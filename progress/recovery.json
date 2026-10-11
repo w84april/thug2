@@ -4,153 +4,74 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 714,
-  "experimental_functions_across_separate_builds": 731,
-  "reported_recovered_functions": 1887,
-  "decompilation_estimate_percent": 16.22,
+  "experimental_functions_in_latest_module": 716,
+  "experimental_functions_across_separate_builds": 733,
+  "reported_recovered_functions": 1889,
+  "decompilation_estimate_percent": 16.23,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/gap-links-checkpoint.json",
-  "checkpoint_sha256": "cfd900141181f7625cf7a3e03415be868fe660a16e8f0af95d012025f417ef5e",
+  "checkpoint": "local/analysis/score-insert-checkpoint.json",
+  "checkpoint_sha256": "ddb0a44210dadbcb84af60434f822966ea04a49e4c18010f371e432164f69156",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "cfd900141181f7625cf7a3e03415be868fe660a16e8f0af95d012025f417ef5e",
-    "artifacts": 17016,
+    "checkpoint_sha256": "ddb0a44210dadbcb84af60434f822966ea04a49e4c18010f371e432164f69156",
+    "artifacts": 17181,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 561,
+    "harnesses": 571,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 16852,
+    "preserved_previous_artifacts": 17016,
     "main_wasm_unchanged": true,
-    "unit_cases": 360,
-    "unit_calls": 998,
-    "new_instruction_coverage": "508/520; heap initialization, allocation failure and null-successor exits unexercised; no exclusions",
-    "browser_suites": 141,
-    "preserved_browser_suites": 140,
+    "unit_cases": 369,
+    "unit_calls": 1904,
+    "new_instruction_coverage": "553/556; heap initialization and two jumped-over alignment instructions unexercised; no exclusions",
+    "indeterminate_storage": {
+      "routine": "0x5629d0",
+      "record_bytes": 156,
+      "tails": [
+        [
+          35,
+          57
+        ],
+        [
+          101,
+          55
+        ]
+      ],
+      "copies": 23,
+      "bytes_across_compared_steps": 2688,
+      "basis": "Uninitialized automatic string tails after their NUL terminators; later original writes remove the allowance. All defined bytes and numeric values compare exactly. No oracle padding is copied into Wasm."
+    },
+    "browser_suites": 142,
+    "preserved_browser_suites": 141,
     "constructor_prefix_unchanged": "241/463; local path stops before Trigger",
     "playable": false
   },
-  "scope": "Sixteen complete original routines recover level Links lookup/predicate, score-history storage and range arithmetic, timed-trick name recording, synchronous score UI script notification, level-specific gap state and named gap-history writes. The fifth Gap command follows Links and runs the first linked script through actual owner/setup/QB execution; direct and component-descriptor paths compare. Full arena/globals/heap and preserved registers compare, with no numeric masks. EndGap, full score insertion, remaining skater startup and playable training are still unfinished; the dispatcher is partial and not counted complete.",
-  "remaining": "Five Gap routes now execute, including linked-node script dispatch. EndGap remains unavailable and the partial dispatcher is not counted complete. Score insertion and history compression, remaining skater construction/frames, camera/rendering and original playable training remain unfinished. Skater construction remains at Trigger.",
-  "browser_suites": 141,
-  "new_cases": 360,
-  "new_calls": 998,
+  "scope": "Full original score insertion and history compression with real score/UI/parameter/event callees. Only the two uninitialized string tails copied by5629d0 are compared by definedness; later original writes remove bytes from that allowance. All defined score/text fields, arena bytes, globals, heap effects and preserved registers compare. Full EndGap and playable browser training remain unfinished.",
+  "remaining": "Score insertion and history compression are recovered as complete routines. EndGap remains unavailable; its partial command dispatcher is not counted complete. Remaining skater construction/frames, camera/rendering and original playable training remain unfinished. Skater construction remains at Trigger.",
+  "browser_suites": 142,
+  "new_cases": 369,
+  "new_calls": 1904,
   "instruction_coverage": {
-    "0x45c3a0": {
-      "covered": 21,
-      "total": 21,
+    "0x5629d0": {
+      "covered": 108,
+      "total": 108,
       "missing": [],
       "excluded": {}
     },
-    "0x45c460": {
-      "covered": 23,
-      "total": 23,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x45c4b0": {
-      "covered": 49,
-      "total": 49,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x45c520": {
-      "covered": 21,
-      "total": 21,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x5612a0": {
-      "covered": 20,
-      "total": 20,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x5614d0": {
-      "covered": 51,
-      "total": 51,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x5628b0": {
-      "covered": 33,
-      "total": 35,
+    "0x563990": {
+      "covered": 445,
+      "total": 448,
       "missing": [
-        "0x5628bc",
-        "0x5628e6"
+        "0x563af5",
+        "0x563c2d",
+        "0x563c6d"
       ],
-      "excluded": {}
-    },
-    "0x561550": {
-      "covered": 85,
-      "total": 85,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x51c9d0": {
-      "covered": 12,
-      "total": 12,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x5638a0": {
-      "covered": 67,
-      "total": 69,
-      "missing": [
-        "0x5638d6",
-        "0x563907"
-      ],
-      "excluded": {}
-    },
-    "0x584110": {
-      "covered": 6,
-      "total": 6,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x5656c0": {
-      "covered": 4,
-      "total": 4,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x578bc0": {
-      "covered": 63,
-      "total": 67,
-      "missing": [
-        "0x578c2c",
-        "0x578c2d",
-        "0x578c2e",
-        "0x578c2f"
-      ],
-      "excluded": {}
-    },
-    "0x578c70": {
-      "covered": 49,
-      "total": 53,
-      "missing": [
-        "0x578cdc",
-        "0x578cdd",
-        "0x578cde",
-        "0x578cdf"
-      ],
-      "excluded": {}
-    },
-    "0x578670": {
-      "covered": 2,
-      "total": 2,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x49f4c0": {
-      "covered": 2,
-      "total": 2,
-      "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "91e2a4f68495a813717d1fbc153578bb92550e474ec4b54a4f3e3031620b0890",
+  "experimental_wasm_sha256": "3b1cdb8be0decee55a3810a7e7a93df4c1ce80823dbb97f83086b27c27ff944d",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -227,6 +148,7 @@
     "local/analysis/audit-scene-kill.py": "ab1b0726995fc9462ee3f42c0aa15887c3cf40e6bd37103230a9811785b728d6",
     "local/analysis/audit-scene-lifetime.py": "9d5fec16aa69ca128196bffd5a6393a056fbcece7ae438306778318255af3380",
     "local/analysis/audit-scene-state.py": "7316e557fa91e6dd891eeb48302abe2db91657a9fe9924527bea90872075659a",
+    "local/analysis/audit-score-insert.py": "f800dffeac34331361c37e8758bc5327cef8b94ad953b3d9026af474587a33f1",
     "local/analysis/audit-skater-adjust.py": "bc19b514fbdf350908be6459b846b42c6c2c07e1bb45768555e82e289e695465",
     "local/analysis/audit-skater-construction.py": "9fcf81c95f507c4840fb5adce71e7d0a1c95ce4fd2eaa5046b997e0195deecb2",
     "local/analysis/audit-skater-gap.py": "2f1db95b196f4cc20109b6e97ba70bfcbcc60e9270af85cd2ae9537052861f82",
@@ -310,6 +232,7 @@
     "local/analysis/build-scene-lifetime-draft.py": "ead130ebfccc29a311766128e4674671adcb4b53cacdb814c3e1b9e9f03463e8",
     "local/analysis/build-scene-state-draft.py": "ca4fb534dfdff750d90d59e930aeeb52f43066915e541521818682193db25f67",
     "local/analysis/build-scene-witnesses.py": "975c39795bceb748d6b9958b641f6ff478d51f28e69d599a629537ea522f1cad",
+    "local/analysis/build-score-insert-draft.py": "01c023fdb97eb911d884c2eec27415836cfb15e5b89d7c8c12b936714470b760",
     "local/analysis/build-script-change-draft.py": "682faa876654b208a926f75badb4b3adad3cf21ee771c52fda925a12b1a94ff1",
     "local/analysis/build-skater-adjust-draft.py": "82aa5fac7186a24c91e49ff03d96622f0c9ef9610c09cbc760d9f16b79248951",
     "local/analysis/build-skater-construction-draft.py": "1872cc560feafef89944954730f06b9b4ee52ffda7ea77e7db91fc1273ace6e4",
@@ -684,6 +607,7 @@
     "local/analysis/pin-scene-kill.py": "8647bd906911e954571ca4d80244c3d7ddd190d2ac4991d6482c50db0522730c",
     "local/analysis/pin-scene-lifetime.py": "a76ea43e6a9f7cebdc6942032331417f09d5ec4d0e76135c4ee06133542d14dd",
     "local/analysis/pin-scene-state.py": "2c8ed71efc86faeae087228ee8c12fee83549368883b1f99023cf88f568cea4a",
+    "local/analysis/pin-score-insert.py": "862bc2484cb5ae81e8b364750094905212aeeb45305a2b41c3b9e7078d21ba6e",
     "local/analysis/pin-skater-adjust.py": "8f6eb39f394443910f3af96dfb9565e0a1a050148f04f1128b9c2832a90cd81b",
     "local/analysis/pin-skater-construction.py": "7128ba665194f8d0daba0e295a9007f30c955fcda3adc58aa6a8e1586bf5a549",
     "local/analysis/pin-skater-gap.py": "0bf9ae09861bef546e1c493e7b1d8a426cf9496490a1d254b0ec3fb4acdd3e27",
@@ -781,6 +705,7 @@
     "local/analysis/probe-scene-state.py": "626cb7b1e0fd6cfe923a0decf5b72a4ed70561100899ae9e55b7de2641f376be",
     "local/analysis/probe-scene-subscribe.py": "4289db02b457a63338bf51cda8844a30c04fbe1cb41a935f1c8d3054aaad861b",
     "local/analysis/probe-scene-visitor.py": "033ec8659634e8964b77c8d64e2f7de92fe7d7e46f0bd84683dca62e563f0e06",
+    "local/analysis/probe-score-insert.py": "d544ad2452e71ec0f5119c56c6b0eee7847705b115868f118e60036483ae80e9",
     "local/analysis/probe-script-change.py": "59a319d03b1f1bbe8fae94c53e443ec5f5a1402443a5c288a2b222652300b711",
     "local/analysis/probe-skater-adjust.py": "0c39b1cd1c48c594b73e68882bc2ac0e7f8a15f6119fa49bb51797ce5f9eb61e",
     "local/analysis/probe-skater-construction.py": "4aebed2dd3d301da98f39ca53559d0eb96cea228c1be2462e696ce9e87ed0e61",
@@ -948,6 +873,14 @@
     "local/analysis/scene-state-witnesses.build.json": "5e769461f435e998b1eff246b704794ca39e86530cd0663b5756013c61c54b56",
     "local/analysis/scene-state-worker.mjs": "7c928756b3d46571a81652c8d56df67295bc356d119b227d0daeb4bdde038f38",
     "local/analysis/scene-visitor-callback.c": "ab9d058175b5631d55f0b4ad43b66261f3b4a6548211e7cf4260a5691dccdd27",
+    "local/analysis/score-insert-browser.html": "db6b7103756d44867efc127c9590873f5c32d39ab337f98e87fe48cbf0f07aac",
+    "local/analysis/score-insert-checks.mjs": "c11c0bb3faf8ff466d59097586713ac8af9ffe41e97b4e814e05173ce93840c3",
+    "local/analysis/score-insert-draft.build.json": "7ea70d48b85086cbbc5b749c302d7e5cf6e5225325344af33d061c44bcb410b0",
+    "local/analysis/score-insert-draft.c": "7ae42785ca894d9220f104359309d629aa0d1935bda8c932e89ce5004163bd05",
+    "local/analysis/score-insert-oracle-derived.py": "6fb3bc90c5970bd1e50377b429073af35496724cebaa0649d7ff9e03880bd71e",
+    "local/analysis/score-insert-routines.json": "032d597c27b31fbd4c85bad012dbcd5005f33d6d8fb1f6156ac10bbc3b03ff9f",
+    "local/analysis/score-insert-ui-setup.py": "5fa542c5b47f6ba1f72fa87f0500ca6dd049637b69da0627bc23c9478231bdbf",
+    "local/analysis/score-insert-worker.mjs": "234b11f0195b0223f925ae0a15cebe26eca5b20117ace4509615f77c93c22ed5",
     "local/analysis/script-change-draft.build.json": "9d3298945a46bdc1d3c6df5bde32c3d9206b56c972f7f47c3bfc365aa58888e5",
     "local/analysis/script-change-draft.c": "ccb6594b6b2a74d51317d84f5d98f81d71e115b79899e2dc69cab26ad6f400bf",
     "local/analysis/serve-asset-factory.py": "b2149d9593c417ac88ae1638730040fdbf01e65f9015d11e2290dd2c60e14c03",
@@ -1013,6 +946,7 @@
     "local/analysis/serve-scene-kill.py": "9c0fde524dfc7715dcba8d88418e1b0afe1260e51fcab9a4bf73846396a9612c",
     "local/analysis/serve-scene-lifetime.py": "beac3b47140400badc55a1b3588920034bb5208b483085d3375d975999d812c2",
     "local/analysis/serve-scene-state.py": "60fae9c416a1b4ed6ea81d6827f352095b80a3233aa3a82f3041966cbfe10d70",
+    "local/analysis/serve-score-insert.py": "03893b010c2321d1bc03fe813be1f319a7661d38256fbb34491a0e845320a204",
     "local/analysis/serve-skater-adjust.py": "07f39cbd3aed76e36b95601016aec85c9124c20bfa093ef4cfdcda895adeade8",
     "local/analysis/serve-skater-construction.py": "4249388b0a84b49d3c12c90e7663a2adb425ebc3fd91243477dfdf4f70d6838e",
     "local/analysis/serve-skater-gap.py": "497a6a8ce41c22c237f22b7e921c601cfc56ae59e7a5dfbb2e83f6f0b7218ec1",
@@ -1292,6 +1226,7 @@
     "local/analysis/verify-scene-name.mjs": "8d1533d59bf9876cc96286c933ecb0ab591a52df1362064b57ef1de3c8e105f4",
     "local/analysis/verify-scene-state-checkpoint.mjs": "ad1c50d0fb49a83095e8dd63453cda0bd80ed6d1847f54cd3bd780ca65464e48",
     "local/analysis/verify-scene-state.mjs": "8f34ae9834ccc58d6f116e42634607573d520f97e2cd54a8b1591fe8c94e8056",
+    "local/analysis/verify-score-insert-checkpoint.mjs": "8dd893126454f2d5f68a9bd53681c44b0ed07084529683cad6daa31628343afc",
     "local/analysis/verify-script-change.mjs": "63fba106cd64257815adceb78d565196ac5fc84b56905862d0937a9b19b77561",
     "local/analysis/verify-skater-adjust-checkpoint.mjs": "0ce6978413a30c0279e1c0a202ca7f2e48930d00119cef7f9bac48df39c95ae9",
     "local/analysis/verify-skater-construction-checkpoint.mjs": "55525b4746f8f3404b8fda5195e0b4d18adb36a58723a747f594b2e9a585b7ef",

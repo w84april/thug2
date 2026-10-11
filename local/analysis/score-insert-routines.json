@@ -1,0 +1,12 @@
+{
+  "0x5629d0": {
+    "bytes": 330,
+    "instructions": 108,
+    "name": "thug_score_compress_history_draft"
+  },
+  "0x563990": {
+    "bytes": 1433,
+    "instructions": 448,
+    "name": "thug_score_insert_draft"
+  }
+}

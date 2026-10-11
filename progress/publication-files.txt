@@ -73,6 +73,7 @@ local/analysis/audit-scene-finalize.py
 local/analysis/audit-scene-kill.py
 local/analysis/audit-scene-lifetime.py
 local/analysis/audit-scene-state.py
+local/analysis/audit-score-insert.py
 local/analysis/audit-skater-adjust.py
 local/analysis/audit-skater-construction.py
 local/analysis/audit-skater-gap.py
@@ -156,6 +157,7 @@ local/analysis/build-scene-kill-draft.py
 local/analysis/build-scene-lifetime-draft.py
 local/analysis/build-scene-state-draft.py
 local/analysis/build-scene-witnesses.py
+local/analysis/build-score-insert-draft.py
 local/analysis/build-script-change-draft.py
 local/analysis/build-skater-adjust-draft.py
 local/analysis/build-skater-construction-draft.py
@@ -530,6 +532,7 @@ local/analysis/pin-scene-finalize.py
 local/analysis/pin-scene-kill.py
 local/analysis/pin-scene-lifetime.py
 local/analysis/pin-scene-state.py
+local/analysis/pin-score-insert.py
 local/analysis/pin-skater-adjust.py
 local/analysis/pin-skater-construction.py
 local/analysis/pin-skater-gap.py
@@ -627,6 +630,7 @@ local/analysis/probe-scene-proximity.py
 local/analysis/probe-scene-state.py
 local/analysis/probe-scene-subscribe.py
 local/analysis/probe-scene-visitor.py
+local/analysis/probe-score-insert.py
 local/analysis/probe-script-change.py
 local/analysis/probe-skater-adjust.py
 local/analysis/probe-skater-construction.py
@@ -794,6 +798,14 @@ local/analysis/scene-state-draft.c
 local/analysis/scene-state-witnesses.build.json
 local/analysis/scene-state-worker.mjs
 local/analysis/scene-visitor-callback.c
+local/analysis/score-insert-browser.html
+local/analysis/score-insert-checks.mjs
+local/analysis/score-insert-draft.build.json
+local/analysis/score-insert-draft.c
+local/analysis/score-insert-oracle-derived.py
+local/analysis/score-insert-routines.json
+local/analysis/score-insert-ui-setup.py
+local/analysis/score-insert-worker.mjs
 local/analysis/script-change-draft.build.json
 local/analysis/script-change-draft.c
 local/analysis/serve-asset-factory.py
@@ -859,6 +871,7 @@ local/analysis/serve-scene-finalize.py
 local/analysis/serve-scene-kill.py
 local/analysis/serve-scene-lifetime.py
 local/analysis/serve-scene-state.py
+local/analysis/serve-score-insert.py
 local/analysis/serve-skater-adjust.py
 local/analysis/serve-skater-construction.py
 local/analysis/serve-skater-gap.py
@@ -1138,6 +1151,7 @@ local/analysis/verify-scene-lifetime.mjs
 local/analysis/verify-scene-name.mjs
 local/analysis/verify-scene-state-checkpoint.mjs
 local/analysis/verify-scene-state.mjs
+local/analysis/verify-score-insert-checkpoint.mjs
 local/analysis/verify-script-change.mjs
 local/analysis/verify-skater-adjust-checkpoint.mjs
 local/analysis/verify-skater-construction-checkpoint.mjs

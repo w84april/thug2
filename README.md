@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.22%** — 1,887 reported recovered routines divided
+**Decompilation estimate: 16.23%** — 1,889 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 731 experimental routines: 714 in the latest
+routines (9.93% of that baseline) and 733 experimental routines: 716 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,016 pinned artifacts. All 141 Node and Chromium suites were rerun for this
-checkpoint and passed; all 140 inherited result objects remain unchanged.
+17,181 pinned artifacts. All 142 Node and Chromium suites were rerun for this
+checkpoint and passed; all 141 inherited result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -58,7 +58,19 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build connects the fifth Gap command: it follows level
+- The latest experimental build recovers full score insertion and bounded history
+  compression. Repeated-trick multipliers, score-limit handling, formatted text,
+  combo events and live script callback changes match the original in 369 cases /
+  1,904 calls. Coverage is 553 / 556 instructions; one platform heap initialization
+  and two skipped alignment instructions remain unexercised, without exclusions
+  or numeric masks. Compression copies 112 uninitialized string-tail bytes per
+  record: only those proven bytes have a definedness allowance, removed as later
+  writes define them. All defined values compare exactly. All 142 Node and
+  Chromium suites pass, preserving all 141 earlier results. Evidence is in
+  `local/analysis/score-insert-checkpoint.json`; the module contains 716 unpromoted
+  complete routines. EndGap, remaining skater startup/frames, camera/rendering and
+  original playable training remain unfinished.
+- The preceding experimental build connects the fifth Gap command: it follows level
   node links and executes the first linked script through the real owner and QB
   interpreter. Sixteen complete routines also recover score storage, range
   calculation, timed-trick name recording, synchronous score UI notification and
