@@ -1,0 +1,47 @@
+{
+  "0x586130": {
+    "bytes": 26,
+    "instructions": 10,
+    "name": "thug_profile_specials_draft"
+  },
+  "0x561360": {
+    "bytes": 152,
+    "instructions": 51,
+    "name": "thug_score_trick_checksum_draft"
+  },
+  "0x562080": {
+    "bytes": 193,
+    "instructions": 74,
+    "name": "thug_score_profile_checksum_draft"
+  },
+  "0x562150": {
+    "bytes": 242,
+    "instructions": 86,
+    "name": "thug_score_profile_special_draft"
+  },
+  "0x5622c0": {
+    "bytes": 170,
+    "instructions": 67,
+    "name": "thug_score_count_history_draft"
+  },
+  "0x5624c0": {
+    "bytes": 74,
+    "instructions": 29,
+    "name": "thug_score_count_named_draft"
+  },
+  "0x562510": {
+    "bytes": 134,
+    "instructions": 51,
+    "name": "thug_score_count_bound_draft"
+  },
+  "0x5625a0": {
+    "bytes": 120,
+    "instructions": 54,
+    "name": "thug_score_preceding_named_draft"
+  },
+  "0x562620": {
+    "bytes": 192,
+    "instructions": 80,
+    "name": "thug_score_preceding_bound_draft"
+  }
+}

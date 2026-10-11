@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 15.87%** — 1,847 reported recovered routines divided
+**Decompilation estimate: 15.95%** — 1,856 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 691 experimental routines: 674 in the latest
+routines (9.93% of that baseline) and 700 experimental routines: 683 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,9 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-16,364 pinned artifacts; the saved behavioral evidence includes 138 passing Node
-and Chromium suites. This publication rechecked integrity, without rerunning those
-behavioral suites.
+16,685 pinned artifacts. All 139 Node and Chromium suites were rerun for this
+checkpoint and passed; all 138 inherited result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -59,7 +58,20 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build completes the SkaterAdjustPhysics frame:
+- The latest experimental build recovers nine profile and score-history queries
+  needed by gap start and end commands. Named tricks, profile bindings, created
+  tricks, repeated taps, spin checks and trailing-match subtraction match the
+  original in 498 cases / 1,408 calls. All returns, arena bytes, globals and
+  preserved registers compare exactly, with no numeric allowances. Coverage is
+  501 / 502 instructions; one skipped alignment instruction remains unexercised,
+  with no exclusions. All 139 Node and Chromium suites pass; all 138 previous
+  result objects are unchanged. Evidence is in
+  `local/analysis/gap-score-checkpoint.json`; the module contains 683 unpromoted
+  complete routines. These queries are not yet connected to the gap commands.
+  Gap start/end, concrete node and string ownership, remaining skater behavior,
+  camera, rendering and playable training remain unfinished. Skater construction
+  still stops before Trigger.
+- The preceding experimental build completes the SkaterAdjustPhysics frame:
   ground correction, moving-object escape and contact reacquisition, shadow
   placement, state transitions, and surface-dependent model/global lighting.
   Fourteen complete routines match the original in 478 cases / 1,032 calls.

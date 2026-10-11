@@ -16,6 +16,7 @@ local/analysis/asset-ready-worker.mjs
 local/analysis/audit-asset-ready.py
 local/analysis/audit-composite-construction.py
 local/analysis/audit-contact-assembly.py
+local/analysis/audit-gap-score.py
 local/analysis/audit-geometry-clone.py
 local/analysis/audit-input-callbacks.py
 local/analysis/audit-input-command.py
@@ -89,6 +90,7 @@ local/analysis/build-asset-factory-draft.py
 local/analysis/build-asset-ready-draft.py
 local/analysis/build-composite-construction-draft.py
 local/analysis/build-contact-assembly-draft.py
+local/analysis/build-gap-score-draft.py
 local/analysis/build-geometry-clone-draft.py
 local/analysis/build-input-callbacks-draft.py
 local/analysis/build-input-command-draft.py
@@ -202,6 +204,11 @@ local/analysis/explore-particle-image-frame.py
 local/analysis/explore-particle-startup-frame.py
 local/analysis/explore-rigidbody-first-frame-diagnostics.py
 local/analysis/explore-rigidbody-first-frame.py
+local/analysis/gap-score-browser.html
+local/analysis/gap-score-draft.build.json
+local/analysis/gap-score-draft.c
+local/analysis/gap-score-routines.json
+local/analysis/gap-score-worker.mjs
 local/analysis/geometry-clone-browser.html
 local/analysis/geometry-clone-configuration-derived.c
 local/analysis/geometry-clone-draft.build.json
@@ -448,6 +455,7 @@ local/analysis/pin-asset-factory.py
 local/analysis/pin-asset-ready.py
 local/analysis/pin-composite-construction.py
 local/analysis/pin-contact-assembly.py
+local/analysis/pin-gap-score.py
 local/analysis/pin-geometry-clone.py
 local/analysis/pin-input-callbacks.py
 local/analysis/pin-input-command.py
@@ -529,6 +537,7 @@ local/analysis/probe-composite-construction.py
 local/analysis/probe-composite-math.py
 local/analysis/probe-contact-assembly-training.py
 local/analysis/probe-contact-assembly.py
+local/analysis/probe-gap-score.py
 local/analysis/probe-geometry-clone.py
 local/analysis/probe-input-callbacks.py
 local/analysis/probe-input-command.py
@@ -771,6 +780,7 @@ local/analysis/serve-asset-factory.py
 local/analysis/serve-asset-ready.py
 local/analysis/serve-composite-construction.py
 local/analysis/serve-contact-assembly.py
+local/analysis/serve-gap-score.py
 local/analysis/serve-geometry-clone.py
 local/analysis/serve-input-callbacks.py
 local/analysis/serve-input-command.py
@@ -1037,6 +1047,7 @@ local/analysis/verify-asset-factory.mjs
 local/analysis/verify-asset-ready-checkpoint.mjs
 local/analysis/verify-composite-construction-checkpoint.mjs
 local/analysis/verify-contact-assembly-checkpoint.mjs
+local/analysis/verify-gap-score-checkpoint.mjs
 local/analysis/verify-geometry-clone-checkpoint.mjs
 local/analysis/verify-input-callbacks-checkpoint.mjs
 local/analysis/verify-input-command-checkpoint.mjs

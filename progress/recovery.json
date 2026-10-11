@@ -4,135 +4,97 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 674,
-  "experimental_functions_across_separate_builds": 691,
-  "reported_recovered_functions": 1847,
-  "decompilation_estimate_percent": 15.87,
+  "experimental_functions_in_latest_module": 683,
+  "experimental_functions_across_separate_builds": 700,
+  "reported_recovered_functions": 1856,
+  "decompilation_estimate_percent": 15.95,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/skater-ground-checkpoint.json",
-  "checkpoint_sha256": "afdbeeb0f9a8e76f1e6ab0e8ea83811cd0905aeaf09c6ce259e15dab03d3881a",
+  "checkpoint": "local/analysis/gap-score-checkpoint.json",
+  "checkpoint_sha256": "4548a47ac26e99ec593f98963fb83baf72ce0d5ca9acfa33964a1ae96c4133d0",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "afdbeeb0f9a8e76f1e6ab0e8ea83811cd0905aeaf09c6ce259e15dab03d3881a",
-    "artifacts": 16364,
+    "checkpoint_sha256": "4548a47ac26e99ec593f98963fb83baf72ce0d5ca9acfa33964a1ae96c4133d0",
+    "artifacts": 16685,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 540,
+    "harnesses": 547,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 16198,
+    "preserved_previous_artifacts": 16364,
     "main_wasm_unchanged": true,
-    "unit_cases": 478,
-    "unit_calls": 1032,
-    "new_instruction_coverage": "955/960;two skipped alignment and three secondary-probe cleanup instructions unexercised;no exclusions",
-    "owner_dispatch_frames": 24,
-    "original_collision_queries": 842,
-    "original_event_emissions": 65,
-    "constructor_prefix_unchanged": "241/463;local path stops before Trigger",
-    "preserved_training_trace_calls": 67,
-    "preserved_active_snapshot_calls": 2,
+    "unit_cases": 498,
+    "unit_calls": 1408,
+    "new_instruction_coverage": "501/502; one skipped alignment instruction unexercised; no exclusions",
+    "browser_suites": 139,
+    "preserved_browser_suites": 138,
+    "constructor_prefix_unchanged": "241/463; local path stops before Trigger",
     "playable": false
   },
-  "scope": "Fourteen original routines recover complete SkaterAdjustPhysics update, moving escape/contact reacquisition, grounded position correction and secondary surface lighting, plus actual mesh light predicate, model/global approach and color writes. Real geometry queries, state changes, event delivery, light virtual and reference cleanup execute. Synthetic initialized graphs are not a playable training skater. Whole arena/globals/heap and preserved registers compare; no numeric exceptions. Full startup, other skater behavior, camera/rendering and playability remain unfinished.",
-  "remaining": "Full SkaterAdjustPhysics frame, moving escape integration, ground correction and surface/model/global lighting are recovered. The actual owner dispatcher reaches the real Adjust update slot. Local skater construction remains at Trigger e594f0a2; remote850eef66 unchanged. Gap scoring/commands, remaining skater assembly, Trick/PhysicsControl frame/commands, Score frame/commands/disposal, Input binding, camera, rendering and playable training remain unfinished.",
-  "browser_suites": 138,
-  "new_cases": 478,
-  "new_calls": 1032,
+  "scope": "Nine original profile and score-history routines used by StartGap and EndGap, including named/profile/created-trick resolution, tap chains, exact spin tolerance and trailing-match subtraction. Whole arena/globals and preserved registers compare. Required QB data, valid created-trick indices and terminating arrays/lists are caller contracts. Gap commands and playable training remain unfinished.",
+  "remaining": "Gap score-history dependencies are recovered. Gap start/end commands and concrete node/string ownership are not yet integrated. Existing constructor remains at Trigger; other skater behavior, camera, rendering and playable training remain unfinished.",
+  "browser_suites": 139,
+  "new_cases": 498,
+  "new_calls": 1408,
   "instruction_coverage": {
-    "0x5b9760": {
-      "covered": 2,
-      "total": 2,
+    "0x586130": {
+      "covered": 10,
+      "total": 10,
       "missing": [],
       "excluded": {}
     },
-    "0x417120": {
-      "covered": 8,
-      "total": 8,
+    "0x561360": {
+      "covered": 51,
+      "total": 51,
       "missing": [],
       "excluded": {}
     },
-    "0x48e660": {
-      "covered": 57,
-      "total": 59,
+    "0x562080": {
+      "covered": 74,
+      "total": 74,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x562150": {
+      "covered": 86,
+      "total": 86,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5622c0": {
+      "covered": 67,
+      "total": 67,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5624c0": {
+      "covered": 29,
+      "total": 29,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x562510": {
+      "covered": 51,
+      "total": 51,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5625a0": {
+      "covered": 54,
+      "total": 54,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x562620": {
+      "covered": 79,
+      "total": 80,
       "missing": [
-        "0x48e6b7",
-        "0x48e6be"
+        "0x56269d"
       ],
-      "excluded": {}
-    },
-    "0x48e830": {
-      "covered": 36,
-      "total": 36,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x48e8a0": {
-      "covered": 7,
-      "total": 7,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b67e0": {
-      "covered": 22,
-      "total": 22,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b6860": {
-      "covered": 28,
-      "total": 28,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b6900": {
-      "covered": 11,
-      "total": 11,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x48edb0": {
-      "covered": 85,
-      "total": 85,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x420670": {
-      "covered": 50,
-      "total": 50,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4f82f0": {
-      "covered": 76,
-      "total": 79,
-      "missing": [
-        "0x4f83ee",
-        "0x4f83f5",
-        "0x4f83f6"
-      ],
-      "excluded": {}
-    },
-    "0x4f8aa0": {
-      "covered": 107,
-      "total": 107,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4f8420": {
-      "covered": 423,
-      "total": 423,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4f8c40": {
-      "covered": 43,
-      "total": 43,
-      "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "918f1c47860a908dacd76205b3875880348aa04274080920feb91070543db834",
+  "experimental_wasm_sha256": "3d5408585967772c59956ed63f4a0847c620fccce4373f6d80b5c95018211991",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -152,6 +114,7 @@
     "local/analysis/audit-asset-ready.py": "ab9332d4d0a9381bd8accd34796534902fa95459f2e24074ad7c8d3b0fc476fb",
     "local/analysis/audit-composite-construction.py": "3502b01f47ae647104176046367e0f331bd5784a21803c4876391bdccdd71d5c",
     "local/analysis/audit-contact-assembly.py": "0d0023288c9cc2c5d5368e92669da5511b27e17e545c8c20e18340a16b580f70",
+    "local/analysis/audit-gap-score.py": "77728f82c729f72dd416fbce976c22cb95a1b2cc4969c05170256929430b6a90",
     "local/analysis/audit-geometry-clone.py": "6c20a73434ab8ef66158d4b3605e12c5242e9aa3ab93e7e88b900feb0409f386",
     "local/analysis/audit-input-callbacks.py": "a2f2d8102eb176e94d9e9996c6dbda7e284da67efe5a21824308ea2ee2314f06",
     "local/analysis/audit-input-command.py": "f78ae842d52ae161ca444fa99de14d67b2425a1cda77140a1ae66b7bf8d09599",
@@ -225,6 +188,7 @@
     "local/analysis/build-asset-ready-draft.py": "2ad47a7c01c07322916bc71c3516ea38b92860ea2e0b33498c3469405cfb3528",
     "local/analysis/build-composite-construction-draft.py": "7e4166b5f8e6a5cdfe1d074ee743d568d83e706f0765affb2c2e6b8fc25fe8b4",
     "local/analysis/build-contact-assembly-draft.py": "8da74e9829e22027e6937f53dd263f2debb9b7157f6cbf281bb5a9c835b9ffc5",
+    "local/analysis/build-gap-score-draft.py": "6e67c84dc877d689f2eb93682e73509681c9cdb5eba2a6b0cecb385a91c8a555",
     "local/analysis/build-geometry-clone-draft.py": "cfbba716e99cdc2dda44110d6bd421645f53afb308e6dc02fc0509f02ade7eb7",
     "local/analysis/build-input-callbacks-draft.py": "a3191e3cebd2134eddd542d7518454fc8fb95e1cb21b091d89eaed7a99d3585e",
     "local/analysis/build-input-command-draft.py": "7ce7ef437c3f96d0c7b357a7839f64ecc08d7af888ec3697f76e7de4f183d84a",
@@ -338,6 +302,11 @@
     "local/analysis/explore-particle-startup-frame.py": "d17700187bdf45911c2a4c00bfc707066dd5756265e4c0150073d324ed158ea2",
     "local/analysis/explore-rigidbody-first-frame-diagnostics.py": "a7bee9403576e57ca7f9b58a7dd10c3aff060d9ff5de12dee3c7f2127d7fa529",
     "local/analysis/explore-rigidbody-first-frame.py": "538f572a092a011e3a4b286b399b71159e4759e8c21e805a7d56d0996405ea1a",
+    "local/analysis/gap-score-browser.html": "f1c9367fb2706fe471d8f83023c488ff2f7bbcc9d941cb5c54e5c7919d1d85ae",
+    "local/analysis/gap-score-draft.build.json": "e3a33818483566c77eb9e20d4b5551483e14366ad03f805355fe53d37ecac237",
+    "local/analysis/gap-score-draft.c": "b336fab7032be44c12e3fa2719975e4a8f93528475fb930b9a86337c9b24bb8f",
+    "local/analysis/gap-score-routines.json": "9909ba7d8c9c538de6368a5affdb8fc92cc4da6c29a3ad6975645cb07f07d02c",
+    "local/analysis/gap-score-worker.mjs": "afc7d676a7b521c90bb31d2b9e65fa1ba7adaf87493490de834ae3f9468320e3",
     "local/analysis/geometry-clone-browser.html": "b141fbd3e50f9987b1af20b393959b0298ee5e7d3892aa72dbe94d973da02429",
     "local/analysis/geometry-clone-configuration-derived.c": "74dc395a691c0dfa5179ce36fa40d3d5b9535b2ff66e4c334299121c2e84c96a",
     "local/analysis/geometry-clone-draft.build.json": "0f8b1647650b54016f2dd3bd4adc54f58b8649e5a67a84234a7dd14b0e1a93c9",
@@ -584,6 +553,7 @@
     "local/analysis/pin-asset-ready.py": "d53f20e208b91fe84cbdb2c2356aef7285826135bd582ea937d7644c0d206978",
     "local/analysis/pin-composite-construction.py": "185104d8a3c6d5ccccc6390c49d8c8942d355dd47beaff4bea2067b5e6c6d2cf",
     "local/analysis/pin-contact-assembly.py": "5853baf86b60fa1c4f5c161fba7fd4a44f3f8a55abbb5d96a460f8f22ab17044",
+    "local/analysis/pin-gap-score.py": "94316c413ab7f0722ad4f985fe7b9b16d38961b5a158d4d6de303e272ddd1e9a",
     "local/analysis/pin-geometry-clone.py": "33d034175c2b64be89291c5aeb69dfe70c259525e8ad1b2cf6e0f26f0756a74a",
     "local/analysis/pin-input-callbacks.py": "9710bd6b7f02cee449dea5ba8c57dda640266cacb39bed4f043e43bfdd84b508",
     "local/analysis/pin-input-command.py": "addabf345bec19119e6912616862d558d02d754e7b418c0ea5dfebbb5ceb8461",
@@ -665,6 +635,7 @@
     "local/analysis/probe-composite-math.py": "e6f92da3ed2a8a46da7ccc3d8dfcbb135c4c33f342bc1c22a757caef1bd1492a",
     "local/analysis/probe-contact-assembly-training.py": "7deffc3be85ee5af8534fb4749e863dbaf1e656fe48360af5cfb00380aeed4be",
     "local/analysis/probe-contact-assembly.py": "bcc23c0a6610e50bddaa501280bbf9972c37fc09ee67a73c457358bac04c6d0b",
+    "local/analysis/probe-gap-score.py": "7ff6bd37650b7bc053acfbf23dd469274b41d50ab5c6d7e8bc9a46a9e43b2007",
     "local/analysis/probe-geometry-clone.py": "2e7eb0e435ca13214413172825701c715920520ef626e6fea54ae6885e2544cc",
     "local/analysis/probe-input-callbacks.py": "8e388648abc27b0a4d2e2f3c61c20e5f2af4d143df3a49d4311c76c394f69d21",
     "local/analysis/probe-input-command.py": "558b2843923ab7bf7430fc99ef885c589be81e11e807a5578ed004c71f5bf435",
@@ -907,6 +878,7 @@
     "local/analysis/serve-asset-ready.py": "ba39f411778d4907698f08d9a98f93b2472aa14ecf98ebd4f4baa6c163cb927f",
     "local/analysis/serve-composite-construction.py": "d5d28e09a2de54830eda064893862c4351ebe371dd264cc7ba4ddc7c350c691d",
     "local/analysis/serve-contact-assembly.py": "173bbdf54f4c75b81f78759049998610452ab4d124eddb23d7d09584af48d446",
+    "local/analysis/serve-gap-score.py": "40cb0dae39001a0778c2c19809005d7a9de41c8bfe6c064bc214526b54d77da1",
     "local/analysis/serve-geometry-clone.py": "69b5dec3035fe3ac42e8a82238866489eaa8e9efefea8686c6230347893aa85a",
     "local/analysis/serve-input-callbacks.py": "3ed888ad539f05f07efd80e244335c7d935f653e6bc77214cd6a9218567837b8",
     "local/analysis/serve-input-command.py": "611a21d2adcd34fd573dd64d8b79e3ff328d7d9f1c32b0cf7c29d77f8f89fce5",
@@ -1173,6 +1145,7 @@
     "local/analysis/verify-asset-ready-checkpoint.mjs": "c535bb202b12135aa8e76744e9b23587624ee3ddf284ca6aadba6c8133bfa54d",
     "local/analysis/verify-composite-construction-checkpoint.mjs": "85ee9cf76c3cae6e1969165e4cdbee277659be232becc4f123dce9a62cd0dda9",
     "local/analysis/verify-contact-assembly-checkpoint.mjs": "b582f99865d553f6ef5dcc424d1112605011cf363e6a285d197f107ce5e740c4",
+    "local/analysis/verify-gap-score-checkpoint.mjs": "48abf6d8c5ed6267e0f0024b9cb4fed5cda743b624a792ad9e0c851db112b7a1",
     "local/analysis/verify-geometry-clone-checkpoint.mjs": "3c7d51eb631a5a65ebb9acbbcef72c014d492bffef966152be21a7197c1d6e5b",
     "local/analysis/verify-input-callbacks-checkpoint.mjs": "6de68d490ae124e868961594689af3a9700bf5ac2c1632ceb15472ce4d7aad7a",
     "local/analysis/verify-input-command-checkpoint.mjs": "4a842b2e9610ac5f2e6b9a27e79c81dda080e6f67ba6979cb15374b0bf8e3e56",
