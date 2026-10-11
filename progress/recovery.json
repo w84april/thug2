@@ -4,137 +4,153 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 698,
-  "experimental_functions_across_separate_builds": 715,
-  "reported_recovered_functions": 1871,
-  "decompilation_estimate_percent": 16.08,
+  "experimental_functions_in_latest_module": 714,
+  "experimental_functions_across_separate_builds": 731,
+  "reported_recovered_functions": 1887,
+  "decompilation_estimate_percent": 16.22,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/gap-start-checkpoint.json",
-  "checkpoint_sha256": "aec98f7c8eae810ae53fab7a994f42c4404cbff7f7165911bb5375977ff8fe79",
+  "checkpoint": "local/analysis/gap-links-checkpoint.json",
+  "checkpoint_sha256": "cfd900141181f7625cf7a3e03415be868fe660a16e8f0af95d012025f417ef5e",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "aec98f7c8eae810ae53fab7a994f42c4404cbff7f7165911bb5375977ff8fe79",
-    "artifacts": 16852,
+    "checkpoint_sha256": "cfd900141181f7625cf7a3e03415be868fe660a16e8f0af95d012025f417ef5e",
+    "artifacts": 17016,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 554,
+    "harnesses": 561,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 16685,
+    "preserved_previous_artifacts": 16852,
     "main_wasm_unchanged": true,
-    "unit_cases": 396,
-    "unit_calls": 984,
-    "new_instruction_coverage": "810/813; two heap-initialization calls and one allocation-failure branch unexercised; no exclusions",
-    "browser_suites": 140,
-    "preserved_browser_suites": 139,
+    "unit_cases": 360,
+    "unit_calls": 998,
+    "new_instruction_coverage": "508/520; heap initialization, allocation failure and null-successor exits unexercised; no exclusions",
+    "browser_suites": 141,
+    "preserved_browser_suites": 140,
     "constructor_prefix_unchanged": "241/463; local path stops before Trigger",
     "playable": false
   },
-  "scope": "Fifteen complete routines recover full StartGap, secondary registration and CheckGapTricks, concrete primary/secondary nodes, owned strings, pool-aware array release and both-list clearing. Real profile/history queries, script array copy, camera-object lookup, state cancellation and terminating QB script spawn execute. Explicit initialized graphs supply the later skater Score link. Full arena/globals/heap/preserved registers compare. Script value copying retains its existing disabled-pool contract; concrete node array allocation/release also tests selected and alternate pools. Four recovered command routes are wired into the real component descriptor; EndGap and linked-node trigger routes explicitly trap, so the dispatcher is partial and is not counted. No playable training scene is claimed.",
-  "remaining": "Full StartGap, secondary registration/checking, concrete nodes and strings, and gap list cleanup are recovered. Four command routes are wired into the component. EndGap and linked-node trigger dispatch still trap; the dispatcher is partial and not counted complete. Skater construction remains at Trigger; other skater behavior, camera, rendering and playable training are unfinished.",
-  "browser_suites": 140,
-  "new_cases": 396,
-  "new_calls": 984,
+  "scope": "Sixteen complete original routines recover level Links lookup/predicate, score-history storage and range arithmetic, timed-trick name recording, synchronous score UI script notification, level-specific gap state and named gap-history writes. The fifth Gap command follows Links and runs the first linked script through actual owner/setup/QB execution; direct and component-descriptor paths compare. Full arena/globals/heap and preserved registers compare, with no numeric masks. EndGap, full score insertion, remaining skater startup and playable training are still unfinished; the dispatcher is partial and not counted complete.",
+  "remaining": "Five Gap routes now execute, including linked-node script dispatch. EndGap remains unavailable and the partial dispatcher is not counted complete. Score insertion and history compression, remaining skater construction/frames, camera/rendering and original playable training remain unfinished. Skater construction remains at Trigger.",
+  "browser_suites": 141,
+  "new_cases": 360,
+  "new_calls": 998,
   "instruction_coverage": {
-    "0x401da0": {
-      "covered": 12,
-      "total": 12,
+    "0x45c3a0": {
+      "covered": 21,
+      "total": 21,
       "missing": [],
       "excluded": {}
     },
-    "0x401dd0": {
-      "covered": 89,
-      "total": 90,
-      "missing": [
-        "0x401e13"
-      ],
-      "excluded": {}
-    },
-    "0x401ed0": {
-      "covered": 26,
-      "total": 26,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x408fd0": {
-      "covered": 34,
-      "total": 34,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x578740": {
-      "covered": 52,
-      "total": 53,
-      "missing": [
-        "0x5787a3"
-      ],
-      "excluded": {}
-    },
-    "0x5787f0": {
-      "covered": 24,
-      "total": 24,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x579570": {
-      "covered": 41,
-      "total": 41,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x579630": {
-      "covered": 26,
-      "total": 26,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x579820": {
-      "covered": 11,
-      "total": 11,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x579600": {
-      "covered": 11,
-      "total": 11,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x57a2f0": {
+    "0x45c460": {
       "covered": 23,
       "total": 23,
       "missing": [],
       "excluded": {}
     },
-    "0x512030": {
-      "covered": 7,
-      "total": 7,
+    "0x45c4b0": {
+      "covered": 49,
+      "total": 49,
       "missing": [],
       "excluded": {}
     },
-    "0x512050": {
-      "covered": 71,
-      "total": 72,
+    "0x45c520": {
+      "covered": 21,
+      "total": 21,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5612a0": {
+      "covered": 20,
+      "total": 20,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5614d0": {
+      "covered": 51,
+      "total": 51,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5628b0": {
+      "covered": 33,
+      "total": 35,
       "missing": [
-        "0x512090"
+        "0x5628bc",
+        "0x5628e6"
       ],
       "excluded": {}
     },
-    "0x512140": {
-      "covered": 39,
-      "total": 39,
+    "0x561550": {
+      "covered": 85,
+      "total": 85,
       "missing": [],
       "excluded": {}
     },
-    "0x512360": {
-      "covered": 344,
-      "total": 344,
+    "0x51c9d0": {
+      "covered": 12,
+      "total": 12,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5638a0": {
+      "covered": 67,
+      "total": 69,
+      "missing": [
+        "0x5638d6",
+        "0x563907"
+      ],
+      "excluded": {}
+    },
+    "0x584110": {
+      "covered": 6,
+      "total": 6,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5656c0": {
+      "covered": 4,
+      "total": 4,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x578bc0": {
+      "covered": 63,
+      "total": 67,
+      "missing": [
+        "0x578c2c",
+        "0x578c2d",
+        "0x578c2e",
+        "0x578c2f"
+      ],
+      "excluded": {}
+    },
+    "0x578c70": {
+      "covered": 49,
+      "total": 53,
+      "missing": [
+        "0x578cdc",
+        "0x578cdd",
+        "0x578cde",
+        "0x578cdf"
+      ],
+      "excluded": {}
+    },
+    "0x578670": {
+      "covered": 2,
+      "total": 2,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x49f4c0": {
+      "covered": 2,
+      "total": 2,
       "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "b9a15511ad1b6ff9b5bf331fd14427f2bc0e23dad3604016b934a8f111affce7",
+  "experimental_wasm_sha256": "91e2a4f68495a813717d1fbc153578bb92550e474ec4b54a4f3e3031620b0890",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -154,6 +170,7 @@
     "local/analysis/audit-asset-ready.py": "ab9332d4d0a9381bd8accd34796534902fa95459f2e24074ad7c8d3b0fc476fb",
     "local/analysis/audit-composite-construction.py": "3502b01f47ae647104176046367e0f331bd5784a21803c4876391bdccdd71d5c",
     "local/analysis/audit-contact-assembly.py": "0d0023288c9cc2c5d5368e92669da5511b27e17e545c8c20e18340a16b580f70",
+    "local/analysis/audit-gap-links.py": "9f2beea3cb83c95b050895881d4373270c81dfafbf05bf5d3c5d5ad05b415ddf",
     "local/analysis/audit-gap-score.py": "77728f82c729f72dd416fbce976c22cb95a1b2cc4969c05170256929430b6a90",
     "local/analysis/audit-gap-start.py": "0ee8c292cc2622f3717c2971462cebd55c1372e4b218e59b60920ea066e062b7",
     "local/analysis/audit-geometry-clone.py": "6c20a73434ab8ef66158d4b3605e12c5242e9aa3ab93e7e88b900feb0409f386",
@@ -229,6 +246,7 @@
     "local/analysis/build-asset-ready-draft.py": "2ad47a7c01c07322916bc71c3516ea38b92860ea2e0b33498c3469405cfb3528",
     "local/analysis/build-composite-construction-draft.py": "7e4166b5f8e6a5cdfe1d074ee743d568d83e706f0765affb2c2e6b8fc25fe8b4",
     "local/analysis/build-contact-assembly-draft.py": "8da74e9829e22027e6937f53dd263f2debb9b7157f6cbf281bb5a9c835b9ffc5",
+    "local/analysis/build-gap-links-draft.py": "95b3f671be6e7572a25986ba267e3aa19c723b00ac1660c308b1f6a10738c3ec",
     "local/analysis/build-gap-score-draft.py": "6e67c84dc877d689f2eb93682e73509681c9cdb5eba2a6b0cecb385a91c8a555",
     "local/analysis/build-gap-start-draft.py": "f40400c1bd59635cecbbf26bcb5db7101a1e68634d6287549b417bd343313dbf",
     "local/analysis/build-geometry-clone-draft.py": "cfbba716e99cdc2dda44110d6bd421645f53afb308e6dc02fc0509f02ade7eb7",
@@ -344,6 +362,12 @@
     "local/analysis/explore-particle-startup-frame.py": "d17700187bdf45911c2a4c00bfc707066dd5756265e4c0150073d324ed158ea2",
     "local/analysis/explore-rigidbody-first-frame-diagnostics.py": "a7bee9403576e57ca7f9b58a7dd10c3aff060d9ff5de12dee3c7f2127d7fa529",
     "local/analysis/explore-rigidbody-first-frame.py": "538f572a092a011e3a4b286b399b71159e4759e8c21e805a7d56d0996405ea1a",
+    "local/analysis/gap-links-browser.html": "c315a95c959ece0757aaadb46ad4f821aa1016fa87be8e568c1b3c1d5e08ec2e",
+    "local/analysis/gap-links-draft.build.json": "c516a0eefbeb9e426ad1b8308639dbdc289deea87f14d464689ba5e8bc1d3a56",
+    "local/analysis/gap-links-draft.c": "bd9ca98b7689d6ed4711039e9486fd125315869f06be73c71a0e2dee6b91001c",
+    "local/analysis/gap-links-routines.json": "f25e9ea63cae35bd5c23941b9b71c9d3d5ae220ff6d6ad360adbf0c30edd6a05",
+    "local/analysis/gap-links-start-derived.c": "bf2e67f2cad8ade6fae32dd52e0fc78267a4bcfa369711cd5b8e21fedfd0dda8",
+    "local/analysis/gap-links-worker.mjs": "cfa68fa579f46ef7dc965c7df2a8b266f572a3a7cffe2f6643e94eb5cd68a50c",
     "local/analysis/gap-score-browser.html": "f1c9367fb2706fe471d8f83023c488ff2f7bbcc9d941cb5c54e5c7919d1d85ae",
     "local/analysis/gap-score-draft.build.json": "e3a33818483566c77eb9e20d4b5551483e14366ad03f805355fe53d37ecac237",
     "local/analysis/gap-score-draft.c": "b336fab7032be44c12e3fa2719975e4a8f93528475fb930b9a86337c9b24bb8f",
@@ -601,6 +625,7 @@
     "local/analysis/pin-asset-ready.py": "d53f20e208b91fe84cbdb2c2356aef7285826135bd582ea937d7644c0d206978",
     "local/analysis/pin-composite-construction.py": "185104d8a3c6d5ccccc6390c49d8c8942d355dd47beaff4bea2067b5e6c6d2cf",
     "local/analysis/pin-contact-assembly.py": "5853baf86b60fa1c4f5c161fba7fd4a44f3f8a55abbb5d96a460f8f22ab17044",
+    "local/analysis/pin-gap-links.py": "91bf80a3a55fa82be063ccab46e8c34631878d6b69c4ab182383397758d8f4cb",
     "local/analysis/pin-gap-score.py": "94316c413ab7f0722ad4f985fe7b9b16d38961b5a158d4d6de303e272ddd1e9a",
     "local/analysis/pin-gap-start.py": "678d17709ec3a5be4d915711d08308fc5871d754e9ec8606d94b093154d11fed",
     "local/analysis/pin-geometry-clone.py": "33d034175c2b64be89291c5aeb69dfe70c259525e8ad1b2cf6e0f26f0756a74a",
@@ -684,6 +709,7 @@
     "local/analysis/probe-composite-math.py": "e6f92da3ed2a8a46da7ccc3d8dfcbb135c4c33f342bc1c22a757caef1bd1492a",
     "local/analysis/probe-contact-assembly-training.py": "7deffc3be85ee5af8534fb4749e863dbaf1e656fe48360af5cfb00380aeed4be",
     "local/analysis/probe-contact-assembly.py": "bcc23c0a6610e50bddaa501280bbf9972c37fc09ee67a73c457358bac04c6d0b",
+    "local/analysis/probe-gap-links.py": "2b340292656f6d918fa27ea9d0371612026baf8cb84927d1eaf8d7e1d5004723",
     "local/analysis/probe-gap-score.py": "7ff6bd37650b7bc053acfbf23dd469274b41d50ab5c6d7e8bc9a46a9e43b2007",
     "local/analysis/probe-gap-start.py": "bef78e5acc6054764199bd7d8844f6edc40f4b4f55999b0abce0f623e786edf8",
     "local/analysis/probe-geometry-clone.py": "2e7eb0e435ca13214413172825701c715920520ef626e6fea54ae6885e2544cc",
@@ -928,6 +954,7 @@
     "local/analysis/serve-asset-ready.py": "ba39f411778d4907698f08d9a98f93b2472aa14ecf98ebd4f4baa6c163cb927f",
     "local/analysis/serve-composite-construction.py": "d5d28e09a2de54830eda064893862c4351ebe371dd264cc7ba4ddc7c350c691d",
     "local/analysis/serve-contact-assembly.py": "173bbdf54f4c75b81f78759049998610452ab4d124eddb23d7d09584af48d446",
+    "local/analysis/serve-gap-links.py": "f5bad7aed7593268311c084ff6db42d479ab1960b20d5458ea164762229cab1a",
     "local/analysis/serve-gap-score.py": "40cb0dae39001a0778c2c19809005d7a9de41c8bfe6c064bc214526b54d77da1",
     "local/analysis/serve-gap-start.py": "5613fc111028304076cbb8ac4b42fff83ee6ee9cee9e0a8ac4f44af11ad40a2c",
     "local/analysis/serve-geometry-clone.py": "69b5dec3035fe3ac42e8a82238866489eaa8e9efefea8686c6230347893aa85a",
@@ -1196,6 +1223,7 @@
     "local/analysis/verify-asset-ready-checkpoint.mjs": "c535bb202b12135aa8e76744e9b23587624ee3ddf284ca6aadba6c8133bfa54d",
     "local/analysis/verify-composite-construction-checkpoint.mjs": "85ee9cf76c3cae6e1969165e4cdbee277659be232becc4f123dce9a62cd0dda9",
     "local/analysis/verify-contact-assembly-checkpoint.mjs": "b582f99865d553f6ef5dcc424d1112605011cf363e6a285d197f107ce5e740c4",
+    "local/analysis/verify-gap-links-checkpoint.mjs": "895f728a89ab590afead27832ef626047a000f404e0eff3235f622b9f8e808c0",
     "local/analysis/verify-gap-score-checkpoint.mjs": "48abf6d8c5ed6267e0f0024b9cb4fed5cda743b624a792ad9e0c851db112b7a1",
     "local/analysis/verify-gap-start-checkpoint.mjs": "b2743b3d1c5fd5ee7ae9c17f45bdf0385dcde3bb3bc87959e64c12df5dd11b07",
     "local/analysis/verify-geometry-clone-checkpoint.mjs": "3c7d51eb631a5a65ebb9acbbcef72c014d492bffef966152be21a7197c1d6e5b",

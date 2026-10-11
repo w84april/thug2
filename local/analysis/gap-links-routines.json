@@ -1,0 +1,82 @@
+{
+  "0x45c3a0": {
+    "bytes": 60,
+    "instructions": 21,
+    "name": "thug_node_named_link_count_draft"
+  },
+  "0x45c460": {
+    "bytes": 75,
+    "instructions": 23,
+    "name": "thug_node_link_at_draft"
+  },
+  "0x45c4b0": {
+    "bytes": 107,
+    "instructions": 49,
+    "name": "thug_node_links_to_draft"
+  },
+  "0x45c520": {
+    "bytes": 51,
+    "instructions": 21,
+    "name": "thug_node_names_linked_draft"
+  },
+  "0x5612a0": {
+    "bytes": 47,
+    "instructions": 20,
+    "name": "thug_score_escape_spaces_draft"
+  },
+  "0x5614d0": {
+    "bytes": 123,
+    "instructions": 51,
+    "name": "thug_score_entries_append_draft"
+  },
+  "0x5628b0": {
+    "bytes": 107,
+    "instructions": 35,
+    "name": "thug_score_map_append_draft"
+  },
+  "0x561550": {
+    "bytes": 230,
+    "instructions": 85,
+    "name": "thug_score_range_value_draft"
+  },
+  "0x51c9d0": {
+    "bytes": 38,
+    "instructions": 12,
+    "name": "thug_timed_tricks_record_name_draft"
+  },
+  "0x5638a0": {
+    "bytes": 234,
+    "instructions": 69,
+    "name": "thug_score_notify_trick_draft"
+  },
+  "0x584110": {
+    "bytes": 25,
+    "instructions": 6,
+    "name": "thug_level_gap_state_draft"
+  },
+  "0x5656c0": {
+    "bytes": 11,
+    "instructions": 4,
+    "name": "thug_game_gap_state_draft"
+  },
+  "0x578bc0": {
+    "bytes": 176,
+    "instructions": 67,
+    "name": "thug_gap_history_record_draft"
+  },
+  "0x578c70": {
+    "bytes": 123,
+    "instructions": 53,
+    "name": "thug_gap_history_increment_draft"
+  },
+  "0x578670": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_gap_secondary_mark_draft"
+  },
+  "0x49f4c0": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_gap_array_score_count_draft"
+  }
+}

@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.08%** — 1,871 reported recovered routines divided
+**Decompilation estimate: 16.22%** — 1,887 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 715 experimental routines: 698 in the latest
+routines (9.93% of that baseline) and 731 experimental routines: 714 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-16,852 pinned artifacts. All 140 Node and Chromium suites were rerun for this
-checkpoint and passed; all 139 inherited result objects remain unchanged.
+17,016 pinned artifacts. All 141 Node and Chromium suites were rerun for this
+checkpoint and passed; all 140 inherited result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -58,7 +58,22 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers full StartGap, secondary trick
+- The latest experimental build connects the fifth Gap command: it follows level
+  node links and executes the first linked script through the real owner and QB
+  interpreter. Sixteen complete routines also recover score storage, range
+  calculation, timed-trick name recording, synchronous score UI notification and
+  level-specific gap-history updates. They match the original in 360 cases /
+  998 calls, without numeric allowances. Coverage is 508 / 520 instructions;
+  heap initialization, allocation failure and null-successor exits remain
+  unexercised. Required initialized lists terminate at sentinel nodes. The two
+  gap command suites together exercise 121 / 126 dispatcher instructions; the
+  remaining EndGap route is unavailable and the dispatcher is not counted
+  complete. All 141 Node and Chromium suites pass, preserving all 140 earlier
+  result objects. Evidence is in `local/analysis/gap-links-checkpoint.json`;
+  the module contains 714 unpromoted complete routines. Full score insertion,
+  history compression, EndGap, remaining skater startup/frames, camera/rendering
+  and original playable training remain unfinished.
+- The preceding experimental build recovers full StartGap, secondary trick
   registration and checking, concrete gap nodes, owned strings and list cleanup.
   Fifteen complete routines match the original-instruction oracle in 396 cases /
   984 calls. Four commands are connected through the actual component descriptor;
