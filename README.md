@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.23%** — 1,889 reported recovered routines divided
+**Decompilation estimate: 16.25%** — 1,891 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 733 experimental routines: 716 in the latest
+routines (9.93% of that baseline) and 735 experimental routines: 718 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,181 pinned artifacts. All 142 Node and Chromium suites were rerun for this
-checkpoint and passed; all 141 inherited result objects remain unchanged.
+17,353 pinned artifacts. All 143 Node and Chromium suites were rerun for this
+checkpoint and passed; all 142 inherited result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -58,7 +58,22 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers full score insertion and bounded history
+- The latest experimental build completes EndGap and connects all six Gap commands
+  through the real component dispatcher. Gap awards, predicate scripts, required
+  tricks, history, success events and callback-driven list changes match the
+  original in 188 cases / 359 calls. Full start-gap, trick-score, finish-gap and
+  secondary-script sequences run in controlled tests. Coverage is 527 / 529
+  instructions, including the complete dispatcher; heap initialization and one
+  null-successor exit remain unexercised, without exclusions or numeric masks.
+  Twelve retained pointers to temporary formatted text are checked by original
+  formatter provenance, Wasm stack bounds and exact contents. This preserves the
+  original dangling-pointer behavior; it does not establish safe text ownership.
+  All 143 Node and Chromium suites pass, preserving all 142 earlier results.
+  Evidence is in `local/analysis/gap-end-checkpoint.json`; the module contains
+  718 unpromoted complete routines. Tests still supply initialized graphs and the
+  later score-state link. Skater construction stops before Trigger; remaining
+  startup/frames, camera/rendering and original playable training are unfinished.
+- The preceding experimental build recovers full score insertion and bounded history
   compression. Repeated-trick multipliers, score-limit handling, formatted text,
   combo events and live script callback changes match the original in 369 cases /
   1,904 calls. Coverage is 553 / 556 instructions; one platform heap initialization

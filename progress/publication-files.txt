@@ -16,6 +16,7 @@ local/analysis/asset-ready-worker.mjs
 local/analysis/audit-asset-ready.py
 local/analysis/audit-composite-construction.py
 local/analysis/audit-contact-assembly.py
+local/analysis/audit-gap-end.py
 local/analysis/audit-gap-links.py
 local/analysis/audit-gap-score.py
 local/analysis/audit-gap-start.py
@@ -93,6 +94,7 @@ local/analysis/build-asset-factory-draft.py
 local/analysis/build-asset-ready-draft.py
 local/analysis/build-composite-construction-draft.py
 local/analysis/build-contact-assembly-draft.py
+local/analysis/build-gap-end-draft.py
 local/analysis/build-gap-links-draft.py
 local/analysis/build-gap-score-draft.py
 local/analysis/build-gap-start-draft.py
@@ -210,6 +212,16 @@ local/analysis/explore-particle-image-frame.py
 local/analysis/explore-particle-startup-frame.py
 local/analysis/explore-rigidbody-first-frame-diagnostics.py
 local/analysis/explore-rigidbody-first-frame.py
+local/analysis/gap-end-browser.html
+local/analysis/gap-end-callback.c
+local/analysis/gap-end-checks.mjs
+local/analysis/gap-end-draft.build.json
+local/analysis/gap-end-draft.c
+local/analysis/gap-end-oracle-derived.py
+local/analysis/gap-end-routines.json
+local/analysis/gap-end-score-setup.py
+local/analysis/gap-end-start-derived.c
+local/analysis/gap-end-worker.mjs
 local/analysis/gap-links-browser.html
 local/analysis/gap-links-draft.build.json
 local/analysis/gap-links-draft.c
@@ -473,6 +485,7 @@ local/analysis/pin-asset-factory.py
 local/analysis/pin-asset-ready.py
 local/analysis/pin-composite-construction.py
 local/analysis/pin-contact-assembly.py
+local/analysis/pin-gap-end.py
 local/analysis/pin-gap-links.py
 local/analysis/pin-gap-score.py
 local/analysis/pin-gap-start.py
@@ -558,6 +571,7 @@ local/analysis/probe-composite-construction.py
 local/analysis/probe-composite-math.py
 local/analysis/probe-contact-assembly-training.py
 local/analysis/probe-contact-assembly.py
+local/analysis/probe-gap-end.py
 local/analysis/probe-gap-links.py
 local/analysis/probe-gap-score.py
 local/analysis/probe-gap-start.py
@@ -812,6 +826,7 @@ local/analysis/serve-asset-factory.py
 local/analysis/serve-asset-ready.py
 local/analysis/serve-composite-construction.py
 local/analysis/serve-contact-assembly.py
+local/analysis/serve-gap-end.py
 local/analysis/serve-gap-links.py
 local/analysis/serve-gap-score.py
 local/analysis/serve-gap-start.py
@@ -1082,6 +1097,7 @@ local/analysis/verify-asset-factory.mjs
 local/analysis/verify-asset-ready-checkpoint.mjs
 local/analysis/verify-composite-construction-checkpoint.mjs
 local/analysis/verify-contact-assembly-checkpoint.mjs
+local/analysis/verify-gap-end-checkpoint.mjs
 local/analysis/verify-gap-links-checkpoint.mjs
 local/analysis/verify-gap-score-checkpoint.mjs
 local/analysis/verify-gap-start-checkpoint.mjs

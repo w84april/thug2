@@ -1,0 +1,12 @@
+{
+  "0x512770": {
+    "bytes": 1253,
+    "instructions": 403,
+    "name": "thug_skater_gap_end_draft"
+  },
+  "0x512cc0": {
+    "bytes": 356,
+    "instructions": 126,
+    "name": "thug_skater_gap_command_prefix_draft"
+  }
+}
