@@ -1,0 +1,72 @@
+{
+  "0x5b9760": {
+    "bytes": 3,
+    "instructions": 2,
+    "name": "thug_collision_accepts_light_draft"
+  },
+  "0x417120": {
+    "bytes": 18,
+    "instructions": 8,
+    "name": "thug_collision_probe_accepts_light_draft"
+  },
+  "0x48e660": {
+    "bytes": 197,
+    "instructions": 59,
+    "name": "thug_model_light_recalculate_draft"
+  },
+  "0x48e830": {
+    "bytes": 111,
+    "instructions": 36,
+    "name": "thug_model_light_approach_draft"
+  },
+  "0x48e8a0": {
+    "bytes": 22,
+    "instructions": 7,
+    "name": "thug_model_light_set_draft"
+  },
+  "0x4b67e0": {
+    "bytes": 98,
+    "instructions": 22,
+    "name": "thug_light_write_ambient_draft"
+  },
+  "0x4b6860": {
+    "bytes": 116,
+    "instructions": 28,
+    "name": "thug_light_write_direction_draft"
+  },
+  "0x4b6900": {
+    "bytes": 25,
+    "instructions": 11,
+    "name": "thug_light_write_all_draft"
+  },
+  "0x48edb0": {
+    "bytes": 334,
+    "instructions": 85,
+    "name": "thug_light_approach_draft"
+  },
+  "0x420670": {
+    "bytes": 140,
+    "instructions": 50,
+    "name": "thug_model_surface_light_draft"
+  },
+  "0x4f82f0": {
+    "bytes": 290,
+    "instructions": 79,
+    "name": "thug_skater_adjust_light_draft"
+  },
+  "0x4f8aa0": {
+    "bytes": 405,
+    "instructions": 107,
+    "name": "thug_skater_adjust_escape_draft"
+  },
+  "0x4f8420": {
+    "bytes": 1655,
+    "instructions": 423,
+    "name": "thug_skater_adjust_ground_draft"
+  },
+  "0x4f8c40": {
+    "bytes": 131,
+    "instructions": 43,
+    "name": "thug_skater_adjust_update_draft"
+  }
+}

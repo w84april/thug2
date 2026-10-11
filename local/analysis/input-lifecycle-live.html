@@ -1,0 +1,101 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 input lifecycle check</title>
+<style>
+body{font:17px system-ui;margin:3rem auto;padding:0 1.5rem;max-width:56rem;background:#f6f4ee;color:#24251f}
+h1{font-size:2rem}button{font:inherit;padding:1rem;border:2px solid #777;background:white;border-radius:4px}
+button:focus{outline:3px solid #306bcc;outline-offset:4px}pre{white-space:pre-wrap;font-size:13px;line-height:1.5}
+</style>
+<h1>Original Input startup</h1>
+<p>THUG2 creates its Input component and device tasks, then processes browser keys through its scheduler and original button events. The level is not playable yet.</p>
+<p>Arrow keys: direction · Space: X button · Z: Square · X: Circle · C: Triangle</p>
+<button id="surface" disabled>Focus here to test controls</button>
+<p id="status">Loading recovered code…</p>
+<button id="stop" disabled>Stop and release input</button>
+<pre id="lifecycle"></pre><pre id="state"></pre><pre id="history"></pre><pre id="validation"></pre>
+<script type="module">
+import {bindKeyboardInput} from '/browser-input.mjs';
+const surface=document.querySelector('#surface'),status=document.querySelector('#status');
+try {
+ const fetchBytes=async path=>{const r=await fetch(path);if(!r.ok)throw Error('Missing '+path);return r.arrayBuffer();};
+ const wasm=await fetchBytes('/module.wasm');
+ const {instance:{exports:e}}=await WebAssembly.instantiate(wasm);
+ const fixture=JSON.parse(new TextDecoder().decode(await fetchBytes('/input-lifecycle-fixtures.json')));
+ const {verifyScriptState}=await import('/checks.mjs');
+ const verified=await verifyScriptState(wasm,fixture,async name=>new Uint8Array(await fetchBytes('/'+name)));
+ document.querySelector('#validation').textContent=JSON.stringify(verified);
+ const setup=fixture.cases[fixture.case_labels.indexOf('actual shared factory/init/finalize/tasks/owner destroy/0/False')];
+ const bytes=new Uint8Array(e.memory.buffer),v=new DataView(e.memory.buffer),symbols=new Map();
+ // Start with initialized device services and an empty generic owner. Original
+ // factory, parameter initialization and task registration run below.
+ bytes.set(new Uint8Array(await fetchBytes('/'+fixture.memory)),fixture.base);
+ for(const [at,hex] of setup.patches)bytes.set(Uint8Array.from(hex.match(/../g)||[],x=>parseInt(x,16)),at);
+ for(const [original,name,offset=0] of fixture.pointer_exports||[])symbols.set(original,e[name].value+offset);
+ for(const [original,name] of fixture.function_exports||[]){
+  const t=e.__indirect_function_table;let slot=-1;
+  for(let i=0;i<t.length;i++)if(t.get(i)===e[name]){slot=i;break;}
+  if(slot<0){slot=t.grow(1);t.set(slot,e[name]);}symbols.set(original,slot);
+ }
+ for(const at of fixture.pointer_fields){const raw=v.getUint32(at,true);if(symbols.has(raw))v.setUint32(at,symbols.get(raw),true);}
+ for(let i=0;i<fixture.globals.length;i++){
+  const [name,,width,offset=0]=fixture.globals[i],at=e[name].value+offset,value=symbols.get(setup.globals[i])??setup.globals[i];
+  for(let k=0;k<width;k++)bytes[at+k]=(value>>>(8*k))&255;
+ }
+ const {instance:{exports:allocator}}=await WebAssembly.instantiate(await fetchBytes('/'+fixture.memory_fixture),{env:{memory:e.memory}});
+ for(const [i,name] of fixture.memory_exports.entries()){
+  const slot=e.__indirect_function_table.grow(1);e.__indirect_function_table.set(slot,allocator[name]);
+  v.setUint32(fixture.memory_adapter+4*(i+1),slot,true);
+ }
+ const services=fixture.scoped_event_services;
+ v.setUint32(e[services.symbol].value,services.pointer,true);
+ for(const s of setup.steps.slice(0,8)){
+  const f=fixture.functions[s.fn],args=f.this===false?[...s.args]:[s.this,...s.args];
+  if(f.memory)args.push(fixture.memory_adapter);e[f.name](...args);
+ }
+ const owner=fixture.base+0x10000,component=v.getUint32(owner+0x100,true),pad=component+0x20;
+ const packetAt=fixture.base+0xc2044,list0=fixture.base+0xc3000,list1=fixture.base+0xc3100;
+ const first=v.getUint32(component+0x490,true),second=v.getUint32(component+0x494,true);
+ const lifecycle={startup:{componentCreated:component!==0,tasksRegistered:[first,second].filter(Boolean).length,
+  ownerId:v.getUint32(owner+0x14,true),firstSlot:v.getUint32(first+0x20,true),secondSlot:v.getUint32(second+0x20,true),
+  selfSuspended:Boolean(v.getUint32(component+8,true)&1)}};
+ document.querySelector('#lifecycle').textContent=JSON.stringify(lifecycle,null,2);
+ const manager=fixture.base+0x60000;
+
+ const names={Up:0,Down:0x20,Left:0x40,Right:0x60,Square:0x160,Circle:0x140,Triangle:0x180,X:0x1a0};
+ const history=[];let transitions=0;
+ const sample=(packet,record)=>{
+  v.setUint32(e.thug_frame_counter.value,Math.floor(performance.now()),true);
+  bytes.set(packet,packetAt);
+  const before=v.getUint32(manager+0x7020,true);
+  e.thug_object_update_components(owner,0,0,fixture.memory_adapter);
+  e.thug_task_list_update_draft(list0,0,0,0,fixture.memory_adapter);
+  e.thug_task_list_update_draft(list1,0,0,0,fixture.memory_adapter);
+  const after=v.getUint32(manager+0x7020,true),events=[];
+  for(let i=before;i!==after;i=(i+1)%1024){
+   const row=manager+0x20+i*28;
+   if(v.getUint32(row+20,true)===0)events.push(v.getUint32(row,true).toString(16).padStart(8,'0'));
+  }
+  const buttons=Object.fromEntries(Object.entries(names).map(([name,off])=>[name,{
+   held:bytes[pad+off],pressed:bytes[pad+off+0x10],released:v.getUint32(pad+off+0x14,true)}]));
+  const result={buttons,eventMask:v.getUint32(component+0x1c,true),events,
+   direction:v.getFloat32(pad+0x228,true),magnitude:v.getFloat32(pad+0x22c,true)};
+  document.querySelector('#state').textContent=JSON.stringify(result,null,2);
+  if(record){history.push({transition:++transitions,...result});document.querySelector('#history').textContent=JSON.stringify(history,null,2);}
+  for(let off=0;off<0x200;off+=0x20){e.thug_input_button_clear_latch(pad+off);e.thug_input_button_clear_pending(pad+off);}
+ };
+ const input=bindKeyboardInput(surface,packet=>sample(packet,true));let frame=0;
+ const tick=()=>{sample(input.packet,false);frame=requestAnimationFrame(tick);};
+ let running=true;
+ const stop=document.querySelector('#stop');stop.disabled=false;
+ const cleanup=()=>{
+  if(!running)return;running=false;cancelAnimationFrame(frame);input.destroy();
+  e.thug_composite_destroy_draft(owner,0,fixture.memory_adapter);
+  const empty=list=>v.getUint32(list+0x10,true)===list+4&&v.getUint32(list+0x14,true)===list+4;
+  lifecycle.cleanup={ownerComponents:v.getUint32(owner+0x100,true),firstListEmpty:empty(list0),secondListEmpty:empty(list1)};
+  document.querySelector('#lifecycle').textContent=JSON.stringify(lifecycle,null,2);
+  surface.disabled=true;stop.disabled=true;status.textContent='Stopped — original owner destructor removed both input tasks.';
+ };
+ stop.addEventListener('click',cleanup);addEventListener('pagehide',cleanup,{once:true});
+ surface.disabled=false;status.textContent='Ready — original startup created both tasks; keys run through the original task scheduler.';tick();
+}catch(error){status.textContent='FAIL: '+error.stack;}
+</script>

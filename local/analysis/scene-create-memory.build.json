@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/scene-create-memory.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/scene-create-memory.wasm"
+  ],
+  "source_sha256": "0acae8be0dfbd97bcdf1dc6519ef5f13b98d963a10dfbba2d86a5bdc46c882c9",
+  "sha256": "4bb5153788450e559c6d4eedfa616cad4534e71e8186dedd690eb338d3d58379"
+}

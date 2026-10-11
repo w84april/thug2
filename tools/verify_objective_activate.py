@@ -1,0 +1,370 @@
+"""Compare complete goal activation through real score/UI, scripts and parent lifecycles."""
+import hashlib,json,random,struct,subprocess
+from collections import Counter
+from unicorn import UC_HOOK_CODE
+from unicorn.x86_const import UC_X86_REG_EAX,UC_X86_REG_ECX,UC_X86_REG_ESP
+from specimen import ROOT,SHA256
+from script_heap_oracle import ScriptHeapOracle
+out=ROOT/'local/validation/collision';report_path=out.parent/'objective-activate.json';report_path.unlink(missing_ok=True)
+prior=json.loads((out/'score-display-fixtures.json').read_text());BASE,SIZE=prior['base'],0x600000
+memory=bytearray((out/prior['memory']).read_bytes());memory.extend(b'\xad'*(SIZE-len(memory)))
+ADAPTER,CONTEXT,ALLOCATOR=BASE+0x100,BASE+0x200,BASE+0x400
+OBJ,REF,OWNED,EM,TABLES,SCRIPTS,FRAMES,CACHE,SYMBOLS,TLS,LOCALE,UM,EVENTS,ENTRIES,SERVICES=[BASE+x for x in [0x10000,0x16000,0x18000,0x60000,0x6c000,0x70000,0x72000,0x73000,0x78000,0x7e000,0x7e100,0x80000,0x83800,0x83900,0x83a00]]
+FONT,METRICS,GLYPHS,BUCKETS,FENTRY=BASE+0x2000,BASE+0x2400,BASE+0x3000,BASE+0x6800,BASE+0x6900
+PRIMARY,SECONDARY,LISTENERS,NAMETABLE,CACHETABLE=[TABLES+i*256 for i in range(5)]
+WIDGET,ARRAY,TEXTS,TRICKS,ITEMS,SCORE,GAME,NODES,BODIES,LOG,HEAP=[BASE+x for x in [0x85000,0x88000,0x90000,0xb0000,0xe0000,0xe1000,0xe3000,0xe4000,0xe5000,0x180000,0x300000]]
+NOTIFY=0xd4491be1
+
+def put(at,fmt,*v):struct.pack_into(fmt,memory,at-BASE,*v)
+def patch(at,fmt,*v):return [at,struct.pack(fmt,*v).hex()]
+def raw(at,data):return [at,bytes(data).hex()]
+put(CONTEXT,'<8I',HEAP,BASE+SIZE,0,LOG,BASE,BASE+SIZE,0,0)
+put(ALLOCATOR+0x124,'<I',ALLOCATOR+0x300)
+# Both configured and default font IDs resolve to the same real metrics.
+put(BUCKETS+24,'<I',BUCKETS+32);put(BUCKETS+32,'<3I',0,FENTRY,0)
+for at,n in [(WIDGET,0x1c4),(SCORE,0x1550),(GAME,0x200),(NODES,0x100),(BODIES,0x2000)]:memory[at-BASE:at-BASE+n]=bytes(n)
+put(WIDGET,'<I',0x64a264);put(WIDGET+8,'<I',0x14400);put(WIDGET+0x14,'<I',0x44727dae);put(WIDGET+0x18,'<I',0x40d92263)
+put(WIDGET+0x28,'<5I',0x6477e4,WIDGET,0,WIDGET+0x28,WIDGET+0x28);put(WIDGET+0x40,'<3I',0x6477e0,0,WIDGET)
+for off in [0xa4,0xa8,0xe8,0xec,0xf0,0xf4,0x170,0x19c,0x1a0]:put(WIDGET+off,'<f',1)
+put(WIDGET+0x160,'<2f',80,100);put(WIDGET+0x178,'<I',0xabc);put(WIDGET+0x190,'<I',3);put(WIDGET+0x1bc,'<I',0x80000000)
+put(GAME+0x34,'<I',NODES)
+for i in range(8):
+ put(NODES+i*16,'<4I',0,BODIES+i*0x400,0,NODES+(i+1)*16)
+ put(BODIES+i*0x400+0x14,'<I',0x100+i);put(BODIES+i*0x400+0x2b8,'<I',i)
+put(NODES+128,'<4I',0,0xffffffff,0,NODES+128)
+put(SCORE+8,'<h',0x100);put(SCORE+0x4c,'<3I',ITEMS,250,0)
+for i in range(250):
+ put(ITEMS+i*4,'<I',TRICKS+i*256);put(ARRAY+i*4,'<I',TEXTS+i*256)
+ for at in [TEXTS+i*256,TRICKS+i*256+0x5c]:memory[at-BASE]=0
+# A real bytecode symbol and cache entry for the post-update notification.
+NOTIFY_SYMBOL=CACHE+0x400
+put(SYMBOLS+(NOTIFY&0xfff)*4,'<I',NOTIFY_SYMBOL);put(NOTIFY_SYMBOL,'<BBHIIII',0,7,0,NOTIFY,0,CACHE+0x500,0)
+put(CACHETABLE+8,'<I',1);put(CACHETABLE+32+(NOTIFY&3)*12,'<3I',NOTIFY,CACHE+0x440,0)
+put(CACHE+0x440,'<5I',NOTIFY,CACHE+0x500,1,0,0)
+memory[CACHE+0x500-BASE:CACHE+0x502-BASE]=b'\x01\x24'
+NUMERIC,SETTINGS,COMPONENT,PRINT,DIAG,GRAPH=BASE+0x86000,BASE+0x87000,BASE+0x87400,BASE+0x87500,BASE+0x87600,BASE+0xf0000
+for at,n in [(NUMERIC,0x1b0),(SETTINGS,64),(COMPONENT,64),(DIAG,512)]:memory[at-BASE:at-BASE+n]=bytes(n)
+put(NUMERIC,'<I',0x64a290);put(NUMERIC+8,'<I',0x14400);put(NUMERIC+0x14,'<I',0xf4d3a70e)
+put(NUMERIC+0x28,'<5I',0x6477e4,NUMERIC,0,NUMERIC+0x28,NUMERIC+0x28);put(NUMERIC+0x40,'<3I',0x6477e0,0,NUMERIC)
+for off in [0xa4,0xa8,0xe8,0xec,0xf0,0xf4,0x170]:put(NUMERIC+off,'<f',1)
+put(NUMERIC+0x180,'<I',FONT);put(COMPONENT+4,'<I',0x8bce7e66);put(COMPONENT+12,'<I',BODIES);put(BODIES+0x100,'<I',COMPONENT)
+put(PRINT,'<2I',DIAG,0);put(DIAG+4,'<I',SCORE)
+# Add numeric-display notification to the existing initialized QB cache.
+NUMERIC_NOTIFY=0xa611bb15
+put(SYMBOLS+(NUMERIC_NOTIFY&0xfff)*4,'<I',CACHE+0x600)
+put(CACHE+0x600,'<BBHIIII',0,7,0,NUMERIC_NOTIFY,0,CACHE+0x680,0)
+put(CACHE+0x640,'<5I',NUMERIC_NOTIFY,CACHE+0x680,1,0,0)
+put(CACHETABLE+8,'<I',2);put(CACHETABLE+32+(NUMERIC_NOTIFY&3)*12,'<3I',NUMERIC_NOTIFY,CACHE+0x640,CACHE+0x660)
+put(CACHE+0x660,'<3I',NOTIFY,CACHE+0x440,0)
+memory[CACHE+0x680-BASE:CACHE+0x682-BASE]=b'\x01\x24'
+# Typed required special-color and rate symbols.
+for i in range(3):
+ put(GRAPH+i*32,'<BBHII',0,1,0,4,GRAPH+0x100+i*16)
+ put(GRAPH+0x100+i*16,'<4I',0x100+i,0xabcdef80+i,0xfffffffe,255)
+put(GRAPH+0x80,'<BBHII',0,12,0,3,GRAPH+0x140);put(GRAPH+0x140,'<3I',GRAPH,GRAPH+32,GRAPH+64)
+for i,(name,kind,value) in enumerate([(0x2e8b9f1c,12,GRAPH+0x80),(0x3abcda81,2,0x3e4ccccd)]):
+ at=GRAPH+0x200+i*32;put(at,'<BBHIIII',0,kind,0,name,0,value,0);put(SYMBOLS+(name&0xfff)*4,'<I',at)
+put(SETTINGS+8,'<I',SETTINGS+16);put(SETTINGS+16,'<4I',26,0xa1dc81f9,0,0)
+OBJECT,MANAGER,NETWORK,PLAYERS,PLAYER_NODES,PROFILES,PROFILE,ROOT_PARAMS,OBJECT_LINKS,PARENTS,GOAL_GRAPH,PARSED,CODE,META= [BASE+x for x in [0x110000,0x112000,0x113000,0x114000,0x115000,0x118000,0x119000,0x11a000,0x11b000,0x11b100,0x140000,0x170000,0x171000,0x120000]]
+QUEUE=MANAGER+0x18;objects=[OBJECT+i*256 for i in range(8)]
+SCORE_COMPONENTS=BASE+0x11c000;SCORES=[SCORE]+[BASE+0x124000+i*0x1600 for i in range(7)]
+for at,n in [(OBJECT,0x800),(MANAGER,0x3a0),(NETWORK,0x200),(PLAYERS,0x1000),(PLAYER_NODES,0x100),(PROFILES,0x100),(PROFILE,0x100),(ROOT_PARAMS,0x100),(OBJECT_LINKS,0x100),(PARENTS,0x100),(SCORE_COMPONENTS,0x100),(PARSED,12),(META,0x1000)]:memory[at-BASE:at-BASE+n]=bytes(n)
+for o in SCORES[1:]:memory[o-BASE:o-BASE+0x1550]=bytes(0x1550)
+put(GAME+0x38c,'<I',MANAGER);put(ALLOCATOR+0x114,'<I',ALLOCATOR+0x500)
+put(MANAGER,'<5I',8,OBJECT_LINKS,0,0,0);put(MANAGER+0x398,'<I',ROOT_PARAMS)
+put(QUEUE,'<5I',0x6474cc,0xffffffff,0,QUEUE,QUEUE)
+put(PROFILES+0x14,'<3I',PROFILE,PROFILE,0)
+for i,o in enumerate(objects):
+ put(o,'<5I',0x64ddd0 if i&1 else 0x64ea30,o,i,o,o)
+ put(o+0x1c,'<2I',ROOT_PARAMS,ROOT_PARAMS+8);put(o+0x2c,'<I',PARENTS+i*4)
+ put(o+0x44,'<I',0xfffffffe);put(o+0x60,'<I',0xdeadbeef);put(o+0x6c,'<2B',0x80,0)
+ put(OBJECT_LINKS+i*16,'<3I',0x100+i,o,OBJECT_LINKS+(i+1)*16 if i<7 else 0)
+ put(PLAYERS+i*512+0x14,'<I',BODIES+i*0x400)
+ put(PLAYER_NODES+i*16,'<4I',0,PLAYERS+i*512,0,PLAYER_NODES+(i+1)*16)
+ component=SCORE_COMPONENTS+i*32;put(component,'<7I',0,0xd262802f,0,BODIES+i*0x400,COMPONENT if not i else 0,0,SCORES[i])
+ put(BODIES+i*0x400+0x100,'<I',component);put(SCORES[i]+8,'<h',0x100+i)
+put(PLAYER_NODES+128,'<4I',0,0xffffffff,0,PLAYER_NODES+128)
+put(NETWORK+0x11c,'<4I',0,0xffffffff,0,PLAYER_NODES)
+# Initialized cache contains real return-only bytecode for each lifecycle script.
+memory[CACHETABLE+32-BASE:CACHETABLE+80-BASE]=bytes(48)
+for i,name in enumerate([NOTIFY,NUMERIC_NOTIFY,5,6,7,8]):
+ at=META+i*256;bucket=SYMBOLS+(name&0xfff)*4;old=struct.unpack_from('<I',memory,bucket-BASE)[0]
+ put(at,'<BBHIIII',0,7,0,name,0,at+64,old);put(bucket,'<I',at)
+ put(at+32,'<5I',name,at+64,1,0,0);memory[at+64-BASE:at+66-BASE]=b'\x01\x24'
+ slot=CACHETABLE+32+(name&3)*12
+ previous=bytes(memory[slot-BASE:slot-BASE+12]);occupied=struct.unpack_from('<I',previous,4)[0]
+ if occupied:memory[at+80-BASE:at+92-BASE]=previous
+ put(slot,'<3I',name,at+32,at+80 if occupied else 0)
+put(CACHETABLE+8,'<I',6)
+initial=bytes(memory);globals_=prior['globals'][:];defaults=prior['cases'][0]['globals'][:];index={g[1]:i for i,g in enumerate(globals_)}
+for name,at,value,width in [('thug_ui_manager',0x701440,UM,4),('thug_game_context',0x7ce478,GAME,4),('thug_script_wait_gate',0x6f352c,0,1),('thug_script_updating',0x6f3544,0,1),('thug_script_stop_pending',0x6f3545,0,1),('thug_game_settings',0x7ce470,SETTINGS,4),('thug_network_state',0x7cce14,NETWORK,4),('thug_profile_manager',0x7ce4b4,PROFILES,4)]:
+ if at in index:defaults[index[at]]=value
+ else:index[at]=len(globals_);globals_.append([name,at,width,0]);defaults.append(value)
+defaults[index[0x7cefa0]]=0
+for i in range(8):
+ at=0x690fa4+i*4;defaults[index[at]]=0xa5a5a5a5
+functions={}
+def bind(at,name,argc=0,result='void',heap=False,diag=False,this=True):
+ functions[hex(at)]={'name':name,'this':this,'result':result,'cleanup':4*argc if this else 0,'stack_args':list(range(argc)),'memory':heap,'diagnostics':diag}
+bind(0x4b0810,'thug_ui_multiline_initialize',result='word',heap=True)
+bind(0x4b08b0,'thug_ui_multiline_destroy',heap=True,diag=True)
+bind(0x4b0b30,'thug_ui_multiline_delete',1,'word',True,True)
+bind(0x4b0cd0,'thug_ui_multiline_set_text',2,heap=True,diag=True)
+bind(0x561670,'thug_score_update_combo_text',1,heap=True,diag=True)
+bind(0x561890,'thug_score_update_numeric_text',2,heap=True,diag=True);functions['0x561890']['float_args']=[1]
+bind(0x564a10,'thug_score_reset',heap=True,diag=True)
+for at in [0x41d1d0,0x461a00,0x461930,0x4aa8e0,0x4b0920,0x4b3fd0,0x4ab250,0x4ad100]:functions[hex(at)]=prior['functions'][hex(at)]
+bind(0x557360,'thug_objective_activate',result='byte',heap=True,diag=True)
+bind(0x557270,'thug_objective_initialize',heap=True,diag=True)
+bind(0x557560,'thug_objective_deactivate',2,'byte',True,True)
+training_prior=json.loads((out/'objective-initialize-fixtures.json').read_text())
+functions['0x471b00']=training_prior['functions']['0x471b00']
+observe=[int(k,16) for k in functions]+[0x401cc0,0x4a8940,0x4abd40,0x461140,0x473800,0x460470,0x474540,0x4748e0,0x473a80,0x475790,0x474420,0x4621d0,0x6234fe,0x4b1830,0x4b0760,0x48d5f0,0x4b3e70,0x48d1d0,0x4abbe0,0x4af720,0x4af8c0,0x4a94a0,0x4ac400,0x4aaff0,0x4637c0,0x4637e0,0x561890,0x564a10,0x402200,0x6285af,0x6286ab,0x5532a0,0x5612d0,0x518390,0x460a20,0x5633e0,0x45db90]
+observe=list(dict.fromkeys(observe+[0x557360,0x557270,0x554bd0,0x553ea0,0x557f90,0x55dbe0,0x5372c0,0x537010,0x476b40,0x477860,0x5566d0,0x556a00,0x44e4f0]))
+oracle=ScriptHeapOracle(initial,BASE,CONTEXT,ALLOCATOR,globals_,defaults,functions,observe=observe,event_limit=(HEAP-LOG)//48,instruction_limit=12000000,scope_entries={ALLOCATOR+0x200:6,ALLOCATOR+0x300:1,ALLOCATOR+0x500:5})
+# Real CRT signed auto-ID formatting runs; only its Windows TLS services adapt.
+os_calls=Counter();last_error=0x12345678
+GET_ERROR,GET_TLS,SET_ERROR=oracle.stop+0x100,oracle.stop+0x110,oracle.stop+0x120
+for slot,target in [(0x6450d4,GET_ERROR),(0x7db10c,GET_TLS),(0x64516c,SET_ERROR)]:oracle.setword(slot,target)
+oracle.setword(0x68ef14,7);oracle.setword(0x68ecfc,LOCALE)
+for at,n in [(GET_ERROR,0),(GET_TLS,4),(SET_ERROR,4)]:oracle.cpu.mem_write(at,b'\xc2'+struct.pack('<H',n))
+def os_service(cpu,address,size,user):
+ global last_error
+ sp=cpu.reg_read(UC_X86_REG_ESP)
+ if address==GET_ERROR:cpu.reg_write(UC_X86_REG_EAX,last_error);os_calls['GetLastError']+=1
+ elif address==GET_TLS:assert oracle.word(sp+4)==7;cpu.reg_write(UC_X86_REG_EAX,TLS);os_calls['TLS_read']+=1
+ else:last_error=oracle.word(sp+4);os_calls['SetLastError']+=1
+for at in [GET_ERROR,GET_TLS,SET_ERROR]:oracle.cpu.hook_add(UC_HOOK_CODE,os_service,begin=at,end=at)
+from unicorn.x86_const import UC_X86_REG_EIP,UC_X86_REG_FPCW
+sp=oracle.stack+0x18000;oracle.cpu.mem_write(sp,struct.pack('<I',oracle.stop));oracle.cpu.reg_write(UC_X86_REG_ESP,sp)
+oracle.cpu.emu_start(0x622f48,oracle.stop,count=1000)
+assert oracle.cpu.reg_read(UC_X86_REG_EIP)==oracle.stop
+# Format/output is an explicit platform boundary, with its literal checked.
+def debug_output(cpu,address,size,user):
+ sp=cpu.reg_read(UC_X86_REG_ESP);ptr=oracle.word(sp+4)
+ text=bytes(cpu.mem_read(ptr,29)).split(b'\0')[0];assert text==b'Score::RESET ...............\n',text
+ n=oracle.word(DIAG);assert n<20;oracle.setword(DIAG,n+1)
+ h=0
+ for ch in text:h=(h*33+ch)&0xffffffff
+ cpu.mem_write(DIAG+16+n*16,struct.pack('<4I',h,oracle.word(SCORE+0x1538),oracle.word(SCORE+0x54),oracle.word(SCORE+0x38)))
+ if oracle.word(DIAG+8):oracle.setword(oracle.word(DIAG+8),oracle.word(DIAG+12))
+ cpu.reg_write(UC_X86_REG_EAX,0xffffffff);cpu.reg_write(UC_X86_REG_EIP,oracle.word(sp));cpu.reg_write(UC_X86_REG_ESP,sp+4)
+oracle.cpu.hook_add(UC_HOOK_CODE,debug_output,begin=0x401c30,end=0x401c30)
+fields={p for p in prior['pointer_fields'] if p<BASE+0x100000}|{WIDGET,WIDGET+0x28,WIDGET+0x40,NUMERIC,NUMERIC+0x28,NUMERIC+0x40}
+def identities(cpu,address,size,user):
+ at=cpu.reg_read(UC_X86_REG_ECX);fields.add(at)
+ if address in [0x460b80,0x4615d0]:fields.update([at+0x28,at+0x40])
+for at in [0x460b80,0x4615d0,0x463870,0x460b20,0x460b40,0x4dfa70,0x48d220]:oracle.cpu.hook_add(UC_HOOK_CODE,identities,begin=at,end=at)
+record=oracle.record
+def relocated_record(kind,a,b,c):
+ log=oracle.word(CONTEXT+12)+oracle.word(CONTEXT+8)*48;pointer=a if kind==2 else c
+ for i in range(4):
+  if pointer+i*4 in fields:fields.add(log+16+i*4)
+ record(kind,a,b,c)
+oracle.record=relocated_record
+exports=prior['pointer_exports']+[[0x64ddd0,'thug_objective_base_methods'],[0x64ea30,'thug_objective_event_methods'],[0x6474cc,'thug_plain_queue_methods']]
+fields.update(objects+[QUEUE])
+labels=[];branches=Counter()
+branch_at={0x4b0d30:'delete_previous_child',0x4b0eaf:'check_auto_height',0x4b0f29:'auto_height_measure',0x4b0fbf:'fixed_height_ring',0x4b0fa3:'second_wrap',0x4b0fe2:'create_text_child',0x4b1139:'row_ring_reset',0x561701:'clear_combo_text',0x56170f:'run_combo_notification'}
+def branch(cpu,address,size,user):branches[branch_at[address]]+=1
+branch_at.update({0x561944:'integer_multiplier',0x561965:'fractional_multiplier',0x56198a:'plain_points',0x5618fc:'zero_points',0x564ae3:'mode_starts_at_100',0x564ade:'mode_starts_at_zero',0x564aaa:'local_score_text_reset',0x564b2d:'special_broadcast',0x564b69:'local_component_reset',0x5183ae:'guarded_score_event'})
+branch_at.update({0x557547:'already_active_return',0x5573f4:'player_score_reset',0x55743d:'parent_lookup',0x557455:'inherit_parent_timer',0x557486:'root_uninitialize',0x55749c:'self_uninitialize',0x5574be:'initialize_inactive',0x557500:'activation_script',0x557515:'offline_flag',0x557525:'queue_insert'})
+for at in branch_at:oracle.cpu.hook_add(UC_HOOK_CODE,branch,begin=at,end=at)
+def call(at,this=0,args=()):return at,this,[v&0xffffffff for v in args]+([PRINT] if functions[hex(at)].get('diagnostics') else [])
+def case(calls,patches=(),changes=None,label='multiline'):
+ stages=oracle.case(calls,patches,{index[k]:v for k,v in (changes or {}).items()});labels.append(label);previous=0
+ for s in stages:
+  for at,data in s['outputs']:
+   if at<=DIAG and at+len(data)//2>=DIAG+4:
+    current=int.from_bytes(bytes.fromhex(data)[DIAG-at:DIAG-at+4],'little');s['callbacks']=current-previous;previous=current
+  merged=[]
+  for at,data in s['outputs']:
+   if merged and merged[-1][0]+len(merged[-1][1])//2==at:merged[-1][1]+=data
+   else:merged.append([at,data])
+  s['outputs']=merged
+ if len(labels)%25==0:print('Original objective activation cases:',len(labels),flush=True)
+ return stages
+
+def texts_patch(texts,capacity=3,width=80,scale=1,spacing=1,automatic=0):
+ p=[patch(WIDGET+0x190,'<i',capacity),patch(WIDGET+0x160,'<f',width),patch(WIDGET+0x19c,'<2f',scale,spacing),patch(WIDGET+0x1b1,'<B',automatic)]
+ for i,t in enumerate(texts):
+  assert len(t)<196;p += [raw(TEXTS+i*256,t+b'\0'),raw(TRICKS+i*256+0x5c,t+b'\0')]
+ return p
+
+def setup(children=0):
+ calls=[call(0x4b3fd0,args=[32]),call(0x461a00,UM,[WIDGET]),call(0x41d1d0,REF,[WIDGET]),call(0x4ab250,UM,[REF,0])]
+ for i in range(children):
+  at=OBJ+i*512
+  calls += [call(0x4b0920,at),call(0x461930,at,[0x100+i]),call(0x461a00,UM,[at]),call(0x41d1d0,REF+(i+1)*16,[at]),call(0x4aa8e0,at,[REF if i<2 else REF+i*16,1]),call(0x4ab250,UM,[REF+(i+1)*16,0])]
+ return calls
+def bits(f):return int.from_bytes(struct.pack('<f',f),'little')
+def numeric_setup():return [call(0x461a00,UM,[NUMERIC])]
+
+class Build:
+ def __init__(self):self.data=bytearray();self.buckets={};self.extra=[]
+ def alloc(self,data):
+  at=GOAL_GRAPH+len(self.data);self.data.extend(data);self.data.extend(bytes((-len(self.data))%4));assert GOAL_GRAPH+len(self.data)<BASE+SIZE;return at
+ def text(self,s):return self.alloc(s+b'\0')
+ def structure(self,entries):
+  nodes=[self.alloc(struct.pack('<BBHIII',kind*2+(i&1),0x5a,0,name,value&0xffffffff,0)) for i,(name,kind,value) in enumerate(entries)]
+  for a,b in zip(nodes,nodes[1:]):struct.pack_into('<I',self.data,a-GOAL_GRAPH+12,b)
+  return self.alloc(struct.pack('<II',0xabcdef01,nodes[0] if nodes else 0))
+ def array(self,kind,items):
+  value=items[0] if len(items)==1 else self.alloc(struct.pack('<'+'I'*len(items),*items)) if items else 0
+  return self.alloc(struct.pack('<BBHII',0x91,kind,0x2345,len(items),value))
+ def header(self,at,source):self.extra.append(raw(at,self.data[source-GOAL_GRAPH:source-GOAL_GRAPH+8]))
+ def symbol(self,name,kind,value):
+  bucket=SYMBOLS+(name&4095)*4;old=self.buckets.get(bucket,struct.unpack_from('<I',initial,bucket-BASE)[0])
+  self.buckets[bucket]=self.alloc(struct.pack('<BBHIIII',0,kind,0,name,0,value,old))
+ def patches(self):return [raw(GOAL_GRAPH,self.data)]+[patch(at,'<I',v) for at,v in self.buckets.items()]+self.extra
+ def goal(self,i,params=(),state=None,flags=0x80,active=0):
+  p=self.structure(params);s=self.structure([(0x700+i,1,7)]) if state is None else state
+  self.extra += [patch(objects[i]+0x1c,'<2I',p,s),patch(objects[i]+0x6c,'<2B',flags,active)]
+  return p,s
+ def children(self,i,ids):
+  links=[self.alloc(struct.pack('<2IB3x',id_,0,0xff)) for id_ in ids]
+  for a,b in zip(links,links[1:]):struct.pack_into('<I',self.data,a-GOAL_GRAPH+4,b)
+  self.extra.append(patch(objects[i]+0x28,'<I',links[0] if links else 0))
+ def parent(self,i,parent):
+  self.extra += [patch(objects[i]+0x2c,'<I',PARENTS+i*4),patch(PARENTS+i*4,'<I',parent)]
+ def queue(self,indices):
+  nodes=[objects[i] for i in indices]
+  for j,node in enumerate(nodes):self.extra.append(patch(node+12,'<2I',nodes[j-1] if j else QUEUE,nodes[j+1] if j+1<len(nodes) else QUEUE))
+  self.extra.append(patch(QUEUE+12,'<2I',nodes[-1] if nodes else QUEUE,nodes[0] if nodes else QUEUE))
+
+rng=random.Random(0x557360)
+def environment():
+ b=Build()
+ for i in range(8):b.goal(i);b.parent(i,0)
+ b.queue([])
+ return b
+
+def run(b,calls=None,p=(),changes=None,label='goal activation'):
+ return case(calls or [call(0x557360,OBJECT),call(0x557360,OBJECT)],b.patches()+list(p),changes,label)
+
+def player_patches(count=0,hidden=0,local=0,special=0):
+ p=[patch(PLAYER_NODES+count*16+4,'<I',0xffffffff)]
+ for i in range(8):
+  p += [patch(PLAYERS+i*512+0x1d0,'<I',4 if hidden&(1<<i) else 0),patch(BODIES+i*0x400+0xbc,'<B',local if not i else 0),patch(SCORES[i]+0x74,'<B',special),patch(SCORES[i]+0x1538,'<2I',0x11220000+i,0x33550000+i)]
+ return p
+
+def ui_setup():return setup(2)+numeric_setup()
+# Early return must not dereference invalid parameters/parent or touch a scope.
+for active in [1,3,0x55,0xff]:
+ b=environment()
+ run(b,p=[patch(OBJECT+0x6d,'<B',active),patch(OBJECT+0x1c,'<I',0xdeadbeef),patch(OBJECT+0x2c,'<I',0)],label='already-active goal returns before every side effect')
+# Flag/count/timer and network state boundaries, both original concrete tables.
+CONNECTION1,CONNECTION2=BASE+0x134000,BASE+0x136000
+for flags in [0,1,0x40,0x41,0x80,0xff]:
+ for network_mode in range(5):
+  b=environment();b.goal(0,[(0x906b67ba,1,61),(0x4999fb52,13,7)],flags=flags)
+  p=[patch(NETWORK,'<3I',0 if not network_mode else 12,CONNECTION1 if network_mode>1 else 0,CONNECTION2 if network_mode==4 else 0),patch(CONNECTION1+0x1e84,'<I',8 if network_mode>=3 else 0),patch(CONNECTION2+0x1e84,'<I',0),patch(OBJECT,'<I',0x64ddd0 if flags&1 else 0x64ea30)]
+  run(b,p=p,label='full activation, flags, initialized state, concrete virtual tables and both network connections')
+  assert oracle.word(OBJECT+0x44)==0xffffffff
+  assert oracle.cpu.mem_read(OBJECT+0x6d,1)[0]&1
+# Parent traversal, root uninitialization and optional self reinitialization.
+for depth in [1,3]:
+ for root_init in [0,1]:
+  for self_init in [0,1]:
+   for root_active in [0,1]:
+    for inherit in [0,2]:
+     b=environment()
+     for i in range(depth):b.parent(i,0x101+i)
+     b.goal(0,[(0x906b67ba,1,17),(0x398b1b8b,13,5),(0xd4e0306a,13,6),(0x4999fb52,13,7)],flags=self_init|0x80)
+     b.goal(depth,[(0xd4e0306a,13,8),(0x01c92cac,13,6)],flags=root_init,active=root_active)
+     b.queue([depth] if root_active else [])
+     run(b,p=[patch(OBJECT+0x18,'<B',inherit),patch(objects[depth]+0x50,'<I',98765)],label='resolved parent chain, root/self lifecycles and inherited timer')
+# Original inherited timer rounds at x87 PC24 before truncating seconds, then
+# multiplies as a wrapping word. First pointer is required; root may end in NULL.
+for time in [0,1,999,1000,1001,1999,2000,0x7fffffff,0x80000000,0xffffffff,16776999,16777000,16777999,123456789]:
+ for null_end in [False,True]:
+  b=environment();b.parent(0,0x101)
+  p=[patch(OBJECT+0x18,'<B',2),patch(objects[1]+0x50,'<I',time)]
+  if null_end:p.append(patch(objects[1]+0x2c,'<I',0))
+  run(b,p=p,label='signed inherited timer, millisecond rounding/wrap and null root terminator')
+# Untimed fields: one skips timer reset; other nonzero values set initialized bit.
+for untimed in [0,1,2,0xffffffff]:
+ for duration in [0,1,0xffffffff,0x80000000]:
+  b=environment();b.goal(0,[(0xf0e712d2,1,untimed),(0x906b67ba,1,duration)])
+  run(b,p=[patch(OBJECT+0x50,'<I',0xdeadbeef),patch(OBJECT+0x6d,'<B',0x90)],label='untimed and duration word semantics')
+# Remove matching unnamed values; named parameters with that checksum survive.
+for kind in [1,3,10,12,13]:
+ b=environment();value={1:7,3:b.text(b'owned text'),10:b.structure([(0x1234,1,12)]),12:b.array(3,[b.text(b'owned array text')]),13:0x99887766}[kind]
+ b.goal(0,[(0x7100155d,kind,value),(0x7100155d,1,99),(0,13,0x7100155d),(0,1,0x7100155d),(0x4999fb52,13,7)])
+ run(b,label='unnamed flag removal preserves identically named owned parameters before activation script')
+for script in [None,0,5,6,7,8,0x12340007,0xeeeeeeee]:
+ b=environment()
+ if script==0x12340007:b.symbol(script,13,7)
+ b.goal(0,[] if script is None else [(0x4999fb52,13,script),(0x398b1b8b,13,5)])
+ run(b,label='actual synchronous script resolution, aliases and missing symbols')
+# Queue insertion ordering and full activate/deactivate/re-activate cycles.
+for priority in [0,1,0x7fffffff,0x80000000,0xffffffff]:
+ b=environment();b.queue([1,2,3]);b.goal(0,[(0x4999fb52,13,7),(0x01c92cac,13,6)])
+ p=[patch(OBJECT+8,'<I',priority),patch(objects[1]+8,'<I',0),patch(objects[2]+8,'<I',1),patch(objects[3]+8,'<I',0x7fffffff)]
+ calls=[call(0x557360,OBJECT),call(0x557560,OBJECT,[0,1]),call(0x557360,OBJECT),call(0x557360,OBJECT)]
+ run(b,calls,p,label='queue priorities, unlink/reinsert and activation counter wrap')
+ assert oracle.word(OBJECT+0x44)==0
+# Complete score reset for visible players, including real local UI destruction.
+for count in [0,1,2,8]:
+ for hidden in [0,1,0xaa,0xff]:
+  for local in [0,1]:
+   for special in [0,1]:
+    b=environment();b.goal(0,[(0,13,0x4599b58c),(0x4999fb52,13,7)])
+    p=player_patches(count,hidden,local,special)+[patch(SETTINGS+24,'<I',0xbff33600),patch(SCORE+0x54,'<I',2)]
+    run(b,ui_setup()+[call(0x557360,OBJECT),call(0x557360,OBJECT)],p,label='score-reset activation for real visible/hidden players and local screen widgets')
+    expected=sum(not(hidden&(1<<i)) for i in range(count))
+    assert oracle.word(DIAG)==expected,(count,hidden,expected,oracle.word(DIAG))
+# The diagnostic boundary mutates globals during nested reset. Activation must
+# retain its captured network and objective manager for its final decisions.
+ALT_NETWORK,ALT_GAME,ALT_MANAGER=BASE+0x138000,BASE+0x139000,BASE+0x13a000
+fields.add(DIAG+8);exports += [[0x7cce14,'thug_network_state'],[0x7ce478,'thug_game_context']]
+for target,value in [(0x7cce14,ALT_NETWORK),(0x7ce478,ALT_GAME),(OBJECT+0x44,0x13579bdf)]:
+ b=environment();b.goal(0,[(0,13,0x4599b58c),(0x4999fb52,13,7)])
+ p=player_patches(1,0,1,1)+[raw(ALT_NETWORK,bytes(0x200)),patch(ALT_NETWORK,'<3I',12,CONNECTION1,0),patch(CONNECTION1+0x1e84,'<I',0),raw(ALT_GAME,bytes(0x400)),patch(ALT_GAME+0x34,'<I',NODES),patch(ALT_GAME+0x38c,'<I',ALT_MANAGER),raw(ALT_MANAGER,bytes(0x400)),patch(ALT_MANAGER+0x18,'<5I',0x6474cc,0xffffffff,0,ALT_MANAGER+0x18,ALT_MANAGER+0x18),patch(DIAG+8,'<2I',target,value)]
+ fields.add(ALT_MANAGER+0x18)
+ run(b,ui_setup()+[call(0x557360,OBJECT)],p,label='captured manager/network and diagnostic mutation during full player score reset')
+# Complete initialization under activation: difficulty merge and text expansion.
+def difficulty(b,index):
+ mode=0x9abcdef0;params=b.structure([(mode,1,index)])
+ b.extra += [patch(MANAGER+0x398,'<I',params),patch(SETTINGS+24,'<I',mode)]
+def text_environment(b):
+ combo,trick=0xa000,0xb000
+ b.symbol(0x8856c817,10,b.structure([(combo,3,b.text(b'Jump'))]))
+ b.symbol(trick,10,b.structure([(0x7031f10c,10,b.structure([(0xa1dc81f9,3,b.text(b'Ollie'))]))]))
+ mapping=b.structure([(combo,13,trick)])
+ b.header(PROFILE+0x5c,b.structure([(0xd544aa2d,10,mapping),(0xac9b9eda,1,0)]))
+ return [(0x79704516,12,b.array(13,[combo])),(0x4bc5229d,3,b.text(b'Press \\k1 for \\t1'))]
+for index_ in [0,1,2,3,0xffffffff]:
+ for grouped in [False,True]:
+  b=environment();difficulty(b,index_);levels=[]
+  for i in range(3):
+   names=[0x701+j for j in range(i+1)]
+   flags=b.array(10,[b.structure([(0x5b8ab877,13,0x7000+i),(0xcc3c4cc4,12,b.array(13,names))])]) if grouped else b.array(13,names)
+   levels.append(b.structure([(0xcc3c4cc4,12,flags)]))
+  b.goal(0,[(0x85104ab3,12,b.array(10,levels)),(0x398b1b8b,13,5),(0x4999fb52,13,7)]+text_environment(b))
+  run(b,label='activation performs real difficulty state merge, QB initialization and objective text expansion')
+# Parse exact archived training flag arrays, then run activation including score
+# reset, real initialization and a deactivate/reactivate lifecycle.
+token_fixture=json.loads((out/'script-tokens-fixtures.json').read_text())
+token_report=json.loads((out.parent/'script-tokens.json').read_text());token_memory=(out/token_fixture['memory']).read_bytes()
+arrays=json.loads((ROOT/'local/analysis/training-objective-arrays.json').read_text());assets=[]
+for entry in arrays:
+ asset=next(a for a in token_report['assets'] if a['member']==entry['member'])
+ data=token_memory[asset['address']-token_fixture['base']:asset['address']-token_fixture['base']+asset['size']]
+ assert hashlib.sha256(data).hexdigest()==asset['sha256']==entry['asset_sha256']
+ data=data[entry['offset']:entry['offset']+entry['bytes']];assert data[0]==5 and data[-1]==6
+ b=environment();difficulty(b,0);level=b.structure([(0xcc3c4cc4,12,PARSED)])
+ b.goal(0,[(0x85104ab3,12,b.array(10,[level])),(0x398b1b8b,13,5),(0x4999fb52,13,7),(0,13,0x4599b58c)])
+ calls=ui_setup()+[call(0x471b00,args=[PARSED,CODE,0]),call(0x557360,OBJECT),call(0x557560,OBJECT,[0,1]),call(0x557360,OBJECT)]
+ run(b,calls,p=player_patches(1,0,1,1)+[raw(CODE,data)],label='archived '+entry['script']+' activation goal_flags @'+str(entry['offset']))
+ assets.append({k:entry[k] for k in ['member','asset_sha256','script','offset','bytes']})
+for name in ['already_active_return','player_score_reset','parent_lookup','inherit_parent_timer','root_uninitialize','self_uninitialize','initialize_inactive','activation_script','offline_flag','queue_insert','local_score_text_reset']:
+ assert branches[name]>0,name
+assert oracle.coverage['0x564a10']>0 and oracle.coverage['0x556a00']>0 and oracle.coverage['0x475790']>0
+scope='Complete original goal activation557360 through actual score reset for visible players, UI combo/numeric updates, parent lookup/uninitialization, self initialization/difficulty merge/text conversion, inherited PC24 timer, owned parameter removal, synchronous QB scripts, captured network status, concrete virtual methods and ordered manager queue insertion. Tests include all thirty exact hash-verified archived training flag arrays through parse/activate/deactivate/reactivate with local score/UI reset. Full arena/globals/returns/heap/scope bytes compare exactly. Diagnostic output is the only instrumented callback; no gameplay substitutions or numeric masks. Original valid parent/player/component/widget graphs, terminating scripts, successful allocation and prior text/state bounds remain required. Complete training startup, gameplay update/completion, rendering and browser input/audio integration remain unfinished.'
+fixture={'base':BASE,'memory':'objective-activate-memory.bin','memory_adapter':ADAPTER,'memory_fixture':'script-values-memory.wasm','memory_exports':['fixture_values_allocate','fixture_values_release','fixture_values_scope'],'globals':globals_,'functions':functions,'float_fields':[],'cases':oracle.cases,'case_labels':labels,'scope':scope,'callback_counter':'diagnostic_callbacks','pointer_exports':exports,'pointer_fields':sorted(fields),'scoped_event_services':{'symbol':'thug_event_services','pointer':SERVICES},'native_callback':{'module':'score-display-diagnostics.wasm','export':'fixture_score_print','slots':[PRINT+4]}}
+path=out/'objective-activate-fixtures.json';path.write_text(json.dumps(fixture,separators=(',',':')));(out/fixture['memory']).write_bytes(initial)
+print('x86 complete:',len(labels),dict(oracle.counts),dict(branches),flush=True)
+subprocess.run(['node',str(ROOT/'tools/verify_objective_activate_wasm.mjs'),str(out)],check=True)
+report={'result':'pass','specimen_sha256':SHA256,'counts':dict(oracle.counts),'callee_coverage':dict(oracle.coverage),'branches':dict(branches),'heap_events':dict(oracle.heap_events),'os_services':dict(os_calls),'training_assets':assets,'scope':scope,'wasm_sha256':hashlib.sha256((ROOT/'local/build/thug-core.wasm').read_bytes()).hexdigest(),'artifact_hashes':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [path,out/fixture['memory'],out/'score-display-diagnostics.wasm']},'source_hashes':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'src').rglob('*')) if p.is_file()}}
+report_path.write_text(json.dumps(report,indent=2)+'\n');print('PASS:',dict(oracle.counts))

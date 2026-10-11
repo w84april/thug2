@@ -1,0 +1,15 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const base='local/analysis/',report=JSON.parse(readFileSync(base+'rigidbody-response-fan-script.json'));
+const {instance:{exports:e}}=await WebAssembly.instantiate(readFileSync(base+'rigidbody-response-draft.wasm'));
+const memory=new Uint8Array(e.memory.buffer),packed=readFileSync(base+'rigidbody-response-fan-compressed.bin');
+const input=0x800000,output=0x900000,window=0xa00000;memory.set(packed,input);memory.fill(0,window,window+4096);
+const end=e.thug_lzss_decode_unchecked(window,input,output,packed.length);
+if(end!==output+report.archive.size)throw Error('Wrong decoded length');
+const decoded=memory.slice(output,end),hash=createHash('sha256').update(decoded).digest('hex');
+if(hash!==report.archive.original_decoded_sha256)throw Error('Decoded bytes differ from original-instruction LZSS evidence');
+const bytes=Buffer.from(decoded),signature=Buffer.from([0x23,0x16,0xb4,0x06,0xd1,0x6d]),offset=bytes.indexOf(signature);
+if(offset<0)throw Error('Archived fan definition missing');
+report.verified_archived={path:base+'rigidbody-response-fan-archived.qb',sha256:hash,size:bytes.length,definition_offset:offset,matches_loose:hash===report.definitions[0].sha256};
+report.scope='Archived TR_scripts.qb decoded with recovered Wasm LZSS and matched against prior original-instruction archive hash. TR_Fan01 exists; archived file differs from loose copy. Script not yet loaded or executed by recovered scene.';
+writeFileSync(report.verified_archived.path,bytes);writeFileSync(base+'rigidbody-response-fan-script.json',JSON.stringify(report,null,2)+'\n');console.log(report.verified_archived);

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "-DCRT_CONTEXT=0x10f6000u",
+    "-DINDEX_CONTROL=0x10f6100u",
+    "-DINDEX_LOG=0x10f6200u",
+    "-DINDEX_METHODS=0x10f8400u",
+    "-DINDEX_DEVICES=0x2b00000u",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/vertex-upload-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-vertex-upload-ports.wasm"
+  ],
+  "source_sha256": "4bb887241e61a5090d5a78b3b43563902bd9b7609f7852889269e3a0e7f7a23c",
+  "sha256": "6ae18fd1afdf3a53d55a138152eb24b4b3961a7733e74a12ddbac5690cf48893",
+  "included_source_sha256": "5a120b73ed97ad420c5d437b43c0d69ea04c25858679fd94c5397d7c5656382f"
+}

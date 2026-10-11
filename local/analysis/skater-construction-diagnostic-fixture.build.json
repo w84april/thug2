@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-construction-diagnostic-fixture.wasm",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-construction-diagnostic-fixture.c"
+  ],
+  "source_sha256": "8c9c5f203f11437d71b92cf25ede46951d966d05155979677aeac4866888c8f7",
+  "sha256": "2e59f3385ce872860f194bd01cd79a64a07cf6b9a06c279c5e7c53732985264e"
+}

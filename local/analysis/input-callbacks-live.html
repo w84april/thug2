@@ -1,0 +1,74 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 input callback check</title>
+<style>
+body{font:17px system-ui;margin:3rem auto;padding:0 1.5rem;max-width:56rem;background:#f6f4ee;color:#24251f}
+h1{font-size:2rem}button{font:inherit;padding:1rem;border:2px solid #777;background:white;border-radius:4px}
+button:focus{outline:3px solid #306bcc;outline-offset:4px}pre{white-space:pre-wrap;font-size:13px;line-height:1.5}
+</style>
+<h1>Original Input callbacks</h1>
+<p>Browser keys pass through THUG2's device callback, button events and controller decoder. The level is not playable yet.</p>
+<p>Arrow keys: direction · Space: X button · Z: Square · X: Circle · C: Triangle</p>
+<button id="surface" disabled>Focus here to test controls</button>
+<p id="status">Loading recovered code…</p>
+<pre id="state"></pre><pre id="history"></pre>
+<script type="module">
+import {bindKeyboardInput} from '/browser-input.mjs';
+const surface=document.querySelector('#surface'),status=document.querySelector('#status');
+try {
+ const fetchBytes=async path=>{const r=await fetch(path);if(!r.ok)throw Error('Missing '+path);return r.arrayBuffer();};
+ const {instance:{exports:e}}=await WebAssembly.instantiate(await fetchBytes('/module.wasm'));
+ const fixture=JSON.parse(new TextDecoder().decode(await fetchBytes('/input-callbacks-fixtures.json')));
+ const setup=fixture.cases[fixture.case_labels.indexOf('primary all edges/0/absent')];
+ const bytes=new Uint8Array(e.memory.buffer),v=new DataView(e.memory.buffer),symbols=new Map();
+ // Reuse the verified synthetic component/task/registry state. This is a
+ // callback integration check, not recovered skater startup or a game frame.
+ bytes.set(new Uint8Array(await fetchBytes('/'+fixture.memory)),fixture.base);
+ for(const [at,hex] of setup.patches)bytes.set(Uint8Array.from(hex.match(/../g)||[],x=>parseInt(x,16)),at);
+ for(const [original,name,offset=0] of fixture.pointer_exports||[])symbols.set(original,e[name].value+offset);
+ for(const [original,name] of fixture.function_exports||[]){
+  const t=e.__indirect_function_table;let slot=-1;
+  for(let i=0;i<t.length;i++)if(t.get(i)===e[name]){slot=i;break;}
+  if(slot<0){slot=t.grow(1);t.set(slot,e[name]);}symbols.set(original,slot);
+ }
+ for(const at of fixture.pointer_fields){const raw=v.getUint32(at,true);if(symbols.has(raw))v.setUint32(at,symbols.get(raw),true);}
+ for(let i=0;i<fixture.globals.length;i++){
+  const [name,,width,offset=0]=fixture.globals[i],at=e[name].value+offset,value=symbols.get(setup.globals[i])??setup.globals[i];
+  for(let k=0;k<width;k++)bytes[at+k]=(value>>>(8*k))&255;
+ }
+ const {instance:{exports:allocator}}=await WebAssembly.instantiate(await fetchBytes('/'+fixture.memory_fixture),{env:{memory:e.memory}});
+ for(const [i,name] of fixture.memory_exports.entries()){
+  const slot=e.__indirect_function_table.grow(1);e.__indirect_function_table.set(slot,allocator[name]);
+  v.setUint32(fixture.memory_adapter+4*(i+1),slot,true);
+ }
+ const services=fixture.scoped_event_services;
+ v.setUint32(e[services.symbol].value,services.pointer,true);
+ const component=fixture.base+0xc0000,pad=component+0x20,packetAt=fixture.base+0xc1000,task=fixture.base+0xc1200;
+ const manager=fixture.base+0x60000;
+ e.thug_input_pad_construct_draft(pad);e.thug_input_pad_construct_draft(component+0x258);
+ const names={Up:0,Down:0x20,Left:0x40,Right:0x60,Square:0x160,Circle:0x140,Triangle:0x180,X:0x1a0};
+ const history=[];let transitions=0;
+ const sample=(packet,record)=>{
+  v.setUint32(e.thug_frame_counter.value,Math.floor(performance.now()),true);
+  bytes.set(packet,packetAt);
+  const before=v.getUint32(manager+0x7020,true);
+  e.thug_input_primary_task_draft(task,0,fixture.memory_adapter);
+  const after=v.getUint32(manager+0x7020,true),events=[];
+  for(let i=before;i!==after;i=(i+1)%1024){
+   const row=manager+0x20+i*28;
+   if(v.getUint32(row+20,true)===0)events.push(v.getUint32(row,true).toString(16).padStart(8,'0'));
+  }
+  const buttons=Object.fromEntries(Object.entries(names).map(([name,off])=>[name,{
+   held:bytes[pad+off],pressed:bytes[pad+off+0x10],released:v.getUint32(pad+off+0x14,true)}]));
+  const result={buttons,eventMask:v.getUint32(component+0x1c,true),events,
+   direction:v.getFloat32(pad+0x228,true),magnitude:v.getFloat32(pad+0x22c,true)};
+  document.querySelector('#state').textContent=JSON.stringify(result,null,2);
+  if(record){history.push({transition:++transitions,...result});document.querySelector('#history').textContent=JSON.stringify(history,null,2);}
+  for(let off=0;off<0x200;off+=0x20){e.thug_input_button_clear_latch(pad+off);e.thug_input_button_clear_pending(pad+off);}
+ };
+ const input=bindKeyboardInput(surface,packet=>sample(packet,true));let frame=0;
+ const tick=()=>{sample(input.packet,false);frame=requestAnimationFrame(tick);};
+ addEventListener('pagehide',()=>{cancelAnimationFrame(frame);input.destroy();},{once:true});
+ surface.disabled=false;status.textContent='Ready — keys run through the original device callback and events.';tick();
+}catch(error){status.textContent='FAIL: '+error.stack;}
+</script>

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-mesh-index-boundary.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-mesh-index-boundary.wasm"
+  ],
+  "source_sha256": "61beb17110e5b6fa084a6f43a56fefaccaa21b96e810da70e8aee42a4fd586b3",
+  "sha256": "ef2a4838a998959ba2dede7f15da2fac5af3a691dc4c372f29152d8678b26679"
+}

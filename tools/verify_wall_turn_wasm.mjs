@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {verifyMotion} from './motion_wasm_checks.mjs';
+const directory=process.argv[2];
+const result=await verifyMotion(readFileSync(resolve(directory,'../../build/thug-core.wasm')),
+  JSON.parse(readFileSync(resolve(directory,'wall-turn-fixtures.json'),'utf8')),name=>readFileSync(resolve(directory,name)));
+writeFileSync(resolve(directory,'../wall-turn-wasm.json'),JSON.stringify(result,null,2)+'\n');
+console.log('WebAssembly wall-turn:',{...result,
+  double_transcendental_differences:result.double_transcendental_differences?.length??0,
+  matrix_infinity_documented_differences:result.matrix_infinity_documented_differences?.length??0});

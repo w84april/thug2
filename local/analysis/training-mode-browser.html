@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 training scene setup recovery</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}pre{white-space:pre-wrap;font-size:12px}#status{font-weight:600}</style>
+<h1>Original training setup verification</h1>
+<p>The original training setup selects its career and free-skate branches using recovered game-mode logic and original mode definitions. It stops at the unrecovered scene-object command. The earlier startup and skeleton-loading checks are retained. The game is not playable yet.</p>
+<p id="status">Loading…</p><pre id="report"></pre>
+<script type="module">
+const status=document.querySelector('#status'),output=document.querySelector('#report');
+try {
+ const response=await fetch('/module.wasm');if(!response.ok)throw Error('Module fetch failed');
+ const wasm=await response.arrayBuffer(),module=await WebAssembly.compile(wasm);
+ const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',wasm))].map(b=>b.toString(16).padStart(2,'0')).join('');
+ const imports=WebAssembly.Module.imports(module).length;if(imports)throw Error('Unexpected runtime imports');
+ const suites={};
+ for(const name of ['training-mode','node-prefix','scene-name','training-setup','asset-factory','training-load','skeleton-asset','skeleton-buffer','script-change']) {
+  status.textContent='Checking '+name+'…';
+  suites[name.replaceAll('-','_')]=await new Promise((resolve,reject)=>{
+   const worker=new Worker('/worker.mjs',{type:'module'});
+   worker.onmessage=({data})=>{worker.terminate();data.error?reject(Error(data.error)):resolve(data.result);};
+   worker.onerror=event=>{worker.terminate();reject(Error(event.message));};
+   worker.postMessage({name,wasm});
+  });
+ }
+ output.textContent=JSON.stringify({result:'pass',wasm_sha256:hash,wasm_bytes:wasm.byteLength,runtime_imports:imports,suites},null,2);
+ status.textContent='PASS — game modes, prefix lookup and training traces match the original.';
+} catch(error){status.textContent='FAIL';output.textContent=String(error.stack||error);}
+</script>

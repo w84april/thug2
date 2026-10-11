@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-fno-builtin",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/model-asset-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/model-asset-ports.wasm"
+  ],
+  "source_sha256": "e0e73414020dd6a3bfe012c7a27d31a4629f98d68b639e25414f4dd1a8dd8c94",
+  "sha256": "18d94aea2ff49482be61438a020eda34c60ac50328c35e560e91a03fcc42728b"
+}

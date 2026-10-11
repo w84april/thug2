@@ -1,0 +1,151 @@
+{
+  "specimen_sha256": "52fc88849654b34839ec2f96bff3a8c0b7a855df9a207aab9f2fca2e6bd440f3",
+  "complete_routines": [
+    {
+      "address": "0x588170",
+      "bytes": 13,
+      "instructions": 3,
+      "export": "thug_trick_history_construct_draft",
+      "calls": []
+    },
+    {
+      "address": "0x51f320",
+      "bytes": 406,
+      "instructions": 80,
+      "export": "thug_trick_reset_draft",
+      "calls": []
+    },
+    {
+      "address": "0x522390",
+      "bytes": 118,
+      "instructions": 34,
+      "export": "thug_trick_construct_draft",
+      "calls": [
+        "0x45d730",
+        "0x588170",
+        "0x51f320"
+      ]
+    },
+    {
+      "address": "0x523490",
+      "bytes": 89,
+      "instructions": 24,
+      "export": "thug_trick_create_draft",
+      "calls": [
+        "0x401cc0",
+        "0x522390"
+      ]
+    },
+    {
+      "address": "0x51f2b0",
+      "bytes": 101,
+      "instructions": 28,
+      "export": "thug_trick_finalize_draft",
+      "calls": [
+        "0x45db90",
+        "0x45db90",
+        "0x45db90",
+        "0x45db90",
+        "0x45db90",
+        "0x45db90"
+      ]
+    },
+    {
+      "address": "0x5234f0",
+      "bytes": 102,
+      "instructions": 29,
+      "export": "thug_trick_destroy_draft",
+      "calls": [
+        "0x477130",
+        "0x409070",
+        "0x45d740"
+      ]
+    },
+    {
+      "address": "0x5243f0",
+      "bytes": 33,
+      "instructions": 11,
+      "export": "thug_trick_delete_draft",
+      "calls": [
+        "0x5234f0",
+        "0x5baba0"
+      ]
+    },
+    {
+      "address": "0x5176c0",
+      "bytes": 11,
+      "instructions": 2,
+      "export": "thug_physics_control_destroy_draft",
+      "calls": []
+    },
+    {
+      "address": "0x5176d0",
+      "bytes": 7,
+      "instructions": 2,
+      "export": "thug_physics_control_initialize_draft",
+      "calls": []
+    },
+    {
+      "address": "0x517740",
+      "bytes": 33,
+      "instructions": 11,
+      "export": "thug_physics_control_delete_draft",
+      "calls": [
+        "0x5176c0",
+        "0x5baba0"
+      ]
+    },
+    {
+      "address": "0x517770",
+      "bytes": 44,
+      "instructions": 13,
+      "export": "thug_physics_control_finalize_draft",
+      "calls": [
+        "0x45db90",
+        "0x45db90"
+      ]
+    },
+    {
+      "address": "0x517830",
+      "bytes": 114,
+      "instructions": 32,
+      "export": "thug_physics_control_create_draft",
+      "calls": [
+        "0x401cc0",
+        "0x45d730"
+      ]
+    }
+  ],
+  "tables": {
+    "0x64c508": [
+      "0x5243f0",
+      "0x5231d0",
+      "0x5bab90",
+      "0x51f2b0",
+      "0x5480a0",
+      "0x4e3f90",
+      "0x48dcd0",
+      "0x45d760",
+      "0x5bab90",
+      "0x5480a0",
+      "0x5bab90",
+      "0x42bb20",
+      "0x523560"
+    ],
+    "0x64bfe0": [
+      "0x517740",
+      "0x517ac0",
+      "0x5176d0",
+      "0x517770",
+      "0x5480a0",
+      "0x4e3f90",
+      "0x48dcd0",
+      "0x45d760",
+      "0x5bab90",
+      "0x5480a0",
+      "0x5bab90",
+      "0x42bb20",
+      "0x517c80"
+    ]
+  }
+}

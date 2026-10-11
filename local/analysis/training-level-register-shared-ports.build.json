@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-level-register-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-level-register-shared-ports.wasm"
+  ],
+  "source_sha256": "43f5232bfb57a3faae7670d8cbc868d3242440ade0567a125d625636e5c1b0d4",
+  "sha256": "29192e475d05ab404d28bbc24f5bda7e48e03bd5b1ee537c5d2f97fcbad6af08"
+}

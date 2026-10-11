@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 scene operation recovery</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}pre{white-space:pre-wrap;font-size:12px}#status{font-weight:600}</style>
+<h1>Original scene operation verification</h1>
+<p>Recovered scene operations cover rails, emitters, lights, collision flags and object-list traversal. These are dependencies of the scene cleanup command; the complete command still needs recovery. Earlier training startup and setup traces remain checked. The game is not playable yet.</p>
+<p id="status">Loading…</p><pre id="report"></pre>
+<script type="module">
+const status=document.querySelector('#status'),output=document.querySelector('#report');
+try {
+ const response=await fetch('/module.wasm');if(!response.ok)throw Error('Module fetch failed');
+ const wasm=await response.arrayBuffer(),module=await WebAssembly.compile(wasm);
+ const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',wasm))].map(b=>b.toString(16).padStart(2,'0')).join('');
+ const imports=WebAssembly.Module.imports(module).length;if(imports)throw Error('Unexpected runtime imports');
+ const suites={};
+ for(const name of ['scene-state','scene-disposal','scene-visitor','training-mode','node-prefix','scene-name','training-setup','asset-factory','training-load','skeleton-asset','skeleton-buffer','script-change']) {
+  status.textContent='Checking '+name+'…';
+  suites[name.replaceAll('-','_')]=await new Promise((resolve,reject)=>{
+   const worker=new Worker('/worker.mjs',{type:'module'});
+   worker.onmessage=({data})=>{worker.terminate();data.error?reject(Error(data.error)):resolve(data.result);};
+   worker.onerror=event=>{worker.terminate();reject(Error(event.message));};
+   worker.postMessage({name,wasm});
+  });
+ }
+ output.textContent=JSON.stringify({result:'pass',wasm_sha256:hash,wasm_bytes:wasm.byteLength,runtime_imports:imports,suites},null,2);
+ status.textContent='PASS — scene operations, object traversal and prior training traces match the original.';
+} catch(error){status.textContent='FAIL';output.textContent=String(error.stack||error);}
+</script>

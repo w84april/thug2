@@ -1,0 +1,145 @@
+{
+  "specimen_sha256": "52fc88849654b34839ec2f96bff3a8c0b7a855df9a207aab9f2fca2e6bd440f3",
+  "complete_routines": [
+    {
+      "address": "0x404ec0",
+      "bytes": 142,
+      "instructions": 46,
+      "export": "thug_matrix_rotation_coordinate_draft",
+      "calls": []
+    },
+    {
+      "address": "0x4057b0",
+      "bytes": 157,
+      "instructions": 35,
+      "export": "thug_matrix_rotate_z_draft",
+      "calls": [
+        "0x5bfa8c"
+      ]
+    },
+    {
+      "address": "0x406260",
+      "bytes": 106,
+      "instructions": 39,
+      "export": "thug_vector_dominant_coordinate_draft",
+      "calls": []
+    },
+    {
+      "address": "0x4062d0",
+      "bytes": 387,
+      "instructions": 122,
+      "export": "thug_matrix_direction_angle_draft",
+      "calls": [
+        "0x406080",
+        "0x4023f0",
+        "0x623630",
+        "0x406260"
+      ]
+    },
+    {
+      "address": "0x517cc0",
+      "bytes": 11,
+      "instructions": 2,
+      "export": "thug_skater_rotate_destroy_draft",
+      "calls": []
+    },
+    {
+      "address": "0x517cd0",
+      "bytes": 20,
+      "instructions": 7,
+      "export": "thug_skater_rotate_initialize_draft",
+      "calls": []
+    },
+    {
+      "address": "0x517cf0",
+      "bytes": 33,
+      "instructions": 11,
+      "export": "thug_skater_rotate_delete_draft",
+      "calls": [
+        "0x517cc0",
+        "0x5baba0"
+      ]
+    },
+    {
+      "address": "0x517d20",
+      "bytes": 21,
+      "instructions": 8,
+      "export": "thug_skater_rotate_finalize_draft",
+      "calls": [
+        "0x45db90"
+      ]
+    },
+    {
+      "address": "0x517d40",
+      "bytes": 114,
+      "instructions": 32,
+      "export": "thug_skater_rotate_create_draft",
+      "calls": [
+        "0x401cc0",
+        "0x45d730"
+      ]
+    },
+    {
+      "address": "0x517dc0",
+      "bytes": 224,
+      "instructions": 81,
+      "export": "thug_skater_rotate_update_draft",
+      "calls": [
+        "0x5beaa0",
+        "0x404ec0",
+        "0x5bfa8c",
+        "0x5bfa8c",
+        "dword ptr [edx + 0x1c]"
+      ]
+    },
+    {
+      "address": "0x517ea0",
+      "bytes": 927,
+      "instructions": 302,
+      "export": "thug_skater_rotate_command_draft",
+      "calls": [
+        "0x4766d0",
+        "0x476b40",
+        "0x476b40",
+        "0x476b40",
+        "0x476b40",
+        "0x4766d0",
+        "0x4766d0",
+        "0x4766d0",
+        "0x476950",
+        "0x45c1b0",
+        "0x45c050",
+        "0x4062d0",
+        "dword ptr [eax + 0x1c]",
+        "0x4766d0",
+        "0x404dd0",
+        "0x5bfa8c",
+        "0x404090",
+        "0x4766d0",
+        "0x405710",
+        "0x404090",
+        "0x4766d0",
+        "0x4057b0",
+        "0x404090",
+        "0x404090"
+      ]
+    }
+  ],
+  "tables": {
+    "0x64c018": [
+      "0x517cf0",
+      "0x517dc0",
+      "0x517cd0",
+      "0x517d20",
+      "0x5480a0",
+      "0x4e3f90",
+      "0x48dcd0",
+      "0x45d760",
+      "0x5bab90",
+      "0x5480a0",
+      "0x5bab90",
+      "0x45d720",
+      "0x517ea0"
+    ]
+  }
+}

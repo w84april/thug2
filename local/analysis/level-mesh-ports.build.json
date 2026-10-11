@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/level-mesh-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/level-mesh-ports.wasm"
+  ],
+  "source_sha256": "86490c9907ea7592b3190eb11fc5145f7f12bdb04a5e6202830308e7be9cfec0",
+  "sha256": "b671c057602e755ae56a45bb05e3f96f0f7112eb9f8c0f875330cf05d4fbeb9e"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "source": "local/analysis/scene-state-callback.c",
+    "source_sha256": "9ac996de8544e9008ddf5dde9e44402c11ee6103cd6e4bd7642a99c35340af6a",
+    "output": "local/analysis/scene-state-callback.wasm",
+    "sha256": "838d96ea557ddbd8c2a5604e7fe269e08392e327f583fff177ed4c84b77cf871",
+    "command": [
+      "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+      "--target=wasm32-unknown-unknown",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-nostdlib",
+      "-Wl,--no-entry,--export-all,--import-memory",
+      "-Wl,-z,stack-size=0",
+      "local/analysis/scene-state-callback.c",
+      "-o",
+      "local/analysis/scene-state-callback.wasm"
+    ]
+  },
+  {
+    "source": "local/analysis/scene-disposal-memory.c",
+    "source_sha256": "c1cb4e65c04f991c7cdb1b2741a4ab2673ffbc02c42d95f4e3c18b7b99539698",
+    "output": "local/analysis/scene-disposal-memory.wasm",
+    "sha256": "0c0c5136a6dd482f497b2f44a96a68fc501a105f2152992daf7cfa8908ef89ec",
+    "command": [
+      "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+      "--target=wasm32-unknown-unknown",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-nostdlib",
+      "-Wl,--no-entry,--export-all,--import-memory",
+      "-Wl,-z,stack-size=0",
+      "local/analysis/scene-disposal-memory.c",
+      "-o",
+      "local/analysis/scene-disposal-memory.wasm"
+    ]
+  },
+  {
+    "source": "local/analysis/scene-visitor-callback.c",
+    "source_sha256": "ab9d058175b5631d55f0b4ad43b66261f3b4a6548211e7cf4260a5691dccdd27",
+    "output": "local/analysis/scene-visitor-callback.wasm",
+    "sha256": "71c291dad7c107ccc27f6f8eef978d2312f71cc5304bb4d4628416e0a97f82cf",
+    "command": [
+      "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+      "--target=wasm32-unknown-unknown",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-nostdlib",
+      "-Wl,--no-entry,--export-all,--import-memory,--allow-undefined",
+      "-Wl,-z,stack-size=0",
+      "local/analysis/scene-visitor-callback.c",
+      "-o",
+      "local/analysis/scene-visitor-callback.wasm"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {verifyScriptState} from './training-startup-checks.mjs';
+const base='local/analysis/',fixture=JSON.parse(readFileSync(base+'training-startup-fixtures.json'));
+const load=name=>readFileSync(existsSync(resolve(base,name))?resolve(base,name):resolve('local/validation/collision',name));
+const result=await verifyScriptState(readFileSync(base+'script-change-draft.wasm'),fixture,load);
+result.completed_setup_calls=4;
+result.interrupted_execute_calls=1;
+result.next_missing_handler='LoadSkeleton at 0x445640';
+result.playable=false;
+writeFileSync(base+'training-startup-result.json',JSON.stringify(result,null,2)+'\n');console.log(result);

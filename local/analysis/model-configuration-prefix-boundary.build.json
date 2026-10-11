@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--export-all",
+    "-Wl,--import-memory",
+    "-Wl,--initial-memory=33554432",
+    "-o",
+    "local/analysis/model-configuration-prefix-boundary.wasm",
+    "local/analysis/model-configuration-prefix-boundary.c"
+  ]
+}

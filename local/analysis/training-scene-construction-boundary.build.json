@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-scene-construction-boundary.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-scene-construction-boundary.wasm"
+  ],
+  "source_sha256": "0d41a1be747543e5f4fe3e4f0c45f5e2314bb3b186524bc2578d014eb76038f6",
+  "sha256": "485bbb440030305c60138a4c4a7aa02ff61269a4da85631796e75e3a1126952e"
+}

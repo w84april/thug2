@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-asset-ready-boundary.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-asset-ready-boundary.wasm"
+  ],
+  "source_sha256": "a86fb2b96b7989ecf468a29326a6471a9c48d09b3a3464a1be05e0843cec859c",
+  "sha256": "ba1a8a5f099291092a82f602a5fd5eea8343b1eb329f1dbcda023c2aeefa8718"
+}

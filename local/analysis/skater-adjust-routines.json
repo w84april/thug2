@@ -1,0 +1,34 @@
+{
+  "0x427700": {
+    "bytes": 757,
+    "instructions": 164
+  },
+  "0x427b30": {
+    "bytes": 320,
+    "instructions": 115
+  },
+  "0x4f80e0": {
+    "bytes": 123,
+    "instructions": 40
+  },
+  "0x4f8040": {
+    "bytes": 11,
+    "instructions": 2
+  },
+  "0x4f8050": {
+    "bytes": 33,
+    "instructions": 11
+  },
+  "0x4f8080": {
+    "bytes": 85,
+    "instructions": 24
+  },
+  "0x417190": {
+    "bytes": 29,
+    "instructions": 10
+  },
+  "0x4171b0": {
+    "bytes": 30,
+    "instructions": 10
+  }
+}

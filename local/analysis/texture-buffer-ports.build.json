@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/texture-buffer-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/texture-buffer-ports.wasm"
+  ],
+  "source_sha256": "4b6a80ddbf35fef0c3e8992145bb2d7c0a02287940b4434966ee7df1d1d1b733",
+  "sha256": "81eafd37e2f68630ba0e68164e3e8ac922af9b8fb4bba988d7d23eb8d418fb03"
+}

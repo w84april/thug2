@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "-DCRT_CONTEXT=0x10f6000u",
+    "-DINDEX_CONTROL=0x10f6100u",
+    "-DINDEX_LOG=0x10f6200u",
+    "-DINDEX_METHODS=0x10f8400u",
+    "-DINDEX_DEVICES=0x2b00000u",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/mesh-index-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-mesh-index-ports.wasm"
+  ],
+  "source_sha256": "381b268a91880f8ad09aa9f8c959d746c5bb63dd670f9a7e8ece5ca7d66c3d8e",
+  "included_source_sha256": "5a120b73ed97ad420c5d437b43c0d69ea04c25858679fd94c5397d7c5656382f",
+  "sha256": "19e4154ea25c8fd66c626b3a57f10bf40bb2720b4c5498d05a2bd2da76df2286"
+}

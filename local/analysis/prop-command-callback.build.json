@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--export-all",
+    "-Wl,--import-memory",
+    "-Wl,--initial-memory=33554432",
+    "-o",
+    "local/analysis/prop-command-callback.wasm",
+    "local/analysis/prop-command-callback.c"
+  ],
+  "source_sha256": "0832d25b4fd5a24fd49615fa095ee1f341c1dacfb879620fced537064b7b9dcd"
+}

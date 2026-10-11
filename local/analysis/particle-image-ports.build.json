@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/particle-image-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/particle-image-ports.wasm"
+  ],
+  "source_sha256": "a4eeae5f747111a48d1dea2d2be7cb9510d680aa7c67cfe29559fa102063e527",
+  "sha256": "a62d9ae46d482e69404f447790149d3cede9cfe0fa2c8e6657c8a29de0592faf"
+}

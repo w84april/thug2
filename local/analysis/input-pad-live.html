@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 controller input check</title>
+<style>
+body{font:17px system-ui;margin:3rem auto;padding:0 1.5rem;max-width:56rem;background:#f6f4ee;color:#24251f}
+h1{font-size:2rem}button{font:inherit;padding:1rem;border:2px solid #777;background:white;border-radius:4px}
+button:focus{outline:3px solid #306bcc;outline-offset:4px}pre{white-space:pre-wrap;font-size:13px;line-height:1.5}
+</style>
+<h1>Original controller decoder</h1>
+<p>This checks browser keys through recovered THUG2 code. The level is not playable yet.</p>
+<p>Arrow keys: direction · Space: X button · Z: Square · X: Circle · C: Triangle</p>
+<button id="surface" disabled>Focus here to test controls</button>
+<p id="status">Loading recovered code…</p>
+<pre id="state"></pre><pre id="history"></pre>
+<script type="module">
+import {bindKeyboardInput} from '/browser-input.mjs';
+const surface=document.querySelector('#surface'),status=document.querySelector('#status');
+try {
+ const response=await fetch('/module.wasm');if(!response.ok)throw Error('Module unavailable');
+ const {instance:{exports:e}}=await WebAssembly.instantiate(await response.arrayBuffer());
+ const bytes=new Uint8Array(e.memory.buffer),v=new DataView(e.memory.buffer);
+ // Dedicated verification scratch area. Production object allocation belongs
+ // to skater startup, which is not established by this input check.
+ const pad=0x1800000,packetAt=pad+0x1000;
+ bytes.fill(0,pad,pad+0x238);e.thug_input_pad_construct_draft(pad);
+ v.setFloat32(e.thug_frame_rate.value,1000,true);v.setFloat32(e.thug_time_scale.value,1,true);
+ const names={Up:0,Down:0x20,Left:0x40,Right:0x60,Square:0x160,Circle:0x140,Triangle:0x180,X:0x1a0};
+ const history=[];let transitions=0;
+ const sample=(packet,record)=>{
+   v.setUint32(e.thug_frame_counter.value,Math.floor(performance.now()),true);
+   bytes.set(packet,packetAt);e.thug_input_pad_update_draft(pad,packetAt);
+   const buttons=Object.fromEntries(Object.entries(names).map(([name,offset])=>[name,{
+     held:bytes[pad+offset],pressed:bytes[pad+offset+0x10],released:v.getUint32(pad+offset+0x14,true),
+   }]));
+   const result={buttons,direction:v.getFloat32(pad+0x228,true),magnitude:v.getFloat32(pad+0x22c,true)};
+   document.querySelector('#state').textContent=JSON.stringify(result,null,2);
+   if(record){history.push({transition:++transitions,...result});if(history.length>8)history.shift();document.querySelector('#history').textContent=JSON.stringify(history,null,2);}
+   for(let offset=0;offset<0x200;offset+=0x20){e.thug_input_button_clear_latch(pad+offset);e.thug_input_button_clear_pending(pad+offset);}
+ };
+ const input=bindKeyboardInput(surface,packet=>sample(packet,true));
+ let frame=0;
+ const tick=()=>{sample(input.packet,false);frame=requestAnimationFrame(tick);};
+ addEventListener('pagehide',()=>{cancelAnimationFrame(frame);input.destroy();},{once:true});
+ surface.disabled=false;status.textContent='Ready — keyboard packets run through the original decoder.';tick();
+}catch(error){status.textContent='FAIL: '+error.message;}
+</script>

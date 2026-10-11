@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-texture-boundary.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-texture-boundary.wasm"
+  ],
+  "source_sha256": "b2d6d9673022c2923f919672c66dbde408f6dab1af761ea30d62e6aaa9491ae8",
+  "sha256": "1aae46a1ed56b2745098ee0aa5ff135b71a57f222f3566580ffc11b18954b472"
+}

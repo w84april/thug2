@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 training scene recovery</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}pre{white-space:pre-wrap;font-size:12px}#status{font-weight:600}</style>
+<h1>Training update: proximity events</h1>
+<p>Recovered movement and player-distance events are compared with the original executable, including an event that deletes its owner. The actual training barrel now passes Motion and Proximity, reaching the unrecovered LockObj update. Complete frames, rendering and playability remain unfinished.</p>
+<p id="status">Loading…</p><pre id="report"></pre>
+<script type="module">
+const status=document.querySelector('#status'),output=document.querySelector('#report');
+try {
+ const response=await fetch('/module.wasm');if(!response.ok)throw Error('Module fetch failed');
+ const wasm=await response.arrayBuffer(),module=await WebAssembly.compile(wasm);
+ const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',wasm))].map(b=>b.toString(16).padStart(2,'0')).join('');
+ const imports=WebAssembly.Module.imports(module).length;if(imports)throw Error('Unexpected runtime imports');
+ const suites={};
+ for(const name of ['proximity-frame','proximity-frame-training','motion-frame','motion-frame-training','particle-setup','particle-setup-training','particle-image','particle-image-training','particle-create','particle-create-training','particle-engine','particle-engine-training','particle-component','particle-component-training','particle-startup','rigidbody-motion','rigidbody-initialize','rigidbody-initialize-training','rigidbody-core','level-collision-component','level-collision-component-unit','level-collision-load','level-collision-load-unit','level-object-startup','geometry-clone','training-geometry-clone','training-geometry-clone-shared','level-register','training-level-register','training-level-register-shared','level-sector','training-level-sector','level-mesh','training-level-mesh','level-material','training-level-material','scene-create','training-scene-create','model-transform','training-model-transform','renderer-bounds','training-renderer-bounds','render-instance','training-render-instance','asset-ready','training-asset-ready','scene-finalize','training-scene-finalize','mesh-register','training-mesh-register','vertex-upload','training-vertex-upload','mesh-index','training-mesh-index','scene-construction','training-scene-construction','material-buffer','training-material-buffer','model-asset','training-model-file','texture-asset','training-texture-asset','texture-buffer','model-configuration','model-configuration-prefix','training-model-configuration','model-initialize','model-initialize-prefix','training-model-initialize','model-component','training-model-component','prop-command','training-prop-script','prop-sound','training-prop-components','prop-lifecycle','composite-math','composite-construction','node-registration','training-node-registration','node-index','training-node-index','scene-kill','scene-subscribe','scene-lifetime','scene-proximity','scene-state','scene-disposal','scene-visitor','training-mode','node-prefix','scene-name','training-setup','asset-factory','training-load','skeleton-asset','skeleton-buffer','script-change']) {
+  status.textContent='Checking '+name+'…';
+  suites[name.replaceAll('-','_')]=await new Promise((resolve,reject)=>{
+   const worker=new Worker('/worker.mjs',{type:'module'});
+   worker.onmessage=({data})=>{worker.terminate();data.error?reject(Error(data.error)):resolve(data.result);};
+   worker.onerror=event=>{worker.terminate();reject(Error(event.message));};
+   worker.postMessage({name,wasm});
+  });
+ }
+ output.textContent=JSON.stringify({result:'pass',wasm_sha256:hash,wasm_bytes:wasm.byteLength,runtime_imports:imports,suites},null,2);
+ status.textContent='PASS — player-distance events, training LockObj boundary and all prior comparisons match the original.';
+} catch(error){status.textContent='FAIL';output.textContent=String(error.stack||error);}
+</script>

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-nostdlib",
+    "-Wl,--no-entry,--import-memory,--export-all,--global-base=58720256",
+    "-DAUDIO_CONTEXT=27000832",
+    "/Users/daniilpolienko/Documents/GitHub/thug/tools/audio_device_callbacks.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/prop-sound-audio-callbacks.wasm"
+  ],
+  "source_sha256": "f687a6e54f3ff70d33d44d08e62121997c06e356e47d2938e2ca4818dfd1d218"
+}

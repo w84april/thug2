@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "-o",
+    "local/analysis/input-lifecycle-hardware-fixture.wasm",
+    "local/analysis/input-lifecycle-hardware-fixture.c"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/scene-finalize-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/scene-finalize-ports.wasm"
+  ],
+  "source_sha256": "e30d2abf258436f3bb00c82964e8a8c91706baa9f21f8b42c6973fc2b7682093",
+  "sha256": "e0f6ffa61c38533d34c22993de429742685374e55717f2159947181b0531ce4c"
+}

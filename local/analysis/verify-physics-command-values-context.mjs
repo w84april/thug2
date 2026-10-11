@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {verifyScriptState} from '../../tools/script_state_wasm_checks.mjs';
+const base='local/analysis/',fixture=JSON.parse(readFileSync(base+'physics-command-values-context-fixtures.json','utf8'));
+const wasm=readFileSync(base+'physics-movement-members-draft.wasm');
+const load=name=>readFileSync(existsSync(resolve(base,name))?resolve(base,name):resolve('local/validation/collision',name));
+const empty=await verifyScriptState(wasm,fixture,load);
+const nested=await verifyScriptState(wasm,{...fixture,scoped_event_services:{...fixture.scoped_event_services,pointer:fixture.outer_scope}},load);
+const result={result:'pass',original_cases:empty.cases,cases:empty.cases+nested.cases,calls:empty.calls+nested.calls,native_qb_callbacks:empty.native_qb_callbacks+nested.native_qb_callbacks,nan_fields_classification_only:empty.nan_fields_classification_only+nested.nan_fields_classification_only,null_scope:empty,outer_scope:nested};
+writeFileSync(base+'physics-command-values-context-result.json',JSON.stringify(result,null,2)+'\n');console.log(result);

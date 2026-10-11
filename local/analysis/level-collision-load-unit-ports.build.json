@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/level-collision-load-unit-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/level-collision-load-unit-ports.wasm"
+  ],
+  "source_sha256": "d83bc80854cf50ab2e3d1ccf5284607100e45a2e0d3f21df40c418d635cf1cbb",
+  "sha256": "72a7db1fbe0273c3521e0f2ed76c3c69ca797f7a2c9542eb86e96b4b98139c37"
+}

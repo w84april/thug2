@@ -1,0 +1,5 @@
+pefile==2024.8.26
+capstone==5.0.9
+unicorn==2.1.4
+pymsi==0.0.0rc1
+olefile==0.47

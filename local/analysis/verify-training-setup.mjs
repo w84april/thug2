@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {verifyScriptState} from './training-setup-checks.mjs';
+const base='local/analysis/',fixture=JSON.parse(readFileSync(base+'training-setup-fixtures.json'));
+const load=name=>readFileSync(existsSync(resolve(base,name))?resolve(base,name):resolve('local/validation/collision',name));
+const result=await verifyScriptState(readFileSync(base+'training-mode-draft.wasm'),fixture,load);
+result.completed_setup_calls=10;
+result.interrupted_execute_calls=2;
+result.next_missing_handler='Kill at 0x5a5030';
+result.playable=false;
+writeFileSync(base+'training-setup-result.json',JSON.stringify(result,null,2)+'\n');console.log(result);

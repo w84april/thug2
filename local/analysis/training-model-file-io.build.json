@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-model-file-io.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/training-model-file-io.wasm"
+  ],
+  "source_sha256": "41247522211c30ddcf3907f07d003886132c738ce8fdd00803983520780508df",
+  "sha256": "5bf12ff63d93b0708032261b3104f58599af811bf139161f98ebea839723e98a"
+}
