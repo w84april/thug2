@@ -1,0 +1,77 @@
+{
+  "0x401da0": {
+    "bytes": 37,
+    "instructions": 12,
+    "name": "thug_owned_string_destroy_draft"
+  },
+  "0x401dd0": {
+    "bytes": 253,
+    "instructions": 90,
+    "name": "thug_owned_string_range_draft"
+  },
+  "0x401ed0": {
+    "bytes": 51,
+    "instructions": 26,
+    "name": "thug_owned_string_assign_draft"
+  },
+  "0x408fd0": {
+    "bytes": 91,
+    "instructions": 34,
+    "name": "thug_gap_array_free_draft"
+  },
+  "0x578740": {
+    "bytes": 172,
+    "instructions": 53,
+    "name": "thug_gap_primary_node_construct_draft"
+  },
+  "0x5787f0": {
+    "bytes": 79,
+    "instructions": 24,
+    "name": "thug_gap_secondary_node_construct_draft"
+  },
+  "0x579570": {
+    "bytes": 130,
+    "instructions": 41,
+    "name": "thug_gap_primary_node_destroy_draft"
+  },
+  "0x579630": {
+    "bytes": 91,
+    "instructions": 26,
+    "name": "thug_gap_secondary_node_destroy_draft"
+  },
+  "0x579820": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_gap_primary_node_delete_draft"
+  },
+  "0x579600": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_gap_secondary_node_delete_draft"
+  },
+  "0x57a2f0": {
+    "bytes": 49,
+    "instructions": 23,
+    "name": "thug_gap_list_clear_draft"
+  },
+  "0x512030": {
+    "bytes": 20,
+    "instructions": 7,
+    "name": "thug_skater_gap_clear_draft"
+  },
+  "0x512050": {
+    "bytes": 225,
+    "instructions": 72,
+    "name": "thug_skater_gap_register_trick_draft"
+  },
+  "0x512140": {
+    "bytes": 91,
+    "instructions": 39,
+    "name": "thug_skater_gap_check_tricks_draft"
+  },
+  "0x512360": {
+    "bytes": 1035,
+    "instructions": 344,
+    "name": "thug_skater_gap_start_draft"
+  }
+}

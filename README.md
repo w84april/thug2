@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 15.95%** — 1,856 reported recovered routines divided
+**Decompilation estimate: 16.08%** — 1,871 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 700 experimental routines: 683 in the latest
+routines (9.93% of that baseline) and 715 experimental routines: 698 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-16,685 pinned artifacts. All 139 Node and Chromium suites were rerun for this
-checkpoint and passed; all 138 inherited result objects remain unchanged.
+16,852 pinned artifacts. All 140 Node and Chromium suites were rerun for this
+checkpoint and passed; all 139 inherited result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -58,7 +58,22 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers nine profile and score-history queries
+- The latest experimental build recovers full StartGap, secondary trick
+  registration and checking, concrete gap nodes, owned strings and list cleanup.
+  Fifteen complete routines match the original-instruction oracle in 396 cases /
+  984 calls. Four commands are connected through the actual component descriptor;
+  the dispatcher remains partial and does not earn a recovered-routine count.
+  EndGap and linked-node trigger dispatch are still unavailable. All 140 Node and
+  Chromium suites pass; all 139 earlier results are unchanged. Coverage is
+  810 / 813 instructions, with two platform heap-initialization calls and one
+  allocation-failure branch unexercised, without exclusions or numeric allowances.
+  Signaling-NaN payloads match the emulator; physical x87 behavior for those
+  encodings has not been established. Evidence is in
+  `local/analysis/gap-start-checkpoint.json`; the module contains 698 unpromoted
+  complete routines. Tests use initialized graphs with an explicit score-state
+  link. Skater construction still stops before Trigger; remaining behavior,
+  camera, rendering and playable training remain unfinished.
+- The preceding experimental build recovers nine profile and score-history queries
   needed by gap start and end commands. Named tricks, profile bindings, created
   tricks, repeated taps, spin checks and trailing-match subtraction match the
   original in 498 cases / 1,408 calls. All returns, arena bytes, globals and
