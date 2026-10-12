@@ -100,6 +100,7 @@ local/analysis/audit-walk-air-motion.py
 local/analysis/audit-walk-air-transitions.py
 local/analysis/audit-walk-animation.py
 local/analysis/audit-walk-common.py
+local/analysis/audit-walk-component.py
 local/analysis/audit-walk-floor.py
 local/analysis/audit-walk-frame-speed.py
 local/analysis/audit-walk-grab.py
@@ -222,6 +223,7 @@ local/analysis/build-walk-animation-draft.py
 local/analysis/build-walk-camera-draft.py
 local/analysis/build-walk-common-draft.py
 local/analysis/build-walk-complete-update-draft.py
+local/analysis/build-walk-component-frame-draft.py
 local/analysis/build-walk-critical-draft.py
 local/analysis/build-walk-exit-floor-draft.py
 local/analysis/build-walk-floor-draft.py
@@ -645,6 +647,7 @@ local/analysis/pin-walk-air-motion.py
 local/analysis/pin-walk-air-transitions.py
 local/analysis/pin-walk-animation.py
 local/analysis/pin-walk-common.py
+local/analysis/pin-walk-component.py
 local/analysis/pin-walk-floor.py
 local/analysis/pin-walk-frame-speed.py
 local/analysis/pin-walk-grab.py
@@ -809,6 +812,7 @@ local/analysis/probe-walk-animation.py
 local/analysis/probe-walk-camera.py
 local/analysis/probe-walk-common.py
 local/analysis/probe-walk-complete-update.py
+local/analysis/probe-walk-component-frame.py
 local/analysis/probe-walk-critical.py
 local/analysis/probe-walk-exit-floor.py
 local/analysis/probe-walk-floor.py
@@ -1050,6 +1054,7 @@ local/analysis/serve-walk-air-motion.py
 local/analysis/serve-walk-air-transitions.py
 local/analysis/serve-walk-animation.py
 local/analysis/serve-walk-common.py
+local/analysis/serve-walk-component.py
 local/analysis/serve-walk-floor.py
 local/analysis/serve-walk-frame-speed.py
 local/analysis/serve-walk-grab.py
@@ -1406,6 +1411,9 @@ local/analysis/verify-walk-animation-checkpoint.mjs
 local/analysis/verify-walk-camera-checkpoint.mjs
 local/analysis/verify-walk-common-checkpoint.mjs
 local/analysis/verify-walk-complete-update-unit.mjs
+local/analysis/verify-walk-component-checkpoint.mjs
+local/analysis/verify-walk-component-frame-unit.mjs
+local/analysis/verify-walk-component-negative.mjs
 local/analysis/verify-walk-critical-checkpoint.mjs
 local/analysis/verify-walk-exit-floor-unit.mjs
 local/analysis/verify-walk-floor-checkpoint.mjs
@@ -1515,6 +1523,10 @@ local/analysis/walk-complete-update-draft.build.json
 local/analysis/walk-complete-update-draft.c
 local/analysis/walk-complete-update-extents.py
 local/analysis/walk-complete-update-routines.json
+local/analysis/walk-component-browser.html
+local/analysis/walk-component-frame-draft.build.json
+local/analysis/walk-component-frame-draft.c
+local/analysis/walk-component-worker.mjs
 local/analysis/walk-critical-diagnostics.build.json
 local/analysis/walk-critical-diagnostics.c
 local/analysis/walk-critical-draft.build.json

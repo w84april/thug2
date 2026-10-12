@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-21,648 pinned artifacts, preserving all 21,394 preceding artifacts. All 184 Node
-and Chromium suites were rerun for this checkpoint and passed; all 179 inherited
+21,854 pinned artifacts, preserving all 21,648 preceding artifacts. All 185 Node
+and Chromium suites were rerun for this checkpoint and passed; all 184 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,6 +59,23 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
+- The walking component now calls the complete dispatcher through the original
+  object update loop. All 168 cases and 797 original calls match, including
+  571 object updates, 492 walking frames and 27 real script callbacks. Tests
+  cover suspension, component order, scripts that change traversal, and eight
+  climb completions inside the owner loop. Five cases construct, attach,
+  initialize and bind Walk before running frames. Both existing routines
+  exercise all 183 instructions; this integration adds no routine count.
+  The preceding module fails the first new integration case at its preserved
+  partial entry. All 185 Node and Chromium suites pass, preserving all 184
+  earlier results, with no numeric allowances or checker changes. The 283
+  probe-word and 762 existing network-padding byte comparisons retain
+  original-write provenance. Evidence is in
+  `local/analysis/walk-component-checkpoint.json`. Other component frames are
+  suspended in these integration fixtures. Full skater construction still stops
+  before the local networking component; startup, rendering and playable
+  training remain unfinished.
+
 - Hanging now connects to the complete five-state walking dispatcher, including
   sideways traversal, corners, blocked movement, dropping and climbing out.
   Ten complete routines match across 888 cases and 2,127 original calls,
@@ -71,9 +88,9 @@ new verified work; unchanged or unfinished work does not create an empty commit.
   existing network-padding byte comparisons retain original-write provenance.
   All 184 Node and Chromium suites pass, preserving all 179 earlier result
   objects. Evidence is in `local/analysis/walk-hanging-checkpoint.json`; the
-  latest module contains 853 unpromoted routines. Startup still uses the
-  preserved partial walking entry. Connecting that entry, completing engine
-  startup and rendering, and playable training remain unfinished.
+  module contains 853 unpromoted routines. At that checkpoint, startup still
+  used the partial walking entry; the component integration above connects it.
+  Full engine startup, rendering and playable training remain unfinished.
 
 - Rail climbing now connects to the shared movement loop, exit animations and
   the actual script commands that finish those animations. Eight complete
