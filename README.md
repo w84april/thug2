@@ -12,13 +12,14 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.06% of original `.text` bytes** —
-428,910 / 2,375,378 bytes attributed to 1,997 distinct original addresses with
+**Reconciled behavioral completion: 18.15% of original `.text` bytes** —
+431,045 / 2,375,378 bytes attributed to 2,013 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 33 newly verified LocalNet, EndRun, BalanceTrick and
-SkaterLoopingSound lifecycle/flag routines. It does not measure playability. See
+reconciled baseline with 49 newly reconciled startup/lifecycle addresses.
+Shared original routines and C aliases receive no additional credit. It does
+not measure playability. See
 [reporting policy and verification](progress/README.md),
 [address ledger](progress/ledger.json) and [objdiff report](progress/report.json).
 
@@ -39,7 +40,7 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 193 suites; all 191 preceding
+checkpoint preserves all prior evidence and passes 195 suites; all 193 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
@@ -75,6 +76,21 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
+- Both original skater constructor branches now reach the tag/sticker texture
+  component. Nine more component types have checked startup, including
+  StatsManager and StateHistory. Across 367 cases and 733 completed calls,
+  607 reachable instructions and 455 native diagnostic callbacks compare
+  exactly. One unreachable three-byte alignment self-LEA is documented.
+  Wrong retained-flag and cached-difficulty controls are rejected. The 17
+  checked mappings contain 16 new addresses and shared initializer `4fbda0`,
+  which receives no additional credit; they add 2,135 original body bytes.
+  The eight-case ID initializer's 98-byte verified span receives only 21 bytes
+  of Ghidra body credit. All 195 Node/actual Chromium suites pass and all 193
+  earlier result objects are unchanged. Constructor `582d90` reaches 424/463
+  instructions across 80 interrupted local/remote calls and remains uncredited.
+  Texture cloning, remaining component lifecycle/frame paths, asset integration,
+  rendering and a playable level remain unfinished.
+
 - SkaterLoopingSound lifecycle and its voice-stop wrapper now pass 121 original/Wasm
   comparison cases and 291 completed calls, including 42 native stop callbacks
   that test mutation and clear-after-callback order. Eight complete routines
@@ -84,7 +100,7 @@ of verified checkpoints is authorized in the current recovery chat.
   Existing voice lookup, device stop and volume initialization receive no new
   address credit. These eight addresses add 549 original body bytes; all 33
   recently reconciled routines add 1,861 bytes. The skater constructor advances
-  to 309/463 instructions and stops before component `1859f772`; it remains
+  at that checkpoint to 309/463 instructions and stops before component `1859f772`; it remains
   partial and earns no completion credit. Component frame/command paths, actual
   audio output, later startup, rendering and the playable level remain unfinished.
 

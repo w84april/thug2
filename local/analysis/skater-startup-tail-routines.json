@@ -1,0 +1,87 @@
+{
+  "0x5147f0": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_nonlocal_net_create_draft"
+  },
+  "0x5144e0": {
+    "bytes": 110,
+    "instructions": 28,
+    "name": "thug_nonlocal_net_construct_draft"
+  },
+  "0x511810": {
+    "bytes": 87,
+    "instructions": 26,
+    "name": "thug_component_125044e2_create_draft"
+  },
+  "0x51ad30": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_state_history_create_draft"
+  },
+  "0x51acb0": {
+    "bytes": 121,
+    "instructions": 41,
+    "name": "thug_state_history_construct_draft"
+  },
+  "0x511470": {
+    "bytes": 117,
+    "instructions": 38,
+    "name": "thug_component_488af07a_create_draft"
+  },
+  "0x5185d0": {
+    "bytes": 87,
+    "instructions": 26,
+    "name": "thug_component_8bce7e66_create_draft"
+  },
+  "0x51b880": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_component_1859f772_create_draft"
+  },
+  "0x51add0": {
+    "bytes": 95,
+    "instructions": 22,
+    "name": "thug_component_1859f772_construct_draft"
+  },
+  "0x51e280": {
+    "bytes": 115,
+    "instructions": 33,
+    "name": "thug_component_380d909a_create_draft"
+  },
+  "0x427ab0": {
+    "bytes": 121,
+    "instructions": 33,
+    "name": "thug_component_408d2aa9_create_draft"
+  },
+  "0x51cb90": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_stats_manager_create_draft"
+  },
+  "0x51c5a0": {
+    "bytes": 153,
+    "instructions": 30,
+    "name": "thug_stats_manager_construct_draft"
+  },
+  "0x511780": {
+    "bytes": 98,
+    "instructions": 21,
+    "name": "thug_component_125044e2_initialize_draft"
+  },
+  "0x4fbda0": {
+    "bytes": 10,
+    "instructions": 2,
+    "name": "thug_component_8bce7e66_initialize_draft"
+  },
+  "0x51ae60": {
+    "bytes": 21,
+    "instructions": 5,
+    "name": "thug_component_1859f772_initialize_draft"
+  },
+  "0x51c670": {
+    "bytes": 734,
+    "instructions": 207,
+    "name": "thug_stats_manager_initialize_draft"
+  }
+}

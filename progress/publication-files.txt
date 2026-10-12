@@ -87,6 +87,7 @@ local/analysis/audit-skater-looping-sound-startup.py
 local/analysis/audit-skater-matrix.py
 local/analysis/audit-skater-rotate.py
 local/analysis/audit-skater-score.py
+local/analysis/audit-skater-startup-tail.py
 local/analysis/audit-skater-trick.py
 local/analysis/audit-skater-walk.py
 local/analysis/audit-sphere-contact.py
@@ -205,6 +206,9 @@ local/analysis/build-skater-looping-sound-startup.py
 local/analysis/build-skater-matrix-draft.py
 local/analysis/build-skater-rotate-draft.py
 local/analysis/build-skater-score-draft.py
+local/analysis/build-skater-startup-tail-negative.py
+local/analysis/build-skater-startup-tail-parent.py
+local/analysis/build-skater-startup-tail.py
 local/analysis/build-skater-trick-draft.py
 local/analysis/build-skater-walk-draft.py
 local/analysis/build-skeleton-asset-draft.py
@@ -645,6 +649,7 @@ local/analysis/pin-skater-looping-sound-startup.py
 local/analysis/pin-skater-matrix.py
 local/analysis/pin-skater-rotate.py
 local/analysis/pin-skater-score.py
+local/analysis/pin-skater-startup-tail.py
 local/analysis/pin-skater-trick.py
 local/analysis/pin-skater-walk.py
 local/analysis/pin-skeleton-asset.py
@@ -777,6 +782,8 @@ local/analysis/probe-skater-matrix.py
 local/analysis/probe-skater-rotate.py
 local/analysis/probe-skater-score-assets.py
 local/analysis/probe-skater-score.py
+local/analysis/probe-skater-startup-tail-parent.py
+local/analysis/probe-skater-startup-tail.py
 local/analysis/probe-skater-trick.py
 local/analysis/probe-skater-walk.py
 local/analysis/probe-skeleton-asset.py
@@ -1066,6 +1073,7 @@ local/analysis/serve-skater-looping-sound.py
 local/analysis/serve-skater-matrix.py
 local/analysis/serve-skater-rotate.py
 local/analysis/serve-skater-score.py
+local/analysis/serve-skater-startup-tail.py
 local/analysis/serve-skater-trick.py
 local/analysis/serve-skater-walk.py
 local/analysis/serve-skeleton-asset.py
@@ -1200,6 +1208,15 @@ local/analysis/skater-score-constructor-prefix.c
 local/analysis/skater-score-draft.build.json
 local/analysis/skater-score-draft.c
 local/analysis/skater-score-worker.mjs
+local/analysis/skater-startup-tail-browser.html
+local/analysis/skater-startup-tail-constructor-prefix.c
+local/analysis/skater-startup-tail-diagnostic-fixture.c
+local/analysis/skater-startup-tail-draft.build.json
+local/analysis/skater-startup-tail-draft.c
+local/analysis/skater-startup-tail-extents.py
+local/analysis/skater-startup-tail-parent-draft.build.json
+local/analysis/skater-startup-tail-routines.json
+local/analysis/skater-startup-tail-worker.mjs
 local/analysis/skater-trick-browser.html
 local/analysis/skater-trick-constructor-prefix.c
 local/analysis/skater-trick-draft.build.json
@@ -1463,6 +1480,10 @@ local/analysis/verify-skater-looping-sound-startup.mjs
 local/analysis/verify-skater-matrix-checkpoint.mjs
 local/analysis/verify-skater-rotate-checkpoint.mjs
 local/analysis/verify-skater-score-checkpoint.mjs
+local/analysis/verify-skater-startup-tail-negative.mjs
+local/analysis/verify-skater-startup-tail-parent.mjs
+local/analysis/verify-skater-startup-tail-regression.mjs
+local/analysis/verify-skater-startup-tail.mjs
 local/analysis/verify-skater-trick-checkpoint.mjs
 local/analysis/verify-skater-walk-checkpoint.mjs
 local/analysis/verify-skeleton-asset-checkpoint.mjs

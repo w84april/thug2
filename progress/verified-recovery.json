@@ -1,16 +1,16 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "33 complete original LocalNet/EndRun/BalanceTrick/SkaterLoopingSound routines add1861 body bytes. Shared routines and adapters receive no additional address credit. Constructor582d90 remains309/463 partial and uncredited. All193 Node/actual Chromium suites pass and all191 predecessor results remain unchanged. Original executable/assets/raw fixtures/compiled modules remain private.",
+  "scope": "49 newly reconciled distinct original addresses add3996 body bytes beyond the original reporting baseline. The latest17 checked mappings contain16 new original addresses (2135 body bytes) and shared4fbda0 (zero additional credit). 367 cases/733 calls and455 diagnostics pass; two wrong controls are rejected. All195 Node/actual Chromium suites pass and all193 prior result objects are unchanged. Constructor582d90 remains424/463 partial across80 interrupted calls and receives zero completion credit. Original executable/assets/raw fixtures/compiled modules remain private.",
   "updates": [
     {
       "checkpoint": {
-        "path": "local/analysis/skater-looping-sound-startup-checkpoint.json",
-        "sha256": "04d3ca79ae3a694a4e61eb9d80d56e41eef69b31ee6cffa3ebb4941bb2d674b4"
+        "path": "local/analysis/skater-startup-tail-checkpoint.json",
+        "sha256": "d0f1582b51698813701109db92a1cba04ac82e9c80285f6e79a1f661911ae1cf"
       },
       "audit": {
-        "path": "local/analysis/skater-looping-sound-startup-audit.json",
-        "sha256": "ec7890623f56f3d9a04c3c9e7e2ff67c12caabdfda92c03235e4e17bc7929d88"
+        "path": "local/analysis/skater-startup-tail-audit.json",
+        "sha256": "4ad967740ee0c49a81d6a904a4b6bd358e6293a1330b4d82fe953245bbb40dce"
       },
       "discovery_exports": [
         {
@@ -24,6 +24,10 @@
         {
           "path": "local/analysis/skater-looping-sound-extra-ranges.tsv",
           "sha256": "d70a86b6d3ce086927a813abed1e8b9d3ee8e930a75612b758ef79cdafe4c695"
+        },
+        {
+          "path": "local/analysis/skater-startup-tail-extra-ranges.tsv",
+          "sha256": "899be2b9b422136ddbd5798f41c29fbd48ead8df063a055569de774ad4106e80"
         }
       ],
       "suites": [
@@ -46,12 +50,12 @@
             "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
           },
           "node": {
-            "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
+            "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
             "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
           },
           "browser": {
-            "path": "local/analysis/skater-looping-sound-browser.json",
-            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-local-net.py",
@@ -77,12 +81,12 @@
             "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
           },
           "node": {
-            "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
+            "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
             "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
           },
           "browser": {
-            "path": "local/analysis/skater-looping-sound-browser.json",
-            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-end-run-lifecycle.py",
@@ -108,12 +112,12 @@
             "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
           },
           "node": {
-            "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
+            "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
             "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
           },
           "browser": {
-            "path": "local/analysis/skater-looping-sound-browser.json",
-            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-balance-lifecycle.py",
@@ -139,12 +143,12 @@
             "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
           },
           "node": {
-            "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+            "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
             "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
           },
           "browser": {
-            "path": "local/analysis/skater-looping-sound-browser.json",
-            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
@@ -170,19 +174,56 @@
             "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
           },
           "node": {
-            "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+            "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
             "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
           },
           "browser": {
-            "path": "local/analysis/skater-looping-sound-browser.json",
-            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
             "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
           }
+        },
+        {
+          "name": "skater_startup_tail",
+          "source": {
+            "path": "local/analysis/skater-startup-tail-draft.c",
+            "sha256": "8485aae2aacc289116848442f560aa00e67ec3892a15b66a52a23439113e4e57"
+          },
+          "routines": {
+            "path": "local/analysis/skater-startup-tail-routines.json",
+            "sha256": "3268ff7d22f0591d6293762ce0b38e6ba23dda5d294f75f936e7fdd738c7b430"
+          },
+          "original": {
+            "path": "local/analysis/skater-startup-tail-original.json",
+            "sha256": "a11821c3153daab163eefc3c3d95dfd89d6acee8835de3a70876a826c1595123"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-startup-tail-fixtures.json",
+            "sha256": "3e6a4bf30d97950d2eb0524b17333c92d462b676954dc4c4bfffb2c5f1c163b0"
+          },
+          "node": {
+            "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+            "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
+          },
+          "browser": {
+            "path": "local/analysis/skater-startup-tail-browser.json",
+            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-startup-tail.py",
+            "sha256": "54ea4717d344f40bef7d9d2f19388799f6638fe6291465ae06620e582b13e6cd"
+          }
         }
       ]
     }
-  ]
+  ],
+  "duplicate_accounting": {
+    "address": "0x004fbda0",
+    "existing_name": "thug_skater_cleanup_initialize_draft",
+    "additional_name": "thug_component_8bce7e66_initialize_draft",
+    "additional_credit": 0
+  }
 }
