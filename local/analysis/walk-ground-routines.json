@@ -1,0 +1,37 @@
+{
+  "0x52a620": {
+    "bytes": 215,
+    "instructions": 78,
+    "name": "thug_walk_follow_platform_draft"
+  },
+  "0x5277b0": {
+    "bytes": 281,
+    "instructions": 80,
+    "name": "thug_walk_prepare_cache_draft"
+  },
+  "0x526260": {
+    "bytes": 464,
+    "instructions": 147,
+    "name": "thug_walk_face_velocity_draft"
+  },
+  "0x528120": {
+    "bytes": 253,
+    "instructions": 73,
+    "name": "thug_walk_target_speed_draft"
+  },
+  "0x526430": {
+    "bytes": 191,
+    "instructions": 55,
+    "name": "thug_walk_slope_speed_draft"
+  },
+  "0x528950": {
+    "bytes": 2058,
+    "instructions": 596,
+    "name": "thug_walk_accelerate_draft"
+  },
+  "0x5264f0": {
+    "bytes": 857,
+    "instructions": 230,
+    "name": "thug_walk_step_height_draft"
+  }
+}

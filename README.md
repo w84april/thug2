@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.65%** — 1,937 reported recovered routines divided
+**Decompilation estimate: 16.71%** — 1,944 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 781 experimental routines: 764 in the latest
+routines (9.93% of that baseline) and 788 experimental routines: 771 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-18,047 pinned artifacts, preserving all 17,870 preceding artifacts. All 147 Node
-and Chromium suites were rerun for this checkpoint and passed; all 146 inherited
+18,220 pinned artifacts, preserving all 18,047 preceding artifacts. All 148 Node
+and Chromium suites were rerun for this checkpoint and passed; all 147 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,25 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers eleven Walk routines: construction,
+- The latest experimental build recovers seven Walk ground helpers: platform
+  motion, collision-cache preparation, velocity-facing interpolation, analog
+  target speed, slope attenuation, acceleration/steering and two-probe step
+  height. Real static and moving geometry, reference cleanup and QB/math helpers
+  execute in 485 cases and 953 calls: 941 complete and 12 explicitly interrupted
+  ground-parent calls. Coverage is 1,249 / 1,259 instructions; ten unexercised
+  instructions have documented unreachable-path proofs under the initialized,
+  single-threaded graph contracts. Their defensive paths remain implemented.
+  The suite adds no numeric masks, NaN classification, quieting or uninitialized
+  byte allowances. All 148 Node and Chromium suites pass, with all 147 earlier
+  result objects unchanged. Evidence is in
+  `local/analysis/walk-ground-checkpoint.json`; this module contains 771
+  unpromoted complete routines. The ground parent reaches 18 / 134 instructions,
+  running platform motion, cache preparation and acceleration in the original
+  order before stopping at transition handler `52c2c0`. The parent is not counted
+  as recovered. Constructor coverage remains 277 / 463 and shared Walk frame
+  coverage remains 51 / 142. Ground transitions, other movement states, remaining
+  startup, rendering and original playable training remain unfinished.
+- The preceding experimental build recovers eleven Walk routines: construction,
   disposal, camera initialization, dependency binding, camera-relative input,
   owner orientation and score-dependent decay. The shared component builder
   creates, links and disposes Walk; skater construction now proceeds through it
