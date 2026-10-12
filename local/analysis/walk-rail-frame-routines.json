@@ -1,0 +1,37 @@
+{
+  "0x441020": {
+    "bytes": 75,
+    "instructions": 22,
+    "name": "thug_walk_rail_bottom_finish_draft"
+  },
+  "0x441070": {
+    "bytes": 75,
+    "instructions": 22,
+    "name": "thug_walk_rail_top_finish_draft"
+  },
+  "0x441860": {
+    "bytes": 79,
+    "instructions": 23,
+    "name": "thug_walk_rail_air_finish_draft"
+  },
+  "0x441680": {
+    "bytes": 466,
+    "instructions": 126,
+    "name": "thug_walk_rail_bottom_exit_draft"
+  },
+  "0x441b80": {
+    "bytes": 601,
+    "instructions": 153,
+    "name": "thug_walk_rail_top_exit_draft"
+  },
+  "0x442280": {
+    "bytes": 806,
+    "instructions": 236,
+    "name": "thug_walk_rail_climb_draft"
+  },
+  "0x4425b0": {
+    "bytes": 178,
+    "instructions": 53,
+    "name": "thug_walk_rail_frame_draft"
+  }
+}

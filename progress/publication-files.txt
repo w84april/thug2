@@ -107,6 +107,7 @@ local/analysis/audit-walk-ground-frame.py
 local/analysis/audit-walk-ground.py
 local/analysis/audit-walk-grounded.py
 local/analysis/audit-walk-ledge.py
+local/analysis/audit-walk-rail-climb.py
 local/analysis/audit-walk-speed.py
 local/analysis/audit-walk-tail.py
 local/analysis/audit-walk-transition.py
@@ -220,6 +221,7 @@ local/analysis/build-walk-animation-draft.py
 local/analysis/build-walk-camera-draft.py
 local/analysis/build-walk-common-draft.py
 local/analysis/build-walk-critical-draft.py
+local/analysis/build-walk-exit-floor-draft.py
 local/analysis/build-walk-floor-draft.py
 local/analysis/build-walk-frame-speed-draft.py
 local/analysis/build-walk-grab-draft.py
@@ -228,6 +230,8 @@ local/analysis/build-walk-ground-frame-draft.py
 local/analysis/build-walk-ground-validation-draft.py
 local/analysis/build-walk-grounded-draft.py
 local/analysis/build-walk-ledge-draft.py
+local/analysis/build-walk-rail-frame-draft.py
+local/analysis/build-walk-rail-update-draft.py
 local/analysis/build-walk-speed-draft.py
 local/analysis/build-walk-tail-draft.py
 local/analysis/build-walk-transfer-draft.py
@@ -642,6 +646,7 @@ local/analysis/pin-walk-ground-frame.py
 local/analysis/pin-walk-ground.py
 local/analysis/pin-walk-grounded.py
 local/analysis/pin-walk-ledge.py
+local/analysis/pin-walk-rail-climb.py
 local/analysis/pin-walk-speed.py
 local/analysis/pin-walk-tail.py
 local/analysis/pin-walk-transition.py
@@ -797,6 +802,7 @@ local/analysis/probe-walk-animation.py
 local/analysis/probe-walk-camera.py
 local/analysis/probe-walk-common.py
 local/analysis/probe-walk-critical.py
+local/analysis/probe-walk-exit-floor.py
 local/analysis/probe-walk-floor.py
 local/analysis/probe-walk-frame-speed-flow.py
 local/analysis/probe-walk-frame-speed.py
@@ -806,6 +812,8 @@ local/analysis/probe-walk-ground-validation.py
 local/analysis/probe-walk-ground.py
 local/analysis/probe-walk-grounded.py
 local/analysis/probe-walk-ledge.py
+local/analysis/probe-walk-rail-frame.py
+local/analysis/probe-walk-rail-update.py
 local/analysis/probe-walk-speed-parent.py
 local/analysis/probe-walk-speed.py
 local/analysis/probe-walk-tail.py
@@ -1037,6 +1045,7 @@ local/analysis/serve-walk-ground-frame.py
 local/analysis/serve-walk-ground.py
 local/analysis/serve-walk-grounded.py
 local/analysis/serve-walk-ledge.py
+local/analysis/serve-walk-rail-climb.py
 local/analysis/serve-walk-speed.py
 local/analysis/serve-walk-tail.py
 local/analysis/serve-walk-transition.py
@@ -1384,6 +1393,7 @@ local/analysis/verify-walk-animation-checkpoint.mjs
 local/analysis/verify-walk-camera-checkpoint.mjs
 local/analysis/verify-walk-common-checkpoint.mjs
 local/analysis/verify-walk-critical-checkpoint.mjs
+local/analysis/verify-walk-exit-floor-unit.mjs
 local/analysis/verify-walk-floor-checkpoint.mjs
 local/analysis/verify-walk-frame-speed-checkpoint.mjs
 local/analysis/verify-walk-frame-speed-unit.mjs
@@ -1394,6 +1404,9 @@ local/analysis/verify-walk-ground-frame-unit.mjs
 local/analysis/verify-walk-ground-validation-unit.mjs
 local/analysis/verify-walk-grounded-checkpoint.mjs
 local/analysis/verify-walk-ledge-checkpoint.mjs
+local/analysis/verify-walk-rail-climb-checkpoint.mjs
+local/analysis/verify-walk-rail-frame-unit.mjs
+local/analysis/verify-walk-rail-update-unit.mjs
 local/analysis/verify-walk-speed-checkpoint.mjs
 local/analysis/verify-walk-tail-checkpoint.mjs
 local/analysis/verify-walk-transfer-unit.mjs
@@ -1465,6 +1478,7 @@ local/analysis/walk-animation-component-derived.c
 local/analysis/walk-animation-draft.build.json
 local/analysis/walk-animation-draft.c
 local/analysis/walk-animation-extents.py
+local/analysis/walk-animation-rail-draft.c
 local/analysis/walk-animation-routines.json
 local/analysis/walk-animation-worker.mjs
 local/analysis/walk-camera-draft.build.json
@@ -1483,6 +1497,10 @@ local/analysis/walk-critical-draft.build.json
 local/analysis/walk-critical-draft.c
 local/analysis/walk-critical-extents.py
 local/analysis/walk-critical-routines.json
+local/analysis/walk-exit-floor-draft.build.json
+local/analysis/walk-exit-floor-draft.c
+local/analysis/walk-exit-floor-extents.py
+local/analysis/walk-exit-floor-routines.json
 local/analysis/walk-floor-browser.html
 local/analysis/walk-floor-diagnostics.build.json
 local/analysis/walk-floor-diagnostics.c
@@ -1538,6 +1556,14 @@ local/analysis/walk-ledge-draft.c
 local/analysis/walk-ledge-extents.py
 local/analysis/walk-ledge-routines.json
 local/analysis/walk-ledge-worker.mjs
+local/analysis/walk-rail-climb-browser.html
+local/analysis/walk-rail-climb-worker.mjs
+local/analysis/walk-rail-frame-draft.build.json
+local/analysis/walk-rail-frame-draft.c
+local/analysis/walk-rail-frame-extents.py
+local/analysis/walk-rail-frame-routines.json
+local/analysis/walk-rail-update-draft.build.json
+local/analysis/walk-rail-update-draft.c
 local/analysis/walk-speed-browser.html
 local/analysis/walk-speed-checks.mjs
 local/analysis/walk-speed-draft.build.json

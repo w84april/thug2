@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.26%** — 2,008 reported recovered routines divided
+**Decompilation estimate: 17.32%** — 2,016 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 852 experimental routines: 835 in the latest
+routines (9.93% of that baseline) and 860 experimental routines: 843 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-21,172 pinned artifacts, preserving all 20,966 preceding artifacts. All 176 Node
-and Chromium suites were rerun for this checkpoint and passed; all 174 inherited
+21,394 pinned artifacts, preserving all 21,172 preceding artifacts. All 179 Node
+and Chromium suites were rerun for this checkpoint and passed; all 176 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -58,6 +58,22 @@ The requested schedule checks approximately every 20 minutes and publishes only
 new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
+
+- Rail climbing now connects to the shared movement loop, exit animations and
+  the actual script commands that finish those animations. Eight complete
+  routines recover the exit-floor query, lower/upper exits, ground/air completion
+  callbacks, climbing and the rail frame. All 369 cases and 1,286 original calls
+  complete and match, including 48 real script callbacks and eight connected exit
+  sequences. Coverage exercises all 716 instructions without exclusions. Four
+  no-floor continuation cases preserve the original automatic rail re-entry.
+  The common loop exercises 133/142 instructions across 400 frames and remains
+  uncounted while hanging is unfinished. No numeric allowances or checker changes
+  are added; 177 probe-word and 324 existing network-padding byte comparisons
+  retain original-write provenance. All 179 Node and Chromium suites pass,
+  preserving all 176 earlier result objects. Evidence is in
+  `local/analysis/walk-rail-climb-checkpoint.json`; the latest module contains
+  843 unpromoted routines. Hanging, startup, rendering and playable training
+  remain unfinished.
 
 - The complete airborne walking update now connects to the shared movement loop.
   Tests cover falls, landings, continued ground movement, ramp transfers,
