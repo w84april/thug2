@@ -179,6 +179,26 @@ matched code. The site labels completion
 “fully linked” and matching “decompiled”; neither label establishes a playable
 browser engine. A later upload still needs its own artifact verification.
 
+A separate [rendering integration record](rendering-preview.json) preserves the
+first private Chromium frame of the original training geometry. Its new WebGL
+adapter draws the preserved Wasm loaders' 2,269 meshes and 2,486 original texture
+mips; all 7,024 vertex/index/mip storage payloads compare to original references.
+Actual orbit, zoom and reset controls pass. The 200 original/Wasm parity suites
+remain the engine checkpoint count; this preview adds no completed functions,
+bytes or native matches. Its isolated raw-input arena and comparison storage
+remain private bootstrap dependencies. First-pass drawing does not establish
+original visibility, sorting, blending, lighting, animations or frame equivalence.
+Full scene/sector/skater startup and playable gameplay remain unfinished.
+
+The preview can be reopened in the existing private workspace with
+`python3 local/analysis/serve-training-webgl-v1.py`; use the printed loopback URL.
+Its source is published; raw assets, binaries, snapshots and screenshots remain
+private. The public source-only reporting check does not reproduce the preview.
+The adapter follows [Direct3D vertex layout](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dfvf),
+[triangle strips](https://learn.microsoft.com/en-us/windows/win32/direct3d9/triangle-strips)
+and [WebGL S3TC upload formats](https://registry.khronos.org/webgl/extensions/WEBGL_compressed_texture_s3tc/);
+those platform mappings receive no original-function credit.
+
 The latest audited startup checkpoint and its selected complete routine maps are
 recorded in [verified-recovery.json](verified-recovery.json). It preserves 200
 passing Node/actual Chromium suites and 87 newly reconciled distinct addresses.

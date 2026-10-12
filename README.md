@@ -80,6 +80,15 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
+- The original training level now renders in a private Chromium geometry preview
+  through the preserved Wasm mesh/texture/material loaders and a new WebGL adapter.
+  All 2,269 meshes, 596 textures and 2,486 mip uploads draw; 7,024 storage payloads
+  match the original references, and orbit/zoom/reset controls are verified.
+  This uses the isolated raw-input arena and comparison device storage, the first
+  material pass and strip zero. Original render states, full startup and skater
+  gameplay remain unfinished. It adds **zero recovery or matching credit** and
+  requires private assets. See [the rendering record](progress/rendering-preview.json).
+
 - Thirteen camera dependencies now pass 97 original/Wasm cases and 271 completed
   calls, exercising all 276 instructions and adding 988 original body bytes.
   Camera object/component storage and cleanup, projection setup, raw owner-state

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "result": "private original-level geometry preview verified in actual Chromium",
+  "playable": false,
+  "complete_engine_parity_suites": 200,
+  "checkpoint": {
+    "path": "local/analysis/training-webgl-v1-checkpoint.json",
+    "sha256": "79107e8f4a0734e54d7749331a05d9c7ed49c35a37423211dfe014448d98d4d8"
+  },
+  "audit": {
+    "path": "local/analysis/training-webgl-v1-audit.json",
+    "sha256": "18354b56ec680391b9b1f06156f34dccb3e7c04e1adeaa6c34a9b91b1cab68ea"
+  },
+  "preserved_artifacts": 24008,
+  "pinned_artifacts": 24039,
+  "loader_calls": 4540,
+  "meshes": 2269,
+  "vertices": 50814,
+  "indices": 77029,
+  "textures": 596,
+  "materials": 870,
+  "mips": 2486,
+  "original_storage_buffers_equal": 7024,
+  "original_storage_sha256": "e6d9940dcc4b1ac18c5776bdfe62a3fbea6def339af8b037dcfe4b90b4206423",
+  "actual_browser": {
+    "rendered": true,
+    "initial_center_pixel_colors": 579,
+    "zoom_center_pixel_colors": 572,
+    "orbit_center_pixel_colors": 696,
+    "reset_center_pixel_colors": 579,
+    "zoom_orbit_reset_verified": true
+  },
+  "completion_credit": {
+    "addresses": 0,
+    "code_bytes": 0,
+    "matched_bytes": 0
+  },
+  "source_files": {
+    "local/analysis/audit-training-webgl-v1.py": "7bed96abd4eb9f12091cff39f1276dbe9d79090030d9d65d88be6fb8ecd9d5ca",
+    "local/analysis/check-training-webgl-v1.mjs": "29492aa4a9c786ff1cf57b5ff2ca7e3288c87d812d9dd79c7f2764b507b40fa7",
+    "local/analysis/pin-training-webgl-v1.py": "ebfda4f8f773263591c2d487968f2d25690c65b41b8e54e7f1579679900b4129",
+    "local/analysis/prepare-training-webgl-v1-storage.py": "355504f10520e48444cdf7e44c695ab020325c0636d934420988a1785c0c370e",
+    "local/analysis/prepare-training-webgl-v1.py": "ceb9ad1c921760f9d861573b2da65ef244a33df3a887c992289628b9e79cb170",
+    "local/analysis/serve-training-webgl-v1.py": "d79e90dcd13790468680233f2dd381c02561bc654f8a1a057b2443e14de1a918",
+    "local/analysis/training-webgl-v1-load.mjs": "6e9cc0be199db2323587b57a2a88c2828c63a7924a6a3500e68fd0bce5c240c7",
+    "local/analysis/training-webgl-v1-render.mjs": "afa95ebe59a63349c8d0741e20fd74c5f12e9fb50d30eddfd5ad45fb74138e6c",
+    "local/analysis/training-webgl-v1.html": "1ab23e0622280cd7da01c6992cfc46a3cca21a6073270ee1550c73ac8bbf27e8"
+  },
+  "scope": "Raw serialized TR assets through preserved Wasm loaders and CPU/GPU comparison storage into a new WebGL adapter; isolated input-arena bootstrap, no full scene/sector/skater startup or original frame equivalence; zero additional recovery credit.",
+  "limitations": [
+    "Fixture-backed raw-input arena and SDK comparison storage are bootstrap dependencies; production file/device adapters and full scene/sector boot remain",
+    "First material pass and strip zero; original pass sorting, visibility, blending, culling, animations and render-state/frame equivalence unverified",
+    "Orbit controls are a new preview interface, not recovered skater gameplay",
+    "All proprietary raw assets, binaries, snapshots and screenshots remain private"
+  ],
+  "private_inputs_required": true,
+  "assets_and_output_snapshots_published": false
+}

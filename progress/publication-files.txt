@@ -99,6 +99,7 @@ local/analysis/audit-sphere-query.py
 local/analysis/audit-sphere-sweep.py
 local/analysis/audit-texture-asset.py
 local/analysis/audit-texture-buffer.py
+local/analysis/audit-training-webgl-v1.py
 local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-air-catch.py
@@ -277,6 +278,7 @@ local/analysis/check-input-pad-keyboard.mjs
 local/analysis/check-level-collision-component-graph.py
 local/analysis/check-level-collision-load-graph.py
 local/analysis/check-level-object-startup-graph.py
+local/analysis/check-training-webgl-v1.mjs
 local/analysis/check-walk-frame-boundaries.mjs
 local/analysis/check-walk-frame-speed-padding.mjs
 local/analysis/check-walk-ground-frame-animation.mjs
@@ -679,6 +681,7 @@ local/analysis/pin-texture-asset.py
 local/analysis/pin-texture-buffer.py
 local/analysis/pin-training-mode.py
 local/analysis/pin-training-startup.py
+local/analysis/pin-training-webgl-v1.py
 local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-air-catch.py
@@ -700,6 +703,8 @@ local/analysis/pin-walk-rail-climb.py
 local/analysis/pin-walk-speed.py
 local/analysis/pin-walk-tail.py
 local/analysis/pin-walk-transition.py
+local/analysis/prepare-training-webgl-v1-storage.py
+local/analysis/prepare-training-webgl-v1.py
 local/analysis/probe-asset-factory.py
 local/analysis/probe-asset-ready.py
 local/analysis/probe-camera-startup-v2.py
@@ -1111,6 +1116,7 @@ local/analysis/serve-texture-asset.py
 local/analysis/serve-texture-buffer.py
 local/analysis/serve-training-mode.py
 local/analysis/serve-training-startup.py
+local/analysis/serve-training-webgl-v1.py
 local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-air-catch.py
@@ -1419,6 +1425,9 @@ local/analysis/training-texture-ports-setup.py
 local/analysis/training-vertex-upload-boundary.build.json
 local/analysis/training-vertex-upload-boundary.c
 local/analysis/training-vertex-upload-ports.build.json
+local/analysis/training-webgl-v1-load.mjs
+local/analysis/training-webgl-v1-render.mjs
+local/analysis/training-webgl-v1.html
 local/analysis/trigger-browser.html
 local/analysis/trigger-callback.c
 local/analysis/trigger-constructor-prefix.c
