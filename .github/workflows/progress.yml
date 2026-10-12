@@ -1,0 +1,48 @@
+name: Verified recovery report
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CARGO_TARGET_DIR: local/build/progress-validator
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use the locally verified Rust toolchain
+        run: rustup toolchain install 1.97.0 --profile minimal
+      - name: Check public metadata and reproduce report
+        run: |
+          python3 tools/test_progress_report.py
+          python3 tools/generate_progress_report.py --check
+          python3 tools/generate_progress_report.py --output local/build/progress/report.json
+      - name: Validate with the pinned objdiff parser
+        run: |
+          cargo +1.97.0 run --locked --manifest-path tools/progress-validator/Cargo.toml -- local/build/progress/report.json
+          python3 tools/test_progress_report.py local/build/progress-validator/debug/thug2-progress-validator
+      - name: Upload only the public objdiff report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pc_report
+          path: local/build/progress/report.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Download the uploaded artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pc_report
+          path: local/build/progress-downloaded
+      - name: Verify downloaded contents and parser acceptance
+        run: |
+          cmp local/build/progress/report.json local/build/progress-downloaded/report.json
+          python3 tools/generate_progress_report.py --check --output local/build/progress-downloaded/report.json
+          cargo +1.97.0 run --locked --manifest-path tools/progress-validator/Cargo.toml -- local/build/progress-downloaded/report.json

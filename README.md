@@ -12,7 +12,16 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
+**Reconciled behavioral completion: 17.98% of original `.text` bytes** —
+427,049 / 2,375,378 bytes attributed to 1,964 distinct original addresses with
+linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
+The game is not playable. Unidentified code, jump tables and padding remain in
+the code denominator; data and assets are unmeasured. This reconciles existing
+evidence and does not represent newly recovered behavior or work toward a
+playable game. See [reporting policy and verification](progress/README.md),
+[address ledger](progress/ledger.json) and [objdiff report](progress/report.json).
+
+**Historical decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
 routines (9.93% of that baseline) and 870 experimental routines: 853 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
@@ -24,7 +33,7 @@ deduplicated address ledger. The initial function inventory is also incomplete.
 Do not interpret two decimal places as that level of measurement accuracy.
 Partial routines, test helpers and generated pseudocode do not earn new progress.
 
-The current machine-readable report is [progress/recovery.json](progress/recovery.json).
+The historical checkpoint bookkeeping is [progress/recovery.json](progress/recovery.json).
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all

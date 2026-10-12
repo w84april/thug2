@@ -1,0 +1,8 @@
+[package]
+name = "thug2-progress-validator"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+objdiff-core = { git = "https://github.com/encounter/objdiff", rev = "0c48d711c7bd51f791b353d7d85ba948b277e2f2", default-features = false, features = ["std", "bindings", "serde"] }
