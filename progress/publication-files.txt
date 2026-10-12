@@ -95,6 +95,7 @@ local/analysis/audit-texture-buffer.py
 local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-air-catch.py
+local/analysis/audit-walk-air-flight.py
 local/analysis/audit-walk-air-motion.py
 local/analysis/audit-walk-air-transitions.py
 local/analysis/audit-walk-animation.py
@@ -205,6 +206,7 @@ local/analysis/build-vertex-upload-draft.py
 local/analysis/build-vertex-upload-ports.py
 local/analysis/build-walk-air-ceiling-draft.py
 local/analysis/build-walk-air-contact-jump-draft.py
+local/analysis/build-walk-air-frame-draft.py
 local/analysis/build-walk-air-jump-clearance-draft.py
 local/analysis/build-walk-air-landing-draft.py
 local/analysis/build-walk-air-ledge-draft.py
@@ -212,6 +214,7 @@ local/analysis/build-walk-air-plane-draft.py
 local/analysis/build-walk-air-rail-draft.py
 local/analysis/build-walk-air-steering-draft.py
 local/analysis/build-walk-air-transfer-draft.py
+local/analysis/build-walk-air-update-draft.py
 local/analysis/build-walk-air-wallplant-draft.py
 local/analysis/build-walk-animation-draft.py
 local/analysis/build-walk-camera-draft.py
@@ -627,6 +630,7 @@ local/analysis/pin-training-startup.py
 local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-air-catch.py
+local/analysis/pin-walk-air-flight.py
 local/analysis/pin-walk-air-motion.py
 local/analysis/pin-walk-air-transitions.py
 local/analysis/pin-walk-animation.py
@@ -779,6 +783,7 @@ local/analysis/probe-trigger.py
 local/analysis/probe-vertex-upload.py
 local/analysis/probe-walk-air-ceiling.py
 local/analysis/probe-walk-air-contact-jump.py
+local/analysis/probe-walk-air-frame.py
 local/analysis/probe-walk-air-jump-clearance.py
 local/analysis/probe-walk-air-landing.py
 local/analysis/probe-walk-air-ledge.py
@@ -786,6 +791,7 @@ local/analysis/probe-walk-air-plane.py
 local/analysis/probe-walk-air-rail.py
 local/analysis/probe-walk-air-steering.py
 local/analysis/probe-walk-air-transfer.py
+local/analysis/probe-walk-air-update.py
 local/analysis/probe-walk-air-wallplant.py
 local/analysis/probe-walk-animation.py
 local/analysis/probe-walk-camera.py
@@ -1019,6 +1025,7 @@ local/analysis/serve-training-startup.py
 local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-air-catch.py
+local/analysis/serve-walk-air-flight.py
 local/analysis/serve-walk-air-motion.py
 local/analysis/serve-walk-air-transitions.py
 local/analysis/serve-walk-animation.py
@@ -1360,6 +1367,8 @@ local/analysis/verify-vertex-upload-checkpoint.mjs
 local/analysis/verify-walk-air-catch-checkpoint.mjs
 local/analysis/verify-walk-air-ceiling-unit.mjs
 local/analysis/verify-walk-air-contact-jump-unit.mjs
+local/analysis/verify-walk-air-flight-checkpoint.mjs
+local/analysis/verify-walk-air-frame-unit.mjs
 local/analysis/verify-walk-air-jump-clearance-unit.mjs
 local/analysis/verify-walk-air-landing-unit.mjs
 local/analysis/verify-walk-air-ledge-unit.mjs
@@ -1369,6 +1378,7 @@ local/analysis/verify-walk-air-rail-unit.mjs
 local/analysis/verify-walk-air-steering-unit.mjs
 local/analysis/verify-walk-air-transfer-unit.mjs
 local/analysis/verify-walk-air-transitions-checkpoint.mjs
+local/analysis/verify-walk-air-update-unit.mjs
 local/analysis/verify-walk-air-wallplant-unit.mjs
 local/analysis/verify-walk-animation-checkpoint.mjs
 local/analysis/verify-walk-camera-checkpoint.mjs
@@ -1406,6 +1416,12 @@ local/analysis/walk-air-contact-jump-draft.build.json
 local/analysis/walk-air-contact-jump-draft.c
 local/analysis/walk-air-contact-jump-extents.py
 local/analysis/walk-air-contact-jump-routines.json
+local/analysis/walk-air-flight-browser.html
+local/analysis/walk-air-flight-worker.mjs
+local/analysis/walk-air-frame-draft.build.json
+local/analysis/walk-air-frame-draft.c
+local/analysis/walk-air-frame-extents.py
+local/analysis/walk-air-frame-routines.json
 local/analysis/walk-air-jump-clearance-draft.build.json
 local/analysis/walk-air-jump-clearance-draft.c
 local/analysis/walk-air-jump-clearance-extents.py
@@ -1438,6 +1454,8 @@ local/analysis/walk-air-transfer-extents.py
 local/analysis/walk-air-transfer-routines.json
 local/analysis/walk-air-transitions-browser.html
 local/analysis/walk-air-transitions-worker.mjs
+local/analysis/walk-air-update-draft.build.json
+local/analysis/walk-air-update-draft.c
 local/analysis/walk-air-wallplant-draft.build.json
 local/analysis/walk-air-wallplant-draft.c
 local/analysis/walk-air-wallplant-extents.py

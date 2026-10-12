@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.25%** — 2,007 reported recovered routines divided
+**Decompilation estimate: 17.26%** — 2,008 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 851 experimental routines: 834 in the latest
+routines (9.93% of that baseline) and 852 experimental routines: 835 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-20,966 pinned artifacts, preserving all 20,747 preceding artifacts. All 174 Node
-and Chromium suites were rerun for this checkpoint and passed; all 171 inherited
+21,172 pinned artifacts, preserving all 20,966 preceding artifacts. All 176 Node
+and Chromium suites were rerun for this checkpoint and passed; all 174 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -58,6 +58,21 @@ The requested schedule checks approximately every 20 minutes and publishes only
 new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
+
+- The complete airborne walking update now connects to the shared movement loop.
+  Tests cover falls, landings, continued ground movement, ramp transfers,
+  projectile scripts, and the normal pose, animation, camera and shadow updates.
+  All 266 cases and 1,000 original calls complete and match, including 40 real
+  script callbacks. The new airborne routine exercises all 296 instructions.
+  The common loop exercises 129/142 instructions and remains uncounted because
+  hanging and rail frames are unfinished. No numeric allowances are added;
+  1,324 indeterminate probe-word and 378 network-padding byte comparisons use
+  the unchanged checker and original-write provenance. All 176 Node and Chromium
+  suites pass, preserving all 174 prior result objects. Evidence is in
+  `local/analysis/walk-air-flight-checkpoint.json`; the latest module contains
+  835 unpromoted routines. A successful wallplant script still has separate
+  helper evidence only. Hanging/rail frames, startup, rendering and playable
+  training remain unfinished.
 
 - Six complete helpers recover ballistic lip clearance, wall-contact jumps,
   rail-target copying, airborne rail eligibility, weighted rail selection and
