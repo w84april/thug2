@@ -1,0 +1,22 @@
+{
+  "0x513630": {
+    "bytes": 140,
+    "instructions": 46,
+    "name": "thug_local_net_create_draft"
+  },
+  "0x512e30": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_local_net_destroy_draft"
+  },
+  "0x512e40": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_local_net_delete_draft"
+  },
+  "0x512e70": {
+    "bytes": 37,
+    "instructions": 12,
+    "name": "thug_local_net_bind_draft"
+  }
+}

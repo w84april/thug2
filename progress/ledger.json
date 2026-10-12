@@ -8,9 +8,9 @@
   },
   "inventory": {
     "path": "progress/function-inventory.tsv",
-    "sha256": "77c4173d8c11dd1fff00008dab976d150016cb04ce975ef763c868662be251a1",
-    "functions": 11870,
-    "body_bytes": 1965185,
+    "sha256": "d2367bea0dff555bd1cd1d17b915ce0e1ec4c293bbcf879e8ec77d7b5eb26cf3",
+    "functions": 11873,
+    "body_bytes": 1966789,
     "source_exports": [
       {
         "path": "local/analysis/progress-function-ranges.tsv",
@@ -23,6 +23,14 @@
       {
         "path": "local/analysis/progress-reconciled-extra-ranges.tsv",
         "sha256": "4ea90dace68d4a503de008a02ae8ae87e20afe4b7786041a42f09913690a8280"
+      },
+      {
+        "path": "local/analysis/end-run-report-extra-ranges.tsv",
+        "sha256": "bcc3194673afbc60cab326517a8a48c0a908277127372fd54abebded409370b7"
+      },
+      {
+        "path": "local/analysis/balance-lifecycle-extra-ranges.tsv",
+        "sha256": "b343b51bb30c3f5afe26f10c4f62c304541388ee6a2e974dda6c03a743210a84"
       }
     ]
   },
@@ -57006,6 +57014,51 @@
       ]
     },
     {
+      "address": "0x004f8cf0",
+      "size": 127,
+      "ranges": [
+        [
+          5213424,
+          5213550
+        ]
+      ],
+      "name": "thug_balance_component_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 44
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f8cf0/covered",
+        "value": 30
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004f8ee0",
       "size": 51,
       "ranges": [
@@ -57080,6 +57133,186 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004f8f80",
+      "size": 143,
+      "ranges": [
+        [
+          5214080,
+          5214222
+        ]
+      ],
+      "name": "thug_balance_component_construct_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 32
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f8f80/covered",
+        "value": 32
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_construct_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004f9010",
+      "size": 33,
+      "ranges": [
+        [
+          5214224,
+          5214256
+        ]
+      ],
+      "name": "thug_balance_component_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 49
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f9010/covered",
+        "value": 11
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_delete_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004f9040",
+      "size": 61,
+      "ranges": [
+        [
+          5214272,
+          5214332
+        ]
+      ],
+      "name": "thug_balance_component_initialize_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 53
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f9040/covered",
+        "value": 20
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_initialize_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004f9080",
+      "size": 24,
+      "ranges": [
+        [
+          5214336,
+          5214359
+        ]
+      ],
+      "name": "thug_balance_component_bind_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 56
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f9080/covered",
+        "value": 8
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_bind_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004f90a0",
       "size": 196,
       "ranges": [
@@ -57113,6 +57346,51 @@
       },
       "aliases": [
         "thug_balance_parameter"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004f9170",
+      "size": 89,
+      "ranges": [
+        [
+          5214576,
+          5214664
+        ]
+      ],
+      "name": "thug_balance_component_create_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 38
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x4f9170/covered",
+        "value": 24
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_component_create_draft"
       ],
       "checkpoint_claims": []
     },
@@ -63135,6 +63413,501 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x00510d20",
+      "size": 11,
+      "ranges": [
+        [
+          5311776,
+          5311786
+        ]
+      ],
+      "name": "thug_end_run_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510d20/covered",
+        "value": 2
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510d30",
+      "size": 12,
+      "ranges": [
+        [
+          5311792,
+          5311803
+        ]
+      ],
+      "name": "thug_end_run_copy_flags_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 19
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510d30/covered",
+        "value": 4
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_copy_flags_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510d40",
+      "size": 33,
+      "ranges": [
+        [
+          5311808,
+          5311840
+        ]
+      ],
+      "name": "thug_end_run_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 17
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510d40/covered",
+        "value": 11
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_delete_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510dc0",
+      "size": 223,
+      "ranges": [
+        [
+          5311936,
+          5312158
+        ]
+      ],
+      "name": "thug_end_run_command_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 21
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510dc0/covered",
+        "value": 68
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_command_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f30",
+      "size": 9,
+      "ranges": [
+        [
+          5312304,
+          5312312
+        ]
+      ],
+      "name": "thug_end_run_flag_2_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 78
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f30/covered",
+        "value": 4
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_flag_2_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f40",
+      "size": 10,
+      "ranges": [
+        [
+          5312320,
+          5312329
+        ]
+      ],
+      "name": "thug_end_run_flag_16_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 79
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f40/covered",
+        "value": 4
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_flag_16_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f50",
+      "size": 7,
+      "ranges": [
+        [
+          5312336,
+          5312342
+        ]
+      ],
+      "name": "thug_end_run_flag_1_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 80
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f50/covered",
+        "value": 3
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_flag_1_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f60",
+      "size": 5,
+      "ranges": [
+        [
+          5312352,
+          5312356
+        ]
+      ],
+      "name": "thug_end_run_clear_1_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 81
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f60/covered",
+        "value": 2
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_clear_1_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f70",
+      "size": 5,
+      "ranges": [
+        [
+          5312368,
+          5312372
+        ]
+      ],
+      "name": "thug_end_run_clear_8_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 82
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f70/covered",
+        "value": 2
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_clear_8_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f80",
+      "size": 5,
+      "ranges": [
+        [
+          5312384,
+          5312388
+        ]
+      ],
+      "name": "thug_end_run_clear_4_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 83
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f80/covered",
+        "value": 2
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_clear_4_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00510f90",
+      "size": 114,
+      "ranges": [
+        [
+          5312400,
+          5312513
+        ]
+      ],
+      "name": "thug_end_run_create_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 12
+      },
+      "original": {
+        "path": "local/analysis/skater-end-run-lifecycle-original.json",
+        "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81",
+        "field": "instruction_coverage/0x510f90/covered",
+        "value": 32
+      },
+      "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_end_run_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+        "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+        "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+      },
+      "aliases": [
+        "thug_end_run_create_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x00511010",
       "size": 11,
       "ranges": [
@@ -64412,6 +65185,186 @@
       "checkpoint_claims": [
         "local/analysis/gap-end-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x00512e30",
+      "size": 11,
+      "ranges": [
+        [
+          5320240,
+          5320250
+        ]
+      ],
+      "name": "thug_local_net_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+        "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969",
+        "line": 17
+      },
+      "original": {
+        "path": "local/analysis/skater-local-net-original.json",
+        "sha256": "b8d7549f6d319ab441d99912f3c968ef13d587827705b26a8c19209b64b1195a",
+        "field": "instruction_coverage/0x512e30/covered",
+        "value": 2
+      },
+      "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_local_net",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-local-net-fixtures.json",
+        "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-local-net.py",
+        "sha256": "f51cfb8baaaf30ff8bd4f1238142c7c9315e238451a895d6dee68f19d784d232"
+      },
+      "aliases": [
+        "thug_local_net_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00512e40",
+      "size": 33,
+      "ranges": [
+        [
+          5320256,
+          5320288
+        ]
+      ],
+      "name": "thug_local_net_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+        "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969",
+        "line": 18
+      },
+      "original": {
+        "path": "local/analysis/skater-local-net-original.json",
+        "sha256": "b8d7549f6d319ab441d99912f3c968ef13d587827705b26a8c19209b64b1195a",
+        "field": "instruction_coverage/0x512e40/covered",
+        "value": 11
+      },
+      "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_local_net",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-local-net-fixtures.json",
+        "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-local-net.py",
+        "sha256": "f51cfb8baaaf30ff8bd4f1238142c7c9315e238451a895d6dee68f19d784d232"
+      },
+      "aliases": [
+        "thug_local_net_delete_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00512e70",
+      "size": 37,
+      "ranges": [
+        [
+          5320304,
+          5320340
+        ]
+      ],
+      "name": "thug_local_net_bind_draft",
+      "source": {
+        "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+        "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969",
+        "line": 20
+      },
+      "original": {
+        "path": "local/analysis/skater-local-net-original.json",
+        "sha256": "b8d7549f6d319ab441d99912f3c968ef13d587827705b26a8c19209b64b1195a",
+        "field": "instruction_coverage/0x512e70/covered",
+        "value": 12
+      },
+      "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_local_net",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-local-net-fixtures.json",
+        "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-local-net.py",
+        "sha256": "f51cfb8baaaf30ff8bd4f1238142c7c9315e238451a895d6dee68f19d784d232"
+      },
+      "aliases": [
+        "thug_local_net_bind_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513630",
+      "size": 140,
+      "ranges": [
+        [
+          5322288,
+          5322427
+        ]
+      ],
+      "name": "thug_local_net_create_draft",
+      "source": {
+        "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+        "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969",
+        "line": 9
+      },
+      "original": {
+        "path": "local/analysis/skater-local-net-original.json",
+        "sha256": "b8d7549f6d319ab441d99912f3c968ef13d587827705b26a8c19209b64b1195a",
+        "field": "instruction_coverage/0x513630/covered",
+        "value": 46
+      },
+      "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_local_net",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-local-net-fixtures.json",
+        "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-local-net.py",
+        "sha256": "f51cfb8baaaf30ff8bd4f1238142c7c9315e238451a895d6dee68f19d784d232"
+      },
+      "aliases": [
+        "thug_local_net_create_draft"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x005138b0",
@@ -74468,6 +75421,186 @@
       ]
     },
     {
+      "address": "0x00579850",
+      "size": 7,
+      "ranges": [
+        [
+          5740624,
+          5740630
+        ]
+      ],
+      "name": "thug_balance_record_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 19
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x579850/covered",
+        "value": 2
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_record_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00579860",
+      "size": 59,
+      "ranges": [
+        [
+          5740640,
+          5740698
+        ]
+      ],
+      "name": "thug_balance_record_bind_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 25
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x579860/covered",
+        "value": 17
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_record_bind_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00579950",
+      "size": 80,
+      "ranges": [
+        [
+          5740880,
+          5740959
+        ]
+      ],
+      "name": "thug_balance_record_construct_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 11
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x579950/covered",
+        "value": 30
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_record_construct_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x005799a0",
+      "size": 34,
+      "ranges": [
+        [
+          5740960,
+          5740993
+        ]
+      ],
+      "name": "thug_balance_record_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-balance-lifecycle-draft.c",
+        "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d",
+        "line": 20
+      },
+      "original": {
+        "path": "local/analysis/skater-balance-lifecycle-original.json",
+        "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6",
+        "field": "instruction_coverage/0x5799a0/covered",
+        "value": 11
+      },
+      "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-balance-browser.json",
+        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "suite": "skater_balance_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+        "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-balance-lifecycle.py",
+        "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+      },
+      "aliases": [
+        "thug_balance_record_delete_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x005799d0",
       "size": 45,
       "ranges": [
@@ -78656,6 +79789,19 @@
     "Original game, private fixtures and Wasm are required to replay the local comparisons; CI validates metadata only.",
     "Historical separate physics experiment is not in this active-build ledger; no credit without reconciliation."
   ],
+  "verified_recovery_updates": [
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-balance-startup-checkpoint.json",
+        "sha256": "73a6d033ac53530c9ac59d34becc2333b105893121abb7e3a3ab53e9460e09ed"
+      },
+      "audit": {
+        "path": "local/analysis/skater-balance-startup-audit.json",
+        "sha256": "33ba253a7c1a4a664e4e24a733b224f8ad9dea2a882911691663ecf87aee7608"
+      },
+      "scope": "Ten complete original routines recover BalanceTrick and embedded record lifecycle and dependency binding. Conditional real QB runs before selected zero writes; 28 native fixture callbacks test mutation and order. 115 cases/328 completed calls cover all185 original instructions with no added comparison allowances. Missing-QB control rejected. All189 prior Node/Chromium results unchanged. Shared update51b970 receives no additional credit. Constructor582d90 advances301/463 and remains partial with zero credit. Rendering and playable level remain unfinished."
+    }
+  ],
   "uncredited_source_definitions": [
     {
       "name": "thug_animation_checksum_prefix_draft",
@@ -78883,6 +80029,69 @@
       "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
     },
     {
+      "name": "thug_end_run_finish_secondary_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 75
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_network_current_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 51
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_network_send_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 52
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_request_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 66
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_settings_deferred_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 67
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_settings_gate_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 37
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_end_run_update_draft",
+      "source": {
+        "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+        "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2",
+        "line": 59
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
       "name": "thug_flexparticle_create_initialize_prefix_draft",
       "source": {
         "path": "local/analysis/particle-update-create-derived.c",
@@ -79059,6 +80268,15 @@
         "path": "local/analysis/asset-ready-factory-derived.c",
         "line": 298,
         "sha256": "ef50c91ffbd9004e025dd9d5fa0f4f3f20e082c49e76423cfeaed69805c293b2"
+      },
+      "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
+    },
+    {
+      "name": "thug_local_net_command_draft",
+      "source": {
+        "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+        "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969",
+        "line": 23
       },
       "reason": "No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers"
     },
@@ -80451,8 +81669,8 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 1964,
-    "uncredited_source_definitions": 199,
+    "accepted_addresses": 1989,
+    "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 3,
     "linear_extent_differences": 10,
     "historical_routine_estimate": {
@@ -80460,6 +81678,6 @@
       "denominator": 11637,
       "used_for_report": false
     },
-    "new_behavioral_recovery": false
+    "new_behavioral_recovery": true
   }
 }

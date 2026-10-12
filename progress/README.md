@@ -51,21 +51,25 @@ source hashes, arithmetic and report format. It cannot rerun original-executable
 comparisons without the local specimen and fixtures. A schema-valid report alone
 is not new behavioral evidence.
 
-The publishing automation remains paused while this migration is being verified.
+The retired publishing automation remains paused. The user has authorized direct
+publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **1,964 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **427,049 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (17.98%)**. Every
-binary-matching measure is zero. This is a reconciliation of existing evidence,
-not newly recovered engine behavior.
+`ledger.json` links **1,989 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **428,361 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.03%)**. Every
+binary-matching measure is zero. The initial reporting commit reconciled existing
+evidence. A subsequent audited
+checkpoint adds 25 complete LocalNet, EndRun and BalanceTrick routines, totaling
+1,312 original body bytes; constructor progress remains partial and uncredited.
 
-The inventory contains 11,870 discovered entries: 11,641 entries in the later
+The inventory contains 11,873 discovered entries: 11,641 entries in the later
 read-only Ghidra export, 228 supplied recovery entries, and one additional tested
-SSE matrix entry found during this reconciliation. These are discovered entries,
+SSE matrix entry and three entries from later startup discovery exports. These
+are discovered entries,
 not an exhaustive or authoritative count of original source functions. Their
-non-overlapping bodies total 1,965,185 bytes. The remaining **410,193 bytes** stay
+non-overlapping bodies total 1,966,789 bytes. The remaining **408,589 bytes** stay
 in the denominator with zero completion, including unidentified code, padding
 and jump tables. The denominator includes runtime/library code present in the
 specimen. Raw file-alignment bytes beyond `.text`'s virtual size are excluded.
@@ -125,14 +129,30 @@ dispatch. Artifact expiration remains a practical limit (90-day retention).
 
 The referenced decomp.dev implementation's registration check looks for a
 completed **push event on the repository's default branch**. A successful PR or
-manual-dispatch run alone does not establish registration eligibility. A hosted
-workflow run, external artifact retrieval and decomp.dev registration have not
-yet been verified. Format/parser acceptance does not establish hosted acceptance
-or public visibility. With zero matching credit, the referenced 0.5% rule still
+manual-dispatch run alone does not establish registration eligibility. The first
+default-branch push workflow passed on 2026-10-12 at
+[commit `8541949`](https://github.com/w84april/thug2/commit/85419493580a0699635fc3ad9fb82c488102280d).
+[Run 38260633281](https://github.com/w84april/thug2/actions/runs/38260633281)
+uploaded and downloaded `pc_report` successfully. Independent artifact retrieval
+confirmed a ZIP containing only `report.json`, byte-identical to the committed
+report; local regeneration and the pinned objdiff parser passed again. See
+[the verification record](upload-verification.json) for hashes and artifact expiry.
+
+decomp.dev registration and hosted acceptance remain unverified. Workflow and
+parser acceptance do not establish public visibility. With zero matching credit,
+the referenced 0.5% rule still
 hides this project from the public listing.
 
-Newer unpublished development on this machine is recorded separately in
-`local/analysis/continued-recovery-next.txt`; it does not change this report baseline.
+The latest audited startup checkpoint and its selected complete routine maps are
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 191
+passing Node/actual Chromium suites and 25 newly reconciled routine addresses.
+The skater constructor reaches 301/463 instructions and stops before component
+`b5f1e9d2`; it receives zero completion credit. Balance commands, component frame
+paths, later startup and the playable level remain unfinished. Private continued
+work is recorded in `local/analysis/continued-recovery-next.txt`.
+
+The first upload verification record identifies the original 17.98% report, not
+the subsequent 18.03% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

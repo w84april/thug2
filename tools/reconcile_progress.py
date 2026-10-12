@@ -111,10 +111,40 @@ def main():
             checked.add(path)
         return {'path': path, 'sha256': pinned[path]}
 
+    # Later checkpoints keep their own immutable evidence. The public selection
+    # manifest names only complete, audited routine maps; partial roots stay out.
+    updates = []
+    selection_path = ROOT / 'progress/verified-recovery.json'
+    if selection_path.exists():
+        selection = read('progress/verified-recovery.json')
+        assert selection['version'] == 1
+        for update in selection['updates']:
+            reference = update['checkpoint']
+            assert digest(reference['path']) == reference['sha256']
+            latest = read(reference['path'])
+            audit = read(update['audit']['path'])
+            assert digest(update['audit']['path']) == update['audit']['sha256']
+            assert audit['result'] == 'pass' and audit['checkpoint_sha256'] == reference['sha256']
+            assert latest['result'] == 'original comparisons, Node and actual Chromium pass; unpromoted'
+            for group in ('artifact_hashes', 'source_hashes', 'draft_source_hashes',
+                          'harness_hashes', 'platform_source_hashes', 'checker_dependency_hashes'):
+                for path, value in latest[group].items():
+                    assert path not in pinned or pinned[path] == value, path
+                    pinned[path] = value
+            pinned[reference['path']] = reference['sha256']
+            pinned[update['audit']['path']] = update['audit']['sha256']
+            assert latest['specimen_sha256'] == checkpoint['specimen_sha256']
+            assert set(latest['original_addresses']).isdisjoint(checkpoint['partial_original_addresses'])
+            updates.append(update)
+
     inventory = {}
     range_paths = ['local/analysis/progress-function-ranges.tsv', 'local/analysis/progress-extra-ranges-complete.tsv']
     if (LOCAL / 'progress-reconciled-extra-ranges.tsv').exists():
         range_paths.append('local/analysis/progress-reconciled-extra-ranges.tsv')
+    for update in updates:
+        for reference in update['discovery_exports']:
+            assert reference == pin(reference['path'])
+            range_paths.append(reference['path'])
     for path in range_paths:
         for row in csv.DictReader((ROOT / path).open(), delimiter='\t'):
             address = int(row['address'], 16)
@@ -127,6 +157,37 @@ def main():
     candidates = collections.defaultdict(list)
     for key, rows in discovery['records'].items():
         candidates[int(key, 16)].extend(rows)
+
+    for update in updates:
+        latest = read(update['checkpoint']['path'])
+        complete_addresses = {int(a, 16) for a in latest['original_addresses']}
+        complete_addresses.update(int(a, 16) for a in latest['verified_scoped_addresses_from_prior'])
+        selected_addresses = set()
+        for suite in update['suites']:
+            for field in ('source', 'routines', 'original', 'fixture', 'node', 'browser', 'mapping_harness'):
+                assert suite[field] == pin(suite[field]['path']), (suite['name'], field)
+            assert suite['original']['path'] == f'local/analysis/{suite["name"].replace("_", "-")}-original.json'
+            routines = read(suite['routines']['path'])
+            assert suite['routines'] == pin(suite['routines']['path'])
+            text = (ROOT / suite['source']['path']).read_text()
+            assert suite['source'] == pin(suite['source']['path'])
+            # Retain unverified named definitions too, without awarding credit.
+            definitions = {}
+            for match in re.finditer(r'^[^\n;{}]*\b(thug_\w+)\s*\([^;{}]*\)\s*\{', text, re.M):
+                definitions[match[1]] = text[:match.start()].count('\n') + 1
+                sources[match[1]] = {**suite['source'], 'line': definitions[match[1]]}
+            for key, routine in routines.items():
+                address = int(key, 16)
+                assert address in complete_addresses and address not in selected_addresses
+                selected_addresses.add(address)
+                assert routine['name'] in definitions
+                candidates[address].append({'name': routine['name'],
+                    'source': sources[routine['name']], 'suite': suite['name'],
+                    'group': 'experimental', 'fixture': suite['fixture']['path'],
+                    'browser_path': suite['browser']['path'], 'node_path': suite['node']['path'],
+                    'mapping_harness': suite['mapping_harness']['path']})
+                discovery['routines'].setdefault(hex(address), []).append(routine)
+        assert selected_addresses == complete_addresses, 'Incomplete checkpoint address selection'
 
     # Aggregate decal suites use several fixture maps, rather than one named
     # after the suite. The original exporter missed all of these maps.
@@ -278,13 +339,16 @@ def main():
             if row.get('native_only'):
                 proof['runtime'] = 'Native recovered-C comparison; no browser validation claimed'
             else:
-                browser_path = maintained_path if row['group'] == 'maintained' else experimental_path
-                summary = maintained if suite == 'collision' else (maintained if row['group'] == 'maintained' else experimental)[suite]
+                browser_path = row.get('browser_path', maintained_path if row['group'] == 'maintained' else experimental_path)
+                summary = (read(browser_path)['observed']['suites'][suite] if 'browser_path' in row else
+                           maintained if suite == 'collision' else (maintained if row['group'] == 'maintained' else experimental)[suite])
                 assert summary['result'] == 'pass'
                 proof['browser'] = {**pin(browser_path), 'suite': suite, 'result': 'pass'}
                 # Original comparison reports include the Node replay, or that
                 # replay is separately preserved in the checkpoint result set.
                 node_paths = [f'local/validation/{suite.replace("_", "-")}-wasm.json'] if row['group'] == 'maintained' else [f'local/analysis/walk-component-checkpoint-{suite.replace("_", "-")}-result.json', f'local/analysis/{suite.replace("_", "-")}-unit.json']
+                if 'node_path' in row:
+                    node_paths = [row['node_path']]
                 for path in node_paths:
                     if path in pinned:
                         node = read(path)
@@ -325,6 +389,11 @@ def main():
             stream.write(f'{address:08x}\t{row["size"]}\t' + ';'.join(f'{start:08x}:{end:08x}' for start, end in row['ranges']) + '\n')
     ledger = {'version': 1, 'specimen_sha256': checkpoint['specimen_sha256'], 'specimen_provenance': 'User-supplied modified/unpacked PC build; not pristine retail', 'checkpoint': pin(checkpoint_path), 'inventory': {'path': 'progress/function-inventory.tsv', 'sha256': digest('progress/function-inventory.tsv'), 'functions': len(inventory), 'body_bytes': sum(r['size'] for r in inventory.values()), 'source_exports': [{'path': path, 'sha256': digest(path)} for path in range_paths]}, 'code_section': {'name': '.text', 'address': 0x401000, 'virtual_size': 2375378, 'denominator_policy': 'All original .text virtual bytes, including unidentified code, jump tables and padding; excludes raw file alignment. No data or asset completion claimed.'}, 'partial_addresses': checkpoint['partial_original_addresses'], 'records': accepted, 'excluded': excluded, 'limitations': ['Scoped behavioral verification, not exhaustive equivalence or binary matching.', 'Original game, private fixtures and Wasm are required to replay the local comparisons; CI validates metadata only.', 'Historical separate physics experiment is not in this active-build ledger; no credit without reconciliation.']}
     accepted_names = {name for row in accepted for name in row['aliases']}
+    ledger['verified_recovery_updates'] = [
+        {'checkpoint': pin(update['checkpoint']['path']), 'audit': pin(update['audit']['path']),
+         'scope': read(update['checkpoint']['path'])['scope']}
+        for update in updates
+    ]
     ledger['uncredited_source_definitions'] = [
         {'name': name, 'source': source, 'reason': 'No accepted one-to-one original address and full-routine behavioral proof; includes adapters, partial entries and untested helpers'}
         for name, source in sorted(sources.items()) if name not in accepted_names
@@ -336,7 +405,7 @@ def main():
         'duplicate_alias_addresses': sum(len(row['aliases']) > 1 for row in accepted),
         'linear_extent_differences': sum('linear_extent_bytes' in row for row in accepted),
         'historical_routine_estimate': {'numerator': 2026, 'denominator': 11637, 'used_for_report': False},
-        'new_behavioral_recovery': False,
+        'new_behavioral_recovery': bool(updates),
     }
     (output / 'ledger.json').write_text(json.dumps(ledger, indent=2) + '\n')
     print(json.dumps({'accepted_functions': len(accepted), 'complete_body_bytes': sum(r['size'] for r in accepted), 'known_functions': len(inventory), 'unassigned_text_bytes': ledger['code_section']['virtual_size'] - ledger['inventory']['body_bytes'], 'excluded': excluded}, indent=2))

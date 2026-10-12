@@ -1,0 +1,52 @@
+{
+  "0x579950": {
+    "bytes": 80,
+    "instructions": 30,
+    "name": "thug_balance_record_construct_draft"
+  },
+  "0x579850": {
+    "bytes": 7,
+    "instructions": 2,
+    "name": "thug_balance_record_destroy_draft"
+  },
+  "0x5799a0": {
+    "bytes": 34,
+    "instructions": 11,
+    "name": "thug_balance_record_delete_draft"
+  },
+  "0x579860": {
+    "bytes": 59,
+    "instructions": 17,
+    "name": "thug_balance_record_bind_draft"
+  },
+  "0x4f8f80": {
+    "bytes": 143,
+    "instructions": 32,
+    "name": "thug_balance_component_construct_draft"
+  },
+  "0x4f9170": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_balance_component_create_draft"
+  },
+  "0x4f8cf0": {
+    "bytes": 127,
+    "instructions": 30,
+    "name": "thug_balance_component_destroy_draft"
+  },
+  "0x4f9010": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_balance_component_delete_draft"
+  },
+  "0x4f9040": {
+    "bytes": 61,
+    "instructions": 20,
+    "name": "thug_balance_component_initialize_draft"
+  },
+  "0x4f9080": {
+    "bytes": 24,
+    "instructions": 8,
+    "name": "thug_balance_component_bind_draft"
+  }
+}

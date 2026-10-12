@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "playable": false,
+  "scope": "25 complete original LocalNet/EndRun/BalanceTrick routines add1312 body bytes. Shared routines and adapters are not new addresses. Constructor582d90 remains301/463 partial and uncredited. All191 Node/actual Chromium suites pass and all189 predecessor results remain unchanged. Original executable/assets/raw fixtures/compiled modules remain private.",
+  "updates": [
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-balance-startup-checkpoint.json",
+        "sha256": "73a6d033ac53530c9ac59d34becc2333b105893121abb7e3a3ab53e9460e09ed"
+      },
+      "audit": {
+        "path": "local/analysis/skater-balance-startup-audit.json",
+        "sha256": "33ba253a7c1a4a664e4e24a733b224f8ad9dea2a882911691663ecf87aee7608"
+      },
+      "discovery_exports": [
+        {
+          "path": "local/analysis/end-run-report-extra-ranges.tsv",
+          "sha256": "bcc3194673afbc60cab326517a8a48c0a908277127372fd54abebded409370b7"
+        },
+        {
+          "path": "local/analysis/balance-lifecycle-extra-ranges.tsv",
+          "sha256": "b343b51bb30c3f5afe26f10c4f62c304541388ee6a2e974dda6c03a743210a84"
+        }
+      ],
+      "suites": [
+        {
+          "name": "skater_local_net",
+          "source": {
+            "path": "local/analysis/skater-local-net-descriptor-corrected.c",
+            "sha256": "d1fcfcdefeb0cccc3bc1f84194ee47e6351fea482ee7cae8aacefd2d1b0d2969"
+          },
+          "routines": {
+            "path": "local/analysis/skater-local-net-routines.json",
+            "sha256": "371e0b930c24e4e51017d77bdacfb7df9e5f6d4c6589ed8e774fba44ae381805"
+          },
+          "original": {
+            "path": "local/analysis/skater-local-net-original.json",
+            "sha256": "b8d7549f6d319ab441d99912f3c968ef13d587827705b26a8c19209b64b1195a"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-local-net-fixtures.json",
+            "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
+          },
+          "node": {
+            "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+            "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
+          },
+          "browser": {
+            "path": "local/analysis/skater-balance-browser.json",
+            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-local-net.py",
+            "sha256": "f51cfb8baaaf30ff8bd4f1238142c7c9315e238451a895d6dee68f19d784d232"
+          }
+        },
+        {
+          "name": "skater_end_run_lifecycle",
+          "source": {
+            "path": "local/analysis/skater-end-run-descriptor-corrected.c",
+            "sha256": "801521f9868ebb6ea6cec51434540e73e86b18d0a9a9ecc508fddc08203afff2"
+          },
+          "routines": {
+            "path": "local/analysis/skater-end-run-lifecycle-routines.json",
+            "sha256": "3bc3df2885850596516064ce2737f2b7874291d287efd4c59fbd95e132f93176"
+          },
+          "original": {
+            "path": "local/analysis/skater-end-run-lifecycle-original.json",
+            "sha256": "bc5861c2bfb88d741de4f2c75ed8651d961e6996761ee0c9cb26fc4b931adc81"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-end-run-lifecycle-fixtures.json",
+            "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
+          },
+          "node": {
+            "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+            "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
+          },
+          "browser": {
+            "path": "local/analysis/skater-balance-browser.json",
+            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-end-run-lifecycle.py",
+            "sha256": "3ae0dc57cdb96c10459bddeb6f75231ff6aaad8f553427c385df561ccdda9f03"
+          }
+        },
+        {
+          "name": "skater_balance_lifecycle",
+          "source": {
+            "path": "local/analysis/skater-balance-lifecycle-draft.c",
+            "sha256": "1ed7cbc2883a9c8c83dcb910f62dbdc51e5418b50d983939b0a76ed322d9209d"
+          },
+          "routines": {
+            "path": "local/analysis/skater-balance-lifecycle-routines.json",
+            "sha256": "af0a837195e11beb96ed7d677a4e9ea38741af1b7165e8bfc3552ae0fb7af521"
+          },
+          "original": {
+            "path": "local/analysis/skater-balance-lifecycle-original.json",
+            "sha256": "8f36e94d26d723655b6e3aeb25f2ed0d8111f36c103535ae8219abda8fdc92e6"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-balance-lifecycle-fixtures.json",
+            "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
+          },
+          "node": {
+            "path": "local/analysis/skater-balance-lifecycle-unit.json",
+            "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
+          },
+          "browser": {
+            "path": "local/analysis/skater-balance-browser.json",
+            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-balance-lifecycle.py",
+            "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+          }
+        }
+      ]
+    }
+  ]
+}

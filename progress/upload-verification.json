@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "result": "pass",
+  "checked_on": "2026-10-12",
+  "repository": "w84april/thug2",
+  "commit": "85419493580a0699635fc3ad9fb82c488102280d",
+  "workflow": ".github/workflows/progress.yml",
+  "workflow_run_id": 38260633281,
+  "workflow_run_url": "https://github.com/w84april/thug2/actions/runs/38260633281",
+  "event": "push",
+  "branch": "main",
+  "status": "completed",
+  "conclusion": "success",
+  "job_id": 114849897497,
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Use the locally verified Rust toolchain",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check public metadata and reproduce report",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate with the pinned objdiff parser",
+      "conclusion": "success"
+    },
+    {
+      "name": "Upload only the public objdiff report",
+      "conclusion": "success"
+    },
+    {
+      "name": "Download the uploaded artifact",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify downloaded contents and parser acceptance",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "artifact": {
+    "id": 11751809331,
+    "name": "pc_report",
+    "bytes": 177076,
+    "archive_sha256": "d3f0b6f82257ddb3613323055148eeb3802e86df616d55274730a0f4aa44ca87",
+    "members": [
+      "report.json"
+    ],
+    "expires_at": "2027-01-10T14:07:37Z"
+  },
+  "independent_retrieval": {
+    "result": "pass",
+    "report_bytes": 2742209,
+    "report_sha256": "bc9536003ee770ee309979d754c530cd0f5ff268f2b2722e25271746d0bf24bb",
+    "byte_identical_to_committed_report": true,
+    "pinned_objdiff_parse_and_migrate": "pass",
+    "deterministic_regeneration": "pass"
+  },
+  "decomp_dev": {
+    "registration": "not performed",
+    "hosted_acceptance": "unverified",
+    "public_visibility": "0% matched code does not meet the referenced 0.5% listing threshold"
+  },
+  "scope": "Report upload/download and parser compatibility verified. CI does not replay private original behavioral comparisons or establish playability."
+}

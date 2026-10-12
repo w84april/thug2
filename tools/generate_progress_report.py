@@ -81,6 +81,11 @@ def generate(ledger, root=ROOT, local_evidence=False):
         recovered[address] = row
     if local_evidence:
         verify_ref(root, ledger['checkpoint'])
+        for update in ledger.get('verified_recovery_updates', []):
+            verify_ref(root, update['checkpoint'])
+            verify_ref(root, update['audit'])
+            audit = json.loads((root / update['audit']['path']).read_text())
+            assert audit['result'] == 'pass' and audit['checkpoint_sha256'] == update['checkpoint']['sha256']
         for ref in ledger['inventory']['source_exports']:
             verify_ref(root, ref)
 

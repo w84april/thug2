@@ -12,13 +12,14 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 17.98% of original `.text` bytes** —
-427,049 / 2,375,378 bytes attributed to 1,964 distinct original addresses with
+**Reconciled behavioral completion: 18.03% of original `.text` bytes** —
+428,361 / 2,375,378 bytes attributed to 1,989 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
 The game is not playable. Unidentified code, jump tables and padding remain in
-the code denominator; data and assets are unmeasured. This reconciles existing
-evidence and does not represent newly recovered behavior or work toward a
-playable game. See [reporting policy and verification](progress/README.md),
+the code denominator; data and assets are unmeasured. This metric combines the
+reconciled baseline with 25 newly verified LocalNet, EndRun and BalanceTrick
+lifecycle/flag routines. It does not measure playability. See
+[reporting policy and verification](progress/README.md),
 [address ledger](progress/ledger.json) and [objdiff report](progress/report.json).
 
 **Historical decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
@@ -36,10 +37,11 @@ Partial routines, test helpers and generated pseudocode do not earn new progress
 The historical checkpoint bookkeeping is [progress/recovery.json](progress/recovery.json).
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
-executable remain unchanged locally. The latest integrity audit passed for all
-21,854 pinned artifacts, preserving all 21,648 preceding artifacts. All 185 Node
-and Chromium suites were rerun for this checkpoint and passed; all 184 inherited
-result objects remain unchanged.
+executable remain unchanged locally. That historical integrity audit passed for all
+21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
+checkpoint preserves all prior evidence and passes 191 suites; all 189 preceding
+result objects remain unchanged. See
+[the current verified checkpoint selection](progress/verified-recovery.json).
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -50,23 +52,38 @@ original-executable comparisons. Existing experimental builders also use local
 build manifests with machine-specific paths; this is a recovery-source archive,
 not a portable playable release. See the setup and validation notes below.
 
-After completing and auditing a new checkpoint, update the compact report with:
+The historical routine estimate in `recovery.json` is preserved as a snapshot.
+For current publication, audit the immutable checkpoint, update the complete
+routine selections in `progress/verified-recovery.json`, then regenerate the
+address ledger and objdiff report. The local specimen/evidence are required:
 
 ```sh
-python3 tools/update_progress.py local/analysis/<name>-checkpoint.json local/analysis/<name>-audit.json
-git add README.md src tools third_party progress
+python3 tools/reconcile_progress.py
+python3 tools/generate_progress_report.py --local-evidence
+python3 tools/test_progress_report.py local/build/progress-validator/debug/thug2-progress-validator
+git add README.md tools progress
 git add -f --pathspec-from-file=progress/publication-files.txt
 ```
 
-Review the staged files before committing. Update `--main-functions` only after
-verifying a changed maintained count, and account for promotions so routines are
-not counted twice. Keep the baseline fixed unless a documented recount replaces
-the metric. Commit bodies should include the reported percentage and fraction,
-maintained/experimental split, verification results and playability status.
-The requested schedule checks approximately every 20 minutes and publishes only
-new verified work; unchanged or unfinished work does not create an empty commit.
+Review the staged source/metadata allowlist before committing. Complete routines
+receive one original address and their original body bytes; duplicates, partial
+roots and test adapters receive no additional credit. Keep the code denominator
+fixed for this specimen and keep matching fields at zero without binary-match
+evidence. Run the default-branch upload/download workflow for each publication.
+The retired chat and its publishing automation remain paused; direct publication
+of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
+
+- BalanceTrick lifecycle now passes 115 original/Wasm comparison cases and 328
+  completed calls, including 28 real QB fixture callbacks that test conditional
+  constructor script ordering. Ten complete routines exercise all 185 original
+  instructions with no new comparison allowances. All 191 Node/actual Chromium
+  suites pass, preserving all 189 prior result objects. Together with the earlier
+  fifteen LocalNet/EndRun routines, 25 addresses add 1,312 original body bytes to
+  the reconciled report. The skater constructor advances to 301/463 instructions
+  and stops before component `b5f1e9d2`; it remains partial and earns no credit.
+  Balance commands, frame paths, later startup and level rendering remain unfinished.
 
 - The walking component now calls the complete dispatcher through the original
   object update loop. All 168 cases and 797 original calls match, including

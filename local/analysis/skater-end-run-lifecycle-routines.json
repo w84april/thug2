@@ -1,0 +1,57 @@
+{
+  "0x510f90": {
+    "bytes": 114,
+    "instructions": 32,
+    "name": "thug_end_run_create_draft"
+  },
+  "0x510d20": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_end_run_destroy_draft"
+  },
+  "0x510d40": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_end_run_delete_draft"
+  },
+  "0x510d30": {
+    "bytes": 12,
+    "instructions": 4,
+    "name": "thug_end_run_copy_flags_draft"
+  },
+  "0x510dc0": {
+    "bytes": 223,
+    "instructions": 68,
+    "name": "thug_end_run_command_draft"
+  },
+  "0x510f30": {
+    "bytes": 9,
+    "instructions": 4,
+    "name": "thug_end_run_flag_2_draft"
+  },
+  "0x510f40": {
+    "bytes": 10,
+    "instructions": 4,
+    "name": "thug_end_run_flag_16_draft"
+  },
+  "0x510f50": {
+    "bytes": 7,
+    "instructions": 3,
+    "name": "thug_end_run_flag_1_draft"
+  },
+  "0x510f60": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_end_run_clear_1_draft"
+  },
+  "0x510f70": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_end_run_clear_8_draft"
+  },
+  "0x510f80": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_end_run_clear_4_draft"
+  }
+}
