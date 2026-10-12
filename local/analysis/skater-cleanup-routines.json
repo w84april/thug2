@@ -1,0 +1,102 @@
+{
+  "0x4fbe20": {
+    "bytes": 87,
+    "instructions": 26,
+    "name": "thug_skater_cleanup_create_draft"
+  },
+  "0x4fbd90": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_skater_cleanup_destroy_draft"
+  },
+  "0x4fbdb0": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_skater_cleanup_delete_draft"
+  },
+  "0x4fbda0": {
+    "bytes": 10,
+    "instructions": 2,
+    "name": "thug_skater_cleanup_initialize_draft"
+  },
+  "0x4fbde0": {
+    "bytes": 21,
+    "instructions": 8,
+    "name": "thug_skater_cleanup_bind_draft"
+  },
+  "0x4fbe00": {
+    "bytes": 17,
+    "instructions": 7,
+    "name": "thug_skater_cleanup_update_draft"
+  },
+  "0x5809c0": {
+    "bytes": 539,
+    "instructions": 137,
+    "name": "thug_skater_update_shadow_direction_draft"
+  },
+  "0x456b30": {
+    "bytes": 5,
+    "instructions": 2,
+    "name": "thug_light_direction_draft"
+  },
+  "0x4b6180": {
+    "bytes": 47,
+    "instructions": 22,
+    "name": "thug_light_direction_pc_draft"
+  },
+  "0x4b6250": {
+    "bytes": 29,
+    "instructions": 11,
+    "name": "thug_light_direction_enabled_draft"
+  },
+  "0x48e920": {
+    "bytes": 5,
+    "instructions": 1,
+    "name": "thug_light_global_direction_draft"
+  },
+  "0x4b6ab0": {
+    "bytes": 81,
+    "instructions": 18,
+    "name": "thug_light_global_direction_pc_draft"
+  },
+  "0x431360": {
+    "bytes": 17,
+    "instructions": 7,
+    "name": "thug_shadow_set_direction_draft"
+  },
+  "0x4a1ba0": {
+    "bytes": 292,
+    "instructions": 80,
+    "name": "thug_shadow_projected_direction_draft"
+  },
+  "0x4a21a0": {
+    "bytes": 276,
+    "instructions": 74,
+    "name": "thug_shadow_dynamic_direction_draft"
+  },
+  "0x485a70": {
+    "bytes": 30,
+    "instructions": 10,
+    "name": "thug_camera_set_position_draft"
+  },
+  "0x485a90": {
+    "bytes": 8,
+    "instructions": 2,
+    "name": "thug_camera_set_orientation_draft"
+  },
+  "0x48bf60": {
+    "bytes": 5,
+    "instructions": 1,
+    "name": "thug_shadow_camera_projection_draft"
+  },
+  "0x4b2c50": {
+    "bytes": 184,
+    "instructions": 64,
+    "name": "thug_shadow_camera_projection_pc_draft"
+  },
+  "0x4db100": {
+    "bytes": 242,
+    "instructions": 72,
+    "name": "thug_shadow_projection_matrices_draft"
+  }
+}

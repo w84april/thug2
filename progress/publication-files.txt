@@ -76,6 +76,7 @@ local/analysis/audit-scene-lifetime.py
 local/analysis/audit-scene-state.py
 local/analysis/audit-score-insert.py
 local/analysis/audit-skater-adjust.py
+local/analysis/audit-skater-cleanup.py
 local/analysis/audit-skater-construction.py
 local/analysis/audit-skater-finalize.py
 local/analysis/audit-skater-gap.py
@@ -164,6 +165,7 @@ local/analysis/build-scene-witnesses.py
 local/analysis/build-score-insert-draft.py
 local/analysis/build-script-change-draft.py
 local/analysis/build-skater-adjust-draft.py
+local/analysis/build-skater-cleanup-draft.py
 local/analysis/build-skater-construction-draft.py
 local/analysis/build-skater-finalize-draft.py
 local/analysis/build-skater-gap-draft.py
@@ -552,6 +554,7 @@ local/analysis/pin-scene-lifetime.py
 local/analysis/pin-scene-state.py
 local/analysis/pin-score-insert.py
 local/analysis/pin-skater-adjust.py
+local/analysis/pin-skater-cleanup.py
 local/analysis/pin-skater-construction.py
 local/analysis/pin-skater-finalize.py
 local/analysis/pin-skater-gap.py
@@ -654,6 +657,7 @@ local/analysis/probe-scene-visitor.py
 local/analysis/probe-score-insert.py
 local/analysis/probe-script-change.py
 local/analysis/probe-skater-adjust.py
+local/analysis/probe-skater-cleanup.py
 local/analysis/probe-skater-construction.py
 local/analysis/probe-skater-finalize.py
 local/analysis/probe-skater-gap.py
@@ -897,6 +901,7 @@ local/analysis/serve-scene-lifetime.py
 local/analysis/serve-scene-state.py
 local/analysis/serve-score-insert.py
 local/analysis/serve-skater-adjust.py
+local/analysis/serve-skater-cleanup.py
 local/analysis/serve-skater-construction.py
 local/analysis/serve-skater-finalize.py
 local/analysis/serve-skater-gap.py
@@ -923,6 +928,15 @@ local/analysis/skater-adjust-draft.build.json
 local/analysis/skater-adjust-draft.c
 local/analysis/skater-adjust-routines.json
 local/analysis/skater-adjust-worker.mjs
+local/analysis/skater-cleanup-browser.html
+local/analysis/skater-cleanup-checker-guard.mjs
+local/analysis/skater-cleanup-checks.mjs
+local/analysis/skater-cleanup-constructor-prefix.c
+local/analysis/skater-cleanup-draft.build.json
+local/analysis/skater-cleanup-draft.c
+local/analysis/skater-cleanup-model-derived.c
+local/analysis/skater-cleanup-routines.json
+local/analysis/skater-cleanup-worker.mjs
 local/analysis/skater-construction-browser.html
 local/analysis/skater-construction-diagnostic-fixture.build.json
 local/analysis/skater-construction-diagnostic-fixture.c
@@ -1195,6 +1209,7 @@ local/analysis/verify-scene-state.mjs
 local/analysis/verify-score-insert-checkpoint.mjs
 local/analysis/verify-script-change.mjs
 local/analysis/verify-skater-adjust-checkpoint.mjs
+local/analysis/verify-skater-cleanup-checkpoint.mjs
 local/analysis/verify-skater-construction-checkpoint.mjs
 local/analysis/verify-skater-finalize-checkpoint.mjs
 local/analysis/verify-skater-gap-checkpoint.mjs

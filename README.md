@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.38%** — 1,906 reported recovered routines divided
+**Decompilation estimate: 16.55%** — 1,926 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 750 experimental routines: 733 in the latest
+routines (9.93% of that baseline) and 770 experimental routines: 753 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,697 pinned artifacts, preserving all 17,525 preceding artifacts. All 145 Node
-and Chromium suites were rerun for this checkpoint and passed; all 144 inherited
+17,870 pinned artifacts, preserving all 17,697 preceding artifacts. All 146 Node
+and Chromium suites were rerun for this checkpoint and passed; all 145 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,24 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers SkaterFinalizePhysics and extends local
+- The latest experimental build recovers SkaterCleanupState and extends local
+  skater construction through it to Walk. Twenty complete routines handle its
+  lifecycle and full frame, light direction virtuals, camera setters, shadow
+  direction and keyed projection matrices. Real look-at and orthographic math,
+  state transitions, signed blend counters and component dispatch run in 441
+  cases: 882 completed calls and 32 interrupted constructor calls. All 557 new
+  instructions are exercised; this is not exhaustive input or branch coverage.
+  Two declared global float-store lanes require precise physical x87 quieting
+  for 28 signaling words, retaining their signs and payloads; five corruption
+  checks confirm the comparison rejects changed results. No NaN classification,
+  numeric masks or uninitialized-byte allowances are added. All 146 Node and
+  Chromium suites pass with all 145 earlier results unchanged. Evidence is in
+  `local/analysis/skater-cleanup-checkpoint.json`; the module contains 753
+  unpromoted complete routines. The partial constructor reaches 265 / 463
+  instructions and stops before Walk. Renderer creation/rendering, remaining
+  startup/frames, later score linkage and original playable training remain
+  unfinished.
+- The preceding experimental build recovers SkaterFinalizePhysics and extends local
   skater construction through it. Seven complete routines handle lifecycle,
   dependency binding, the full frame, degenerate matrix repair and animation
   speed clamping. Real stat lookup and matrix operations match the original in
