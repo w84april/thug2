@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.55%** — 1,926 reported recovered routines divided
+**Decompilation estimate: 16.65%** — 1,937 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 770 experimental routines: 753 in the latest
+routines (9.93% of that baseline) and 781 experimental routines: 764 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,870 pinned artifacts, preserving all 17,697 preceding artifacts. All 146 Node
-and Chromium suites were rerun for this checkpoint and passed; all 145 inherited
+18,047 pinned artifacts, preserving all 17,870 preceding artifacts. All 147 Node
+and Chromium suites were rerun for this checkpoint and passed; all 146 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,24 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers SkaterCleanupState and extends local
+- The latest experimental build recovers eleven Walk routines: construction,
+  disposal, camera initialization, dependency binding, camera-relative input,
+  owner orientation and score-dependent decay. The shared component builder
+  creates, links and disposes Walk; skater construction now proceeds through it
+  to the next component. All 505 new instructions are exercised across 848
+  cases and 1,474 calls: 1,330 complete, 32 interrupted constructor calls and
+  112 interrupted frame-prefix calls. Allocation failure is checked explicitly.
+  There are no numeric masks, NaN classification or uninitialized-byte allowances
+  in this suite. All 147 Node and Chromium suites pass, with all 146 earlier
+  result objects unchanged. Evidence is in
+  `local/analysis/skater-walk-checkpoint.json`; this module contains 764
+  unpromoted complete routines. The partial constructor reaches 277 / 463
+  instructions and stops before component `7cd3e6d5`. The partial Walk frame
+  reaches 51 / 142 instructions and stops before its five movement-state handlers
+  or remaining common tail; neither partial routine counts toward the estimate.
+  Walking movement/collision, remaining startup, rendering and playable training
+  remain unfinished.
+- The preceding experimental build recovers SkaterCleanupState and extends local
   skater construction through it to Walk. Twenty complete routines handle its
   lifecycle and full frame, light direction virtuals, camera setters, shadow
   direction and keyed projection matrices. Real look-at and orthographic math,

@@ -1,0 +1,57 @@
+{
+  "0x528880": {
+    "bytes": 15,
+    "instructions": 7,
+    "name": "thug_walk_contact_construct_draft"
+  },
+  "0x528890": {
+    "bytes": 27,
+    "instructions": 10,
+    "name": "thug_walk_contact_destroy_draft"
+  },
+  "0x52a190": {
+    "bytes": 247,
+    "instructions": 54,
+    "name": "thug_walk_construct_draft"
+  },
+  "0x52a5c0": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_walk_create_draft"
+  },
+  "0x5288b0": {
+    "bytes": 149,
+    "instructions": 38,
+    "name": "thug_walk_destroy_draft"
+  },
+  "0x52a290": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_walk_delete_draft"
+  },
+  "0x526060": {
+    "bytes": 82,
+    "instructions": 22,
+    "name": "thug_walk_initialize_draft"
+  },
+  "0x525fb0": {
+    "bytes": 176,
+    "instructions": 40,
+    "name": "thug_walk_bind_draft"
+  },
+  "0x527f20": {
+    "bytes": 508,
+    "instructions": 138,
+    "name": "thug_walk_read_input_draft"
+  },
+  "0x527db0": {
+    "bytes": 360,
+    "instructions": 120,
+    "name": "thug_walk_read_owner_draft"
+  },
+  "0x528370": {
+    "bytes": 141,
+    "instructions": 41,
+    "name": "thug_walk_score_decay_draft"
+  }
+}

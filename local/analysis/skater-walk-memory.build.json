@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--import-memory,--export-all,--global-base=33554432",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-walk-memory.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-walk-memory.wasm"
+  ],
+  "source_hashes": {
+    "local/analysis/skater-walk-memory.c": "08fc7765ea4863835fb51e1e75c4bfd48c1ff3c16c88f2768a1f6ed53e85b195"
+  },
+  "sha256": "555eab4faab20272654f8921c202ca7d90df034a7b5a422ff50f9d9571a55756"
+}

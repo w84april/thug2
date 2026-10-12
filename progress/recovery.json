@@ -4,166 +4,112 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 753,
-  "experimental_functions_across_separate_builds": 770,
-  "reported_recovered_functions": 1926,
-  "decompilation_estimate_percent": 16.55,
+  "experimental_functions_in_latest_module": 764,
+  "experimental_functions_across_separate_builds": 781,
+  "reported_recovered_functions": 1937,
+  "decompilation_estimate_percent": 16.65,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/skater-cleanup-checkpoint.json",
-  "checkpoint_sha256": "e0ddda94d392f6197f33dad0747c1705460c4d609f22bf041eca4b5e2348cbd1",
+  "checkpoint": "local/analysis/skater-walk-checkpoint.json",
+  "checkpoint_sha256": "ad6425b0bc8f7f24c600967702cfbde8619d573d550179581af1efed4c9f94c9",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "e0ddda94d392f6197f33dad0747c1705460c4d609f22bf041eca4b5e2348cbd1",
-    "artifacts": 17870,
+    "checkpoint_sha256": "ad6425b0bc8f7f24c600967702cfbde8619d573d550179581af1efed4c9f94c9",
+    "artifacts": 18047,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 605,
+    "harnesses": 614,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 17697,
+    "preserved_previous_artifacts": 17870,
     "main_wasm_unchanged": true,
-    "unit_cases": 441,
-    "unit_calls": 914,
-    "completed_calls": 882,
-    "interrupted_calls": 32,
-    "new_instruction_coverage": "557/557; no exclusions; instruction coverage does not imply exhaustive inputs or branches",
+    "unit_cases": 848,
+    "unit_calls": 1474,
+    "completed_calls": 1330,
+    "interrupted_calls": 144,
+    "new_instruction_coverage": "505/505; no exclusions; instruction coverage does not imply exhaustive inputs or branches",
     "new_uninitialized_byte_allowances": 0,
-    "physical_x87_quieted_words": 28,
-    "global_quieting_corruption_cases_rejected": 5,
-    "browser_suites": 146,
-    "preserved_browser_suites": 145,
-    "constructor_prefix": "265/463; local path creates CleanupState then stops before Walk",
+    "new_float_comparison_allowances": 0,
+    "browser_suites": 147,
+    "preserved_browser_suites": 146,
+    "constructor_prefix": "277/463; local path creates Walk then stops before7cd3e6d5",
+    "walk_frame_prefix": "51/142; stops before five state handlers or remaining common tail",
     "playable": false
   },
-  "scope": "Twenty complete original routines recover CleanupState lifecycle and full frame, light direction virtuals and global fallback, camera setters, all three shadow direction receivers and real projected-shadow camera/table/D3DX calculations. Existing camera accessors, vector and D3DX helpers are reused and not recounted. Whole arena/globals/heap and completed-call preserved registers compare. Initialized dependency graphs and successful allocation are contracts. Actual owner dispatch, shared construction/frame/disposal and original skater construction through CleanupState execute; partial construction stops before Walk726e85aa and is not a completed routine. Renderer creation, rendering, remaining startup/frames and one original playable training level remain unfinished.",
-  "remaining": "CleanupState is recovered and local skater construction now stops before Walk726e85aa; remote850eef66 unchanged. Renderer constructors/rendering, remaining startup/frames, later score linkage and original playable training remain unfinished.",
-  "browser_suites": 146,
-  "new_cases": 441,
-  "new_calls": 914,
+  "scope": "Eleven complete original routines recover Walk allocation, construction, embedded collision-contact lifetime, disposal, optional camera initialization, dependency linking, camera-relative input, owner-vector loading and score-dependent decay. Actual CRT loops, collision references/cache, QB lookup, input magnitude and timing callees execute. Whole arena/globals/heap and completed-call preserved registers compare. Initialized graphs with required QB parameters are contracts; factory allocation failure is also exercised at the explicit test-heap boundary. Shared builder startup/disposal executes. Original skater construction continues through Walk to local7cd3e6d5 or remote850eef66. The Walk frame executes common setup and explicitly stops before each of five state handlers (or the remaining common tail for an invalid state); neither partial parent counts as recovered. State behavior, remaining startup/frames, rendering and original playable training remain unfinished.",
+  "remaining": "Walk lifecycle/input/owner vectors/score decay are recovered. Local skater construction now stops before7cd3e6d5; remote850eef66 unchanged. Walk common frame setup stops before its five state handlers or remaining common tail. State movement/collision behavior, remaining startup/frames, renderer creation/rendering and original playable training remain unfinished.",
+  "browser_suites": 147,
+  "new_cases": 848,
+  "new_calls": 1474,
   "instruction_coverage": {
-    "0x4fbe20": {
-      "covered": 26,
-      "total": 26,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4fbd90": {
-      "covered": 2,
-      "total": 2,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4fbdb0": {
-      "covered": 11,
-      "total": 11,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4fbda0": {
-      "covered": 2,
-      "total": 2,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4fbde0": {
-      "covered": 8,
-      "total": 8,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4fbe00": {
+    "0x528880": {
       "covered": 7,
       "total": 7,
       "missing": [],
       "excluded": {}
     },
-    "0x5809c0": {
-      "covered": 137,
-      "total": 137,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x456b30": {
-      "covered": 2,
-      "total": 2,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b6180": {
-      "covered": 22,
-      "total": 22,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b6250": {
-      "covered": 11,
-      "total": 11,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x48e920": {
-      "covered": 1,
-      "total": 1,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4b6ab0": {
-      "covered": 18,
-      "total": 18,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x431360": {
-      "covered": 7,
-      "total": 7,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4a1ba0": {
-      "covered": 80,
-      "total": 80,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x4a21a0": {
-      "covered": 74,
-      "total": 74,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x485a70": {
+    "0x528890": {
       "covered": 10,
       "total": 10,
       "missing": [],
       "excluded": {}
     },
-    "0x485a90": {
-      "covered": 2,
-      "total": 2,
+    "0x52a190": {
+      "covered": 54,
+      "total": 54,
       "missing": [],
       "excluded": {}
     },
-    "0x48bf60": {
-      "covered": 1,
-      "total": 1,
+    "0x52a5c0": {
+      "covered": 24,
+      "total": 24,
       "missing": [],
       "excluded": {}
     },
-    "0x4b2c50": {
-      "covered": 64,
-      "total": 64,
+    "0x5288b0": {
+      "covered": 38,
+      "total": 38,
       "missing": [],
       "excluded": {}
     },
-    "0x4db100": {
-      "covered": 72,
-      "total": 72,
+    "0x52a290": {
+      "covered": 11,
+      "total": 11,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x526060": {
+      "covered": 22,
+      "total": 22,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x525fb0": {
+      "covered": 40,
+      "total": 40,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x527f20": {
+      "covered": 138,
+      "total": 138,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x527db0": {
+      "covered": 120,
+      "total": 120,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x528370": {
+      "covered": 41,
+      "total": 41,
       "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "10bb968047b351319e7be04b1d612fce57305dd11a30ccdad5e5770954108d64",
+  "experimental_wasm_sha256": "0ae07a7452cbffe29a672a7cf71a2c4c4ead9a12131c2aadb7e84960ae80d6b3",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -252,6 +198,7 @@
     "local/analysis/audit-skater-rotate.py": "a7130f6423fca7cc032f78d9bb6b3c8be4412d5982ea99dd2ca9b26c666f00a8",
     "local/analysis/audit-skater-score.py": "81654189c7908f3c388e061a68fa6aaf7fe7844d4a4325ba6161297f16c875bc",
     "local/analysis/audit-skater-trick.py": "1b49790a4b600d6846a2f24374a1a21881e68777b5f07d7296a94090fbb8530f",
+    "local/analysis/audit-skater-walk.py": "4257b45201b433ad43eccb698340e26f53bda004ecd021a29b270ab558b82ae3",
     "local/analysis/audit-sphere-contact.py": "01d77aac5f23556487db4dfd1e0c40e15911a1393b9313a8c215c29a5725adc1",
     "local/analysis/audit-sphere-geometry.py": "9f4b718867ec073f7f3821e03db4563878d55faa2f654fba86404bf193e90622",
     "local/analysis/audit-sphere-query.py": "1bc393849d17f89ff3180d43796e998dd687509e96c5f87af7fde77b85f3c3ae",
@@ -341,6 +288,7 @@
     "local/analysis/build-skater-rotate-draft.py": "99f11a595593e3c606b1c81e41ff5f582efe7fe1492ef2a70f72b8986f06d28f",
     "local/analysis/build-skater-score-draft.py": "a355535f19d4f66756ba0596188507a2054a06e5e88419e5e443fbfd58993a84",
     "local/analysis/build-skater-trick-draft.py": "f1404d805aaf28b63ae0f29f7d462391e07bd01d516c352b9324605ff9c12633",
+    "local/analysis/build-skater-walk-draft.py": "87ac921ded0d6f348b4eead049a1d69beba781ba5d237af6b28063ad4c7f1cb2",
     "local/analysis/build-skeleton-asset-draft.py": "8745c2d36f3080c4930468943ae81461ef6e861f648d82d546f5106673f28e2a",
     "local/analysis/build-skeleton-buffer-draft.py": "c865bf473d6329ebd58b0b26f9f0c87c82fa9e15da40afedebddc6a662a5a2a3",
     "local/analysis/build-sphere-contact-draft.py": "14d3c9e6a468338ec8f3542e201e0724ce3e0cb85585163107c8f4f7010581a8",
@@ -730,6 +678,7 @@
     "local/analysis/pin-skater-rotate.py": "e46b2997a39e584e0610ef273edd9c9ad76ea507bda7b37e98c92ea4af73050e",
     "local/analysis/pin-skater-score.py": "c38e750c200d270010b8eb328830671936d3c6cb38d44375f49a96ff24fd4955",
     "local/analysis/pin-skater-trick.py": "1403dd03dd1848ee742b441760497255278aa5885a2b08f83f33e292ed909278",
+    "local/analysis/pin-skater-walk.py": "1bc4671aa2b773841e102476175a2fe2f1fc5adaeff34ab45fc10e4985074ed8",
     "local/analysis/pin-skeleton-asset.py": "539043a6ecc7286804b4b1ffc1328b5f93473489068ed0caf7e777d04c1eab56",
     "local/analysis/pin-skeleton-buffer.py": "1875fb6bb8dd458fc34389747c28f41c8923b4f3a0377e3bc4d386c46ed87930",
     "local/analysis/pin-sphere-contact.py": "52ca3c53d42b599b0507eb5c55712074ac4b196ce6978c39e2091734e1d0bded",
@@ -834,6 +783,7 @@
     "local/analysis/probe-skater-score-assets.py": "1d9591aa70fd99dcb67ac4ebc8fdb0c199240ebfe29bd37a985115323f487d10",
     "local/analysis/probe-skater-score.py": "aca1276db71969be2ef30bc35f0c3fdc68e783c6b08ed9440dfca3115998619c",
     "local/analysis/probe-skater-trick.py": "6503f416a4f0bd485b71a062bb8c538aabe32d859906827e85baf0d98c2311e8",
+    "local/analysis/probe-skater-walk.py": "5cc1fe0936ed27d01b3909514d0845336bd65faa0e472636969bba1c5217a1de",
     "local/analysis/probe-skeleton-asset.py": "8a7eac48107b9a0f91211789b3bcb797e4c869efe7f3a735c4c53babff4f4f69",
     "local/analysis/probe-skeleton-buffer.py": "e782daa1930bcbe9d1e9c981af5dad38bd9f41c638e09275eb8c59326ca948de",
     "local/analysis/probe-sphere-contact-training.py": "abfa3f9b159a9e57d56bbade01789e739fbcc9a17857ff36935d2ac4f6149297",
@@ -1077,6 +1027,7 @@
     "local/analysis/serve-skater-rotate.py": "9f80bb29670b94f3d4fdc75c8db86dc1faa0fac3f2f874172e72b9374a188115",
     "local/analysis/serve-skater-score.py": "2a2e44dbedbdec3f2583d4a67846d87467954f89d02821f0081352792c3c5191",
     "local/analysis/serve-skater-trick.py": "3e95c8af090bbdac6ea01022615f450c4bcaca3a9e955e4a9292855c61e95cdc",
+    "local/analysis/serve-skater-walk.py": "cfcfa2711e263f977378fb4af354912ebae0368d6a617dfc900a5ef0924753f3",
     "local/analysis/serve-skeleton-asset.py": "8a6e399ccc6a45fbd864560536eb47ff6c50f42b427b5745bd760040cb46a6d3",
     "local/analysis/serve-skeleton-buffer.py": "fae7c1754f38a35d64e8a23f5f2295c0afb17fc0974cae56b38bf9ae78c72dbf",
     "local/analysis/serve-sphere-contact.py": "a2e0db4cf35c2bb75e308ba23dc51411b0cfca568de757d61d553747bdd480f8",
@@ -1157,6 +1108,16 @@
     "local/analysis/skater-trick-draft.c": "f341ad9b30d12baae13827c1c78a83909fab0cf55e042c0d8b3dce8913740fe1",
     "local/analysis/skater-trick-routines.json": "b7a5ed8adf24c2e58e02c695881b5c808cf529703c99972f761fc9a7bcae414b",
     "local/analysis/skater-trick-worker.mjs": "2b44e4af6b4146dcd5b226d7b4920a039e9928d0df02f458e3b7cc12ece888f9",
+    "local/analysis/skater-walk-browser.html": "61a5f4c0aa7351fed2d0a4690d25c4d73d2bb7ec4b9af7446c69a4ae4aa5cf24",
+    "local/analysis/skater-walk-checks.mjs": "5b9ce62e82adeeadb4f4bf12359b3b3952051f025322f5b6726c948af45e646f",
+    "local/analysis/skater-walk-constructor-prefix.c": "e5ba8d9b861f80288f8774a2358f8b1f91c26a23a6ad45db325264089a2f8569",
+    "local/analysis/skater-walk-draft.build.json": "2f117d3ece2d12a5ce397feadbee252ce6f29b9113757d05d1e2b864160131db",
+    "local/analysis/skater-walk-draft.c": "a7fe345ff67ac00900ecb72de97432c98973cf6edf1cc3184c2275d8191c4cb0",
+    "local/analysis/skater-walk-extents.py": "59abd71a1dfdfedf3eadb1c2b445adfd7cfedc6bb28bb3e33c0bb5f029240bd0",
+    "local/analysis/skater-walk-memory.build.json": "098c66c35d229f01d392804e882d9939ebfd49e21d989927614e211292ea6b98",
+    "local/analysis/skater-walk-memory.c": "08fc7765ea4863835fb51e1e75c4bfd48c1ff3c16c88f2768a1f6ed53e85b195",
+    "local/analysis/skater-walk-routines.json": "28c14177f8ad8d45994c453a3ae85e99022c61d89dfb28858debff37ba7c22d6",
+    "local/analysis/skater-walk-worker.mjs": "8fe12de1d16288dd494212aa52a0facc0f870ce58dafabdfcab0e2f34bbd2c89",
     "local/analysis/skeleton-asset-browser.html": "af9e2e57a64612d43f5d7d60102b2050a5c9927cf504b7a362c28986e6be0018",
     "local/analysis/skeleton-asset-draft.build.json": "b98dadc971abe906814c727672dea373e025957a96a16a3c57479e513981b737",
     "local/analysis/skeleton-asset-draft.c": "e0e8f1dabe4c17ec5e1e9ec035bed83902f4d21a65ba0469757f0b3dd63750b4",
@@ -1385,6 +1346,7 @@
     "local/analysis/verify-skater-rotate-checkpoint.mjs": "7efb4144e01bb0948e94c9f78fec87e6c355a16324ee7a26b1684907c85c94b8",
     "local/analysis/verify-skater-score-checkpoint.mjs": "8ff8c16cb95cc40cf3738a952cc2cc4fd69de21722fcd24602f6889187a36139",
     "local/analysis/verify-skater-trick-checkpoint.mjs": "1277727584c3f22c9802dade66029cac04715931bb4f9ac70a8cab9f4a9bfeee",
+    "local/analysis/verify-skater-walk-checkpoint.mjs": "c51aebcf02d494302dfb7b9e388b98c4ca97d100565f85f147c1e57e4bccab85",
     "local/analysis/verify-skeleton-asset-checkpoint.mjs": "99d66380f265c2e663b05fe4b5b7bb4c403ff8d9e536708ccd6e43a43d1617b7",
     "local/analysis/verify-skeleton-asset.mjs": "d18c20ad915f040325b6d0acdf142aee422c390775a6470f7790aeb57d64c63d",
     "local/analysis/verify-skeleton-buffer.mjs": "c4fcfee0bf0aa9a55c075ec897f53d11089913cb4fd9c2675be52ceb551f377e",

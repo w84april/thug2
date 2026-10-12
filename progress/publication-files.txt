@@ -85,6 +85,7 @@ local/analysis/audit-skater-matrix.py
 local/analysis/audit-skater-rotate.py
 local/analysis/audit-skater-score.py
 local/analysis/audit-skater-trick.py
+local/analysis/audit-skater-walk.py
 local/analysis/audit-sphere-contact.py
 local/analysis/audit-sphere-geometry.py
 local/analysis/audit-sphere-query.py
@@ -174,6 +175,7 @@ local/analysis/build-skater-matrix-draft.py
 local/analysis/build-skater-rotate-draft.py
 local/analysis/build-skater-score-draft.py
 local/analysis/build-skater-trick-draft.py
+local/analysis/build-skater-walk-draft.py
 local/analysis/build-skeleton-asset-draft.py
 local/analysis/build-skeleton-buffer-draft.py
 local/analysis/build-sphere-contact-draft.py
@@ -563,6 +565,7 @@ local/analysis/pin-skater-matrix.py
 local/analysis/pin-skater-rotate.py
 local/analysis/pin-skater-score.py
 local/analysis/pin-skater-trick.py
+local/analysis/pin-skater-walk.py
 local/analysis/pin-skeleton-asset.py
 local/analysis/pin-skeleton-buffer.py
 local/analysis/pin-sphere-contact.py
@@ -667,6 +670,7 @@ local/analysis/probe-skater-rotate.py
 local/analysis/probe-skater-score-assets.py
 local/analysis/probe-skater-score.py
 local/analysis/probe-skater-trick.py
+local/analysis/probe-skater-walk.py
 local/analysis/probe-skeleton-asset.py
 local/analysis/probe-skeleton-buffer.py
 local/analysis/probe-sphere-contact-training.py
@@ -910,6 +914,7 @@ local/analysis/serve-skater-matrix.py
 local/analysis/serve-skater-rotate.py
 local/analysis/serve-skater-score.py
 local/analysis/serve-skater-trick.py
+local/analysis/serve-skater-walk.py
 local/analysis/serve-skeleton-asset.py
 local/analysis/serve-skeleton-buffer.py
 local/analysis/serve-sphere-contact.py
@@ -990,6 +995,16 @@ local/analysis/skater-trick-draft.build.json
 local/analysis/skater-trick-draft.c
 local/analysis/skater-trick-routines.json
 local/analysis/skater-trick-worker.mjs
+local/analysis/skater-walk-browser.html
+local/analysis/skater-walk-checks.mjs
+local/analysis/skater-walk-constructor-prefix.c
+local/analysis/skater-walk-draft.build.json
+local/analysis/skater-walk-draft.c
+local/analysis/skater-walk-extents.py
+local/analysis/skater-walk-memory.build.json
+local/analysis/skater-walk-memory.c
+local/analysis/skater-walk-routines.json
+local/analysis/skater-walk-worker.mjs
 local/analysis/skeleton-asset-browser.html
 local/analysis/skeleton-asset-draft.build.json
 local/analysis/skeleton-asset-draft.c
@@ -1218,6 +1233,7 @@ local/analysis/verify-skater-matrix-checkpoint.mjs
 local/analysis/verify-skater-rotate-checkpoint.mjs
 local/analysis/verify-skater-score-checkpoint.mjs
 local/analysis/verify-skater-trick-checkpoint.mjs
+local/analysis/verify-skater-walk-checkpoint.mjs
 local/analysis/verify-skeleton-asset-checkpoint.mjs
 local/analysis/verify-skeleton-asset.mjs
 local/analysis/verify-skeleton-buffer.mjs
