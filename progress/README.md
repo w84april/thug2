@@ -1,8 +1,8 @@
 # Recovery reporting
 
-This project recovers Windows x86 behavior for WebAssembly. It has **no verified
-binary matches** and is not playable yet. Behavioral comparisons do not establish
-that rebuilt x86 bytes match the original executable.
+This project recovers Windows x86 behavior for WebAssembly. It has **406 verified
+native matching bytes across eight individual functions** and is not playable yet.
+Behavioral completion and native binary matching have separate evidence.
 
 ## decomp.dev requirements checked on 2026-10-12
 
@@ -39,8 +39,17 @@ Authoritative implementation references:
 ## Metric policy
 
 `complete_code` will represent original code bytes attributed to recovered
-functions with linked source and passing behavioral evidence. All `matched_*`
-and `fuzzy_match_percent` values remain zero: no binary matching was attempted.
+functions with linked source and passing behavioral evidence. Matching credit
+requires selected positive per-function native proof, complete original body
+sizes and exact raw or declared-relocation-resolved bytes. The accepted proof
+is [matching/selection.json](../matching/selection.json), which pins the immutable
+[trial proof](../matching/proof.json), source, comparator and manifest hashes.
+Five functions match raw COFF bytes (189 bytes); three checksum functions match
+after DIR32 table address resolution (217 bytes). No instructions or operands are
+masked. Two mismatches earn zero. No graded fuzzy comparison was performed:
+the eight exact items use objdiff's 100% item field, all other items use zero,
+and aggregate fuzzy fields contain only that conservative exact-byte fraction.
+Data matching and completion remain zero. This does not establish a full PE link.
 Completion does not mean exhaustive input coverage, hardware parity, complete
 engine integration, or playability. Existing test scopes and numeric allowances
 remain part of the evidence and must not be hidden by the aggregate metric.
@@ -52,8 +61,10 @@ reconciled independently; uncertain mappings remain uncounted.
 Original executables, game assets, disassembly, generated pseudocode, fixture
 memory and compiled game modules stay local. CI can check the published metadata,
 source hashes, arithmetic and report format. It cannot rerun original-executable
-comparisons without the local specimen and fixtures. A schema-valid report alone
-is not new behavioral evidence.
+comparisons without the local specimen and fixtures, or replay native matching
+without the private object/compiler environment. Public matching metadata is a
+hashed record of independently replayed local proof, not a CI compiler build.
+A schema-valid report alone is not new behavioral or matching evidence.
 
 The retired publishing automation remains paused. The user has authorized direct
 publication of verified work from the current recovery chat.
@@ -62,8 +73,10 @@ publication of verified work from the current recovery chat.
 
 `ledger.json` links **2,038 distinct original addresses** to source hashes and
 preserved positive original-execution evidence. It credits **435,589 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.34%)**. Every
-binary-matching measure is zero. The initial reporting commit reconciled existing
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.34%)**.
+Native matching separately credits **406 / 2,375,378 bytes (0.01709%)**, across
+eight already complete addresses, so completion receives no additional credit.
+The initial reporting commit reconciled existing
 evidence. Subsequent audited checkpoint selections add 74 distinct addresses,
 totaling 8,540 original body bytes. The latest four checked mappings add 451
 bytes. The preceding 22 mappings added 21 addresses (4,093 bytes); shared
@@ -125,8 +138,13 @@ CARGO_TARGET_DIR=local/build/progress-validator cargo +1.97.0 run --locked \
 CI does not replay original comparisons. Its checks enforce source identity,
 unique addresses and non-overlapping ranges, sizes, partial exclusions,
 denominator arithmetic, deterministic regeneration and the actual pinned
-objdiff parser. The parser also rejects matching credit in aggregate, unit,
-category and item fields and verifies unit totals and completion metadata.
+objdiff parser. The parser checks aggregate/unit matching arithmetic and exact
+item totals, then requires deterministic regeneration against the validated
+selected proof. A matching claim moved to an unproved routine is rejected even
+when its aggregate arithmetic is correct. Aggregate, unit, category, item and
+provenance corruptions are tested. Run this project validator from the repository
+root. The trial pins an earlier inventory hash; every trial body must still equal
+the current full original range, despite later unrelated discovery additions.
 
 ## Upload verification and registration
 

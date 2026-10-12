@@ -20,7 +20,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Use the locally verified Rust toolchain
         run: rustup toolchain install 1.97.0 --profile minimal
-      - name: Check public metadata and reproduce report
+      # Public metadata validation only: no proprietary compiler or original replay.
+      - name: Check behavioral and native proof metadata and reproduce report
         run: |
           python3 tools/test_progress_report.py
           python3 tools/generate_progress_report.py --check

@@ -1,0 +1,57 @@
+{
+  "symbols": {
+    "?crc_table@@3QBIB": "0067c248"
+  },
+  "functions": [
+    {
+      "symbol": "_crc_buffer",
+      "address": "00401aa0",
+      "size": 71
+    },
+    {
+      "symbol": "_crc_extend",
+      "address": "00401af0",
+      "size": 55
+    },
+    {
+      "symbol": "_crc_normalized",
+      "address": "00401b30",
+      "size": 91
+    },
+    {
+      "symbol": "_crc_string",
+      "address": "00401b90",
+      "size": 73
+    },
+    {
+      "symbol": "_crc_extend_string",
+      "address": "00401be0",
+      "size": 78
+    },
+    {
+      "symbol": "?copy@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00402320",
+      "size": 31
+    },
+    {
+      "symbol": "?add@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00402340",
+      "size": 42
+    },
+    {
+      "symbol": "?subtract@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00406050",
+      "size": 42
+    },
+    {
+      "symbol": "?scale@Vector@@QAEAAU1@M@Z",
+      "address": "00402370",
+      "size": 43
+    },
+    {
+      "symbol": "?length_squared@Vector@@QBEMXZ",
+      "address": "004023a0",
+      "size": 31
+    }
+  ]
+}

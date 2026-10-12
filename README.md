@@ -14,7 +14,8 @@ Generated decompiler pseudocode alone does not supply that build.
 
 **Reconciled behavioral completion: 18.34% of original `.text` bytes** —
 435,589 / 2,375,378 bytes attributed to 2,038 distinct original addresses with
-linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
+linked source and scoped behavioral evidence. **Verified native binary matching:
+406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
 reconciled baseline with 74 newly reconciled startup/lifecycle addresses.
@@ -22,6 +23,9 @@ Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
 [address ledger](progress/ledger.json) and [objdiff report](progress/report.json).
+The native matching proof compares complete individual function bodies, with
+189 raw COFF-equal bytes and 217 bytes equal after declared address resolution.
+It does not establish a linked executable. See [the proof and scope](matching/README.md).
 
 **Historical decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
@@ -75,6 +79,14 @@ The retired chat and its publishing automation remain paused; direct publication
 of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
+
+- Eight reconstructed C++ helpers now have independently replayed native byte
+  matches under MSVC 13.10.3077. Every byte is compared; three checksum routines
+  use their declared table-address relocations and five vector methods match raw
+  object bytes. Two string-checksum candidates remain mismatched and receive no
+  credit. This changes only the separate matching metric; behavioral completion
+  and the original code denominator stay unchanged. Public checks validate the
+  selected proof metadata; CI does not run the private compiler or original.
 
 - Four initialization dependencies now pass 55 original/Wasm cases and 131
   completed calls: the Light constructor, shared-component construction, camera
@@ -4029,8 +4041,9 @@ skater movement, collision, tricks, and camera. Required work includes:
 4. Build an executable engine subset, then add browser rendering, input, asset
    loading, timing, and sound adapters and validate it against a reference run.
 
-Compiler metadata suggests the MSVC 7.1 era. The exact original toolchain and
-compiler settings still need verification before claiming binary matching.
+MSVC 13.10.3077 reproduces eight complete native function bodies with `/O2 /Gy`.
+Exact project-wide compiler settings, library provenance and a complete PE link
+remain unverified; see [the native trial](matching/README.md).
 
 Guidance: [Decompedia](https://decomp.wiki/) and
 [Snail Mail recovery article](https://banteg.xyz/posts/snail-mail/).

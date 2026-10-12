@@ -1,0 +1,237 @@
+{
+  "reference_sha256": "52fc88849654b34839ec2f96bff3a8c0b7a855df9a207aab9f2fca2e6bd440f3",
+  "object_sha256": "be220d5217f301b24c145bba66b4afe4ffd296743004bb8f62d0893e4b8d02e0",
+  "inventory_sha256": "93b58d230df6ad4843f2ee92ac92772b4f9c69c7f13e1c73023aad34661a4746",
+  "functions": [
+    {
+      "symbol": "_crc_buffer",
+      "address": "00401aa0",
+      "size": 71,
+      "compiled_size": 71,
+      "raw_object_equal": false,
+      "relocated_equal": true,
+      "relocations": [
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "?crc_table@@3QBIB",
+          "target": "0067c248",
+          "addend": 0
+        }
+      ],
+      "reference_sha256": "01fcdc50b76fcb2d620e9de7ac776c4a8827a85fa779757f669a7e68febf6854",
+      "raw_object_sha256": "388aaaa8c65a0d30a485102a849c97e047e1c48c806696871f91f38d990db725",
+      "relocated_sha256": "01fcdc50b76fcb2d620e9de7ac776c4a8827a85fa779757f669a7e68febf6854",
+      "credited_bytes": 71,
+      "first_difference": null
+    },
+    {
+      "symbol": "_crc_extend",
+      "address": "00401af0",
+      "size": 55,
+      "compiled_size": 55,
+      "raw_object_equal": false,
+      "relocated_equal": true,
+      "relocations": [
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?crc_table@@3QBIB",
+          "target": "0067c248",
+          "addend": 0
+        }
+      ],
+      "reference_sha256": "e7cf538d18a7c4d86ef93b87d54204ddc91c4641bb433be0c6b1838a562ee288",
+      "raw_object_sha256": "b89d904039d73cdd737bfb96282066bb86cc8d7ec9d3185eb5920cfaf6b63926",
+      "relocated_sha256": "e7cf538d18a7c4d86ef93b87d54204ddc91c4641bb433be0c6b1838a562ee288",
+      "credited_bytes": 55,
+      "first_difference": null
+    },
+    {
+      "symbol": "_crc_normalized",
+      "address": "00401b30",
+      "size": 91,
+      "compiled_size": 91,
+      "raw_object_equal": false,
+      "relocated_equal": true,
+      "relocations": [
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "?crc_table@@3QBIB",
+          "target": "0067c248",
+          "addend": 0
+        }
+      ],
+      "reference_sha256": "577727d96f9d62d6ae46fc2b84be30c88d541c616b5719a221e7fc997c43e2ff",
+      "raw_object_sha256": "25365f8354f3131899ac88373ccc6b63451c34aa1fc316648529ff25393d35c2",
+      "relocated_sha256": "577727d96f9d62d6ae46fc2b84be30c88d541c616b5719a221e7fc997c43e2ff",
+      "credited_bytes": 91,
+      "first_difference": null
+    },
+    {
+      "symbol": "_crc_string",
+      "address": "00401b90",
+      "size": 73,
+      "compiled_size": 72,
+      "raw_object_equal": false,
+      "relocated_equal": false,
+      "relocations": [
+        {
+          "offset": 55,
+          "type": "DIR32",
+          "symbol": "?crc_table@@3QBIB",
+          "target": "0067c248",
+          "addend": 0
+        }
+      ],
+      "reference_sha256": "75498a07b3d227f99b0692b3a5a581167e95757bd98cdc0df3e47f853236d607",
+      "raw_object_sha256": "84c24d0d3e8e19993f2dc7a04c3bb03b8661efde7b24add41196d24299f1bc4e",
+      "relocated_sha256": "c8b71534ea64b8d272fa0a4b0520b3e06d18fe58dd044ebda2a2bb62dcd04b0e",
+      "credited_bytes": 0,
+      "first_difference": 16
+    },
+    {
+      "symbol": "_crc_extend_string",
+      "address": "00401be0",
+      "size": 78,
+      "compiled_size": 75,
+      "raw_object_equal": false,
+      "relocated_equal": false,
+      "relocations": [
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "?crc_table@@3QBIB",
+          "target": "0067c248",
+          "addend": 0
+        }
+      ],
+      "reference_sha256": "b83a29b1fe644bd3405298d7a78363db48a0c6c856d1ec5fbce8ed56f46e4508",
+      "raw_object_sha256": "7bd545e18d37344e45f213e730aec98198398563990f053bd6992f1dec644c96",
+      "relocated_sha256": "d63ea7b7f975b0a2f447068adcc87cfffe4e03b02de45d8e6ab4ec03c3015e99",
+      "credited_bytes": 0,
+      "first_difference": 1
+    },
+    {
+      "symbol": "?copy@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00402320",
+      "size": 31,
+      "compiled_size": 31,
+      "raw_object_equal": true,
+      "relocated_equal": true,
+      "relocations": [],
+      "reference_sha256": "488dbddb9d91612e9d16686d3d0c8a7fbc851b9899b24fcd7433007989a8b2ad",
+      "raw_object_sha256": "488dbddb9d91612e9d16686d3d0c8a7fbc851b9899b24fcd7433007989a8b2ad",
+      "relocated_sha256": "488dbddb9d91612e9d16686d3d0c8a7fbc851b9899b24fcd7433007989a8b2ad",
+      "credited_bytes": 31,
+      "first_difference": null
+    },
+    {
+      "symbol": "?add@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00402340",
+      "size": 42,
+      "compiled_size": 42,
+      "raw_object_equal": true,
+      "relocated_equal": true,
+      "relocations": [],
+      "reference_sha256": "b5fc4f28441fa235adcf4900abb55585fd355bfca442c0b39bcfc661ca7b1f03",
+      "raw_object_sha256": "b5fc4f28441fa235adcf4900abb55585fd355bfca442c0b39bcfc661ca7b1f03",
+      "relocated_sha256": "b5fc4f28441fa235adcf4900abb55585fd355bfca442c0b39bcfc661ca7b1f03",
+      "credited_bytes": 42,
+      "first_difference": null
+    },
+    {
+      "symbol": "?subtract@Vector@@QAEAAU1@ABU1@@Z",
+      "address": "00406050",
+      "size": 42,
+      "compiled_size": 42,
+      "raw_object_equal": true,
+      "relocated_equal": true,
+      "relocations": [],
+      "reference_sha256": "44adc3831e21614fc0f328f2ba69127328a61b1bc04d9f227ebd4150b0a04889",
+      "raw_object_sha256": "44adc3831e21614fc0f328f2ba69127328a61b1bc04d9f227ebd4150b0a04889",
+      "relocated_sha256": "44adc3831e21614fc0f328f2ba69127328a61b1bc04d9f227ebd4150b0a04889",
+      "credited_bytes": 42,
+      "first_difference": null
+    },
+    {
+      "symbol": "?scale@Vector@@QAEAAU1@M@Z",
+      "address": "00402370",
+      "size": 43,
+      "compiled_size": 43,
+      "raw_object_equal": true,
+      "relocated_equal": true,
+      "relocations": [],
+      "reference_sha256": "3c65890d073dedbfc396260e3533939b66ccb0dcd12e98e29d0ac12589d8cc09",
+      "raw_object_sha256": "3c65890d073dedbfc396260e3533939b66ccb0dcd12e98e29d0ac12589d8cc09",
+      "relocated_sha256": "3c65890d073dedbfc396260e3533939b66ccb0dcd12e98e29d0ac12589d8cc09",
+      "credited_bytes": 43,
+      "first_difference": null
+    },
+    {
+      "symbol": "?length_squared@Vector@@QBEMXZ",
+      "address": "004023a0",
+      "size": 31,
+      "compiled_size": 31,
+      "raw_object_equal": true,
+      "relocated_equal": true,
+      "relocations": [],
+      "reference_sha256": "7ab81ef75aaeb8fdc804bd92be5aff0fe4b42e0a6f4ca6c8a8b3028fa8072a38",
+      "raw_object_sha256": "7ab81ef75aaeb8fdc804bd92be5aff0fe4b42e0a6f4ca6c8a8b3028fa8072a38",
+      "relocated_sha256": "7ab81ef75aaeb8fdc804bd92be5aff0fe4b42e0a6f4ca6c8a8b3028fa8072a38",
+      "credited_bytes": 31,
+      "first_difference": null
+    }
+  ],
+  "credited_bytes": 406,
+  "raw_equal_bytes": 189,
+  "relocation_policy": "Apply only declared COFF DIR32/REL32 targets; compare every resulting byte.",
+  "source": "matching/functions.cpp",
+  "source_sha256": "58f1860ca4f86f5e99a04eea561295cf51b3524bb7902f799bf642a08645d556",
+  "manifest_sha256": "59d27bc7d31117d8cd0e59090bd95346e36c5ec19101bd10ec0d29a364125a9b",
+  "compiler": {
+    "banner": "Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 13.10.3077 for 80x86",
+    "object_record": {
+      "tool_id": 96,
+      "build": 3077
+    },
+    "options": [
+      "/nologo",
+      "/c",
+      "/O2",
+      "/Gy"
+    ],
+    "files_sha256": {
+      "cl.exe": "2ecf86a3edfd3deae498e08298e210e984537ce9e11759930561e43f40bd2515",
+      "c1.dll": "11f452af93f8e686b36b348763b33d32ae2766f1b0c360a447053bf44ec50fcc",
+      "c1xx.dll": "353f3d5dcd050b876e1c044b99c4bf47958d255f395a4919f406a19921be4dfa",
+      "c2.dll": "bcd28f39b1798b07989c30a1df471cf87fc20e3802d130901a08f83800e6b81e",
+      "msvcr71.dll": "8094af5ee310714caebccaeee7769ffb08048503ba478b879edfef5f1a24fefe"
+    },
+    "distribution": "Microsoft Visual C++ Toolkit 2003 version 1.01",
+    "archive": {
+      "url": "https://www.lysator.liu.se/~andro/exjobb/extras-win32/VCToolkitSetup.exe",
+      "sha256": "c040f6ffbc2259426dd523b7561575fe1704b58bc37092fbfe27b64aefc449f6",
+      "authenticode_sha1": "98f2ebf413504ed1e824203b513bbf5750b05971",
+      "verification": "Embedded PKCS#7 signature verified mathematically with OpenSSL; signed digest independently equals PE file digest. Microsoft Corporation signer certificate. No independent current trust-chain/revocation claim."
+    }
+  },
+  "scope": "Individual reconstructed C++ function bodies only. Shared reporting remains unchanged. No executable link or playability claim.",
+  "environment": {
+    "host": "macOS 15.6, ARM64 Apple M1 Max",
+    "runner": "Wine 11.0_1, x86_64 under Rosetta",
+    "runner_archive_url": "https://github.com/Gcenx/macOS_Wine_builds/releases/download/11.0_1/wine-stable-11.0_1-osx64.tar.xz",
+    "runner_archive_sha256": "b50dc50ec7f41d58b115a6b685d4d1315ba3c797bd3aa0f49213f2703cb82388",
+    "runner_sha256": "bad3b6126b6612680e26302c0e0b7e56d6c7036eac9bf6313878bdd9039b003f"
+  },
+  "tools_sha256": {
+    "tools/native_match.py": "10ad8ce80f5efdd575dbf10e8e9d4d72b129016e3d39e378bcb734443d812622",
+    "tools/build_native_match.py": "19c6f9c6ac8983cd65b0d43e148bb18e5cd902c5d2cd4718c5f27f18349c1a58",
+    "tools/test_native_match.py": "a4eaa8b2ce9c8748ed1dffc97b59f75de87067af275437e6a7c3e84e67a3581c"
+  },
+  "recovered_sources_sha256": {
+    "src/core/checksum.c": "5b48d136743ae06977d7fd4d2937df75a5fcf91ff3d8d8635d3491d3db302206",
+    "src/core/vector.c": "83ad5cffb32fe46086bed597ed45aed14edeb4e1e705ded472d3c06c994868b6"
+  }
+}

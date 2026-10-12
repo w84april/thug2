@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "proof": {
+    "path": "matching/proof.json",
+    "sha256": "5b947ee3bfd11b24ab3949004c6250633002838ea7c144bf454339085b505dc6"
+  },
+  "manifest": {
+    "path": "matching/manifest.json",
+    "sha256": "59d27bc7d31117d8cd0e59090bd95346e36c5ec19101bd10ec0d29a364125a9b"
+  },
+  "accepted_addresses": [
+    "00401aa0",
+    "00401af0",
+    "00401b30",
+    "00402320",
+    "00402340",
+    "00402370",
+    "004023a0",
+    "00406050"
+  ],
+  "data_targets": [
+    {
+      "symbol": "?crc_table@@3QBIB",
+      "address": "0067c248",
+      "size": 1024,
+      "bytes_sha256": "12f3e0576d447eb37b36d82ba0c1c5481b8f0d12fdc70347ce4a076b229d4c86",
+      "source": {
+        "path": "src/core/crc_table.inc",
+        "sha256": "db61b280ab8287f7c7c2285706eec93cc8f61d990ad5f2d62af2537476eb3407"
+      }
+    }
+  ],
+  "local_review": {
+    "path": "local/analysis/native-matching-independent-review-v2.json",
+    "sha256": "c91e67507be1e959bafd706d0be41647b84223394c00a5aabb8a9d592890c553"
+  },
+  "scope": "Eight independently replayed individual native function bodies. No instruction masking, fuzzy partial credit, data credit, full executable link or gameplay completion change. CI validates public metadata; private comparator replay requires the reference and object.",
+  "trial_inventory_sha256": "93b58d230df6ad4843f2ee92ac92772b4f9c69c7f13e1c73023aad34661a4746"
+}

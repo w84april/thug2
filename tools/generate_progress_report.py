@@ -1,9 +1,10 @@
-"""Generate objdiff v2 accounting metadata; never award binary-match credit."""
+"""Generate objdiff v2 with separate behavioral completion and verified matching."""
 import argparse
 import csv
 import hashlib
 import json
 from pathlib import Path
+from verify_matching_proof import verified_matches
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -114,19 +115,23 @@ def generate(ledger, root=ROOT, local_evidence=False):
         for ref in ledger['inventory']['source_exports']:
             verify_ref(root, ref)
 
-    def measures(code, functions, complete, units, complete_units):
-        return {'total_code': str(code), 'complete_code': str(complete), 'complete_code_percent': complete / code * 100 if code else 0, 'total_functions': functions, 'total_units': units, 'complete_units': complete_units, 'matched_code': '0', 'matched_data': '0', 'matched_functions': 0, 'matched_code_percent': 0, 'matched_data_percent': 0, 'matched_functions_percent': 0, 'fuzzy_match_percent': 0, 'total_data': '0', 'complete_data': '0', 'complete_data_percent': 0}
+    matched = verified_matches(ledger, inventory, root, local_evidence)
+
+    def measures(code, functions, complete, units, complete_units, matched_code=0, matched_functions=0):
+        percent = matched_code / code * 100 if code else 0
+        return {'total_code': str(code), 'complete_code': str(complete), 'complete_code_percent': complete / code * 100 if code else 0, 'total_functions': functions, 'total_units': units, 'complete_units': complete_units, 'matched_code': str(matched_code), 'matched_data': '0', 'matched_functions': matched_functions, 'matched_code_percent': percent, 'matched_data_percent': 0, 'matched_functions_percent': matched_functions / functions * 100 if functions else 0, 'fuzzy_match_percent': percent, 'total_data': '0', 'complete_data': '0', 'complete_data_percent': 0}
 
     units = []
     for complete in (True, False):
         addresses = [a for a in sorted(inventory) if (a in recovered) == complete]
         code = sum(inventory[a][0] for a in addresses)
-        functions = [{'name': recovered[a]['name'] if complete else f'original_{a:08x}', 'size': str(inventory[a][0]), 'address': str(a - start), 'fuzzy_match_percent': 0, 'metadata': {'virtual_address': str(a)}} for a in addresses]
-        units.append({'name': 'Verified behavioral recovery' if complete else 'Known unrecovered original functions', 'measures': measures(code, len(addresses), code if complete else 0, 1, int(complete)), 'functions': functions, 'metadata': {'complete': complete, 'auto_generated': True}})
+        functions = [{'name': recovered[a]['name'] if complete else f'original_{a:08x}', 'size': str(inventory[a][0]), 'address': str(a - start), 'fuzzy_match_percent': 100 if a in matched else 0, 'metadata': {'virtual_address': str(a)}} for a in addresses]
+        matches = [a for a in addresses if a in matched]
+        units.append({'name': 'Verified behavioral recovery' if complete else 'Known unrecovered original functions', 'measures': measures(code, len(addresses), code if complete else 0, 1, int(complete), sum(inventory[a][0] for a in matches), len(matches)), 'functions': functions, 'metadata': {'complete': complete, 'auto_generated': True}})
     unassigned = total - body_bytes
     units.append({'name': 'Unassigned original .text bytes (includes padding and jump tables)', 'measures': measures(unassigned, 0, 0, 1, 0), 'sections': [{'name': '.text unassigned', 'size': str(unassigned), 'fuzzy_match_percent': 0}], 'metadata': {'complete': False, 'auto_generated': True}})
     complete_bytes = sum(r['size'] for r in recovered.values())
-    return {'version': 2, 'measures': measures(total, len(inventory), complete_bytes, len(units), 1), 'units': units}
+    return {'version': 2, 'measures': measures(total, len(inventory), complete_bytes, len(units), 1, sum(f['size'] for f in matched.values()), len(matched)), 'units': units}
 
 
 def main():
@@ -145,7 +150,7 @@ def main():
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(data)
     m = report['measures']
-    print(f'{len(ledger["records"])} verified addresses; {m["complete_code"]}/{m["total_code"]} original .text bytes ({m["complete_code_percent"]:.2f}%); zero verified binary matches')
+    print(f'{len(ledger["records"])} verified addresses; {m["complete_code"]}/{m["total_code"]} original .text bytes ({m["complete_code_percent"]:.2f}%); {m["matched_code"]} verified native matching bytes ({m["matched_code_percent"]:.5f}%)')
 
 
 if __name__ == '__main__':

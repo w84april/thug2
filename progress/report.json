@@ -7,13 +7,13 @@
     "total_functions": 11889,
     "total_units": 3,
     "complete_units": 1,
-    "matched_code": "0",
+    "matched_code": "406",
     "matched_data": "0",
-    "matched_functions": 0,
-    "matched_code_percent": 0,
+    "matched_functions": 8,
+    "matched_code_percent": 0.01709201651274029,
     "matched_data_percent": 0,
-    "matched_functions_percent": 0,
-    "fuzzy_match_percent": 0,
+    "matched_functions_percent": 0.06728909075616116,
+    "fuzzy_match_percent": 0.01709201651274029,
     "total_data": "0",
     "complete_data": "0",
     "complete_data_percent": 0
@@ -28,13 +28,13 @@
         "total_functions": 2038,
         "total_units": 1,
         "complete_units": 1,
-        "matched_code": "0",
+        "matched_code": "406",
         "matched_data": "0",
-        "matched_functions": 0,
-        "matched_code_percent": 0,
+        "matched_functions": 8,
+        "matched_code_percent": 0.09320712873832902,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0,
-        "fuzzy_match_percent": 0,
+        "matched_functions_percent": 0.39254170755642787,
+        "fuzzy_match_percent": 0.09320712873832902,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -107,7 +107,7 @@
           "name": "thug_crc32_buffer",
           "size": "71",
           "address": "2720",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4201120"
           }
@@ -116,7 +116,7 @@
           "name": "thug_crc32_extend_buffer",
           "size": "55",
           "address": "2800",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4201200"
           }
@@ -125,7 +125,7 @@
           "name": "thug_crc32_normalized_buffer",
           "size": "91",
           "address": "2864",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4201264"
           }
@@ -242,7 +242,7 @@
           "name": "thug_vector_copy",
           "size": "31",
           "address": "4896",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4203296"
           }
@@ -251,7 +251,7 @@
           "name": "thug_vector_add",
           "size": "42",
           "address": "4928",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4203328"
           }
@@ -260,7 +260,7 @@
           "name": "thug_vector_scale",
           "size": "43",
           "address": "4976",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4203376"
           }
@@ -269,7 +269,7 @@
           "name": "thug_vector_length_squared",
           "size": "31",
           "address": "5024",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4203424"
           }
@@ -719,7 +719,7 @@
           "name": "thug_vector_subtract",
           "size": "42",
           "address": "20560",
-          "fuzzy_match_percent": 0,
+          "fuzzy_match_percent": 100,
           "metadata": {
             "virtual_address": "4218960"
           }
@@ -18400,10 +18400,10 @@
         "matched_code": "0",
         "matched_data": "0",
         "matched_functions": 0,
-        "matched_code_percent": 0,
+        "matched_code_percent": 0.0,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0,
-        "fuzzy_match_percent": 0,
+        "matched_functions_percent": 0.0,
+        "fuzzy_match_percent": 0.0,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -107086,10 +107086,10 @@
         "matched_code": "0",
         "matched_data": "0",
         "matched_functions": 0,
-        "matched_code_percent": 0,
+        "matched_code_percent": 0.0,
         "matched_data_percent": 0,
         "matched_functions_percent": 0,
-        "fuzzy_match_percent": 0,
+        "fuzzy_match_percent": 0.0,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
