@@ -1,0 +1,17 @@
+{
+  "0x5278d0": {
+    "bytes": 772,
+    "instructions": 234,
+    "name": "thug_walk_critical_point_draft"
+  },
+  "0x525f70": {
+    "bytes": 53,
+    "instructions": 13,
+    "name": "thug_walk_camera_facing_draft"
+  },
+  "0x529f80": {
+    "bytes": 498,
+    "instructions": 129,
+    "name": "thug_walk_update_camera_draft"
+  }
+}

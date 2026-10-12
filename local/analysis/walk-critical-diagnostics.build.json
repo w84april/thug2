@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--import-memory",
+    "-Wl,--export-all",
+    "-Wl,--global-base=58720256",
+    "local/analysis/walk-critical-diagnostics.c",
+    "-o",
+    "local/analysis/walk-critical-diagnostics.wasm"
+  ],
+  "sha256": "4e9d885bbd25a2580cc9a5c9c42fcd405e83783a7b9861896da24fe716530161",
+  "source_sha256": "160512a715f67749c52244dc16163280c39f3057c19343cc348430cff6445c65"
+}
