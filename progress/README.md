@@ -21,16 +21,20 @@ administrator, and an Actions workflow with a readable report artifact. The
 GitHub App is an additional integration for automatic refresh and PR reporting.
 Our repository is public. The user registered the project, and its
 [decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
-the browser on 2026-10-13. Its latest independently observed commit was
-`0e9f1b2`, displaying 18.49% “fully linked” and 0.02% “decompiled” (matching).
-That linked percentage came from our earlier incorrect encoding of behavioral
-coverage as linked-unit completion. It proves historical artifact import, not
-original-target build/link integration. The corrected `060efffb` report has independently verified upload/download
-equality and pinned parser acceptance (run `38314064187`, artifact `11776495461`).
-Its report SHA-256 is `b945ac5813cb8f538596191f23ba281868e1a2ac175556c8dda27108111f825e`;
-original-target linked bytes and units are zero. Corrected site import remains
-unobserved: the live page still shows the preceding historical report.
-Matching remains 406 bytes.
+the browser on 2026-10-13. The manager chat independently observed the corrected
+`060efffb10eed0db0798757bbb6bd2980dd3231f` import and its exact commit link,
+rounded 0.02% matching, the hidden-until-0.5% notice and removal of the historical
+“fully linked” display. That observation is recorded separately from this chat's
+earlier view of the superseded `0e9f1b2` report. Earlier linked percentages
+incorrectly encoded behavioral coverage; they prove historical import, not
+original-target build/link integration. The corrected `060efffb` report also has
+independently verified upload/download equality and pinned parser acceptance
+(run `38314064187`, artifact `11776495461`). Its report SHA-256 is
+`b945ac5813cb8f538596191f23ba281868e1a2ac175556c8dda27108111f825e`;
+original-target linked bytes and units are zero. Matching remains 406 bytes.
+The later camera checkpoint `f9ebc3fa` has a separately verified hosted artifact
+(run `38317514576`, artifact `11777236994`) equal to the committed report;
+its own site import has not been observed.
 
 
 There is a material limitation: the current public listing hides projects below
@@ -374,3 +378,22 @@ caller fixtures and the first metadata revision. This does not complete full
 profile initialization or make the Warehouse preview playable. Behavioral
 coverage is 439,254/2,375,378 bytes across 2,071 addresses (18.49%). Native matching
 remains eight functions/406 bytes and original-target linking remains zero.
+
+## Animation channel startup
+
+Four channel creation and fade dependencies pass 295 original cases and 828
+direct calls, covering 152/154 instructions under initialized allocation and
+valid live channel graph contracts. The two exclusions are the literal cold
+allocator bootstrap and an unchecked internal allocation failure that faults
+before returning. Direct allocation-wrapper failures compare. The original
+channel constructor, destructor and allocator callees execute and earn no
+repeated credit. All 208 Node and actual Chromium suites pass, with all 207
+predecessor result objects unchanged and complete rendered results equal to Node.
+The immutable checkpoint preserves 26,655 artifacts including all 26,226 parent
+artifacts and the rejected earlier sentinel fixture and field-offset draft.
+
+The four addresses add 416 unique body bytes: behavioral coverage is now
+439,670/2,375,378 bytes across 2,075 addresses (18.51%). Native matching remains
+eight functions/406 bytes and original-target linked credit remains zero. Clip
+playback startup, full Animation/profile initialization, a controllable rendered
+skater and gameplay remain unfinished. The Warehouse is still a static preview.

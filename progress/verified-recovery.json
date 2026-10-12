@@ -731,6 +731,51 @@
         }
       ],
       "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-channel-startup-v3-checkpoint.json",
+        "sha256": "6788149d9d5e5d69d692ae3d8138de9c8b60d9f64b25adcb2521260273a71474"
+      },
+      "audit": {
+        "path": "local/analysis/animation-channel-startup-v3-audit.json",
+        "sha256": "c44cfdbc19ad1ab45c990fae41cac58e6210607d0233afbc1c82802ec4d54e9a"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "animation_channel_startup_v3",
+          "routines": {
+            "path": "local/analysis/animation-channel-startup-v3-routines.json",
+            "sha256": "e9bc284a4650bb9d7351f9363e32e8fa4ed67c7ca98dc0592f774d1c8b72bdbe"
+          },
+          "original": {
+            "path": "local/analysis/animation-channel-startup-v3-original.json",
+            "sha256": "61efc2d83d798d3db7992486d4f4cc521ba108861c4360743ad1955ed4b8de8d"
+          },
+          "fixture": {
+            "path": "local/analysis/animation-channel-startup-v3-fixtures.json",
+            "sha256": "e084c6c1bab33deb40d573335bfff9ead64f275c230abef46ba1ec105cdc560e"
+          },
+          "node": {
+            "path": "local/analysis/animation-channel-startup-v3-regression-animation-channel-startup-v3-result.json",
+            "sha256": "f739ff7e98ed88e05eb0ba0e8724dd116782667f7a65585ae497b4c915620d9a"
+          },
+          "browser": {
+            "path": "local/analysis/animation-channel-startup-v3-browser-full.json",
+            "sha256": "8b152585bea43ab50f31cf8686ae65fac49360853d3937f2523b238a8c0ebb7d"
+          },
+          "source": {
+            "path": "local/analysis/animation-channel-startup-v2.c",
+            "sha256": "f5614c8a29dbc601e49338492547bd58e00c9b6fe54f7402f54b378b2f14fa4f"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-animation-channel-startup-v3.py",
+            "sha256": "2ab0b3a2cef505828a5ff186882f7ac675f1c89a8d38e78b5b56050b53c12ef5"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [

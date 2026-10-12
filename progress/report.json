@@ -22,19 +22,19 @@
     {
       "name": "Scoped behavioral recovery (original-target link unverified)",
       "measures": {
-        "total_code": "439254",
+        "total_code": "439670",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 2071,
+        "total_functions": 2075,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.09242943718213152,
+        "matched_code_percent": 0.09234198376054768,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.386286817962337,
-        "fuzzy_match_percent": 0.09242943718213152,
+        "matched_functions_percent": 0.38554216867469876,
+        "fuzzy_match_percent": 0.09234198376054768,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -8510,6 +8510,15 @@
           }
         },
         {
+          "name": "thug_animation_state_begin_channel_v1",
+          "size": "293",
+          "address": "511520",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4709920"
+          }
+        },
+        {
           "name": "thug_animation_set_balance",
           "size": "457",
           "address": "512640",
@@ -8906,6 +8915,15 @@
           }
         },
         {
+          "name": "thug_animation_channel_is_fading_v1",
+          "size": "12",
+          "address": "526736",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4725136"
+          }
+        },
+        {
           "name": "thug_animation_reset_events",
           "size": "43",
           "address": "526752",
@@ -8978,6 +8996,15 @@
           }
         },
         {
+          "name": "thug_animation_channel_begin_fade_v1",
+          "size": "55",
+          "address": "527168",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4725568"
+          }
+        },
+        {
           "name": "thug_animation_clear_events",
           "size": "68",
           "address": "527280",
@@ -9011,6 +9038,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4726288"
+          }
+        },
+        {
+          "name": "thug_animation_channel_allocate_v1",
+          "size": "56",
+          "address": "528096",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4726496"
           }
         },
         {
@@ -18688,10 +18724,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1530766",
+        "total_code": "1530350",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9822,
+        "total_functions": 9818,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -32405,15 +32441,6 @@
           }
         },
         {
-          "name": "original_0047de20",
-          "size": "293",
-          "address": "511520",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4709920"
-          }
-        },
-        {
           "name": "original_0047e010",
           "size": "21",
           "address": "512016",
@@ -32684,39 +32711,12 @@
           }
         },
         {
-          "name": "original_00481990",
-          "size": "12",
-          "address": "526736",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4725136"
-          }
-        },
-        {
-          "name": "original_00481b40",
-          "size": "55",
-          "address": "527168",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4725568"
-          }
-        },
-        {
           "name": "original_00481b80",
           "size": "35",
           "address": "527232",
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4725632"
-          }
-        },
-        {
-          "name": "original_00481ee0",
-          "size": "56",
-          "address": "528096",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4726496"
           }
         },
         {

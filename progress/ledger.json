@@ -38134,6 +38134,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x0047de20",
+      "size": 293,
+      "ranges": [
+        [
+          4709920,
+          4710212
+        ]
+      ],
+      "name": "thug_animation_state_begin_channel_v1",
+      "source": {
+        "path": "local/analysis/animation-channel-startup-v2.c",
+        "sha256": "f5614c8a29dbc601e49338492547bd58e00c9b6fe54f7402f54b378b2f14fa4f",
+        "line": 24
+      },
+      "original": {
+        "path": "local/analysis/animation-channel-startup-v3-original.json",
+        "sha256": "61efc2d83d798d3db7992486d4f4cc521ba108861c4360743ad1955ed4b8de8d",
+        "field": "instruction_coverage/0x47de20/covered",
+        "value": 116
+      },
+      "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes.",
+      "browser": {
+        "path": "local/analysis/animation-channel-startup-v3-browser-full.json",
+        "sha256": "8b152585bea43ab50f31cf8686ae65fac49360853d3937f2523b238a8c0ebb7d",
+        "suite": "animation_channel_startup_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-channel-startup-v3-regression-animation-channel-startup-v3-result.json",
+        "sha256": "f739ff7e98ed88e05eb0ba0e8724dd116782667f7a65585ae497b4c915620d9a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-channel-startup-v3-fixtures.json",
+        "sha256": "e084c6c1bab33deb40d573335bfff9ead64f275c230abef46ba1ec105cdc560e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-channel-startup-v3.py",
+        "sha256": "2ab0b3a2cef505828a5ff186882f7ac675f1c89a8d38e78b5b56050b53c12ef5"
+      },
+      "aliases": [
+        "thug_animation_state_begin_channel_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0047e280",
       "size": 457,
       "ranges": [
@@ -39818,6 +39863,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x00481990",
+      "size": 12,
+      "ranges": [
+        [
+          4725136,
+          4725147
+        ]
+      ],
+      "name": "thug_animation_channel_is_fading_v1",
+      "source": {
+        "path": "local/analysis/animation-channel-startup-v2.c",
+        "sha256": "f5614c8a29dbc601e49338492547bd58e00c9b6fe54f7402f54b378b2f14fa4f",
+        "line": 13
+      },
+      "original": {
+        "path": "local/analysis/animation-channel-startup-v3-original.json",
+        "sha256": "61efc2d83d798d3db7992486d4f4cc521ba108861c4360743ad1955ed4b8de8d",
+        "field": "instruction_coverage/0x481990/covered",
+        "value": 5
+      },
+      "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes.",
+      "browser": {
+        "path": "local/analysis/animation-channel-startup-v3-browser-full.json",
+        "sha256": "8b152585bea43ab50f31cf8686ae65fac49360853d3937f2523b238a8c0ebb7d",
+        "suite": "animation_channel_startup_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-channel-startup-v3-regression-animation-channel-startup-v3-result.json",
+        "sha256": "f739ff7e98ed88e05eb0ba0e8724dd116782667f7a65585ae497b4c915620d9a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-channel-startup-v3-fixtures.json",
+        "sha256": "e084c6c1bab33deb40d573335bfff9ead64f275c230abef46ba1ec105cdc560e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-channel-startup-v3.py",
+        "sha256": "2ab0b3a2cef505828a5ff186882f7ac675f1c89a8d38e78b5b56050b53c12ef5"
+      },
+      "aliases": [
+        "thug_animation_channel_is_fading_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004819a0",
       "size": 43,
       "ranges": [
@@ -40114,6 +40204,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x00481b40",
+      "size": 55,
+      "ranges": [
+        [
+          4725568,
+          4725622
+        ]
+      ],
+      "name": "thug_animation_channel_begin_fade_v1",
+      "source": {
+        "path": "local/analysis/animation-channel-startup-v2.c",
+        "sha256": "f5614c8a29dbc601e49338492547bd58e00c9b6fe54f7402f54b378b2f14fa4f",
+        "line": 35
+      },
+      "original": {
+        "path": "local/analysis/animation-channel-startup-v3-original.json",
+        "sha256": "61efc2d83d798d3db7992486d4f4cc521ba108861c4360743ad1955ed4b8de8d",
+        "field": "instruction_coverage/0x481b40/covered",
+        "value": 16
+      },
+      "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes.",
+      "browser": {
+        "path": "local/analysis/animation-channel-startup-v3-browser-full.json",
+        "sha256": "8b152585bea43ab50f31cf8686ae65fac49360853d3937f2523b238a8c0ebb7d",
+        "suite": "animation_channel_startup_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-channel-startup-v3-regression-animation-channel-startup-v3-result.json",
+        "sha256": "f739ff7e98ed88e05eb0ba0e8724dd116782667f7a65585ae497b4c915620d9a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-channel-startup-v3-fixtures.json",
+        "sha256": "e084c6c1bab33deb40d573335bfff9ead64f275c230abef46ba1ec105cdc560e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-channel-startup-v3.py",
+        "sha256": "2ab0b3a2cef505828a5ff186882f7ac675f1c89a8d38e78b5b56050b53c12ef5"
+      },
+      "aliases": [
+        "thug_animation_channel_begin_fade_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x00481bb0",
       "size": 68,
       "ranges": [
@@ -40258,6 +40393,51 @@
       },
       "aliases": [
         "thug_animation_update_events"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00481ee0",
+      "size": 56,
+      "ranges": [
+        [
+          4726496,
+          4726551
+        ]
+      ],
+      "name": "thug_animation_channel_allocate_v1",
+      "source": {
+        "path": "local/analysis/animation-channel-startup-v2.c",
+        "sha256": "f5614c8a29dbc601e49338492547bd58e00c9b6fe54f7402f54b378b2f14fa4f",
+        "line": 8
+      },
+      "original": {
+        "path": "local/analysis/animation-channel-startup-v3-original.json",
+        "sha256": "61efc2d83d798d3db7992486d4f4cc521ba108861c4360743ad1955ed4b8de8d",
+        "field": "instruction_coverage/0x481ee0/covered",
+        "value": 15
+      },
+      "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes.",
+      "browser": {
+        "path": "local/analysis/animation-channel-startup-v3-browser-full.json",
+        "sha256": "8b152585bea43ab50f31cf8686ae65fac49360853d3937f2523b238a8c0ebb7d",
+        "suite": "animation_channel_startup_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-channel-startup-v3-regression-animation-channel-startup-v3-result.json",
+        "sha256": "f739ff7e98ed88e05eb0ba0e8724dd116782667f7a65585ae497b4c915620d9a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-channel-startup-v3-fixtures.json",
+        "sha256": "e084c6c1bab33deb40d573335bfff9ead64f275c230abef46ba1ec105cdc560e"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-channel-startup-v3.py",
+        "sha256": "2ab0b3a2cef505828a5ff186882f7ac675f1c89a8d38e78b5b56050b53c12ef5"
+      },
+      "aliases": [
+        "thug_animation_channel_allocate_v1"
       ],
       "checkpoint_claims": []
     },
@@ -83663,6 +83843,17 @@
         "sha256": "a5a90ca95d0a4c7f60d69aed2e9292ebf31a2d6f70fee227e330329781ef1f2c"
       },
       "scope": "One new24-byte generic Camera initialization calls the original manager virtual priority setter. Bounded poison/unaligned component storage, unused invalid QB pointer and repeated real registry re-registration compare. Integrated45f3a0 root assembles actual five type descriptors from original skutils QB through real factories, typed startup initialize/finalize/moved slots, primary/secondary/missing target routes, merged overrides, camera priority, node rename and low-byte finalize0/1/256/257. All original game callees execute; initialized heap/platform boundaries retained. Derived method tables expose only verified startup slots, not disposal/frame/commands. No full profile startup, camera update/reset, controllable skater, rendered game frame, matching or new credit for reused functions. All207 Node/actualChromium suites pass and all206 predecessor result objects remain unchanged. One new address24bytes/8instructions;36full original camera assembly cases. Failed first table pointer conversion, test priority offset and missing factory-relocation fixtures remain private and unselected. No checker/numeric changes."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-channel-startup-v3-checkpoint.json",
+        "sha256": "6788149d9d5e5d69d692ae3d8138de9c8b60d9f64b25adcb2521260273a71474"
+      },
+      "audit": {
+        "path": "local/analysis/animation-channel-startup-v3-audit.json",
+        "sha256": "c44cfdbc19ad1ab45c990fae41cac58e6210607d0233afbc1c82802ec4d54e9a"
+      },
+      "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes. All208 Node/actualChromium suites pass and all207 predecessor result objects remain unchanged. Four unique addresses416bytes;152/154instructions with two explicit scoped exclusions. Failed sentinel fixture and header-offset draft remain private and unselected; corrected source follows original+5c duration/+60 weight. No fixture/checker/numeric changes to make a failed port pass."
     }
   ],
   "uncredited_source_definitions": [
@@ -85541,7 +85732,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2071,
+    "accepted_addresses": 2075,
     "uncredited_source_definitions": 208,
     "duplicate_alias_addresses": 8,
     "linear_extent_differences": 13,

@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.49% of original `.text` bytes** —
-439,254 / 2,375,378 bytes attributed to 2,071 distinct original addresses with
+**Reconciled behavioral completion: 18.51% of original `.text` bytes** —
+439,670 / 2,375,378 bytes attributed to 2,075 distinct original addresses with
 mapped source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 107 newly reconciled startup/lifecycle/camera addresses.
+reconciled baseline with 111 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
