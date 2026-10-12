@@ -1,0 +1,42 @@
+{
+  "0x47b4e0": {
+    "bytes": 57,
+    "instructions": 20,
+    "name": "thug_sound_stop_draft"
+  },
+  "0x5138e0": {
+    "bytes": 135,
+    "instructions": 33,
+    "name": "thug_looping_sound_construct_draft"
+  },
+  "0x513ad0": {
+    "bytes": 89,
+    "instructions": 24,
+    "name": "thug_looping_sound_create_draft"
+  },
+  "0x513b30": {
+    "bytes": 113,
+    "instructions": 29,
+    "name": "thug_looping_sound_destroy_draft"
+  },
+  "0x513fa0": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_looping_sound_delete_draft"
+  },
+  "0x513880": {
+    "bytes": 40,
+    "instructions": 9,
+    "name": "thug_looping_sound_initialize_draft"
+  },
+  "0x513970": {
+    "bytes": 21,
+    "instructions": 8,
+    "name": "thug_looping_sound_bind_draft"
+  },
+  "0x513f60": {
+    "bytes": 61,
+    "instructions": 22,
+    "name": "thug_looping_sound_suspend_draft"
+  }
+}

@@ -8,9 +8,9 @@
   },
   "inventory": {
     "path": "progress/function-inventory.tsv",
-    "sha256": "d2367bea0dff555bd1cd1d17b915ce0e1ec4c293bbcf879e8ec77d7b5eb26cf3",
-    "functions": 11873,
-    "body_bytes": 1966789,
+    "sha256": "d1cbb61a450aeaeef981575c25f2414190f53b5100926eba6417d06d33429884",
+    "functions": 11876,
+    "body_bytes": 1966911,
     "source_exports": [
       {
         "path": "local/analysis/progress-function-ranges.tsv",
@@ -31,6 +31,10 @@
       {
         "path": "local/analysis/balance-lifecycle-extra-ranges.tsv",
         "sha256": "b343b51bb30c3f5afe26f10c4f62c304541388ee6a2e974dda6c03a743210a84"
+      },
+      {
+        "path": "local/analysis/skater-looping-sound-extra-ranges.tsv",
+        "sha256": "d70a86b6d3ce086927a813abed1e8b9d3ee8e930a75612b758ef79cdafe4c695"
       }
     ]
   },
@@ -36917,6 +36921,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x0047b4e0",
+      "size": 57,
+      "ranges": [
+        [
+          4699360,
+          4699416
+        ]
+      ],
+      "name": "thug_sound_stop_draft",
+      "source": {
+        "path": "local/analysis/sound-stop-draft.c",
+        "sha256": "73be26b2eb9127d18c86796f61210d8fbf132acbd67095d4f26c22531dbff1bf",
+        "line": 5
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x47b4e0/covered",
+        "value": 20
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_sound_stop_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0047b6f0",
       "size": 98,
       "ranges": [
@@ -57036,13 +57085,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57155,13 +57204,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57200,13 +57249,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57245,13 +57294,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57290,13 +57339,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57372,13 +57421,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -63435,13 +63484,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63480,13 +63529,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63525,13 +63574,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63570,13 +63619,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63615,13 +63664,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63660,13 +63709,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63705,13 +63754,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63750,13 +63799,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63795,13 +63844,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63840,13 +63889,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63885,13 +63934,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+        "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -65209,13 +65258,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65254,13 +65303,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65299,13 +65348,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65344,13 +65393,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+        "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65363,6 +65412,51 @@
       },
       "aliases": [
         "thug_local_net_create_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513880",
+      "size": 40,
+      "ranges": [
+        [
+          5322880,
+          5322919
+        ]
+      ],
+      "name": "thug_looping_sound_initialize_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 25
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513880/covered",
+        "value": 9
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_initialize_draft"
       ],
       "checkpoint_claims": []
     },
@@ -65408,6 +65502,276 @@
       "checkpoint_claims": [
         "local/analysis/skater-finalize-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x005138e0",
+      "size": 135,
+      "ranges": [
+        [
+          5322976,
+          5323110
+        ]
+      ],
+      "name": "thug_looping_sound_construct_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 9
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x5138e0/covered",
+        "value": 33
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_construct_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513970",
+      "size": 21,
+      "ranges": [
+        [
+          5323120,
+          5323140
+        ]
+      ],
+      "name": "thug_looping_sound_bind_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 29
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513970/covered",
+        "value": 8
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_bind_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513ad0",
+      "size": 89,
+      "ranges": [
+        [
+          5323472,
+          5323560
+        ]
+      ],
+      "name": "thug_looping_sound_create_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513ad0/covered",
+        "value": 24
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_create_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513b30",
+      "size": 113,
+      "ranges": [
+        [
+          5323568,
+          5323680
+        ]
+      ],
+      "name": "thug_looping_sound_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 18
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513b30/covered",
+        "value": 29
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513f60",
+      "size": 61,
+      "ranges": [
+        [
+          5324640,
+          5324700
+        ]
+      ],
+      "name": "thug_looping_sound_suspend_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 31
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513f60/covered",
+        "value": 22
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_suspend_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00513fa0",
+      "size": 33,
+      "ranges": [
+        [
+          5324704,
+          5324736
+        ]
+      ],
+      "name": "thug_looping_sound_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+        "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa",
+        "line": 23
+      },
+      "original": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+        "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4",
+        "field": "instruction_coverage/0x513fa0/covered",
+        "value": 11
+      },
+      "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
+      "browser": {
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
+        "suite": "skater_looping_sound_lifecycle",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+        "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+        "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+        "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+      },
+      "aliases": [
+        "thug_looping_sound_delete_draft"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x00513fd0",
@@ -75443,13 +75807,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -75488,13 +75852,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -75533,13 +75897,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -75578,13 +75942,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-balance-browser.json",
-        "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500",
+        "path": "local/analysis/skater-looping-sound-browser.json",
+        "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-balance-lifecycle-unit.json",
+        "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -79792,14 +80156,14 @@
   "verified_recovery_updates": [
     {
       "checkpoint": {
-        "path": "local/analysis/skater-balance-startup-checkpoint.json",
-        "sha256": "73a6d033ac53530c9ac59d34becc2333b105893121abb7e3a3ab53e9460e09ed"
+        "path": "local/analysis/skater-looping-sound-startup-checkpoint.json",
+        "sha256": "04d3ca79ae3a694a4e61eb9d80d56e41eef69b31ee6cffa3ebb4941bb2d674b4"
       },
       "audit": {
-        "path": "local/analysis/skater-balance-startup-audit.json",
-        "sha256": "33ba253a7c1a4a664e4e24a733b224f8ad9dea2a882911691663ecf87aee7608"
+        "path": "local/analysis/skater-looping-sound-startup-audit.json",
+        "sha256": "ec7890623f56f3d9a04c3c9e7e2ff67c12caabdfda92c03235e4e17bc7929d88"
       },
-      "scope": "Ten complete original routines recover BalanceTrick and embedded record lifecycle and dependency binding. Conditional real QB runs before selected zero writes; 28 native fixture callbacks test mutation and order. 115 cases/328 completed calls cover all185 original instructions with no added comparison allowances. Missing-QB control rejected. All189 prior Node/Chromium results unchanged. Shared update51b970 receives no additional credit. Constructor582d90 advances301/463 and remains partial with zero credit. Rendering and playable level remain unfinished."
+      "scope": "Eight complete original routines recover SkaterLoopingSound lifecycle and stop wrapper47b4e0. 121 cases/291 completed calls cover156/156 original instructions. 42 native Stop callbacks test owner/global mutation and clear-after-callback order; clear-before-callback control is rejected. All191 predecessor Node/Chromium results remain unchanged. Existing voice-find47ad80, slot-stop47c7a0 and volume-init47b030 receive zero additional credit. Constructor582d90 advances309/463 and remains partial with zero credit. Frame, command, global registration, actual audio device output, rendering and playable level remain unfinished"
     }
   ],
   "uncredited_source_definitions": [
@@ -81669,7 +82033,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 1989,
+    "accepted_addresses": 1997,
     "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 3,
     "linear_extent_differences": 10,

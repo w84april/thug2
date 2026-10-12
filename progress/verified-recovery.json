@@ -1,16 +1,16 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "25 complete original LocalNet/EndRun/BalanceTrick routines add1312 body bytes. Shared routines and adapters are not new addresses. Constructor582d90 remains301/463 partial and uncredited. All191 Node/actual Chromium suites pass and all189 predecessor results remain unchanged. Original executable/assets/raw fixtures/compiled modules remain private.",
+  "scope": "33 complete original LocalNet/EndRun/BalanceTrick/SkaterLoopingSound routines add1861 body bytes. Shared routines and adapters receive no additional address credit. Constructor582d90 remains309/463 partial and uncredited. All193 Node/actual Chromium suites pass and all191 predecessor results remain unchanged. Original executable/assets/raw fixtures/compiled modules remain private.",
   "updates": [
     {
       "checkpoint": {
-        "path": "local/analysis/skater-balance-startup-checkpoint.json",
-        "sha256": "73a6d033ac53530c9ac59d34becc2333b105893121abb7e3a3ab53e9460e09ed"
+        "path": "local/analysis/skater-looping-sound-startup-checkpoint.json",
+        "sha256": "04d3ca79ae3a694a4e61eb9d80d56e41eef69b31ee6cffa3ebb4941bb2d674b4"
       },
       "audit": {
-        "path": "local/analysis/skater-balance-startup-audit.json",
-        "sha256": "33ba253a7c1a4a664e4e24a733b224f8ad9dea2a882911691663ecf87aee7608"
+        "path": "local/analysis/skater-looping-sound-startup-audit.json",
+        "sha256": "ec7890623f56f3d9a04c3c9e7e2ff67c12caabdfda92c03235e4e17bc7929d88"
       },
       "discovery_exports": [
         {
@@ -20,6 +20,10 @@
         {
           "path": "local/analysis/balance-lifecycle-extra-ranges.tsv",
           "sha256": "b343b51bb30c3f5afe26f10c4f62c304541388ee6a2e974dda6c03a743210a84"
+        },
+        {
+          "path": "local/analysis/skater-looping-sound-extra-ranges.tsv",
+          "sha256": "d70a86b6d3ce086927a813abed1e8b9d3ee8e930a75612b758ef79cdafe4c695"
         }
       ],
       "suites": [
@@ -42,12 +46,12 @@
             "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
           },
           "node": {
-            "path": "local/analysis/skater-local-net-balance-candidate-unit.json",
+            "path": "local/analysis/skater-local-net-looping-sound-candidate-unit.json",
             "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
           },
           "browser": {
-            "path": "local/analysis/skater-balance-browser.json",
-            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+            "path": "local/analysis/skater-looping-sound-browser.json",
+            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-local-net.py",
@@ -73,12 +77,12 @@
             "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
           },
           "node": {
-            "path": "local/analysis/skater-end-run-lifecycle-balance-candidate-unit.json",
+            "path": "local/analysis/skater-end-run-lifecycle-looping-sound-candidate-unit.json",
             "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
           },
           "browser": {
-            "path": "local/analysis/skater-balance-browser.json",
-            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+            "path": "local/analysis/skater-looping-sound-browser.json",
+            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-end-run-lifecycle.py",
@@ -104,16 +108,78 @@
             "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
           },
           "node": {
-            "path": "local/analysis/skater-balance-lifecycle-unit.json",
+            "path": "local/analysis/skater-balance-lifecycle-looping-sound-candidate-unit.json",
             "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
           },
           "browser": {
-            "path": "local/analysis/skater-balance-browser.json",
-            "sha256": "b2dc11e183bccced0b2e2e010cdfe75a5498de3df1db8129b6a52e6bac0b5500"
+            "path": "local/analysis/skater-looping-sound-browser.json",
+            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-balance-lifecycle.py",
             "sha256": "4b952f3969afbab73449c15efd62fd607231aab46d10f5f3f5380742391c789d"
+          }
+        },
+        {
+          "name": "skater_looping_sound_lifecycle",
+          "source": {
+            "path": "local/analysis/sound-stop-draft.c",
+            "sha256": "73be26b2eb9127d18c86796f61210d8fbf132acbd67095d4f26c22531dbff1bf"
+          },
+          "routines": {
+            "path": "local/analysis/sound-stop-routines.json",
+            "sha256": "dbfeb3bae26e6fae1aa50b5aa05b22eb73dd183ff9d0dbcdac60a8f899cfa7ff"
+          },
+          "original": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+            "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+            "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+          },
+          "node": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+            "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+          },
+          "browser": {
+            "path": "local/analysis/skater-looping-sound-browser.json",
+            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+            "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
+          }
+        },
+        {
+          "name": "skater_looping_sound_lifecycle",
+          "source": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-draft.c",
+            "sha256": "e41cb6dc057c2a28738044b63d230ebec1d19c1bbaa07c34cb6387419dd6a3aa"
+          },
+          "routines": {
+            "path": "local/analysis/skater-looping-sound-parent-routines.json",
+            "sha256": "eef4d5c8ca22f14acbffca779fadab7960d6736b5ffb1725e8158d2db2fde13a"
+          },
+          "original": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-original.json",
+            "sha256": "fe3244be62e4a98dcec8eae325d4605d249ca9169491f3dbe411c5b2ff4096e4"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-fixtures.json",
+            "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
+          },
+          "node": {
+            "path": "local/analysis/skater-looping-sound-lifecycle-looping-sound-candidate-unit.json",
+            "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
+          },
+          "browser": {
+            "path": "local/analysis/skater-looping-sound-browser.json",
+            "sha256": "d4f6fda309fc6b809ca402996abec546881305dcf3fcde1a5a0eb59a88239040"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
+            "sha256": "ea406616b371a5026038e9200e90e02c20d81ba1ea8fa0457eb874ef4d3d28c2"
           }
         }
       ]

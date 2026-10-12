@@ -2,9 +2,9 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "428361",
-    "complete_code_percent": 18.033382476389022,
-    "total_functions": 11873,
+    "complete_code": "428910",
+    "complete_code_percent": 18.056494587387775,
+    "total_functions": 11876,
     "total_units": 3,
     "complete_units": 1,
     "matched_code": "0",
@@ -22,10 +22,10 @@
     {
       "name": "Verified behavioral recovery",
       "measures": {
-        "total_code": "428361",
-        "complete_code": "428361",
+        "total_code": "428910",
+        "complete_code": "428910",
         "complete_code_percent": 100.0,
-        "total_functions": 1989,
+        "total_functions": 1997,
         "total_units": 1,
         "complete_units": 1,
         "matched_code": "0",
@@ -8258,6 +8258,15 @@
           }
         },
         {
+          "name": "thug_sound_stop_draft",
+          "size": "57",
+          "address": "500960",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4699360"
+          }
+        },
+        {
           "name": "thug_sound_active_id_draft",
           "size": "98",
           "address": "501488",
@@ -14711,12 +14720,75 @@
           }
         },
         {
+          "name": "thug_looping_sound_initialize_draft",
+          "size": "40",
+          "address": "1124480",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5322880"
+          }
+        },
+        {
           "name": "thug_skater_animation_speed_draft",
           "size": "40",
           "address": "1124528",
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5322928"
+          }
+        },
+        {
+          "name": "thug_looping_sound_construct_draft",
+          "size": "135",
+          "address": "1124576",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5322976"
+          }
+        },
+        {
+          "name": "thug_looping_sound_bind_draft",
+          "size": "21",
+          "address": "1124720",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5323120"
+          }
+        },
+        {
+          "name": "thug_looping_sound_create_draft",
+          "size": "89",
+          "address": "1125072",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5323472"
+          }
+        },
+        {
+          "name": "thug_looping_sound_destroy_draft",
+          "size": "113",
+          "address": "1125168",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5323568"
+          }
+        },
+        {
+          "name": "thug_looping_sound_suspend_draft",
+          "size": "61",
+          "address": "1126240",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5324640"
+          }
+        },
+        {
+          "name": "thug_looping_sound_delete_draft",
+          "size": "33",
+          "address": "1126304",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5324704"
           }
         },
         {
@@ -17950,10 +18022,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1538428",
+        "total_code": "1538001",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9884,
+        "total_functions": 9879,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -31466,15 +31538,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4698976"
-          }
-        },
-        {
-          "name": "original_0047b4e0",
-          "size": "57",
-          "address": "500960",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4699360"
           }
         },
         {
@@ -45329,21 +45392,12 @@
           }
         },
         {
-          "name": "original_005138e0",
-          "size": "135",
-          "address": "1124576",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5322976"
-          }
-        },
-        {
-          "name": "original_00513970",
+          "name": "original_00513860",
           "size": "21",
-          "address": "1124720",
+          "address": "1124448",
           "fuzzy_match_percent": 0,
           "metadata": {
-            "virtual_address": "5323120"
+            "virtual_address": "5322848"
           }
         },
         {
@@ -45365,39 +45419,12 @@
           }
         },
         {
-          "name": "original_00513ad0",
-          "size": "89",
-          "address": "1125072",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5323472"
-          }
-        },
-        {
-          "name": "original_00513b30",
-          "size": "113",
-          "address": "1125168",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5323568"
-          }
-        },
-        {
           "name": "original_00513bed",
           "size": "871",
           "address": "1125357",
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5323757"
-          }
-        },
-        {
-          "name": "original_00513fa0",
-          "size": "33",
-          "address": "1126304",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5324704"
           }
         },
         {
@@ -106933,7 +106960,7 @@
     {
       "name": "Unassigned original .text bytes (includes padding and jump tables)",
       "measures": {
-        "total_code": "408589",
+        "total_code": "408467",
         "complete_code": "0",
         "complete_code_percent": 0.0,
         "total_functions": 0,
@@ -106953,7 +106980,7 @@
       "sections": [
         {
           "name": ".text unassigned",
-          "size": "408589",
+          "size": "408467",
           "fuzzy_match_percent": 0
         }
       ],

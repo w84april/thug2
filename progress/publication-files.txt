@@ -83,6 +83,7 @@ local/analysis/audit-skater-descriptor.py
 local/analysis/audit-skater-finalize.py
 local/analysis/audit-skater-gap.py
 local/analysis/audit-skater-ground.py
+local/analysis/audit-skater-looping-sound-startup.py
 local/analysis/audit-skater-matrix.py
 local/analysis/audit-skater-rotate.py
 local/analysis/audit-skater-score.py
@@ -199,6 +200,8 @@ local/analysis/build-skater-finalize-draft.py
 local/analysis/build-skater-gap-draft.py
 local/analysis/build-skater-ground-draft.py
 local/analysis/build-skater-local-net-draft.py
+local/analysis/build-skater-looping-sound-lifecycle.py
+local/analysis/build-skater-looping-sound-startup.py
 local/analysis/build-skater-matrix-draft.py
 local/analysis/build-skater-rotate-draft.py
 local/analysis/build-skater-score-draft.py
@@ -414,6 +417,7 @@ local/analysis/lock-frame-rigidbody-core-derived.c
 local/analysis/lock-frame-rigidbody-initialize-derived.c
 local/analysis/lock-frame-training-checks.mjs
 local/analysis/lock-frame-worker.mjs
+local/analysis/looping-sound-stop-callback.c
 local/analysis/map-input-component-descriptors.py
 local/analysis/map-input-component-names.py
 local/analysis/map-prop-component-dependencies.py
@@ -637,6 +641,7 @@ local/analysis/pin-skater-end-run-startup.py
 local/analysis/pin-skater-finalize.py
 local/analysis/pin-skater-gap.py
 local/analysis/pin-skater-ground.py
+local/analysis/pin-skater-looping-sound-startup.py
 local/analysis/pin-skater-matrix.py
 local/analysis/pin-skater-rotate.py
 local/analysis/pin-skater-score.py
@@ -766,6 +771,8 @@ local/analysis/probe-skater-finalize.py
 local/analysis/probe-skater-gap.py
 local/analysis/probe-skater-ground.py
 local/analysis/probe-skater-local-net.py
+local/analysis/probe-skater-looping-sound-lifecycle.py
+local/analysis/probe-skater-looping-sound-startup.py
 local/analysis/probe-skater-matrix.py
 local/analysis/probe-skater-rotate.py
 local/analysis/probe-skater-score-assets.py
@@ -1055,6 +1062,7 @@ local/analysis/serve-skater-finalize.py
 local/analysis/serve-skater-gap.py
 local/analysis/serve-skater-ground.py
 local/analysis/serve-skater-local-net.py
+local/analysis/serve-skater-looping-sound.py
 local/analysis/serve-skater-matrix.py
 local/analysis/serve-skater-rotate.py
 local/analysis/serve-skater-score.py
@@ -1164,6 +1172,16 @@ local/analysis/skater-local-net-draft.c
 local/analysis/skater-local-net-extents.py
 local/analysis/skater-local-net-routines.json
 local/analysis/skater-local-net-worker.mjs
+local/analysis/skater-looping-sound-browser.html
+local/analysis/skater-looping-sound-constructor-prefix.c
+local/analysis/skater-looping-sound-lifecycle-draft.build.json
+local/analysis/skater-looping-sound-lifecycle-draft.c
+local/analysis/skater-looping-sound-lifecycle-extents.py
+local/analysis/skater-looping-sound-lifecycle-routines.json
+local/analysis/skater-looping-sound-negative-before-stop.c
+local/analysis/skater-looping-sound-parent-routines.json
+local/analysis/skater-looping-sound-startup-draft.build.json
+local/analysis/skater-looping-sound-worker.mjs
 local/analysis/skater-matrix-browser.html
 local/analysis/skater-matrix-checks.mjs
 local/analysis/skater-matrix-constructor-prefix.c
@@ -1207,6 +1225,8 @@ local/analysis/skeleton-buffer-browser.html
 local/analysis/skeleton-buffer-draft.build.json
 local/analysis/skeleton-buffer-draft.c
 local/analysis/skeleton-buffer-worker.mjs
+local/analysis/sound-stop-draft.c
+local/analysis/sound-stop-routines.json
 local/analysis/sphere-contact-browser.html
 local/analysis/sphere-contact-draft.build.json
 local/analysis/sphere-contact-draft.c
@@ -1437,6 +1457,9 @@ local/analysis/verify-skater-gap-checkpoint.mjs
 local/analysis/verify-skater-ground-checkpoint.mjs
 local/analysis/verify-skater-local-net-regression.mjs
 local/analysis/verify-skater-local-net-unit.mjs
+local/analysis/verify-skater-looping-sound-lifecycle.mjs
+local/analysis/verify-skater-looping-sound-regression.mjs
+local/analysis/verify-skater-looping-sound-startup.mjs
 local/analysis/verify-skater-matrix-checkpoint.mjs
 local/analysis/verify-skater-rotate-checkpoint.mjs
 local/analysis/verify-skater-score-checkpoint.mjs

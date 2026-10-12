@@ -56,20 +56,21 @@ publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **1,989 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **428,361 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.03%)**. Every
+`ledger.json` links **1,997 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **428,910 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.06%)**. Every
 binary-matching measure is zero. The initial reporting commit reconciled existing
 evidence. A subsequent audited
-checkpoint adds 25 complete LocalNet, EndRun and BalanceTrick routines, totaling
-1,312 original body bytes; constructor progress remains partial and uncredited.
+checkpoint adds 33 complete LocalNet, EndRun, BalanceTrick and SkaterLoopingSound
+routines, totaling 1,861 original body bytes; constructor progress remains partial
+and uncredited.
 
-The inventory contains 11,873 discovered entries: 11,641 entries in the later
+The inventory contains 11,876 discovered entries: 11,641 entries in the later
 read-only Ghidra export, 228 supplied recovery entries, and one additional tested
-SSE matrix entry and three entries from later startup discovery exports. These
+SSE matrix entry and six entries from later startup discovery exports. These
 are discovered entries,
 not an exhaustive or authoritative count of original source functions. Their
-non-overlapping bodies total 1,966,789 bytes. The remaining **408,589 bytes** stay
+non-overlapping bodies total 1,966,911 bytes. The remaining **408,467 bytes** stay
 in the denominator with zero completion, including unidentified code, padding
 and jump tables. The denominator includes runtime/library code present in the
 specimen. Raw file-alignment bytes beyond `.text`'s virtual size are excluded.
@@ -144,15 +145,19 @@ the referenced 0.5% rule still
 hides this project from the public listing.
 
 The latest audited startup checkpoint and its selected complete routine maps are
-recorded in [verified-recovery.json](verified-recovery.json). It preserves 191
-passing Node/actual Chromium suites and 25 newly reconciled routine addresses.
-The skater constructor reaches 301/463 instructions and stops before component
-`b5f1e9d2`; it receives zero completion credit. Balance commands, component frame
-paths, later startup and the playable level remain unfinished. Private continued
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 193
+passing Node/actual Chromium suites and 33 newly reconciled routine addresses.
+The latest eight routines add 549 original body bytes, passing 121 comparison
+cases and 291 completed calls with 42 native stop callbacks. A clear-before-stop
+control is rejected. Previously recovered voice lookup, device stop and volume
+initialization earn no new credit. The skater constructor reaches 309/463
+instructions and stops before component `1859f772`; it receives zero completion
+credit. Balance and looping-sound commands, component frame paths, audio output,
+later startup, rendering and the playable level remain unfinished. Private continued
 work is recorded in `local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the subsequent 18.03% report. Later pushes use the same upload/download checks.
+the current 18.06% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

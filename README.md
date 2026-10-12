@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.03% of original `.text` bytes** —
-428,361 / 2,375,378 bytes attributed to 1,989 distinct original addresses with
+**Reconciled behavioral completion: 18.06% of original `.text` bytes** —
+428,910 / 2,375,378 bytes attributed to 1,997 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 25 newly verified LocalNet, EndRun and BalanceTrick
-lifecycle/flag routines. It does not measure playability. See
+reconciled baseline with 33 newly verified LocalNet, EndRun, BalanceTrick and
+SkaterLoopingSound lifecycle/flag routines. It does not measure playability. See
 [reporting policy and verification](progress/README.md),
 [address ledger](progress/ledger.json) and [objdiff report](progress/report.json).
 
@@ -39,7 +39,7 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 191 suites; all 189 preceding
+checkpoint preserves all prior evidence and passes 193 suites; all 191 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
@@ -75,15 +75,24 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
-- BalanceTrick lifecycle now passes 115 original/Wasm comparison cases and 328
-  completed calls, including 28 real QB fixture callbacks that test conditional
-  constructor script ordering. Ten complete routines exercise all 185 original
-  instructions with no new comparison allowances. All 191 Node/actual Chromium
-  suites pass, preserving all 189 prior result objects. Together with the earlier
-  fifteen LocalNet/EndRun routines, 25 addresses add 1,312 original body bytes to
-  the reconciled report. The skater constructor advances to 301/463 instructions
-  and stops before component `b5f1e9d2`; it remains partial and earns no credit.
-  Balance commands, frame paths, later startup and level rendering remain unfinished.
+- SkaterLoopingSound lifecycle and its voice-stop wrapper now pass 121 original/Wasm
+  comparison cases and 291 completed calls, including 42 native stop callbacks
+  that test mutation and clear-after-callback order. Eight complete routines
+  exercise all 156 original instructions with no new comparison allowances.
+  A control that clears the voice before the callback is rejected. All 193
+  Node/actual Chromium suites pass, preserving all 191 previous result objects.
+  Existing voice lookup, device stop and volume initialization receive no new
+  address credit. These eight addresses add 549 original body bytes; all 33
+  recently reconciled routines add 1,861 bytes. The skater constructor advances
+  to 309/463 instructions and stops before component `1859f772`; it remains
+  partial and earns no completion credit. Component frame/command paths, actual
+  audio output, later startup, rendering and the playable level remain unfinished.
+
+- The preceding BalanceTrick checkpoint passes 115 original/Wasm comparison
+  cases and 328 completed calls, including 28 real QB fixture callbacks that
+  test conditional constructor script ordering. Its ten complete routines
+  cover all 185 original instructions; shared helpers receive no new credit.
+  The latest checkpoint preserves this evidence and its result objects.
 
 - The walking component now calls the complete dispatcher through the original
   object update loop. All 168 cases and 797 original calls match, including
