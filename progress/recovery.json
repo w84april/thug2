@@ -4,113 +4,122 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 771,
-  "experimental_functions_across_separate_builds": 788,
-  "reported_recovered_functions": 1944,
-  "decompilation_estimate_percent": 16.71,
+  "experimental_functions_in_latest_module": 782,
+  "experimental_functions_across_separate_builds": 799,
+  "reported_recovered_functions": 1955,
+  "decompilation_estimate_percent": 16.8,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/walk-ground-checkpoint.json",
-  "checkpoint_sha256": "6e4794a6221f713a722b5087b52f625d7d5b73f3b04f40be71d35855a55606ec",
+  "checkpoint": "local/analysis/walk-transition-checkpoint.json",
+  "checkpoint_sha256": "57a220b40e27aa3c9bc00af074f838dab3fbd4eaa3e690c2f3d48a0f223fa78f",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "6e4794a6221f713a722b5087b52f625d7d5b73f3b04f40be71d35855a55606ec",
-    "artifacts": 18220,
+    "checkpoint_sha256": "57a220b40e27aa3c9bc00af074f838dab3fbd4eaa3e690c2f3d48a0f223fa78f",
+    "artifacts": 18397,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 622,
+    "harnesses": 630,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 18047,
+    "preserved_previous_artifacts": 18220,
     "main_wasm_unchanged": true,
-    "unit_cases": 485,
-    "unit_calls": 953,
-    "completed_calls": 941,
-    "interrupted_calls": 12,
-    "new_instruction_coverage": "1249/1259; ten documented unreachable-path exclusions under initialized single-threaded contracts; not exhaustive inputs or branches",
+    "unit_cases": 825,
+    "unit_calls": 1399,
+    "completed_calls": 1399,
+    "interrupted_calls": 0,
+    "new_instruction_coverage": "1011/1014; three documented unreachable-path exclusions after a false collision query; not exhaustive inputs or branches",
     "new_uninitialized_byte_allowances": 0,
     "new_float_comparison_allowances": 0,
-    "browser_suites": 148,
-    "preserved_browser_suites": 147,
+    "browser_suites": 149,
+    "preserved_browser_suites": 148,
     "constructor_prefix": "277/463 unchanged; local path stops before7cd3e6d5",
     "walk_frame_prefix": "51/142 unchanged; stops before state handlers or common tail",
-    "walk_ground_prefix": "18/134; stops before transition52c2c0",
+    "walk_ground_prefix": "18/134 unchanged; stops before transition52c2c0",
+    "rail_selection_to_callback_target_sequences": 12,
     "playable": false
   },
-  "scope": "Seven complete original Walk routines recover platform motion, collision-cache preparation, velocity-facing interpolation, analog target speed, slope attenuation, acceleration/steering and two-probe step height. Real collision geometry, reference lifetimes and QB/math callees execute. Whole arena/globals and completed-call preserved registers compare. The ground parent executes platform follow, cache preparation and acceleration in original order, then explicitly stops before transition routine52c2c0; the parent is not counted as recovered. Initialized single-threaded graphs, finite numeric fixtures and required QB parameters are contracts. Ten unexercised instructions have documented unreachable-path proofs under these contracts. Remaining ground transitions, full movement/startup, rendering and playable training remain unfinished.",
-  "remaining": "Walk ground platform/cache/facing/speed/steering/step-height helpers are recovered. Ground parent52d300 stops before52c2c0; floor/contact handler52b370 remains unfinished. Constructor277/463 and common Walk frame51/142 remain unchanged. Remaining ground transitions, other movement states, startup, renderer creation/rendering and original playable training remain unfinished.",
-  "browser_suites": 148,
-  "new_cases": 485,
-  "new_calls": 953,
+  "scope": "Eleven complete original routines recover Walk gravity selection, state changes and buffered-input timing, moving-platform velocity transfer, facing preparation, indexed collision-ray direction, rail quaternion/world orientation, vertical-rail entry/exit targets, reverse node selection, entry setup and the transition callback target. Actual gameplay flags, QB/math/timing, collision queries and moving-contact cleanup execute. Twelve explicit search-to-callback-target sequences verify selection and state3 initialization, while the intervening animation/movement frame remains unrecovered. Whole arena/globals and preserved registers compare without numeric or byte allowances. Initialized graphs, valid rail links/counts and finite numeric fixtures are contracts. Three success-path reference cleanup instructions are unreachable because a false collision-query result guarantees a null moving reference. Full ground/Walk updates, remaining startup/rendering and original playable training remain unfinished.",
+  "remaining": "Walk state-change and vertical-rail selection/entry helpers are recovered, including callback-target initialization. Ground parent52d300 remains18/134 and stops before52c2c0, whose ledge helper52bc70 remains unfinished. Floor/contact handler52b370, full ground/Walk and intervening animation frames, remaining startup, renderer creation/rendering and original playable training remain unfinished. Constructor277/463 and common Walk frame51/142 are unchanged.",
+  "browser_suites": 149,
+  "new_cases": 825,
+  "new_calls": 1399,
   "instruction_coverage": {
-    "0x52a620": {
-      "covered": 71,
-      "total": 78,
+    "0x5284c0": {
+      "covered": 46,
+      "total": 46,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5260e0": {
+      "covered": 106,
+      "total": 106,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x52ab90": {
+      "covered": 102,
+      "total": 102,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x527720": {
+      "covered": 39,
+      "total": 39,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x528220": {
+      "covered": 25,
+      "total": 25,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x57cfb0": {
+      "covered": 46,
+      "total": 46,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x4410c0": {
+      "covered": 64,
+      "total": 64,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x441260": {
+      "covered": 115,
+      "total": 115,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x4418b0": {
+      "covered": 199,
+      "total": 202,
       "missing": [
-        "0x52a658",
-        "0x52a65a",
-        "0x52a65f",
-        "0x52a660",
-        "0x52a661",
-        "0x52a662",
-        "0x52a665"
+        "0x441b49",
+        "0x441b50",
+        "0x441b51"
       ],
       "excluded": {
-        "0x52a658": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a65a": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a65f": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a660": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a661": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a662": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented.",
-        "0x52a665": "Stable initialized single-threaded contact graph: caller52a638 rejects a null owner, then immediately calls416f00 with the same contact. That callee returns false only at416f10 for a null owner; its live-owner branch returns true at4170da. No intervening owner mutation or callback exists. The defensive false-result release path remains implemented."
+        "0x441b49": "Fresh probe417760 has no callback. Query4172f0 returns false only when both its static-hit byte and moving-object reference are zero (417477..417487). The success branch of4418b0 is taken only after that false result. It copies four matrix words and performs no reference mutation or callback before testing the same reference at441b3e. Its non-null unlink branch is therefore unreachable under initialized single-threaded graphs. The defensive cleanup remains implemented.",
+        "0x441b50": "Fresh probe417760 has no callback. Query4172f0 returns false only when both its static-hit byte and moving-object reference are zero (417477..417487). The success branch of4418b0 is taken only after that false result. It copies four matrix words and performs no reference mutation or callback before testing the same reference at441b3e. Its non-null unlink branch is therefore unreachable under initialized single-threaded graphs. The defensive cleanup remains implemented.",
+        "0x441b51": "Fresh probe417760 has no callback. Query4172f0 returns false only when both its static-hit byte and moving-object reference are zero (417477..417487). The success branch of4418b0 is taken only after that false result. It copies four matrix words and performs no reference mutation or callback before testing the same reference at441b3e. Its non-null unlink branch is therefore unreachable under initialized single-threaded graphs. The defensive cleanup remains implemented."
       }
     },
-    "0x5277b0": {
-      "covered": 80,
-      "total": 80,
+    "0x57d880": {
+      "covered": 133,
+      "total": 133,
       "missing": [],
       "excluded": {}
     },
-    "0x526260": {
-      "covered": 147,
-      "total": 147,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x528120": {
-      "covered": 73,
-      "total": 73,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x526430": {
-      "covered": 55,
-      "total": 55,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x528950": {
-      "covered": 593,
-      "total": 596,
-      "missing": [
-        "0x528de5",
-        "0x528dec",
-        "0x528ded"
-      ],
-      "excluded": {
-        "0x528de5": "The fresh417760 probe has null moving reference and callback. Acceleration calls4172f0 with check_moving=0. That query clears the reference at41738b and skips the only assignment/linking block4173f5..417423. With no callback, the reference remains null, so cleanup skips these unlink instructions. The defensive unlink path remains implemented.",
-        "0x528dec": "The fresh417760 probe has null moving reference and callback. Acceleration calls4172f0 with check_moving=0. That query clears the reference at41738b and skips the only assignment/linking block4173f5..417423. With no callback, the reference remains null, so cleanup skips these unlink instructions. The defensive unlink path remains implemented.",
-        "0x528ded": "The fresh417760 probe has null moving reference and callback. Acceleration calls4172f0 with check_moving=0. That query clears the reference at41738b and skips the only assignment/linking block4173f5..417423. With no callback, the reference remains null, so cleanup skips these unlink instructions. The defensive unlink path remains implemented."
-      }
-    },
-    "0x5264f0": {
-      "covered": 230,
-      "total": 230,
+    "0x441de0": {
+      "covered": 136,
+      "total": 136,
       "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "5867b6b3651e096f6a4e8f611fde0c9d6c78380591e173ce8710f258575f9e1a",
+  "experimental_wasm_sha256": "e5cef2b1e1b160044f52ccfc7c037b7b2dacc803432ec10d062ae3567aee66fa",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -209,6 +218,7 @@
     "local/analysis/audit-trigger.py": "a2895518bc930272e72d4c5a94f0bd07e8cfca9975f00c890026278ae6960eae",
     "local/analysis/audit-vertex-upload.py": "f9584bf0f8d5e53052a26391b210e9a1663eba87144c67a46a12aab7a708b228",
     "local/analysis/audit-walk-ground.py": "bf21c67a21da7f419cbea50e7c8df6ba2c492c2a8163492de48b9638683b5d28",
+    "local/analysis/audit-walk-transition.py": "ce2b625c35665b89713ed19360ba471dc7c9eab1b6d885870ced010792015e01",
     "local/analysis/build-asset-factory-draft.py": "7e558ddf602be090fb5062402a2345583276f1b739eb3a34f8f390ca4ba1e610",
     "local/analysis/build-asset-ready-draft.py": "2ad47a7c01c07322916bc71c3516ea38b92860ea2e0b33498c3469405cfb3528",
     "local/analysis/build-composite-construction-draft.py": "7e4166b5f8e6a5cdfe1d074ee743d568d83e706f0765affb2c2e6b8fc25fe8b4",
@@ -304,6 +314,7 @@
     "local/analysis/build-vertex-upload-draft.py": "a28758aa2d1b79abc8ffeaba452e65f67e76eb83eb2849656f951f8d020ac661",
     "local/analysis/build-vertex-upload-ports.py": "6fe26ae6a03e09d7a09f7e9b689257442bce6886d387f8958ff29c5e380e6fb2",
     "local/analysis/build-walk-ground-draft.py": "089869d2584e1528a0614ac2bf9b0fca9abd92fd37c6b0bf4a403c9f34d1dd60",
+    "local/analysis/build-walk-transition-draft.py": "bc17ddca5dee3cf698dce087b1916042e3c6ed0afe3a652739c72b02c9ce3213",
     "local/analysis/check-input-pad-keyboard.mjs": "6c3847638e2a84b920143ccc349e5ed5050e532d762a015e2ebc91368f327b71",
     "local/analysis/check-level-collision-component-graph.py": "2588b706745872db4fb6b36495c8dc9a101081e32c68ffe725ade10d2933a963",
     "local/analysis/check-level-collision-load-graph.py": "dc982e6e40e83ef744dc7bb59013fdb2c85aa6348e98583545c021406dc49bc8",
@@ -695,6 +706,7 @@
     "local/analysis/pin-trigger.py": "1e14954e2da741b02981cd4032f56fea1ae65d92ef0703e3f584b9f810b7ef65",
     "local/analysis/pin-vertex-upload.py": "5f7aa2bc51e9b6f73ac2b1c4fe1ba93845c7da8d8302f765717a079313f47fea",
     "local/analysis/pin-walk-ground.py": "d871bc9d2355a1ba289812eda6a05788edcaaf4fe19ca220767d45833f8d5e6a",
+    "local/analysis/pin-walk-transition.py": "ccaf1e8cb5b3d3d7a140d5b9dcd2b0dd3c77f75cf484d9236c22f835742ec9b0",
     "local/analysis/probe-asset-factory.py": "a4a178207bb244e1f1806da508da49c99bf211333a111c3aadca5711e20d58e4",
     "local/analysis/probe-asset-ready.py": "43533e5fa15f997dcd1b167f074d210e168ad2683ac13bfe7ebe5b415e5df366",
     "local/analysis/probe-composite-construction.py": "bf1c5959e6fc5245b2fa26750f5a1a28f229f6a6b8e1067d959ee20c666ce31a",
@@ -832,6 +844,7 @@
     "local/analysis/probe-trigger.py": "b6a29e20e83e36a36ba0a7d3064f987fd2bfacd8d23d6c2bbfa0d592f0cfb902",
     "local/analysis/probe-vertex-upload.py": "417b5a49204232f3c3e66413ce6fb24966c8c454fbe50cd2e5ac08a9a34f2fe9",
     "local/analysis/probe-walk-ground.py": "f2f948c426e097da34201ae4e00de64b72730a51004c3b6e75981c25d1da10e4",
+    "local/analysis/probe-walk-transition.py": "e63cc2a535d42417b94abefbe74226800cf3fb2f7ad42cfb5e1531bd68d6f8ab",
     "local/analysis/prop-command-browser.html": "fff2619f92a6255c31b78ac9537de16faa4306d54fb5d3eadfb30d83a2a9101d",
     "local/analysis/prop-command-callback.build.json": "40def70c9c2463c9bfc9c8abac1627f89323f2dbb4a69ba5607a2a5656a56b3e",
     "local/analysis/prop-command-callback.c": "0832d25b4fd5a24fd49615fa095ee1f341c1dacfb879620fced537064b7b9dcd",
@@ -1046,6 +1059,7 @@
     "local/analysis/serve-trigger.py": "04e81f18c455ea69076c53635fcdf73d10828619920c0b916815e9b75c23296e",
     "local/analysis/serve-vertex-upload.py": "4c65cd7e207bbe023a3dd8bd8fb6fbe06adc831149a11847d2e2206f2f49c663",
     "local/analysis/serve-walk-ground.py": "74df6dba79aa342046a0cdac95975a35d45bed749ad71e90dca7ace126f4e82f",
+    "local/analysis/serve-walk-transition.py": "87df99dfe671fcdbbea509671b0fe92b11e951e88e28ba0db61bbd31a011bd39",
     "local/analysis/skater-adjust-browser.html": "ce82ced13d354f9caa6c24c96b7c6e627132e0eed621b3af12a9a4cb54a54b79",
     "local/analysis/skater-adjust-constructor-prefix.c": "14a03b150c2dc5219ea99cffd2d4441970180e48708b98bd77cf6d4917ad9e7b",
     "local/analysis/skater-adjust-draft.build.json": "f234d21926a445b6bb257347433efc94e775cd04665dcb760b6780c5bc5f230e",
@@ -1371,6 +1385,7 @@
     "local/analysis/verify-trigger-checkpoint.mjs": "35ba68f4e7d05f2c68cad9882752c844a6e6d8f98726f575f84b53c5c72ca8fa",
     "local/analysis/verify-vertex-upload-checkpoint.mjs": "448f01496bb1143436f44f7543374a396c7194adddf1fe09a2c08b597cdbfe3f",
     "local/analysis/verify-walk-ground-checkpoint.mjs": "8201dcd1f8c0a7e86377ca573053cac50bc5edd7056e408f8817bb286a92ca34",
+    "local/analysis/verify-walk-transition-checkpoint.mjs": "1b9f434df8d53b88ebc9c1ccd655378afe91f1d5deacfc4766290e5288a236f8",
     "local/analysis/vertex-upload-browser.html": "6ba5041e79143ad822b13a48fa2ad0fcadf98f9f9b3a61b9f0e64e0f055a5503",
     "local/analysis/vertex-upload-draft.build.json": "e5ba8ffca4997fde7dffc58d0439c672e59d81e0debd9e6254fefa87cdc84824",
     "local/analysis/vertex-upload-draft.c": "86903ad75889b126e93cbd5cf61025a8d6c60f9199c601fca1d2ef30c757e58c",
@@ -1385,6 +1400,12 @@
     "local/analysis/walk-ground-extents.py": "ea5b4d05079aa14eb4c6320e46aea01af1afa80a91e5976b045d6b4e566dc356",
     "local/analysis/walk-ground-routines.json": "998b673a67f341d4ead6db1f84f75514810e702cf9cff9a22965c711cf092f18",
     "local/analysis/walk-ground-worker.mjs": "d08305813ab0deaf392c6003f59a376e67d1702bf8265f1604b0d11a47f32961",
+    "local/analysis/walk-transition-browser.html": "95e74ac018cdf8c099062522cb6e1134d22817ec6eb9af409d0a2202108b3fb0",
+    "local/analysis/walk-transition-draft.build.json": "c690d7c7019342b053f1a98130a74bfa818dedbed01a57637d08083b7fb6fe92",
+    "local/analysis/walk-transition-draft.c": "46731a02a0c0723a23a3b3d6ab92226de17d7e7edfdaf101ce17e539c7866a86",
+    "local/analysis/walk-transition-extents.py": "abf4b334df3fb2196e1fceb546fda59aff67e299af3a537d506fd2249eced563",
+    "local/analysis/walk-transition-routines.json": "54782c20177fbde926342d8198b91ad82d9e5f94e74934c12a2740e8484c09b7",
+    "local/analysis/walk-transition-worker.mjs": "5c03747a94d06284bb886178bbd08f158617a5a5c98352271035ce2243ea19a3",
     "src/audio/device.c": "9dd85e6e200aa77e5a21fa035566818b026af3997c2fa5d2370f67ba3936e235",
     "src/audio/device.h": "306133453105edbfe132c8951c5f82402f8f2bbeab2d37ce31337e2d0dbd16d5",
     "src/audio/events.c": "fdeb30e9ac5e4082da2072a37d68ba2bd5bc38fbba99d12153f1daf9bfc8bba8",

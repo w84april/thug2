@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.71%** — 1,944 reported recovered routines divided
+**Decompilation estimate: 16.80%** — 1,955 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 788 experimental routines: 771 in the latest
+routines (9.93% of that baseline) and 799 experimental routines: 782 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-18,220 pinned artifacts, preserving all 18,047 preceding artifacts. All 148 Node
-and Chromium suites were rerun for this checkpoint and passed; all 147 inherited
+18,397 pinned artifacts, preserving all 18,220 preceding artifacts. All 149 Node
+and Chromium suites were rerun for this checkpoint and passed; all 148 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,23 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers seven Walk ground helpers: platform
+- The latest experimental build recovers eleven Walk helpers for gravity,
+  state changes, buffered input, moving-platform velocity, facing/probe
+  directions and vertical-rail selection and entry. Real collision, gameplay
+  flags, QB/math/timing and contact cleanup match the original in 825 cases and
+  1,399 completed calls. Coverage is 1,011 / 1,014 instructions; three reference
+  cleanup instructions have documented unreachable-path proofs after a false
+  collision query. The defensive cleanup remains implemented. There are no new
+  numeric masks, NaN classification, quieting or uninitialized-byte allowances.
+  Twelve explicit rail-selection-to-callback-target sequences reach state 3;
+  the intervening animation/movement frame remains unrecovered. All 149 Node
+  and Chromium suites pass, preserving all 148 earlier result objects. Evidence
+  is in `local/analysis/walk-transition-checkpoint.json`; this module contains
+  782 unpromoted complete routines. Ground-parent coverage remains 18 / 134,
+  shared Walk frame coverage 51 / 142 and constructor coverage 277 / 463.
+  Full walking/rail frames, ledge jumps, remaining startup, rendering and
+  original playable training remain unfinished.
+- The preceding experimental build recovers seven Walk ground helpers: platform
   motion, collision-cache preparation, velocity-facing interpolation, analog
   target speed, slope attenuation, acceleration/steering and two-probe step
   height. Real static and moving geometry, reference cleanup and QB/math helpers

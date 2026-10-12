@@ -1,0 +1,57 @@
+{
+  "0x5284c0": {
+    "bytes": 149,
+    "instructions": 46,
+    "name": "thug_walk_gravity_draft"
+  },
+  "0x5260e0": {
+    "bytes": 384,
+    "instructions": 106,
+    "name": "thug_walk_change_state_draft"
+  },
+  "0x52ab90": {
+    "bytes": 376,
+    "instructions": 102,
+    "name": "thug_walk_leave_platform_draft"
+  },
+  "0x527720": {
+    "bytes": 139,
+    "instructions": 39,
+    "name": "thug_walk_prepare_facing_draft"
+  },
+  "0x528220": {
+    "bytes": 84,
+    "instructions": 25,
+    "name": "thug_walk_probe_direction_draft"
+  },
+  "0x57cfb0": {
+    "bytes": 212,
+    "instructions": 46,
+    "name": "thug_rail_orientation_draft"
+  },
+  "0x4410c0": {
+    "bytes": 200,
+    "instructions": 64,
+    "name": "thug_walk_enter_rail_draft"
+  },
+  "0x441260": {
+    "bytes": 369,
+    "instructions": 115,
+    "name": "thug_walk_rail_exit_target_draft"
+  },
+  "0x4418b0": {
+    "bytes": 706,
+    "instructions": 202,
+    "name": "thug_walk_rail_entry_target_draft"
+  },
+  "0x57d880": {
+    "bytes": 407,
+    "instructions": 133,
+    "name": "thug_walk_find_rail_draft"
+  },
+  "0x441de0": {
+    "bytes": 479,
+    "instructions": 136,
+    "name": "thug_walk_try_rail_draft"
+  }
+}
