@@ -1,0 +1,9 @@
+{
+  "0x582d90": {
+    "bytes": 1639,
+    "instructions": 463,
+    "name": "thug_skater_construct_complete_draft",
+    "body_bytes": 1639,
+    "ranges": "00582d90:005833f6"
+  }
+}

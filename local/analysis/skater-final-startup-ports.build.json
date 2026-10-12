@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-final-startup-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-final-startup-ports.wasm"
+  ],
+  "source_sha256": "c14cd17637917bb7b42e200a6c3b7096b75a4f76e1b08391680eb5170328725f",
+  "sha256": "d63bc8314ad33cd46be0d14e61996d28df750a7e6de30aaf4ce0c3bd4d4e4114"
+}

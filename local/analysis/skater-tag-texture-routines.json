@@ -1,0 +1,121 @@
+{
+  "0x4c7fb0": {
+    "bytes": 33,
+    "instructions": 14,
+    "name": "thug_texture_image_width_draft",
+    "body_bytes": 33,
+    "ranges": "004c7fb0:004c7fd0"
+  },
+  "0x4c7fe0": {
+    "bytes": 33,
+    "instructions": 14,
+    "name": "thug_texture_image_height_draft",
+    "body_bytes": 33,
+    "ranges": "004c7fe0:004c8000"
+  },
+  "0x5b9e50": {
+    "bytes": 3,
+    "instructions": 2,
+    "name": "thug_texture_image_false_draft",
+    "body_bytes": 3,
+    "ranges": "005b9e50:005b9e52"
+  },
+  "0x49f3b0": {
+    "bytes": 8,
+    "instructions": 2,
+    "name": "thug_texture_image_flag_draft",
+    "body_bytes": 8,
+    "ranges": "0049f3b0:0049f3b7"
+  },
+  "0x4e0500": {
+    "bytes": 415,
+    "instructions": 154,
+    "name": "thug_texture_resource_copy_draft",
+    "body_bytes": 415,
+    "ranges": "004e0500:004e069e"
+  },
+  "0x4c8450": {
+    "bytes": 592,
+    "instructions": 199,
+    "name": "thug_texture_image_copy_draft",
+    "body_bytes": 592,
+    "ranges": "004c8450:004c869f"
+  },
+  "0x4c9c80": {
+    "bytes": 123,
+    "instructions": 37,
+    "name": "thug_texture_dictionary_pc_clone_draft",
+    "body_bytes": 123,
+    "ranges": "004c9c80:004c9cfa"
+  },
+  "0x49fbe0": {
+    "bytes": 53,
+    "instructions": 25,
+    "name": "thug_texture_dictionary_clone_image_draft",
+    "body_bytes": 53,
+    "ranges": "0049fbe0:0049fc14"
+  },
+  "0x49f500": {
+    "bytes": 59,
+    "instructions": 25,
+    "name": "thug_texture_dictionary_remove_image_draft",
+    "body_bytes": 59,
+    "ranges": "0049f500:0049f53a"
+  },
+  "0x4c8090": {
+    "bytes": 19,
+    "instructions": 8,
+    "name": "thug_texture_dictionary_pc_remove_draft",
+    "body_bytes": 19,
+    "ranges": "004c8090:004c80a2"
+  },
+  "0x4cae60": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_texture_image_delete_draft",
+    "body_bytes": 33,
+    "ranges": "004cae60:004cae80"
+  },
+  "0x4c9d00": {
+    "bytes": 113,
+    "instructions": 32,
+    "name": "thug_texture_image_destroy_draft",
+    "body_bytes": 113,
+    "ranges": "004c9d00:004c9d70"
+  },
+  "0x4c98b0": {
+    "bytes": 153,
+    "instructions": 51,
+    "name": "thug_texture_image_collapse_draft",
+    "body_bytes": 153,
+    "ranges": "004c98b0:004c9948"
+  },
+  "0x4e06a0": {
+    "bytes": 82,
+    "instructions": 34,
+    "name": "thug_texture_resource_destroy_draft",
+    "body_bytes": 73,
+    "ranges": "004e06a0:004e06c6;004e06d0:004e06f1"
+  },
+  "0x4e03f0": {
+    "bytes": 78,
+    "instructions": 27,
+    "name": "thug_texture_resource_unlink_draft",
+    "body_bytes": 78,
+    "ranges": "004e03f0:004e043d"
+  },
+  "0x4da730": {
+    "bytes": 47,
+    "instructions": 17,
+    "name": "thug_texture_stage_bind_draft",
+    "body_bytes": 47,
+    "ranges": "004da730:004da75e"
+  },
+  "0x49f210": {
+    "bytes": 7,
+    "instructions": 2,
+    "name": "thug_texture_wrapper_base_destroy_draft",
+    "body_bytes": 7,
+    "ranges": "0049f210:0049f216"
+  }
+}

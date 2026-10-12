@@ -114,6 +114,7 @@ def main():
     # Later checkpoints keep their own immutable evidence. The public selection
     # manifest names only complete, audited routine maps; partial roots stay out.
     updates = []
+    resolved_partials = {}
     selection_path = ROOT / 'progress/verified-recovery.json'
     if selection_path.exists():
         selection = read('progress/verified-recovery.json')
@@ -134,7 +135,20 @@ def main():
             pinned[reference['path']] = reference['sha256']
             pinned[update['audit']['path']] = update['audit']['sha256']
             assert latest['specimen_sha256'] == checkpoint['specimen_sha256']
-            assert set(latest['original_addresses']).isdisjoint(checkpoint['partial_original_addresses'])
+            resolved = set(update.get('resolved_partials', []))
+            historical = set(checkpoint['partial_original_addresses'])
+            assert resolved <= historical
+            assert set(latest['original_addresses']) & historical == resolved
+            assert resolved == set(audit.get('resolved_partial_addresses', []))
+            for address in resolved:
+                proof = latest['partial_resolutions'][address]
+                assert proof['completed_calls'] > 0 and proof['expected_traps'] == 0
+                assert proof['returned_this'] and proof['temporary_cleanup_verified']
+                assert address not in resolved_partials, 'Duplicate partial resolution'
+                resolved_partials[address] = {
+                    'address': address, 'checkpoint': reference,
+                    'audit': update['audit'], 'verification': proof,
+                }
             updates.append(update)
 
     inventory = {}
@@ -279,7 +293,7 @@ def main():
     accepted = []
     excluded = []
     reports = {}
-    partials = {int(a, 16) for a in checkpoint['partial_original_addresses']}
+    partials = {int(a, 16) for a in checkpoint['partial_original_addresses']} - {int(a, 16) for a in resolved_partials}
     missing = sorted(set(candidates) - set(inventory) - partials)
     if missing:
         (LOCAL / 'progress-reconciliation-extra-entries.txt').write_text(''.join(f'{address:08x}\n' for address in missing))
@@ -389,6 +403,10 @@ def main():
             stream.write(f'{address:08x}\t{row["size"]}\t' + ';'.join(f'{start:08x}:{end:08x}' for start, end in row['ranges']) + '\n')
     ledger = {'version': 1, 'specimen_sha256': checkpoint['specimen_sha256'], 'specimen_provenance': 'User-supplied modified/unpacked PC build; not pristine retail', 'checkpoint': pin(checkpoint_path), 'inventory': {'path': 'progress/function-inventory.tsv', 'sha256': digest('progress/function-inventory.tsv'), 'functions': len(inventory), 'body_bytes': sum(r['size'] for r in inventory.values()), 'source_exports': [{'path': path, 'sha256': digest(path)} for path in range_paths]}, 'code_section': {'name': '.text', 'address': 0x401000, 'virtual_size': 2375378, 'denominator_policy': 'All original .text virtual bytes, including unidentified code, jump tables and padding; excludes raw file alignment. No data or asset completion claimed.'}, 'partial_addresses': checkpoint['partial_original_addresses'], 'records': accepted, 'excluded': excluded, 'limitations': ['Scoped behavioral verification, not exhaustive equivalence or binary matching.', 'Original game, private fixtures and Wasm are required to replay the local comparisons; CI validates metadata only.', 'Historical separate physics experiment is not in this active-build ledger; no credit without reconciliation.']}
     accepted_names = {name for row in accepted for name in row['aliases']}
+    if resolved_partials:
+        ledger['historical_partial_addresses'] = ledger['partial_addresses']
+        ledger['partial_addresses'] = [a for a in ledger['partial_addresses'] if a not in resolved_partials]
+        ledger['resolved_partials'] = list(resolved_partials.values())
     ledger['verified_recovery_updates'] = [
         {'checkpoint': pin(update['checkpoint']['path']), 'audit': pin(update['audit']['path']),
          'scope': read(update['checkpoint']['path'])['scope']}

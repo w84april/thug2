@@ -1,16 +1,16 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "49 newly reconciled distinct original addresses add3996 body bytes beyond the original reporting baseline. The latest17 checked mappings contain16 new original addresses (2135 body bytes) and shared4fbda0 (zero additional credit). 367 cases/733 calls and455 diagnostics pass; two wrong controls are rejected. All195 Node/actual Chromium suites pass and all193 prior result objects are unchanged. Constructor582d90 remains424/463 partial across80 interrupted calls and receives zero completion credit. Original executable/assets/raw fixtures/compiled modules remain private.",
+  "scope": "70 newly reconciled distinct original addresses add8089 body bytes beyond the original reporting baseline. The latest22 checked mappings contain21 new addresses (4093 body bytes) and shared49f3b0 (zero additional credit). 332 cases/412 calls pass, including80 complete local/remote582d90 constructor calls and40 real pooled structure allocations. Historical partial582d90 is explicitly resolved with return and temporary cleanup evidence; immutable older partial checkpoints remain unchanged. All198 Node/actual Chromium suites pass; all195 predecessor result objects are unchanged. Sixteen scoped instruction exclusions and two rejected wrong controls are recorded. Integrated finalization/frame/rendering and a playable level remain unfinished; original executable/assets/raw fixtures/compiled modules remain private.",
   "updates": [
     {
       "checkpoint": {
-        "path": "local/analysis/skater-startup-tail-checkpoint.json",
-        "sha256": "d0f1582b51698813701109db92a1cba04ac82e9c80285f6e79a1f661911ae1cf"
+        "path": "local/analysis/skater-full-startup-checkpoint.json",
+        "sha256": "54626e56a2fd2b8f3c98c89a2dc86e5f5a3ec56fe7d82655722d6cc73615bc62"
       },
       "audit": {
-        "path": "local/analysis/skater-startup-tail-audit.json",
-        "sha256": "4ad967740ee0c49a81d6a904a4b6bd358e6293a1330b4d82fe953245bbb40dce"
+        "path": "local/analysis/skater-full-startup-audit.json",
+        "sha256": "66453ce1ddf631056773b8e3e67f910d3be65165c10429ace89906c91df83098"
       },
       "discovery_exports": [
         {
@@ -28,6 +28,10 @@
         {
           "path": "local/analysis/skater-startup-tail-extra-ranges.tsv",
           "sha256": "899be2b9b422136ddbd5798f41c29fbd48ead8df063a055569de774ad4106e80"
+        },
+        {
+          "path": "local/analysis/skater-tag-texture-extra-ranges.tsv",
+          "sha256": "bab696d71b409ace18cf4c0c7979832536395f688ecf3832dd6975b95b49448d"
         }
       ],
       "suites": [
@@ -50,12 +54,12 @@
             "sha256": "ec42e32df3ab4e6bf5b2b221983c0b4d9094342766b0b6916068755614c5841a"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-local-net-result.json",
             "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-local-net.py",
@@ -81,12 +85,12 @@
             "sha256": "8da4a16f0a846276a17b12cafba801b4b039ab09633ad6be5e3ba3773e3d2e6e"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
             "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-end-run-lifecycle.py",
@@ -112,12 +116,12 @@
             "sha256": "5c7e50ab07c18fd84c216954771b5ac41f5b1c2c6f517f06e68fc820ac6e25ba"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
             "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-balance-lifecycle.py",
@@ -143,12 +147,12 @@
             "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
             "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
@@ -174,12 +178,12 @@
             "sha256": "4b7f945e7d191e00b4d9cdde09b81ea385ddd4b6550b93eb522685daec0f9f9f"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
             "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-looping-sound-lifecycle.py",
@@ -205,25 +209,129 @@
             "sha256": "3e6a4bf30d97950d2eb0524b17333c92d462b676954dc4c4bfffb2c5f1c163b0"
           },
           "node": {
-            "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+            "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
             "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
           },
           "browser": {
-            "path": "local/analysis/skater-startup-tail-browser.json",
-            "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491"
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
           },
           "mapping_harness": {
             "path": "local/analysis/probe-skater-startup-tail.py",
             "sha256": "54ea4717d344f40bef7d9d2f19388799f6638fe6291465ae06620e582b13e6cd"
           }
+        },
+        {
+          "name": "skater_tag_texture",
+          "source": {
+            "path": "local/analysis/skater-tag-texture-draft.c",
+            "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870"
+          },
+          "routines": {
+            "path": "local/analysis/skater-tag-texture-routines.json",
+            "sha256": "e90405f1cf6247102172119e9de5be061ccfb8681468fb2aeffa2a32d95d43a7"
+          },
+          "original": {
+            "path": "local/analysis/skater-tag-texture-original.json",
+            "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-tag-texture-fixtures.json",
+            "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+          },
+          "node": {
+            "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+            "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+          },
+          "browser": {
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-tag-texture.py",
+            "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+          }
+        },
+        {
+          "name": "skater_final_startup",
+          "source": {
+            "path": "local/analysis/skater-final-startup-draft.c",
+            "sha256": "a1b0248a4a76d6cb89054edd66b389c484b9141b835d348d36031b0f6ba57ed5"
+          },
+          "routines": {
+            "path": "local/analysis/skater-final-startup-routines.json",
+            "sha256": "59d72a6fa52539e7073250330d1cd84452809268bd657a0852ef50ad283b8f57"
+          },
+          "original": {
+            "path": "local/analysis/skater-final-startup-original.json",
+            "sha256": "1c4fb306a7332c62229aa34bd587fe767e817470a89c3c78aa9bdd8258b3b0c3"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-final-startup-fixtures.json",
+            "sha256": "8e04a494195f677e0e2be82235c1e23ed512f6907248b2632aef862f0a253ac9"
+          },
+          "node": {
+            "path": "local/analysis/skater-full-startup-regression-skater-final-startup-result.json",
+            "sha256": "64233f8d5c5c1672fbc03830974bc07d20e07868f04448a58d6ddce54be11dbd"
+          },
+          "browser": {
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-final-startup.py",
+            "sha256": "0defd78c0790f2c93937b5960328cd51b6df474db42444ae7c1a8ef60bc2e786"
+          }
+        },
+        {
+          "name": "skater_full_startup",
+          "source": {
+            "path": "local/analysis/skater-full-constructor-draft.c",
+            "sha256": "76182a8c6210bae55818ca5d8ee7d3db76041087d51d4da24a5cdbcaae4e300b"
+          },
+          "routines": {
+            "path": "local/analysis/skater-full-startup-routines.json",
+            "sha256": "da4229c60362b94764800382b4448ca5503fcd10353cbe63f8a15ac86dda5262"
+          },
+          "original": {
+            "path": "local/analysis/skater-full-startup-original.json",
+            "sha256": "74f1cefe0e33f1d3b9ae93ea6ad7d10845a6aaa1e2779142f120e882cb84fdcc"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-full-startup-fixtures.json",
+            "sha256": "41296c9964d852f6607b9114cfd105011b04b3c03a6df7647d1ce9b7b24a3309"
+          },
+          "node": {
+            "path": "local/analysis/skater-full-startup-regression-skater-full-startup-result.json",
+            "sha256": "75d4a56f7581d8c2e822099f74720de6c1b24e18079bac46fbeaa2c22ef98c4e"
+          },
+          "browser": {
+            "path": "local/analysis/skater-full-startup-browser.json",
+            "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-full-startup.py",
+            "sha256": "5f3f316a2df5b7073c4c24a97c6042368b048b57ea4e0f9af6db03cde41b03ae"
+          }
         }
+      ],
+      "resolved_partials": [
+        "0x582d90"
       ]
     }
   ],
-  "duplicate_accounting": {
-    "address": "0x004fbda0",
-    "existing_name": "thug_skater_cleanup_initialize_draft",
-    "additional_name": "thug_component_8bce7e66_initialize_draft",
-    "additional_credit": 0
-  }
+  "duplicate_accounting": [
+    {
+      "address": "0x004fbda0",
+      "existing_name": "thug_skater_cleanup_initialize_draft",
+      "additional_name": "thug_component_8bce7e66_initialize_draft",
+      "additional_credit": 0
+    },
+    {
+      "address": "0x0049f3b0",
+      "existing_name": "thug_model_geometry_flag16_draft",
+      "additional_name": "thug_texture_image_flag_draft",
+      "additional_credit": 0
+    }
+  ]
 }

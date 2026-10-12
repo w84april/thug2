@@ -81,6 +81,7 @@ local/analysis/audit-skater-cleanup.py
 local/analysis/audit-skater-construction.py
 local/analysis/audit-skater-descriptor.py
 local/analysis/audit-skater-finalize.py
+local/analysis/audit-skater-full-startup.py
 local/analysis/audit-skater-gap.py
 local/analysis/audit-skater-ground.py
 local/analysis/audit-skater-looping-sound-startup.py
@@ -198,6 +199,7 @@ local/analysis/build-skater-descriptor-candidate.py
 local/analysis/build-skater-end-run-draft.py
 local/analysis/build-skater-end-run-startup.py
 local/analysis/build-skater-finalize-draft.py
+local/analysis/build-skater-full-startup.py
 local/analysis/build-skater-gap-draft.py
 local/analysis/build-skater-ground-draft.py
 local/analysis/build-skater-local-net-draft.py
@@ -209,6 +211,8 @@ local/analysis/build-skater-score-draft.py
 local/analysis/build-skater-startup-tail-negative.py
 local/analysis/build-skater-startup-tail-parent.py
 local/analysis/build-skater-startup-tail.py
+local/analysis/build-skater-tag-texture-negative.py
+local/analysis/build-skater-tag-texture.py
 local/analysis/build-skater-trick-draft.py
 local/analysis/build-skater-walk-draft.py
 local/analysis/build-skeleton-asset-draft.py
@@ -643,6 +647,7 @@ local/analysis/pin-skater-construction.py
 local/analysis/pin-skater-descriptor.py
 local/analysis/pin-skater-end-run-startup.py
 local/analysis/pin-skater-finalize.py
+local/analysis/pin-skater-full-startup.py
 local/analysis/pin-skater-gap.py
 local/analysis/pin-skater-ground.py
 local/analysis/pin-skater-looping-sound-startup.py
@@ -772,7 +777,9 @@ local/analysis/probe-skater-cleanup.py
 local/analysis/probe-skater-construction.py
 local/analysis/probe-skater-end-run-lifecycle.py
 local/analysis/probe-skater-end-run-startup.py
+local/analysis/probe-skater-final-startup.py
 local/analysis/probe-skater-finalize.py
+local/analysis/probe-skater-full-startup.py
 local/analysis/probe-skater-gap.py
 local/analysis/probe-skater-ground.py
 local/analysis/probe-skater-local-net.py
@@ -784,6 +791,7 @@ local/analysis/probe-skater-score-assets.py
 local/analysis/probe-skater-score.py
 local/analysis/probe-skater-startup-tail-parent.py
 local/analysis/probe-skater-startup-tail.py
+local/analysis/probe-skater-tag-texture.py
 local/analysis/probe-skater-trick.py
 local/analysis/probe-skater-walk.py
 local/analysis/probe-skeleton-asset.py
@@ -1066,6 +1074,7 @@ local/analysis/serve-skater-construction.py
 local/analysis/serve-skater-descriptor.py
 local/analysis/serve-skater-end-run.py
 local/analysis/serve-skater-finalize.py
+local/analysis/serve-skater-full-startup.py
 local/analysis/serve-skater-gap.py
 local/analysis/serve-skater-ground.py
 local/analysis/serve-skater-local-net.py
@@ -1150,6 +1159,10 @@ local/analysis/skater-end-run-lifecycle-extents.py
 local/analysis/skater-end-run-lifecycle-routines.json
 local/analysis/skater-end-run-startup-draft.build.json
 local/analysis/skater-end-run-worker.mjs
+local/analysis/skater-final-startup-draft.c
+local/analysis/skater-final-startup-ports.build.json
+local/analysis/skater-final-startup-ports.c
+local/analysis/skater-final-startup-routines.json
 local/analysis/skater-finalize-browser.html
 local/analysis/skater-finalize-constructor-prefix.c
 local/analysis/skater-finalize-draft.build.json
@@ -1157,6 +1170,11 @@ local/analysis/skater-finalize-draft.c
 local/analysis/skater-finalize-routines.json
 local/analysis/skater-finalize-vector-derived.c
 local/analysis/skater-finalize-worker.mjs
+local/analysis/skater-full-constructor-draft.c
+local/analysis/skater-full-startup-browser.html
+local/analysis/skater-full-startup-draft.build.json
+local/analysis/skater-full-startup-routines.json
+local/analysis/skater-full-startup-worker.mjs
 local/analysis/skater-gap-browser.html
 local/analysis/skater-gap-constructor-prefix.c
 local/analysis/skater-gap-draft.build.json
@@ -1217,6 +1235,15 @@ local/analysis/skater-startup-tail-extents.py
 local/analysis/skater-startup-tail-parent-draft.build.json
 local/analysis/skater-startup-tail-routines.json
 local/analysis/skater-startup-tail-worker.mjs
+local/analysis/skater-tag-image-derived.c
+local/analysis/skater-tag-texture-buffer-derived.c
+local/analysis/skater-tag-texture-draft.build.json
+local/analysis/skater-tag-texture-draft.c
+local/analysis/skater-tag-texture-negative-ignore-pitch.c
+local/analysis/skater-tag-texture-negative-source-buffer-test.c
+local/analysis/skater-tag-texture-ports.build.json
+local/analysis/skater-tag-texture-ports.c
+local/analysis/skater-tag-texture-routines.json
 local/analysis/skater-trick-browser.html
 local/analysis/skater-trick-constructor-prefix.c
 local/analysis/skater-trick-draft.build.json
@@ -1469,7 +1496,11 @@ local/analysis/verify-skater-descriptor-regression.mjs
 local/analysis/verify-skater-end-run-lifecycle.mjs
 local/analysis/verify-skater-end-run-regression.mjs
 local/analysis/verify-skater-end-run-startup.mjs
+local/analysis/verify-skater-final-startup.mjs
 local/analysis/verify-skater-finalize-checkpoint.mjs
+local/analysis/verify-skater-full-startup-extents.py
+local/analysis/verify-skater-full-startup-regression.mjs
+local/analysis/verify-skater-full-startup.mjs
 local/analysis/verify-skater-gap-checkpoint.mjs
 local/analysis/verify-skater-ground-checkpoint.mjs
 local/analysis/verify-skater-local-net-regression.mjs
@@ -1484,6 +1515,8 @@ local/analysis/verify-skater-startup-tail-negative.mjs
 local/analysis/verify-skater-startup-tail-parent.mjs
 local/analysis/verify-skater-startup-tail-regression.mjs
 local/analysis/verify-skater-startup-tail.mjs
+local/analysis/verify-skater-tag-texture-negative.mjs
+local/analysis/verify-skater-tag-texture.mjs
 local/analysis/verify-skater-trick-checkpoint.mjs
 local/analysis/verify-skater-walk-checkpoint.mjs
 local/analysis/verify-skeleton-asset-checkpoint.mjs

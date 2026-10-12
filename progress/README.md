@@ -16,13 +16,17 @@ not accept an arbitrary progress JSON with a percentage field.
 Registration requires a public GitHub repository, an authenticated repository
 administrator, and an Actions workflow with a readable report artifact. The
 GitHub App is an additional integration for automatic refresh and PR reporting.
-Our repository is public; registration has not been performed.
+Our repository is public. The user registered the project, and its
+[decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
+the browser on 2026-10-12. It displayed commit `4adce8e`, 18.15% fully linked
+completion and 0.00% decompiled (matching), confirming import of that report.
 
 There is a material limitation: the current public listing hides projects below
 **0.5% matched code**. Completion progress alone does not meet that threshold.
 Our report can be format-compatible while the project remains hidden. We will
 not turn recovery completion into matching credit to bypass that restriction.
-Hosted acceptance/visibility of this non-matching project remains unverified.
+Hosted import is verified for the displayed commit. Public listing visibility
+remains unavailable while the matching threshold is unmet.
 
 Authoritative implementation references:
 
@@ -56,23 +60,22 @@ publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **2,013 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **431,045 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.15%)**. Every
+`ledger.json` links **2,034 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **435,138 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.32%)**. Every
 binary-matching measure is zero. The initial reporting commit reconciled existing
-evidence. A subsequent audited
-checkpoint selection adds 49 distinct startup/lifecycle addresses, totaling
-3,996 original body bytes. The latest 17 checked mappings contain 16 newly
-credited addresses and shared initializer `4fbda0`, which earns no extra bytes;
-constructor progress remains partial
-and uncredited.
+evidence. Subsequent audited checkpoint selections add 70 distinct addresses,
+totaling 8,089 original body bytes. The latest 22 checked mappings contain 21 new
+addresses (4,093 bytes) and shared `49f3b0`, which earns no extra bytes. Constructor
+`582d90` now has explicit return and temporary cleanup verification; its earlier
+partial checkpoints remain immutable.
 
-The inventory contains 11,886 discovered entries: 11,641 entries in the later
+The inventory contains 11,889 discovered entries: 11,641 entries in the later
 read-only Ghidra export, 228 supplied recovery entries, and one additional tested
-SSE matrix entry and sixteen entries from later startup discovery exports. These
+SSE matrix entry and nineteen entries from later startup discovery exports. These
 are discovered entries,
 not an exhaustive or authoritative count of original source functions. Their
-non-overlapping bodies total 1,969,610 bytes. The remaining **405,768 bytes** stay
+non-overlapping bodies total 1,969,695 bytes. The remaining **405,683 bytes** stay
 in the denominator with zero completion, including unidentified code, padding
 and jump tables. The denominator includes runtime/library code present in the
 specimen. Raw file-alignment bytes beyond `.text`'s virtual size are excluded.
@@ -81,9 +84,12 @@ The executable is the supplied modified/unpacked build, not pristine retail.
 The 19 initial evidence gaps were resolved using existing nested original
 counters, coverage, and the maintained decal fixture maps. Four checkpoint
 claims now have source and execution links. Aliases at `0042bb20`, `004a2ba0`
-and `005480a0` earn one address and one body each. Twelve linear extents exceed the
-Ghidra body union; only the smaller body union receives byte credit. Five current
-partial roots receive no credit. The Gap command's old `prefix` name remains for
+and `005480a0`, plus `004fbda0` and `0049f3b0`, earn one address and one body each.
+Thirteen linear extents exceed the
+Ghidra body union; only the smaller body union receives byte credit. Four current
+partial roots receive no credit. The fifth historical partial, `582d90`, has an
+explicit audited resolution linked to 80 completed original/Wasm constructor
+calls, successful returns, real pooled allocations and temporary cleanup. The Gap command's old `prefix` name remains for
 immutable tests, but its pinned complete-dispatch evidence covers all routes.
 The wallplant helper's older oracle lacks a status field; its enclosing pinned
 checkpoint records the complete routine and passing Node/Chromium comparisons.
@@ -141,30 +147,34 @@ confirmed a ZIP containing only `report.json`, byte-identical to the committed
 report; local regeneration and the pinned objdiff parser passed again. See
 [the verification record](upload-verification.json) for hashes and artifact expiry.
 
-decomp.dev registration and hosted acceptance remain unverified. Workflow and
-parser acceptance do not establish public visibility. With zero matching credit,
-the referenced 0.5% rule still
-hides this project from the public listing.
+decomp.dev registration and import of the earlier 18.15% report are independently
+verified on the project page. Its visible notice confirms that the project stays
+hidden from the public listing until 0.5% matched code. The site labels completion
+“fully linked” and matching “decompiled”; neither label establishes a playable
+browser engine. A later upload still needs its own artifact verification.
 
 The latest audited startup checkpoint and its selected complete routine maps are
-recorded in [verified-recovery.json](verified-recovery.json). It preserves 195
-passing Node/actual Chromium suites and 49 newly reconciled distinct addresses.
-The latest 17 checked mappings add 16 new addresses and 2,135 original body
-bytes; shared initializer `4fbda0` is an alias with zero additional credit.
-Across 367 cases and 733 completed calls, 607 reachable instructions and 455
-diagnostic callbacks compare exactly. One unreachable three-byte alignment
-self-LEA is explicitly documented. Incorrect unconditional flag clearing and
-pre-callback difficulty caching are rejected by the unchanged comparator.
-The eight-case ID initializer `511780` executes a 98-byte span but conservatively
-receives only its 21-byte Ghidra body union in the report. The skater constructor
-reaches 424/463 instructions in 80 local/remote interrupted calls and stops
-before component `5b512edc`, which loads/clones tag/sticker textures; it receives
-zero completion credit. Remaining lifecycle/command/frame paths, texture cloning,
-asset integration, rendering and the playable level remain unfinished. Private continued
-work is recorded in `local/analysis/continued-recovery-next.txt`.
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 198
+passing Node/actual Chromium suites and 70 newly reconciled distinct addresses.
+The latest 22 checked mappings add 21 new addresses and 4,093 original body
+bytes; shared `49f3b0` is an alias with zero additional credit. Across 332 cases
+and 412 completed calls, 1,280/1,296 scoped instructions compare exactly with no
+new numeric allowances or checker changes. Sixteen exclusions cover initialized
+allocator bootstrap, unchecked allocation-fault paths and unreachable alignment;
+the resource destructor receives its 73-byte body union rather than its 82-byte
+linear extent. Wrong row-pitch handling and a changed original buffer condition
+are rejected by the unchanged comparator. All 195 predecessor result objects are
+unchanged. Constructor `582d90` returns successfully in 80 local/remote calls,
+including 40 real pooled structure allocations, actual tag/sticker RGBA copies
+and temporary QB cleanup. Its historical partial status is resolved through a
+separate audited declaration; earlier checkpoints are preserved. Complete
+component finalization/frames, cold startup, actual rendering and the playable
+level remain unfinished. GPU fixtures record storage operations, not rendered
+frames. Private continued work is recorded in
+`local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the current 18.15% report. Later pushes use the same upload/download checks.
+the current 18.32% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

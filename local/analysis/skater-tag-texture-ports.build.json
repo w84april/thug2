@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32-unknown-unknown",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry,--export-all,--import-memory",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-tag-texture-ports.c",
+    "-o",
+    "/Users/daniilpolienko/Documents/GitHub/thug/local/analysis/skater-tag-texture-ports.wasm"
+  ],
+  "source_sha256": "a53bdd076f14bc88694ba051efecc8791013b3283fc8d330f90518ddea4ae4fb",
+  "sha256": "32aeb2aaff30fd7097bf8df37d175fad743dffe261b290628e672a074f59bd53"
+}

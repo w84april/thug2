@@ -31,13 +31,23 @@ def main():
     changed = copy.deepcopy(ledger)
     changed['records'][0]['source']['sha256'] = '0' * 64
     bad_ledgers.append(changed)
+    if ledger.get('resolved_partials'):
+        missing_resolution = copy.deepcopy(ledger)
+        missing_resolution['resolved_partials'] = []
+        bad_ledgers.append(missing_resolution)
+        no_return = copy.deepcopy(ledger)
+        no_return['resolved_partials'][0]['verification']['returned_this'] = False
+        bad_ledgers.append(no_return)
+        no_calls = copy.deepcopy(ledger)
+        no_calls['resolved_partials'][0]['verification']['completed_calls'] = 0
+        bad_ledgers.append(no_calls)
     for bad in bad_ledgers:
         try:
             generate(bad)
         except AssertionError:
             continue
         raise AssertionError('Corrupt ledger was accepted')
-    print('Report arithmetic and five corruption controls pass')
+    print(f'Report arithmetic and {len(bad_ledgers)} corruption controls pass')
     if len(sys.argv) > 1:
         parser = str(Path(sys.argv[1]).resolve())
         bad_reports = []

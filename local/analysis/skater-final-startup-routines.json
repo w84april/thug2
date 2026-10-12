@@ -1,0 +1,30 @@
+{
+  "0x51da80": {
+    "bytes": 117,
+    "instructions": 38,
+    "name": "thug_tag_texture_create_draft",
+    "body_bytes": 117,
+    "ranges": "0051da80:0051daf4"
+  },
+  "0x4ece10": {
+    "bytes": 128,
+    "instructions": 36,
+    "name": "thug_component_d1515392_construct_draft",
+    "body_bytes": 128,
+    "ranges": "004ece10:004ece8f"
+  },
+  "0x4ecf20": {
+    "bytes": 86,
+    "instructions": 24,
+    "name": "thug_component_d1515392_create_draft",
+    "body_bytes": 86,
+    "ranges": "004ecf20:004ecf75"
+  },
+  "0x51d890": {
+    "bytes": 289,
+    "instructions": 81,
+    "name": "thug_tag_texture_initialize_draft",
+    "body_bytes": 289,
+    "ranges": "0051d890:0051d9b0"
+  }
+}

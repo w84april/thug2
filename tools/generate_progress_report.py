@@ -46,6 +46,10 @@ def generate(ledger, root=ROOT, local_evidence=False):
     assert body_bytes == ledger['inventory']['body_bytes'] <= total
     recovered = {}
     partials = {int(a, 16) for a in ledger['partial_addresses']}
+    resolutions = {int(row['address'], 16): row for row in ledger.get('resolved_partials', [])}
+    assert len(resolutions) == len(ledger.get('resolved_partials', [])), 'Duplicate partial resolution'
+    historical = {int(a, 16) for a in ledger.get('historical_partial_addresses', ledger['partial_addresses'])}
+    assert historical == partials | resolutions.keys() and not partials & resolutions.keys(), 'Missing/invalid partial resolution'
     for row in ledger['records']:
         address = int(row['address'], 16)
         assert address not in recovered, 'Duplicate recovered address'
@@ -79,6 +83,27 @@ def generate(ledger, root=ROOT, local_evidence=False):
                 summary = browser if row['browser']['suite'] == 'collision' else suites[row['browser']['suite']]
                 assert summary['result'] == 'pass'
         recovered[address] = row
+    for address, resolution in resolutions.items():
+        assert address in recovered, 'Resolved partial lacks completed routine evidence'
+        proof = resolution['verification']
+        assert proof['completed_calls'] > 0 and proof['expected_traps'] == 0
+        assert proof['returned_this'] and proof['temporary_cleanup_verified'], 'Incomplete constructor resolution'
+        assert any(resolution['checkpoint'] == u['checkpoint'] and resolution['audit'] == u['audit']
+                   for u in ledger['verified_recovery_updates']), 'Unaudited partial resolution'
+        if local_evidence:
+            verify_ref(root, resolution['checkpoint'])
+            verify_ref(root, resolution['audit'])
+            parent = json.loads((root / resolution['checkpoint']['path']).read_text())
+            audit = json.loads((root / resolution['audit']['path']).read_text())
+            assert proof == parent['partial_resolutions'][hex(address)]
+            assert hex(address) in audit['resolved_partial_addresses']
+            row = recovered[address]
+            original = json.loads((root / row['original']['path']).read_text())['complete_constructor']
+            fixture = json.loads((root / row['fixture']['path']).read_text())
+            steps = [s for c in fixture['cases'] for s in c['steps'] if int(s['fn'], 16) == address]
+            assert len(steps) == original['returned_calls'] == proof['completed_calls']
+            assert all(not s.get('expected_trap') and s['result'] == s['this'] for s in steps)
+            assert all(r['returned_this'] and r['temporary_scope_restored'] and r['texture_copies_equal'] for r in original['records'])
     if local_evidence:
         verify_ref(root, ledger['checkpoint'])
         for update in ledger.get('verified_recovery_updates', []):

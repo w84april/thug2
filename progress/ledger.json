@@ -8,9 +8,9 @@
   },
   "inventory": {
     "path": "progress/function-inventory.tsv",
-    "sha256": "93b58d230df6ad4843f2ee92ac92772b4f9c69c7f13e1c73023aad34661a4746",
-    "functions": 11886,
-    "body_bytes": 1969610,
+    "sha256": "6be15916b606ef01c58c53a776faeeeb9689ceb1b1a30de43e55f6fff01a64f4",
+    "functions": 11889,
+    "body_bytes": 1969695,
     "source_exports": [
       {
         "path": "local/analysis/progress-function-ranges.tsv",
@@ -39,6 +39,10 @@
       {
         "path": "local/analysis/skater-startup-tail-extra-ranges.tsv",
         "sha256": "899be2b9b422136ddbd5798f41c29fbd48ead8df063a055569de774ad4106e80"
+      },
+      {
+        "path": "local/analysis/skater-tag-texture-extra-ranges.tsv",
+        "sha256": "bab696d71b409ace18cf4c0c7979832536395f688ecf3832dd6975b95b49448d"
       }
     ]
   },
@@ -52,8 +56,7 @@
     "0x4270e0",
     "0x49ac60",
     "0x4bcef0",
-    "0x5a2e50",
-    "0x582d90"
+    "0x5a2e50"
   ],
   "records": [
     {
@@ -13729,13 +13732,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -36992,13 +36995,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -46895,6 +46898,51 @@
       ]
     },
     {
+      "address": "0x0049f210",
+      "size": 7,
+      "ranges": [
+        [
+          4846096,
+          4846102
+        ]
+      ],
+      "name": "thug_texture_wrapper_base_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 108
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_wrapper_base_destroy_draft",
+        "value": 2
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_wrapper_base_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0049f220",
       "size": 223,
       "ranges": [
@@ -46974,7 +47022,8 @@
         "sha256": "b1d5e4089f0d3722117598061e1d7962d578a2ca732dcb8dced1a00728c3c3f5"
       },
       "aliases": [
-        "thug_model_geometry_flag16_draft"
+        "thug_model_geometry_flag16_draft",
+        "thug_texture_image_flag_draft"
       ],
       "checkpoint_claims": [
         "local/analysis/render-instance-checkpoint.json"
@@ -47102,6 +47151,51 @@
       "checkpoint_claims": [
         "local/analysis/gap-links-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x0049f500",
+      "size": 59,
+      "ranges": [
+        [
+          4846848,
+          4846906
+        ]
+      ],
+      "name": "thug_texture_dictionary_remove_image_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 129
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_dictionary_remove_image_draft",
+        "value": 6
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_dictionary_remove_image_draft"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x0049f540",
@@ -47268,6 +47362,51 @@
       "checkpoint_claims": [
         "local/analysis/particle-image-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x0049fbe0",
+      "size": 53,
+      "ranges": [
+        [
+          4848608,
+          4848660
+        ]
+      ],
+      "name": "thug_texture_dictionary_clone_image_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 125
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_dictionary_clone_image_draft",
+        "value": 19
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_dictionary_clone_image_draft"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x0049fd30",
@@ -53656,6 +53795,96 @@
       ]
     },
     {
+      "address": "0x004c7fb0",
+      "size": 33,
+      "ranges": [
+        [
+          5013424,
+          5013456
+        ]
+      ],
+      "name": "thug_texture_image_width_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 71
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_width_draft",
+        "value": 18
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_width_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004c7fe0",
+      "size": 33,
+      "ranges": [
+        [
+          5013472,
+          5013504
+        ]
+      ],
+      "name": "thug_texture_image_height_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 72
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_height_draft",
+        "value": 18
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_height_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004c8070",
       "size": 27,
       "ranges": [
@@ -53699,6 +53928,141 @@
       ]
     },
     {
+      "address": "0x004c8090",
+      "size": 19,
+      "ranges": [
+        [
+          5013648,
+          5013666
+        ]
+      ],
+      "name": "thug_texture_dictionary_pc_remove_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 116
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_dictionary_pc_remove_draft",
+        "value": 1
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_dictionary_pc_remove_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004c8450",
+      "size": 592,
+      "ranges": [
+        [
+          5014608,
+          5015199
+        ]
+      ],
+      "name": "thug_texture_image_copy_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 77
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_copy_draft",
+        "value": 19
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_copy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004c98b0",
+      "size": 153,
+      "ranges": [
+        [
+          5019824,
+          5019976
+        ]
+      ],
+      "name": "thug_texture_image_collapse_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 100
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_collapse_draft",
+        "value": 9
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_collapse_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004c9b00",
       "size": 147,
       "ranges": [
@@ -53740,6 +54104,141 @@
       "checkpoint_claims": [
         "local/analysis/particle-image-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x004c9c80",
+      "size": 123,
+      "ranges": [
+        [
+          5020800,
+          5020922
+        ]
+      ],
+      "name": "thug_texture_dictionary_pc_clone_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 120
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_dictionary_pc_clone_draft",
+        "value": 1
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_dictionary_pc_clone_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004c9d00",
+      "size": 113,
+      "ranges": [
+        [
+          5020928,
+          5021040
+        ]
+      ],
+      "name": "thug_texture_image_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 110
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_destroy_draft",
+        "value": 1
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_destroy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004cae60",
+      "size": 33,
+      "ranges": [
+        [
+          5025376,
+          5025408
+        ]
+      ],
+      "name": "thug_texture_image_delete_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 114
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_delete_draft",
+        "value": 16
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_delete_draft"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x004cb420",
@@ -55427,6 +55926,51 @@
       ]
     },
     {
+      "address": "0x004da730",
+      "size": 47,
+      "ranges": [
+        [
+          5089072,
+          5089118
+        ]
+      ],
+      "name": "thug_texture_stage_bind_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 29
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_stage_bind_draft",
+        "value": 6
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_stage_bind_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004db100",
       "size": 242,
       "ranges": [
@@ -56116,6 +56660,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004e03f0",
+      "size": 78,
+      "ranges": [
+        [
+          5112816,
+          5112893
+        ]
+      ],
+      "name": "thug_texture_resource_unlink_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 60
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_resource_unlink_draft",
+        "value": 1
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_resource_unlink_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004e04b0",
       "size": 78,
       "ranges": [
@@ -56157,6 +56746,104 @@
       "checkpoint_claims": [
         "local/analysis/texture-buffer-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x004e0500",
+      "size": 415,
+      "ranges": [
+        [
+          5113088,
+          5113502
+        ]
+      ],
+      "name": "thug_texture_resource_copy_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 36
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_resource_copy_draft",
+        "value": 72
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_resource_copy_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004e06a0",
+      "size": 73,
+      "ranges": [
+        [
+          5113504,
+          5113542
+        ],
+        [
+          5113552,
+          5113585
+        ]
+      ],
+      "name": "thug_texture_resource_destroy_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 66
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_resource_destroy_draft",
+        "value": 48
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_resource_destroy_draft"
+      ],
+      "checkpoint_claims": [],
+      "linear_extent_bytes": [
+        82
+      ],
+      "size_note": "Ghidra body union excludes gaps/alignment within the separately verified linear extent; body bytes only receive credit."
     },
     {
       "address": "0x004e0790",
@@ -56731,6 +57418,96 @@
       ]
     },
     {
+      "address": "0x004ece10",
+      "size": 128,
+      "ranges": [
+        [
+          5164560,
+          5164687
+        ]
+      ],
+      "name": "thug_component_d1515392_construct_draft",
+      "source": {
+        "path": "local/analysis/skater-final-startup-draft.c",
+        "sha256": "a1b0248a4a76d6cb89054edd66b389c484b9141b835d348d36031b0f6ba57ed5",
+        "line": 19
+      },
+      "original": {
+        "path": "local/analysis/skater-final-startup-original.json",
+        "sha256": "1c4fb306a7332c62229aa34bd587fe767e817470a89c3c78aa9bdd8258b3b0c3",
+        "field": "instruction_coverage/0x4ece10/covered",
+        "value": 35
+      },
+      "scope": "Final tag/sticker factory and initializer plus d1515392 sentinel constructor/factory. Actual original images load through the maintained file/palette/swizzle code, clone pitched GPU resources, delete temporary wrappers and unlink their registry entries. Signed/absent heap-index formatting, compression heap selection/restore, original CRC extensions, retained poisoned bytes and normal allocation failures compare. Frame/finalization/commands remain unverified; no full skater or playable-level credit in this suite.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_final_startup",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-final-startup-result.json",
+        "sha256": "64233f8d5c5c1672fbc03830974bc07d20e07868f04448a58d6ddce54be11dbd"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-final-startup-fixtures.json",
+        "sha256": "8e04a494195f677e0e2be82235c1e23ed512f6907248b2632aef862f0a253ac9"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-final-startup.py",
+        "sha256": "0defd78c0790f2c93937b5960328cd51b6df474db42444ae7c1a8ef60bc2e786"
+      },
+      "aliases": [
+        "thug_component_d1515392_construct_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004ecf20",
+      "size": 86,
+      "ranges": [
+        [
+          5164832,
+          5164917
+        ]
+      ],
+      "name": "thug_component_d1515392_create_draft",
+      "source": {
+        "path": "local/analysis/skater-final-startup-draft.c",
+        "sha256": "a1b0248a4a76d6cb89054edd66b389c484b9141b835d348d36031b0f6ba57ed5",
+        "line": 24
+      },
+      "original": {
+        "path": "local/analysis/skater-final-startup-original.json",
+        "sha256": "1c4fb306a7332c62229aa34bd587fe767e817470a89c3c78aa9bdd8258b3b0c3",
+        "field": "instruction_coverage/0x4ecf20/covered",
+        "value": 24
+      },
+      "scope": "Final tag/sticker factory and initializer plus d1515392 sentinel constructor/factory. Actual original images load through the maintained file/palette/swizzle code, clone pitched GPU resources, delete temporary wrappers and unlink their registry entries. Signed/absent heap-index formatting, compression heap selection/restore, original CRC extensions, retained poisoned bytes and normal allocation failures compare. Frame/finalization/commands remain unverified; no full skater or playable-level credit in this suite.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_final_startup",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-final-startup-result.json",
+        "sha256": "64233f8d5c5c1672fbc03830974bc07d20e07868f04448a58d6ddce54be11dbd"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-final-startup-fixtures.json",
+        "sha256": "8e04a494195f677e0e2be82235c1e23ed512f6907248b2632aef862f0a253ac9"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-final-startup.py",
+        "sha256": "0defd78c0790f2c93937b5960328cd51b6df474db42444ae7c1a8ef60bc2e786"
+      },
+      "aliases": [
+        "thug_component_d1515392_create_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004f8040",
       "size": 11,
       "ranges": [
@@ -57134,13 +57911,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57253,13 +58030,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57298,13 +58075,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57343,13 +58120,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57388,13 +58165,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -57470,13 +58247,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -63534,13 +64311,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63579,13 +64356,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63624,13 +64401,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63669,13 +64446,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63714,13 +64491,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63759,13 +64536,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63804,13 +64581,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63849,13 +64626,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63894,13 +64671,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63939,13 +64716,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -63984,13 +64761,13 @@
       },
       "scope": "Eleven complete EndRun lifecycle and flag routines. Original heap, base virtual lifecycle, complete command branches, all six low flags and high-bit preservation, unaligned destruction and overlapping copies execute. Whole arena/globals/heap and completed-call registers compare. Frame, settings gate/deferred helper, network send, event/script requests and full skater startup are excluded and remain unverified. No playable-game or binary-matching claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_end_run_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-end-run-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-end-run-lifecycle-result.json",
         "sha256": "95fe348342870200f64616431484b6153cb286ba831507087ca5eb17e82befe5"
       },
       "fixture": {
@@ -64318,13 +65095,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -64441,13 +65218,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -64490,13 +65267,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -65451,13 +66228,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-local-net-result.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65496,13 +66273,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-local-net-result.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65541,13 +66318,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-local-net-result.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65586,13 +66363,13 @@
       },
       "scope": "Four complete local network lifecycle routines: factory513630, destructor512e30, deletion512e40 and dependency binding512e70. Shared initialization, unhandled command and composite lifecycle execute unchanged. Network frame5136c0/5131a0 and full skater startup remain explicitly pending; no network or playable-game claim.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_local_net",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-local-net-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-local-net-result.json",
         "sha256": "3d1f87e6c03b4ff2c73eac33ef0f308dd959f6b8bfc9e0822dad5431dd5ac746"
       },
       "fixture": {
@@ -65631,13 +66408,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65719,13 +66496,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65764,13 +66541,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65809,13 +66586,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65854,13 +66631,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65899,13 +66676,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -65944,13 +66721,13 @@
       },
       "scope": "Eight new complete routines: voice-stop47b4e0 and seven SkaterLoopingSound lifecycle routines. Existing original voice search47ad80, device stop47c7a0 and embedded volume initialization47b030 are reused, with zero additional address credit. Whole arena/globals/heap/returns/registers compare exactly; external buffer Stop callbacks test field mutation before the final voice clear. Frame513bb0, command5139e0, registration513860, full startup, actual audio device output and playable level remain unverified. Optional float tests use exact bits, without new numeric allowances.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_looping_sound_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-looping-sound-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-looping-sound-lifecycle-result.json",
         "sha256": "9d4970c817240aa138546c4111452291c888d9ddb58b3f7fe7243203fca6a30a"
       },
       "fixture": {
@@ -66247,13 +67024,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -66292,13 +67069,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -66890,13 +67667,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67423,13 +68200,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67472,13 +68249,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67554,13 +68331,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67599,13 +68376,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67644,13 +68421,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67849,13 +68626,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -67894,13 +68671,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -68056,13 +68833,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -68149,6 +68926,96 @@
       },
       "aliases": [
         "thug_timed_tricks_check_balance"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0051d890",
+      "size": 289,
+      "ranges": [
+        [
+          5363856,
+          5364144
+        ]
+      ],
+      "name": "thug_tag_texture_initialize_draft",
+      "source": {
+        "path": "local/analysis/skater-final-startup-draft.c",
+        "sha256": "a1b0248a4a76d6cb89054edd66b389c484b9141b835d348d36031b0f6ba57ed5",
+        "line": 27
+      },
+      "original": {
+        "path": "local/analysis/skater-final-startup-original.json",
+        "sha256": "1c4fb306a7332c62229aa34bd587fe767e817470a89c3c78aa9bdd8258b3b0c3",
+        "field": "instruction_coverage/0x51d890/covered",
+        "value": 81
+      },
+      "scope": "Final tag/sticker factory and initializer plus d1515392 sentinel constructor/factory. Actual original images load through the maintained file/palette/swizzle code, clone pitched GPU resources, delete temporary wrappers and unlink their registry entries. Signed/absent heap-index formatting, compression heap selection/restore, original CRC extensions, retained poisoned bytes and normal allocation failures compare. Frame/finalization/commands remain unverified; no full skater or playable-level credit in this suite.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_final_startup",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-final-startup-result.json",
+        "sha256": "64233f8d5c5c1672fbc03830974bc07d20e07868f04448a58d6ddce54be11dbd"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-final-startup-fixtures.json",
+        "sha256": "8e04a494195f677e0e2be82235c1e23ed512f6907248b2632aef862f0a253ac9"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-final-startup.py",
+        "sha256": "0defd78c0790f2c93937b5960328cd51b6df474db42444ae7c1a8ef60bc2e786"
+      },
+      "aliases": [
+        "thug_tag_texture_initialize_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0051da80",
+      "size": 117,
+      "ranges": [
+        [
+          5364352,
+          5364468
+        ]
+      ],
+      "name": "thug_tag_texture_create_draft",
+      "source": {
+        "path": "local/analysis/skater-final-startup-draft.c",
+        "sha256": "a1b0248a4a76d6cb89054edd66b389c484b9141b835d348d36031b0f6ba57ed5",
+        "line": 14
+      },
+      "original": {
+        "path": "local/analysis/skater-final-startup-original.json",
+        "sha256": "1c4fb306a7332c62229aa34bd587fe767e817470a89c3c78aa9bdd8258b3b0c3",
+        "field": "instruction_coverage/0x51da80/covered",
+        "value": 38
+      },
+      "scope": "Final tag/sticker factory and initializer plus d1515392 sentinel constructor/factory. Actual original images load through the maintained file/palette/swizzle code, clone pitched GPU resources, delete temporary wrappers and unlink their registry entries. Signed/absent heap-index formatting, compression heap selection/restore, original CRC extensions, retained poisoned bytes and normal allocation failures compare. Frame/finalization/commands remain unverified; no full skater or playable-level credit in this suite.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_final_startup",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-final-startup-result.json",
+        "sha256": "64233f8d5c5c1672fbc03830974bc07d20e07868f04448a58d6ddce54be11dbd"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-final-startup-fixtures.json",
+        "sha256": "8e04a494195f677e0e2be82235c1e23ed512f6907248b2632aef862f0a253ac9"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-final-startup.py",
+        "sha256": "0defd78c0790f2c93937b5960328cd51b6df474db42444ae7c1a8ef60bc2e786"
+      },
+      "aliases": [
+        "thug_tag_texture_create_draft"
       ],
       "checkpoint_claims": []
     },
@@ -68249,13 +69116,13 @@
       },
       "scope": "Seventeen complete startup routines for nine concrete skater component types. Original required QB contracts, allocation failure, raw/unaligned fields, all eight ID cases, retained toggle byte, signed array length and native diagnostic mutation compare exactly. Shared callees reused, no additional recovery credit. Component frame/finalization/disposal/commands and full skater constructor remain incomplete. Ghidra511780 body union21bytes is conservatively distinguished from98bytes of executed inline ID cases.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_startup_tail",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-startup-tail-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-startup-tail-result.json",
         "sha256": "07e2d93c4092af0b562cc5a76da3e033c1136b1376fb5d392424ce79139c7a35"
       },
       "fixture": {
@@ -76548,13 +77415,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -76593,13 +77460,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -76638,13 +77505,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -76683,13 +77550,13 @@
       },
       "scope": "Ten complete original routines recover balance record construction/destruction/delete/dependency binding and BalanceTrick constructor/factory/destruction/delete/initialization/final dependency. Conditional real QB executes before selected zero writes, including terminal test native callbacks that mutate fields and disable later constructor scripts. Raw unaligned writes, allocation failure, low-byte delete flags, missing/duplicate dependencies and shared lifecycle are compared through original instructions. Whole arena/globals/heap and preserved registers compare exactly. Shared suspend update51b970 is reused and earns no new count. Checksum4f9420, full skater startup, renderer and playable level remain unfinished.",
       "browser": {
-        "path": "local/analysis/skater-startup-tail-browser.json",
-        "sha256": "755deee8444645679d61671e5daf158097a23e5b2f32c8b809480605dd9c8491",
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
         "suite": "skater_balance_lifecycle",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-startup-tail-regression-skater-balance-lifecycle-result.json",
+        "path": "local/analysis/skater-full-startup-regression-skater-balance-lifecycle-result.json",
         "sha256": "c754243ef6a06e5d84864665c38b70b9f670793ef4412db2dea2fd842abfbd8c"
       },
       "fixture": {
@@ -78044,6 +78911,51 @@
       ]
     },
     {
+      "address": "0x00582d90",
+      "size": 1639,
+      "ranges": [
+        [
+          5778832,
+          5780470
+        ]
+      ],
+      "name": "thug_skater_construct_complete_draft",
+      "source": {
+        "path": "local/analysis/skater-full-constructor-draft.c",
+        "sha256": "76182a8c6210bae55818ca5d8ee7d3db76041087d51d4da24a5cdbcaae4e300b",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/skater-full-startup-original.json",
+        "sha256": "74f1cefe0e33f1d3b9ae93ea6ad7d10845a6aaa1e2779142f120e882cb84fdcc",
+        "field": "instruction_coverage/0x582d90/covered",
+        "value": 459
+      },
+      "scope": "Complete original582d90 local/remote skater constructor returnsTHIS and performs final descriptor/override cleanup after all real component factories and actual tag/sticker image cloning. Exact owner/heap/global/registry/diagnostic behavior and preserved registers compare over80 initialized original calls with pooled and generic structure storage. Bounded valid startup graphs and successful internal allocations; cold heap bootstrap and failure paths that fault before return are outside this scope. Component finalization, frames, main startup, rendering and a playable original level remain unfinished.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_full_startup",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-full-startup-result.json",
+        "sha256": "75d4a56f7581d8c2e822099f74720de6c1b24e18079bac46fbeaa2c22ef98c4e"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-full-startup-fixtures.json",
+        "sha256": "41296c9964d852f6607b9114cfd105011b04b3c03a6df7647d1ce9b7b24a3309"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-full-startup.py",
+        "sha256": "5f3f316a2df5b7073c4c24a97c6042368b048b57ea4e0f9af6db03cde41b03ae"
+      },
+      "aliases": [
+        "thug_skater_construct_complete_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x00584110",
       "size": 25,
       "ranges": [
@@ -79376,6 +80288,51 @@
       },
       "aliases": [
         "thug_async_swap_completions"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x005b9e50",
+      "size": 3,
+      "ranges": [
+        [
+          6004304,
+          6004306
+        ]
+      ],
+      "name": "thug_texture_image_false_draft",
+      "source": {
+        "path": "local/analysis/skater-tag-texture-draft.c",
+        "sha256": "5c74e9e4b437cd2cb2aa18a98468b576ad6ed042ac93fdfcc15804352d682870",
+        "line": 74
+      },
+      "original": {
+        "path": "local/analysis/skater-tag-texture-original.json",
+        "sha256": "a60630abaa787ad2c31d06293115e7d7ae2d676c289544fb0f1257bf2b279240",
+        "field": "counts/thug_texture_image_false_draft",
+        "value": 16
+      },
+      "scope": "Actual PC texture dimensions, false flag, resource/wrapper/dictionary cloning, mip descriptions and pitched forward copies, registry unlink, release/binding cleanup, indirect ownership and dictionary deletion. Bounded valid storage, initialized successful allocation/GPU operations; Shared base false/null virtuals are also verified. Cold heap bootstrap and unchecked outer/pack allocation faults are outside the valid-storage scope; nullable primary/secondary copy allocation is verified. Original tag/sticker files load and cloned RGBA bytes equal original uploads. Platform GPU storage is not rendering; no full skater/startup/playability credit.",
+      "browser": {
+        "path": "local/analysis/skater-full-startup-browser.json",
+        "sha256": "b9658c1f08a6a74c6175ec88e948bf804fc412cd512b882fb9523abfe7dda17f",
+        "suite": "skater_tag_texture",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-full-startup-regression-skater-tag-texture-result.json",
+        "sha256": "97708193c2c3799fdfca75dce95bce0bb522aacd06e2f04ca3c7685ece20ad13"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-tag-texture-fixtures.json",
+        "sha256": "61db619ba680c5e691c67c94e10213c6b6dd62abb15522b732794edb74a9c393"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-tag-texture.py",
+        "sha256": "10e9d0c837fb10c6d66ff41c8dceaa005bbc839822d2f8d3f204308cc9d970cd"
+      },
+      "aliases": [
+        "thug_texture_image_false_draft"
       ],
       "checkpoint_claims": []
     },
@@ -80894,17 +81851,43 @@
     "Original game, private fixtures and Wasm are required to replay the local comparisons; CI validates metadata only.",
     "Historical separate physics experiment is not in this active-build ledger; no credit without reconciliation."
   ],
+  "historical_partial_addresses": [
+    "0x4270e0",
+    "0x49ac60",
+    "0x4bcef0",
+    "0x5a2e50",
+    "0x582d90"
+  ],
+  "resolved_partials": [
+    {
+      "address": "0x582d90",
+      "checkpoint": {
+        "path": "local/analysis/skater-full-startup-checkpoint.json",
+        "sha256": "54626e56a2fd2b8f3c98c89a2dc86e5f5a3ec56fe7d82655722d6cc73615bc62"
+      },
+      "audit": {
+        "path": "local/analysis/skater-full-startup-audit.json",
+        "sha256": "66453ce1ddf631056773b8e3e67f910d3be65165c10429ace89906c91df83098"
+      },
+      "verification": {
+        "completed_calls": 80,
+        "expected_traps": 0,
+        "returned_this": true,
+        "temporary_cleanup_verified": true
+      }
+    }
+  ],
   "verified_recovery_updates": [
     {
       "checkpoint": {
-        "path": "local/analysis/skater-startup-tail-checkpoint.json",
-        "sha256": "d0f1582b51698813701109db92a1cba04ac82e9c80285f6e79a1f661911ae1cf"
+        "path": "local/analysis/skater-full-startup-checkpoint.json",
+        "sha256": "54626e56a2fd2b8f3c98c89a2dc86e5f5a3ec56fe7d82655722d6cc73615bc62"
       },
       "audit": {
-        "path": "local/analysis/skater-startup-tail-audit.json",
-        "sha256": "4ad967740ee0c49a81d6a904a4b6bd358e6293a1330b4d82fe953245bbb40dce"
+        "path": "local/analysis/skater-full-startup-audit.json",
+        "sha256": "66453ce1ddf631056773b8e3e67f910d3be65165c10429ace89906c91df83098"
       },
-      "scope": "Seventeen complete original startup routines for nine remaining component types, including StatsManager, StateHistory and nonlocal net logic. 367 cases/733 calls compare607 reachable instructions; the only omitted instruction is a provably unreachable three-byte self-LEA. 455 native diagnostics cover sticky flag and live difficulty reload. Both wrong controls are rejected. The511780 inline ID span98bytes receives only21bytes original Ghidra body credit. Shared functions/adapters receive zero new address credit. All193 prior Node/Chromium result objects remain unchanged. Constructor582d90 reaches424/463 in80 interrupted local/remote calls and receives zero recovery credit. Startup texture cloning, component frames, asset integration, rendering and a playable level remain unfinished."
+      "scope": "Twenty-one new unique original addresses (4093 conservative body bytes), plus shared49f3b0 with zero additional credit. 332 cases/412 calls compare1280/1296 scoped instructions. Sixteen exclusions cover initialized allocator bootstrap, unchecked allocation-fault paths and nine-byte unreachable alignment. Two wrong controls are rejected. All198 Node/actual Chromium suites pass and all195 predecessor result objects are unchanged. Complete582d90 returnsTHIS in80 original local/remote calls (40 pooled), verifies actual tag/sticker RGBA copies and temporary structure cleanup. Historical partial status is explicitly resolved by this audited proof; old checkpoints remain immutable. Complete component finalization/frames, cold startup, integrated rendering and a playable level remain unfinished."
     }
   ],
   "uncredited_source_definitions": [
@@ -82774,10 +83757,10 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2013,
+    "accepted_addresses": 2034,
     "uncredited_source_definitions": 207,
-    "duplicate_alias_addresses": 4,
-    "linear_extent_differences": 12,
+    "duplicate_alias_addresses": 5,
+    "linear_extent_differences": 13,
     "historical_routine_estimate": {
       "numerator": 2026,
       "denominator": 11637,
