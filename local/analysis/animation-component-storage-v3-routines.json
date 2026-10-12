@@ -1,0 +1,12 @@
+{
+  "0x41a410": {
+    "bytes": 162,
+    "instructions": 43,
+    "name": "thug_animation_component_construct_storage_v1"
+  },
+  "0x41a5b0": {
+    "bytes": 86,
+    "instructions": 24,
+    "name": "thug_animation_component_create_storage_v1"
+  }
+}

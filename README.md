@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.39% of original `.text` bytes** —
-436,856 / 2,375,378 bytes attributed to 2,054 distinct original addresses with
+**Reconciled behavioral completion: 18.40% of original `.text` bytes** —
+437,104 / 2,375,378 bytes attributed to 2,056 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 90 newly reconciled startup/lifecycle/camera addresses.
+reconciled baseline with 92 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -44,14 +44,17 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 201 suites; all 200 preceding
+checkpoint preserves all prior evidence and passes 202 suites; all 201 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
-The latest checkpoint verifies viewport camera ownership, reference replacement
-and player-camera registration against complete original execution. Its 75 cases
-and 344 calls exercise all 104 instructions of three new routines, adding 279
-body bytes. Full profile startup and SkaterCamera reset remain unfinished.
+The latest engine checkpoint verifies Animation component storage and allocation
+against complete original execution: 24 cases and 42 calls add two routines and
+248 body bytes. It exercises 66 of 67 instructions, with only the reviewed cold
+allocator bootstrap call excluded under its initialized-service contract.
+Animation QB initialization, full profile startup and SkaterCamera reset remain
+unfinished. A separate zero-credit scene audit corrects the preview to show the
+indoor Warehouse and preserves the earlier full-bundle exterior overview.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -85,6 +88,14 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
+- Two Animation storage routines pass 24 original/Wasm cases and 42 completed
+  calls, adding 248 original body bytes. Base component initialization, embedded
+  intrusive links, allocation failure and unaligned storage compare through
+  their recovered callees. The two vtable identities do not establish virtual
+  behavior. All 202 Node/actual Chromium suites pass, preserving all 201 prior
+  result objects, with no new engine numeric allowance or checker change.
+  Animation QB initialization and complete profile startup remain unfinished.
+
 - Three viewport routines now pass 75 original/Wasm cases and 344 completed calls,
   exercising all 104 instructions and adding 279 original body bytes. Actual
   camera disposal, intrusive reference replacement and forced owner-state
@@ -93,14 +104,17 @@ of verified checkpoints is authorized in the current recovery chat.
   Registration takes separate owner and viewport arguments. Initialized UI and
   mapping services remain required; full profile startup is unfinished.
 
-- The original training level now renders in a private Chromium geometry preview
-  through the preserved Wasm mesh/texture/material loaders and a new WebGL adapter.
-  All 2,269 meshes, 596 textures and 2,486 mip uploads draw; 7,024 storage payloads
-  match the original references, and orbit/zoom/reset controls are verified.
-  This uses the isolated raw-input arena and comparison device storage, the first
-  material pass and strip zero. Original render states, full startup and skater
-  gameplay remain unfinished. It adds **zero recovery or matching credit** and
-  requires private assets. See [the rendering record](progress/rendering-preview.json).
+- The private geometry preview now defaults to the indoor Training Warehouse.
+  Original QB loading confirms the menu's `TRAINING` → `load_TR` mapping and joins
+  all 790 SCN sectors to original node names. The same TR bundle also contains
+  New Jersey exterior geometry; the earlier whole-bundle view and title overstated
+  the playable-area presentation. The new adapter draws 2,028 meshes from original
+  `CreatedAtStart` static geometry, loads 596 textures and 2,486 mips, and verifies
+  all 7,024 original storage buffers. Orbit, zoom, bundle overview and reset pass
+  in Chromium. Its camera is adapted from an original Warehouse restart node;
+  default gameplay spawn, visibility, transforms and frame equivalence remain
+  unverified. It adds **zero recovery or matching credit**, requires private
+  assets and remains unplayable. See [the rendering record](progress/rendering-preview.json).
 
 - Thirteen camera dependencies now pass 97 original/Wasm cases and 271 completed
   calls, exercising all 276 instructions and adding 988 original body bytes.

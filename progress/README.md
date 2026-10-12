@@ -19,8 +19,8 @@ GitHub App is an additional integration for automatic refresh and PR reporting.
 Our repository is public. The user registered the project, and its
 [decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
 the browser on 2026-10-12. Its latest independently observed commit was
-`dacbf92`, with 18.38% fully linked completion and 0.02% decompiled (matching),
-confirming import of that camera report. The matching display rounds 406 bytes.
+`2c5bec00`, with 18.39% fully linked completion and 0.02% decompiled (matching),
+confirming import of that viewport report. The matching display rounds 406 bytes.
 
 There is a material limitation: the current public listing hides projects below
 **0.5% matched code**. Completion progress alone does not meet that threshold.
@@ -72,15 +72,16 @@ publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **2,054 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **436,856 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.39%)**.
+`ledger.json` links **2,056 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **437,104 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.40%)**.
 Native matching separately credits **406 / 2,375,378 bytes (0.01709%)**, across
 eight already complete addresses, so completion receives no additional credit.
 The initial reporting commit reconciled existing
-evidence. Subsequent audited checkpoint selections add 90 distinct addresses,
-totaling 9,807 original body bytes. The latest three viewport routines add 279
-bytes. The preceding thirteen camera mappings added 988 bytes, four mappings
+evidence. Subsequent audited checkpoint selections add 92 distinct addresses,
+totaling 10,055 original body bytes. The latest two Animation storage routines add
+248 bytes. The preceding three viewport routines added 279 bytes, thirteen camera
+mappings added 988 bytes, four mappings
 added 451 bytes, and the earlier 22 mappings
 added 21 addresses (4,093 bytes); shared
 `49f3b0` earned no extra bytes. Constructor
@@ -169,14 +170,15 @@ confirmed a ZIP containing only `report.json`, byte-identical to the committed
 report; local regeneration and the pinned objdiff parser passed again. See
 [the verification record](upload-verification.json) for hashes and artifact expiry.
 
-decomp.dev registration and import of the camera report at `dacbf92` are
-independently verified on the project page. Its exact commit link, 18.38%
+decomp.dev registration and import of the viewport report at `2c5bec00` are
+independently verified on the project page. Its exact commit link, 18.39%
 “fully linked” and 0.02% “decompiled” display were observed; the latter
 rounds the verified 406 / 2,375,378 matching bytes (0.01709%). That report also
 passed all hosted upload/download steps and independent ZIP retrieval, byte
 comparison, regeneration and pinned-parser checks. The zero-credit rendering
 commit `52c53e5` uploaded the same report, independently retrieved and verified.
-The newer 18.39% viewport report needs its own upload and site-import verification.
+The viewport report's hosted artifact was independently downloaded and verified.
+The newer 18.40% Animation report needs its own upload and site-import verification.
 The visible notice
 confirms that the project stays hidden from the public listing until 0.5%
 matched code. The site labels completion
@@ -184,18 +186,23 @@ matched code. The site labels completion
 browser engine. A later upload still needs its own artifact verification.
 
 A separate [rendering integration record](rendering-preview.json) preserves the
-first private Chromium frame of the original training geometry. Its new WebGL
-adapter draws the preserved Wasm loaders' 2,269 meshes and 2,486 original texture
-mips; all 7,024 vertex/index/mip storage payloads compare to original references.
-Actual orbit, zoom and reset controls pass. The 200 original/Wasm parity suites
-remain the engine checkpoint count; this preview adds no completed functions,
-bytes or native matches. Its isolated raw-input arena and comparison storage
-remain private bootstrap dependencies. First-pass drawing does not establish
-original visibility, sorting, blending, lighting, animations or frame equivalence.
-Full scene/sector/skater startup and playable gameplay remain unfinished.
+earlier full-bundle exterior preview and the corrected indoor Warehouse view.
+Original whole QB loading confirms `TRAINING` → `load_TR` with the `TR` prefix;
+the bundle contains Warehouse and New Jersey exterior sectors. The earlier title
+and image overstated the playable-area presentation. The new WebGL adapter selects
+672 original `CreatedAtStart` static sectors (2,028 meshes) and adapts its camera
+from a Warehouse restart node. That node is not verified as the default gameplay
+spawn. All 7,024 vertex/index/mip storage buffers still compare to original
+references, and actual zoom, orbit, bundle overview and reset controls pass.
+The engine checkpoint remains at 202 original/Wasm parity suites; the preview adds
+no completed functions, bytes or native matches. The isolated raw-input arena and
+comparison storage remain private bootstrap dependencies. Original visibility,
+transforms (including 56 flagged billboard sectors), sorting, blending, lighting,
+animations and frame equivalence remain unverified. Full scene/sector/skater
+startup and playable gameplay remain unfinished.
 
 The preview can be reopened in the existing private workspace with
-`python3 local/analysis/serve-training-webgl-v1.py`; use the printed loopback URL.
+`python3 local/analysis/serve-training-warehouse-v2.py`; use the printed loopback URL.
 Its source is published; raw assets, binaries, snapshots and screenshots remain
 private. The public source-only reporting check does not reproduce the preview.
 The adapter follows [Direct3D vertex layout](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dfvf),
@@ -204,9 +211,17 @@ and [WebGL S3TC upload formats](https://registry.khronos.org/webgl/extensions/WE
 those platform mappings receive no original-function credit.
 
 The latest audited startup checkpoint and its selected complete routine maps are
-recorded in [verified-recovery.json](verified-recovery.json). It preserves 201
-passing Node/actual Chromium suites and 90 newly reconciled distinct addresses.
-The latest three viewport routines compare 75 cases and 344 completed calls,
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 202
+passing Node/actual Chromium suites and 92 newly reconciled distinct addresses.
+The latest two Animation storage routines compare 24 cases and 42 completed calls,
+adding 248 original body bytes. Coverage is 66/67 instructions, with only the
+reviewed cold allocator bootstrap call excluded under the initialized-service
+contract. Allocation failure, embedded sentinel links and unaligned writes pass;
+identity-only vtables receive no virtual behavior credit. All 201 predecessor
+result objects remain unchanged. Animation QB initialization and full profile
+startup remain unfinished.
+
+The preceding three viewport routines compare 75 cases and 344 completed calls,
 exercising all 104 original instructions. Actual camera deletion, intrusive
 reference updates and forced owner-state synchronization execute unchanged.
 Registration has separate owner-key and viewport-index arguments followed by a
@@ -249,7 +264,7 @@ frames. Private continued work is recorded in
 `local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the current 18.39% report. Later pushes use the same upload/download checks.
+the current 18.40% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

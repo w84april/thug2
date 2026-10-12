@@ -2,8 +2,8 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "436856",
-    "complete_code_percent": 18.39100976770855,
+    "complete_code": "437104",
+    "complete_code_percent": 18.401450211292687,
     "total_functions": 11889,
     "total_units": 3,
     "complete_units": 1,
@@ -22,19 +22,19 @@
     {
       "name": "Verified behavioral recovery",
       "measures": {
-        "total_code": "436856",
-        "complete_code": "436856",
+        "total_code": "437104",
+        "complete_code": "437104",
         "complete_code_percent": 100.0,
-        "total_functions": 2054,
+        "total_functions": 2056,
         "total_units": 1,
         "complete_units": 1,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.09293680297397769,
+        "matched_code_percent": 0.0928840733555401,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.3894839337877313,
-        "fuzzy_match_percent": 0.09293680297397769,
+        "matched_functions_percent": 0.38910505836575876,
+        "fuzzy_match_percent": 0.0928840733555401,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -2063,6 +2063,24 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4301024"
+          }
+        },
+        {
+          "name": "thug_animation_component_construct_storage_v1",
+          "size": "162",
+          "address": "103440",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4301840"
+          }
+        },
+        {
+          "name": "thug_animation_component_create_storage_v1",
+          "size": "86",
+          "address": "103856",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4302256"
           }
         },
         {
@@ -18535,10 +18553,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1532839",
+        "total_code": "1532591",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9835,
+        "total_functions": 9833,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -20813,30 +20831,12 @@
           }
         },
         {
-          "name": "original_0041a410",
-          "size": "162",
-          "address": "103440",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4301840"
-          }
-        },
-        {
           "name": "original_0041a4c0",
           "size": "238",
           "address": "103616",
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4302016"
-          }
-        },
-        {
-          "name": "original_0041a5b0",
-          "size": "86",
-          "address": "103856",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4302256"
           }
         },
         {

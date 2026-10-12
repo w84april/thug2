@@ -9117,6 +9117,96 @@
       ]
     },
     {
+      "address": "0x0041a410",
+      "size": 162,
+      "ranges": [
+        [
+          4301840,
+          4302001
+        ]
+      ],
+      "name": "thug_animation_component_construct_storage_v1",
+      "source": {
+        "path": "local/analysis/animation-component-storage-v1.c",
+        "sha256": "75cd28a7b20d598b3de5d4273e8e5d7133b900e6af2f9b3306e0648e906ba82a",
+        "line": 8
+      },
+      "original": {
+        "path": "local/analysis/animation-component-storage-v3-original.json",
+        "sha256": "a0cff2f9bfd5e99d41e4fedc6935d69489bc191be52c01e6094b87a5b361fe66",
+        "field": "instruction_coverage/0x41a410/covered",
+        "value": 42
+      },
+      "scope": "Animation component constructor and factory storage with initialized generic allocator. Real base construction, embedded intrusive-list identity, successful/null sentinel allocations, outer allocation failure, raw poisoned and unaligned gaps and repeated construction compare. Component and embedded vtables are identity-only; no virtual lifecycle, Animation QB initialization, cold allocator bootstrap, full profile startup or gameplay is claimed. No fake game callee, numeric allowance or checker change.",
+      "browser": {
+        "path": "local/analysis/animation-component-storage-v3-browser.json",
+        "sha256": "864c4d526e299207f788215ca206e54762ae82c6404e7a70ddc5a0ddfc237d19",
+        "suite": "animation_component_storage_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-component-storage-v3-regression-animation-component-storage-v3-result.json",
+        "sha256": "bb069287fcabc6a97010932ab0dd1515df0ed23190d03a644af54f5c9b565c8d"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-component-storage-v3-fixtures.json",
+        "sha256": "5020e5e930fa262d5dcea0e58c05bbad6d757e309c94a9e0f6b1d225a8df47cd"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-component-storage-v3.py",
+        "sha256": "a946f08ad3b6e3f1a6c15fa9effbf9dbc89511c4e17ed19703b1cd4945a768a6"
+      },
+      "aliases": [
+        "thug_animation_component_construct_storage_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041a5b0",
+      "size": 86,
+      "ranges": [
+        [
+          4302256,
+          4302341
+        ]
+      ],
+      "name": "thug_animation_component_create_storage_v1",
+      "source": {
+        "path": "local/analysis/animation-component-storage-v1.c",
+        "sha256": "75cd28a7b20d598b3de5d4273e8e5d7133b900e6af2f9b3306e0648e906ba82a",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/animation-component-storage-v3-original.json",
+        "sha256": "a0cff2f9bfd5e99d41e4fedc6935d69489bc191be52c01e6094b87a5b361fe66",
+        "field": "instruction_coverage/0x41a5b0/covered",
+        "value": 24
+      },
+      "scope": "Animation component constructor and factory storage with initialized generic allocator. Real base construction, embedded intrusive-list identity, successful/null sentinel allocations, outer allocation failure, raw poisoned and unaligned gaps and repeated construction compare. Component and embedded vtables are identity-only; no virtual lifecycle, Animation QB initialization, cold allocator bootstrap, full profile startup or gameplay is claimed. No fake game callee, numeric allowance or checker change.",
+      "browser": {
+        "path": "local/analysis/animation-component-storage-v3-browser.json",
+        "sha256": "864c4d526e299207f788215ca206e54762ae82c6404e7a70ddc5a0ddfc237d19",
+        "suite": "animation_component_storage_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-component-storage-v3-regression-animation-component-storage-v3-result.json",
+        "sha256": "bb069287fcabc6a97010932ab0dd1515df0ed23190d03a644af54f5c9b565c8d"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-component-storage-v3-fixtures.json",
+        "sha256": "5020e5e930fa262d5dcea0e58c05bbad6d757e309c94a9e0f6b1d225a8df47cd"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-component-storage-v3.py",
+        "sha256": "a946f08ad3b6e3f1a6c15fa9effbf9dbc89511c4e17ed19703b1cd4945a768a6"
+      },
+      "aliases": [
+        "thug_animation_component_create_storage_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0041a640",
       "size": 57,
       "ranges": [
@@ -82821,6 +82911,17 @@
         "sha256": "adbfdcea2141e63610cf44aaf4c81341daa933e48dfabc3d16f9eb7a66bac4a6"
       },
       "scope": "Three viewport-registration routines execute with real camera object lifecycle, intrusive reference operations, global owner/component lookup and virtual Camera update. Owned flag low-bit, low-byte force, absent/secondary/colliding lookup, null payload without forced update, unused mappings, linked/external references and raw unregistered owned pointer storage compare. The comparison allocator retains released storage; assigning the same owned pointer is a raw original behavior case, not a valid gameplay lifetime claim. Initialized bounded mappings/UI services and nonnull camera for forced updates required. No new numeric allowances, fake game callee, full profile/startup or gameplay credit. All201 Node/actualChromium suites pass and all200 predecessor result objects are unchanged. Three additional unique addresses contribute279 original body bytes; all104 instructions exercised. Original59f890 takes three cdecl arguments: owner key, viewport index and low-byte force. No checker or numeric allowance changes. Preserves the zero-credit original-training rendering preview and every preceding pinned artifact."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-component-storage-v3-checkpoint.json",
+        "sha256": "4539ac1e1bf455980713e4e51ad56b599c0abf7e6cd8b9ce4dd4196a2ec0e459"
+      },
+      "audit": {
+        "path": "local/analysis/animation-component-storage-v3-audit.json",
+        "sha256": "325acdd3df9a29ae0de71fa6204605726d865cf0555896795162a1d0e95afa88"
+      },
+      "scope": "Animation component constructor and factory storage with initialized generic allocator. Real base construction, embedded intrusive-list identity, successful/null sentinel allocations, outer allocation failure, raw poisoned and unaligned gaps and repeated construction compare. Component and embedded vtables are identity-only; no virtual lifecycle, Animation QB initialization, cold allocator bootstrap, full profile startup or gameplay is claimed. No fake game callee, numeric allowance or checker change. All202 Node/actualChromium suites pass and all201 predecessor result objects are unchanged. Two additional unique addresses contribute248 original body bytes;66/67 instructions exercised, with only the reviewed41a472 cold allocator bootstrap call excluded by the initialized-service contract. Embedded unaligned vtable relocation is explicitly declared; failedv2 unit and earlier dynamic-exclusion harness are retained. No checker or numeric allowance changes. All earlier rendering/engine artifacts remain immutable."
     }
   ],
   "uncredited_source_definitions": [
@@ -84690,7 +84791,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2054,
+    "accepted_addresses": 2056,
     "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 5,
     "linear_extent_differences": 13,

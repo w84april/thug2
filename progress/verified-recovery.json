@@ -1,7 +1,7 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "Reconciled baseline plus 90 distinct newly audited startup/lifecycle/camera addresses and 9807 original body bytes. Latest three viewport routines add279 bytes after75 cases/344 calls and all104 original instructions, no numeric allowance or checker changes. All201 Node/actualChromium suites pass; all200 predecessor result objects unchanged. Historical582d90 remains independently resolved through80 complete constructor calls. Four remaining partial roots, startup traces, camera-specific QB initialization/commands, SkaterCamera reset and full profile startup earn no new credit. The separate rendering preview earns zero completion bytes. Native binary matching remains independently selected406 bytes.",
+  "scope": "Reconciled baseline plus92 distinct newly audited startup/lifecycle/camera addresses and10055 original body bytes. Latest Animation constructor/factory storage adds248 bytes after24 cases/42 calls and66/67 instructions; only the reviewed cold allocator call41a472 is excluded under initialized-service scope. All202 Node/actualChromium suites pass; all201 predecessor objects unchanged. Three later unverified Animation discoveries remain outside the selected inventory and earn zero completion; their bytes remain in the unchanged code denominator. Native matching remains separately selected406 bytes. Full virtual lifecycle/profile startup and gameplay remain unfinished; startup traces/rendering preview earn no credit.",
   "updates": [
     {
       "checkpoint": {
@@ -447,6 +447,51 @@
           "mapping_harness": {
             "path": "local/analysis/probe-camera-viewport-v1.py",
             "sha256": "136353c396a3c008b6f0d0fd1ea31f12e2d3233209f7d4ed5ac23e080d7a1a16"
+          }
+        }
+      ],
+      "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-component-storage-v3-checkpoint.json",
+        "sha256": "4539ac1e1bf455980713e4e51ad56b599c0abf7e6cd8b9ce4dd4196a2ec0e459"
+      },
+      "audit": {
+        "path": "local/analysis/animation-component-storage-v3-audit.json",
+        "sha256": "325acdd3df9a29ae0de71fa6204605726d865cf0555896795162a1d0e95afa88"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "animation_component_storage_v3",
+          "source": {
+            "path": "local/analysis/animation-component-storage-v1.c",
+            "sha256": "75cd28a7b20d598b3de5d4273e8e5d7133b900e6af2f9b3306e0648e906ba82a"
+          },
+          "routines": {
+            "path": "local/analysis/animation-component-storage-v3-routines.json",
+            "sha256": "492ac621c1cef31a2b1c69907f4dbd6e6e1de7b3889f7cd8269b230602ebd9aa"
+          },
+          "original": {
+            "path": "local/analysis/animation-component-storage-v3-original.json",
+            "sha256": "a0cff2f9bfd5e99d41e4fedc6935d69489bc191be52c01e6094b87a5b361fe66"
+          },
+          "fixture": {
+            "path": "local/analysis/animation-component-storage-v3-fixtures.json",
+            "sha256": "5020e5e930fa262d5dcea0e58c05bbad6d757e309c94a9e0f6b1d225a8df47cd"
+          },
+          "node": {
+            "path": "local/analysis/animation-component-storage-v3-regression-animation-component-storage-v3-result.json",
+            "sha256": "bb069287fcabc6a97010932ab0dd1515df0ed23190d03a644af54f5c9b565c8d"
+          },
+          "browser": {
+            "path": "local/analysis/animation-component-storage-v3-browser.json",
+            "sha256": "864c4d526e299207f788215ca206e54762ae82c6404e7a70ddc5a0ddfc237d19"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-animation-component-storage-v3.py",
+            "sha256": "a946f08ad3b6e3f1a6c15fa9effbf9dbc89511c4e17ed19703b1cd4945a768a6"
           }
         }
       ],
