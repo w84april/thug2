@@ -1,0 +1,12 @@
+{
+  "0x52bc70": {
+    "bytes": 1545,
+    "instructions": 398,
+    "name": "thug_walk_ledge_jump_draft"
+  },
+  "0x52c2c0": {
+    "bytes": 3107,
+    "instructions": 846,
+    "name": "thug_walk_resolve_contacts_draft"
+  }
+}

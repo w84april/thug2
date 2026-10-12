@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.80%** — 1,955 reported recovered routines divided
+**Decompilation estimate: 16.82%** — 1,957 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 799 experimental routines: 782 in the latest
+routines (9.93% of that baseline) and 801 experimental routines: 784 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-18,397 pinned artifacts, preserving all 18,220 preceding artifacts. All 149 Node
-and Chromium suites were rerun for this checkpoint and passed; all 148 inherited
+18,573 pinned artifacts, preserving all 18,397 preceding artifacts. All 150 Node
+and Chromium suites were rerun for this checkpoint and passed; all 149 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,26 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers eleven Walk helpers for gravity,
+- The latest experimental build recovers the full ledge-jump and eight-probe
+  walking-contact routines. Ledge-height scans, moving-wall response, velocity
+  constraints, rail entry and real script cancellation match the original in
+  503 cases and 680 calls: 671 complete and nine explicitly interrupted ground
+  updates. Coverage is 1,241 / 1,244 instructions; three skipped alignment
+  instructions remain in the denominator without exclusions. The ground parent
+  now reaches 63 / 134 instructions, up from 18, and stops before floor handling;
+  genuine state/control exits return normally. It is not counted as a completed
+  routine. All defined memory compares exactly, including retained stack-pointer
+  identities. There are 820 four-byte comparisons of copied probe fields proven
+  uninitialized by original write tracing: 784 unknown fields and 36 unset scene
+  fields. Any later defining write removes the allowance; six corruption checks
+  verify the comparison rejects changed defined data or provenance. No numeric
+  masks, NaN classification or quieting are added. All 150 Node and Chromium
+  suites pass, preserving all 149 earlier result objects. Evidence is in
+  `local/analysis/walk-ledge-checkpoint.json`; this module contains 784 unpromoted
+  complete routines. Shared Walk frame coverage remains 51 / 142 and constructor
+  coverage 277 / 463. Floor handling, full walking/rail frames, remaining startup,
+  rendering and original playable training remain unfinished.
+- The preceding experimental build recovers eleven Walk helpers for gravity,
   state changes, buffered input, moving-platform velocity, facing/probe
   directions and vertical-rail selection and entry. Real collision, gameplay
   flags, QB/math/timing and contact cleanup match the original in 825 cases and

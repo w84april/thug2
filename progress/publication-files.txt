@@ -95,6 +95,7 @@ local/analysis/audit-texture-buffer.py
 local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-ground.py
+local/analysis/audit-walk-ledge.py
 local/analysis/audit-walk-transition.py
 local/analysis/build-asset-factory-draft.py
 local/analysis/build-asset-ready-draft.py
@@ -191,6 +192,7 @@ local/analysis/build-trigger-draft.py
 local/analysis/build-vertex-upload-draft.py
 local/analysis/build-vertex-upload-ports.py
 local/analysis/build-walk-ground-draft.py
+local/analysis/build-walk-ledge-draft.py
 local/analysis/build-walk-transition-draft.py
 local/analysis/check-input-pad-keyboard.mjs
 local/analysis/check-level-collision-component-graph.py
@@ -583,6 +585,7 @@ local/analysis/pin-training-startup.py
 local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-ground.py
+local/analysis/pin-walk-ledge.py
 local/analysis/pin-walk-transition.py
 local/analysis/probe-asset-factory.py
 local/analysis/probe-asset-ready.py
@@ -721,6 +724,7 @@ local/analysis/probe-training-vertex-upload.py
 local/analysis/probe-trigger.py
 local/analysis/probe-vertex-upload.py
 local/analysis/probe-walk-ground.py
+local/analysis/probe-walk-ledge.py
 local/analysis/probe-walk-transition.py
 local/analysis/prop-command-browser.html
 local/analysis/prop-command-callback.build.json
@@ -936,6 +940,7 @@ local/analysis/serve-training-startup.py
 local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-ground.py
+local/analysis/serve-walk-ledge.py
 local/analysis/serve-walk-transition.py
 local/analysis/skater-adjust-browser.html
 local/analysis/skater-adjust-constructor-prefix.c
@@ -1262,6 +1267,7 @@ local/analysis/verify-training-startup.mjs
 local/analysis/verify-trigger-checkpoint.mjs
 local/analysis/verify-vertex-upload-checkpoint.mjs
 local/analysis/verify-walk-ground-checkpoint.mjs
+local/analysis/verify-walk-ledge-checkpoint.mjs
 local/analysis/verify-walk-transition-checkpoint.mjs
 local/analysis/vertex-upload-browser.html
 local/analysis/vertex-upload-draft.build.json
@@ -1277,6 +1283,14 @@ local/analysis/walk-ground-draft.c
 local/analysis/walk-ground-extents.py
 local/analysis/walk-ground-routines.json
 local/analysis/walk-ground-worker.mjs
+local/analysis/walk-ledge-browser.html
+local/analysis/walk-ledge-checker-negative.mjs
+local/analysis/walk-ledge-checks.mjs
+local/analysis/walk-ledge-draft.build.json
+local/analysis/walk-ledge-draft.c
+local/analysis/walk-ledge-extents.py
+local/analysis/walk-ledge-routines.json
+local/analysis/walk-ledge-worker.mjs
 local/analysis/walk-transition-browser.html
 local/analysis/walk-transition-draft.build.json
 local/analysis/walk-transition-draft.c
