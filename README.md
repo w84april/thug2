@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.09%** — 1,989 reported recovered routines divided
+**Decompilation estimate: 17.11%** — 1,991 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 833 experimental routines: 816 in the latest
+routines (9.93% of that baseline) and 835 experimental routines: 818 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-19,709 pinned artifacts, preserving all 19,501 preceding artifacts. All 158 Node
-and Chromium suites were rerun for this checkpoint and passed; all 155 inherited
+19,896 pinned artifacts, preserving all 19,709 preceding artifacts. All 159 Node
+and Chromium suites were rerun for this checkpoint and passed; all 158 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,6 +59,21 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
+- Two complete routines now recover animation-channel speed changes and component
+  forwarding. All 267 cases and 547 original calls complete and match, including
+  32 populated-queue cases that enqueue 40 messages. Individual/all-channel and
+  relative-length behavior, low-byte flags, player/client gates, repeated updates,
+  queue links and heap events are checked. The corpus exercises 157 of 171
+  instructions with no exclusions; the remaining instructions include alignment
+  and null-link return paths. Defined payload bytes remain exact. Three original
+  uninitialized payload bytes receive byte-specific, write-traced allowances;
+  12 negative/control tests prevent those allowances from hiding defined changes.
+  All 159 Node and Chromium suites pass, preserving all 158 prior results.
+  Evidence is in `local/analysis/walk-speed-checkpoint.json`; this module contains
+  818 unpromoted complete routines. Separate original tracing established that
+  the walking parent's legacy command returns unhandled before its distinct speed
+  update. Its implementation is still an unpublished integration candidate.
+  Full walking frames, startup, rendering and playable training remain unfinished.
 - Three complete routines now recover critical-point displacement and collision
   correction, event-driven camera facing and its setter. Across three comparison
   suites, all 300 cases and 1,896 original calls complete and match: 856 calls to

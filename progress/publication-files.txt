@@ -101,6 +101,7 @@ local/analysis/audit-walk-grab.py
 local/analysis/audit-walk-ground.py
 local/analysis/audit-walk-grounded.py
 local/analysis/audit-walk-ledge.py
+local/analysis/audit-walk-speed.py
 local/analysis/audit-walk-tail.py
 local/analysis/audit-walk-transition.py
 local/analysis/build-asset-factory-draft.py
@@ -206,12 +207,14 @@ local/analysis/build-walk-grab-draft.py
 local/analysis/build-walk-ground-draft.py
 local/analysis/build-walk-grounded-draft.py
 local/analysis/build-walk-ledge-draft.py
+local/analysis/build-walk-speed-draft.py
 local/analysis/build-walk-tail-draft.py
 local/analysis/build-walk-transition-draft.py
 local/analysis/check-input-pad-keyboard.mjs
 local/analysis/check-level-collision-component-graph.py
 local/analysis/check-level-collision-load-graph.py
 local/analysis/check-level-object-startup-graph.py
+local/analysis/check-walk-speed-padding.mjs
 local/analysis/composite-construction-browser.html
 local/analysis/composite-construction-callback-setup.py
 local/analysis/composite-construction-callback.build.json
@@ -605,6 +608,7 @@ local/analysis/pin-walk-grab.py
 local/analysis/pin-walk-ground.py
 local/analysis/pin-walk-grounded.py
 local/analysis/pin-walk-ledge.py
+local/analysis/pin-walk-speed.py
 local/analysis/pin-walk-tail.py
 local/analysis/pin-walk-transition.py
 local/analysis/probe-asset-factory.py
@@ -752,6 +756,8 @@ local/analysis/probe-walk-grab.py
 local/analysis/probe-walk-ground.py
 local/analysis/probe-walk-grounded.py
 local/analysis/probe-walk-ledge.py
+local/analysis/probe-walk-speed-parent.py
+local/analysis/probe-walk-speed.py
 local/analysis/probe-walk-tail.py
 local/analysis/probe-walk-transition.py
 local/analysis/prop-command-browser.html
@@ -974,6 +980,7 @@ local/analysis/serve-walk-grab.py
 local/analysis/serve-walk-ground.py
 local/analysis/serve-walk-grounded.py
 local/analysis/serve-walk-ledge.py
+local/analysis/serve-walk-speed.py
 local/analysis/serve-walk-tail.py
 local/analysis/serve-walk-transition.py
 local/analysis/skater-adjust-browser.html
@@ -1309,6 +1316,7 @@ local/analysis/verify-walk-grab-checkpoint.mjs
 local/analysis/verify-walk-ground-checkpoint.mjs
 local/analysis/verify-walk-grounded-checkpoint.mjs
 local/analysis/verify-walk-ledge-checkpoint.mjs
+local/analysis/verify-walk-speed-checkpoint.mjs
 local/analysis/verify-walk-tail-checkpoint.mjs
 local/analysis/verify-walk-transition-checkpoint.mjs
 local/analysis/vertex-upload-browser.html
@@ -1381,6 +1389,13 @@ local/analysis/walk-ledge-draft.c
 local/analysis/walk-ledge-extents.py
 local/analysis/walk-ledge-routines.json
 local/analysis/walk-ledge-worker.mjs
+local/analysis/walk-speed-browser.html
+local/analysis/walk-speed-checks.mjs
+local/analysis/walk-speed-draft.build.json
+local/analysis/walk-speed-draft.c
+local/analysis/walk-speed-extents.py
+local/analysis/walk-speed-routines.json
+local/analysis/walk-speed-worker.mjs
 local/analysis/walk-tail-browser.html
 local/analysis/walk-tail-draft.build.json
 local/analysis/walk-tail-extents.py

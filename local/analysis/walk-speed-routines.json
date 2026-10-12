@@ -1,0 +1,12 @@
+{
+  "0x47e850": {
+    "bytes": 484,
+    "instructions": 164,
+    "name": "thug_animation_state_speed_draft"
+  },
+  "0x419b90": {
+    "bytes": 21,
+    "instructions": 7,
+    "name": "thug_animation_component_speed_draft"
+  }
+}
