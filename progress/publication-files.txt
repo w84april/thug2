@@ -84,6 +84,7 @@ local/analysis/audit-skater-finalize.py
 local/analysis/audit-skater-full-startup.py
 local/analysis/audit-skater-gap.py
 local/analysis/audit-skater-ground.py
+local/analysis/audit-skater-initialization-links-v1.py
 local/analysis/audit-skater-looping-sound-startup.py
 local/analysis/audit-skater-matrix.py
 local/analysis/audit-skater-rotate.py
@@ -202,6 +203,7 @@ local/analysis/build-skater-finalize-draft.py
 local/analysis/build-skater-full-startup.py
 local/analysis/build-skater-gap-draft.py
 local/analysis/build-skater-ground-draft.py
+local/analysis/build-skater-initialization-links-v1.py
 local/analysis/build-skater-local-net-draft.py
 local/analysis/build-skater-looping-sound-lifecycle.py
 local/analysis/build-skater-looping-sound-startup.py
@@ -371,6 +373,7 @@ local/analysis/inspect-lock-frame-state.py
 local/analysis/inspect-rigidbody-initialize-training.py
 local/analysis/inspect-rigidbody-response-fan.mjs
 local/analysis/inspect-rigidbody-response-fan.py
+local/analysis/inspect-skater-camera-qb-v1.py
 local/analysis/inspect-skater-score.py
 local/analysis/inspect-training-entrypoints.mjs
 local/analysis/level-collision-component-browser.html
@@ -650,6 +653,7 @@ local/analysis/pin-skater-finalize.py
 local/analysis/pin-skater-full-startup.py
 local/analysis/pin-skater-gap.py
 local/analysis/pin-skater-ground.py
+local/analysis/pin-skater-initialization-links-v1.py
 local/analysis/pin-skater-looping-sound-startup.py
 local/analysis/pin-skater-matrix.py
 local/analysis/pin-skater-rotate.py
@@ -782,6 +786,7 @@ local/analysis/probe-skater-finalize.py
 local/analysis/probe-skater-full-startup.py
 local/analysis/probe-skater-gap.py
 local/analysis/probe-skater-ground.py
+local/analysis/probe-skater-initialization-links-v1.py
 local/analysis/probe-skater-local-net.py
 local/analysis/probe-skater-looping-sound-lifecycle.py
 local/analysis/probe-skater-looping-sound-startup.py
@@ -1077,6 +1082,7 @@ local/analysis/serve-skater-finalize.py
 local/analysis/serve-skater-full-startup.py
 local/analysis/serve-skater-gap.py
 local/analysis/serve-skater-ground.py
+local/analysis/serve-skater-initialization-links-v1.py
 local/analysis/serve-skater-local-net.py
 local/analysis/serve-skater-looping-sound.py
 local/analysis/serve-skater-matrix.py
@@ -1191,6 +1197,11 @@ local/analysis/skater-ground-moving-derived.c
 local/analysis/skater-ground-routines.json
 local/analysis/skater-ground-static-derived.c
 local/analysis/skater-ground-worker.mjs
+local/analysis/skater-initialization-links-v1-browser.html
+local/analysis/skater-initialization-links-v1-routines.json
+local/analysis/skater-initialization-links-v1-worker.mjs
+local/analysis/skater-initialization-links-v1.build.json
+local/analysis/skater-initialization-links-v1.c
 local/analysis/skater-local-net-browser.html
 local/analysis/skater-local-net-descriptor-corrected.c
 local/analysis/skater-local-net-draft.build.json
@@ -1327,6 +1338,7 @@ local/analysis/trace-renderer-bounds-training.py
 local/analysis/trace-rigidbody-initialize-training.py
 local/analysis/trace-rigidbody-update-active-training.py
 local/analysis/trace-rigidbody-update-training.py
+local/analysis/trace-skater-initialization-v1.py
 local/analysis/trace-training-level-mesh-flow.py
 local/analysis/trace-training-node-index.py
 local/analysis/trace-training-object-expansion.py
@@ -1503,6 +1515,8 @@ local/analysis/verify-skater-full-startup-regression.mjs
 local/analysis/verify-skater-full-startup.mjs
 local/analysis/verify-skater-gap-checkpoint.mjs
 local/analysis/verify-skater-ground-checkpoint.mjs
+local/analysis/verify-skater-initialization-links-v1-regression.mjs
+local/analysis/verify-skater-initialization-links-v1.mjs
 local/analysis/verify-skater-local-net-regression.mjs
 local/analysis/verify-skater-local-net-unit.mjs
 local/analysis/verify-skater-looping-sound-lifecycle.mjs

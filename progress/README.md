@@ -60,13 +60,14 @@ publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **2,034 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **435,138 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.32%)**. Every
+`ledger.json` links **2,038 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **435,589 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.34%)**. Every
 binary-matching measure is zero. The initial reporting commit reconciled existing
-evidence. Subsequent audited checkpoint selections add 70 distinct addresses,
-totaling 8,089 original body bytes. The latest 22 checked mappings contain 21 new
-addresses (4,093 bytes) and shared `49f3b0`, which earns no extra bytes. Constructor
+evidence. Subsequent audited checkpoint selections add 74 distinct addresses,
+totaling 8,540 original body bytes. The latest four checked mappings add 451
+bytes. The preceding 22 mappings added 21 addresses (4,093 bytes); shared
+`49f3b0` earned no extra bytes. Constructor
 `582d90` now has explicit return and temporary cleanup verification; its earlier
 partial checkpoints remain immutable.
 
@@ -154,9 +155,16 @@ hidden from the public listing until 0.5% matched code. The site labels completi
 browser engine. A later upload still needs its own artifact verification.
 
 The latest audited startup checkpoint and its selected complete routine maps are
-recorded in [verified-recovery.json](verified-recovery.json). It preserves 198
-passing Node/actual Chromium suites and 70 newly reconciled distinct addresses.
-The latest 22 checked mappings add 21 new addresses and 4,093 original body
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 199
+passing Node/actual Chromium suites and 74 newly reconciled distinct addresses.
+The latest four complete dependencies cover Light construction, shared-component
+construction, camera owner binding and Walk camera binding. They pass 55 cases
+and 131 completed calls, covering 127/132 instructions with five unchecked
+allocation-fault exclusions. All 198 predecessor result objects are unchanged.
+Original QB loading of the camera descriptor file is discovery evidence only;
+it does not establish runtime camera integration or earn routine credit.
+
+The preceding 22 checked mappings add 21 new addresses and 4,093 original body
 bytes; shared `49f3b0` is an alias with zero additional credit. Across 332 cases
 and 412 completed calls, 1,280/1,296 scoped instructions compare exactly with no
 new numeric allowances or checker changes. Sixteen exclusions cover initialized
@@ -174,7 +182,7 @@ frames. Private continued work is recorded in
 `local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the current 18.32% report. Later pushes use the same upload/download checks.
+the current 18.34% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

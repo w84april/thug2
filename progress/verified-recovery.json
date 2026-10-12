@@ -1,7 +1,7 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "70 newly reconciled distinct original addresses add8089 body bytes beyond the original reporting baseline. The latest22 checked mappings contain21 new addresses (4093 body bytes) and shared49f3b0 (zero additional credit). 332 cases/412 calls pass, including80 complete local/remote582d90 constructor calls and40 real pooled structure allocations. Historical partial582d90 is explicitly resolved with return and temporary cleanup evidence; immutable older partial checkpoints remain unchanged. All198 Node/actual Chromium suites pass; all195 predecessor result objects are unchanged. Sixteen scoped instruction exclusions and two rejected wrong controls are recorded. Integrated finalization/frame/rendering and a playable level remain unfinished; original executable/assets/raw fixtures/compiled modules remain private.",
+  "scope": "74 newly reconciled distinct original addresses add8540 conservative body bytes beyond the original reporting baseline. The latest independent update adds four original addresses/451 bytes over55 cases/131 calls and127of132 scoped instructions; five unchecked allocation-fault instructions remain excluded. All199 Node/actual Chromium suites pass and all198 predecessor result objects are unchanged. Earlier complete constructor582d90 resolution,80 original completed calls and shared49f3b0 zero extra credit remain selected unchanged. New whole originalQB camera asset and post-construction entry traces are discovery only, earning no completion. Full profile/camera/frame/rendering integration and a playable level remain unfinished; private evidence/checkpoints are preserved.",
   "updates": [
     {
       "checkpoint": {
@@ -317,6 +317,50 @@
       ],
       "resolved_partials": [
         "0x582d90"
+      ]
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-initialization-links-v1-checkpoint.json",
+        "sha256": "00f8b62d01b16b1ee0ce3c57c11c698821f90784c74881a552f13668a28cca3f"
+      },
+      "audit": {
+        "path": "local/analysis/skater-initialization-links-v1-audit.json",
+        "sha256": "0d3115e5d21df1d74ce185bedc98592699e5f7b978fae2f985222ab01ef916a6"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "skater_initialization_links_v1",
+          "source": {
+            "path": "local/analysis/skater-initialization-links-v1.c",
+            "sha256": "ca4d8b7190e44cbd2bbb11968fb48c80821a72fba8e3216ae4bfe8ab8ff8747c"
+          },
+          "routines": {
+            "path": "local/analysis/skater-initialization-links-v1-routines.json",
+            "sha256": "f1ab4c211e4d0d211eb4fa4a914caeee85be8e75bc6b4c9e0a2bda498f0cb28f"
+          },
+          "original": {
+            "path": "local/analysis/skater-initialization-links-v1-original.json",
+            "sha256": "8de8e9302fbbf320384df667403da11af5f71a86605c34269c07ee7662b18750"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-initialization-links-v1-fixtures.json",
+            "sha256": "d0075ce4cb7162ee5afee488cfa04b3afbe5a8209077b60bd5d85bafaddd548b"
+          },
+          "node": {
+            "path": "local/analysis/skater-initialization-links-v1-regression-skater-initialization-links-v1-result.json",
+            "sha256": "74371b5927fc70616f3ad654fe8e9cb15977c452d3823797c93115578af4f24c"
+          },
+          "browser": {
+            "path": "local/analysis/skater-initialization-links-v1-browser.json",
+            "sha256": "25da26f807ce96b740d25a4dd1f2717999f5ea3413e37c3dd89613eb07a0dd3c"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-initialization-links-v1.py",
+            "sha256": "41ec591e700e642cfb04b0b7451564f51bc0305a6abd002d4874ffce8837be25"
+          }
+        }
       ]
     }
   ],

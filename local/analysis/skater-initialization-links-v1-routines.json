@@ -1,0 +1,22 @@
+{
+  "0x433c10": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_object_light_construct_v1"
+  },
+  "0x57b2f0": {
+    "bytes": 301,
+    "instructions": 91,
+    "name": "thug_skater_add_shared_components_v1"
+  },
+  "0x4fa3c0": {
+    "bytes": 84,
+    "instructions": 21,
+    "name": "thug_skater_camera_bind_owner_v1"
+  },
+  "0x525e60": {
+    "bytes": 33,
+    "instructions": 9,
+    "name": "thug_walk_bind_camera_v1"
+  }
+}

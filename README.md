@@ -12,12 +12,12 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.32% of original `.text` bytes** —
-435,138 / 2,375,378 bytes attributed to 2,034 distinct original addresses with
+**Reconciled behavioral completion: 18.34% of original `.text` bytes** —
+435,589 / 2,375,378 bytes attributed to 2,038 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified binary matching: 0%.**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 70 newly reconciled startup/lifecycle addresses.
+reconciled baseline with 74 newly reconciled startup/lifecycle addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -40,7 +40,7 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 198 suites; all 195 preceding
+checkpoint preserves all prior evidence and passes 199 suites; all 198 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
@@ -75,6 +75,17 @@ The retired chat and its publishing automation remain paused; direct publication
 of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
+
+- Four initialization dependencies now pass 55 original/Wasm cases and 131
+  completed calls: the Light constructor, shared-component construction, camera
+  owner binding and Walk camera binding. They add four distinct addresses and
+  451 original body bytes, with 127/132 instructions exercised and five documented
+  unchecked allocation-fault exclusions. Callback order, ownership, appended
+  component chains, repeated binding and null-camera resets compare exactly.
+  All 199 Node/actual Chromium suites pass, preserving all 198 previous result
+  objects. The original camera descriptor file has also been inspected with the
+  original QB loader; that discovery earns no completion credit. Full profile
+  initialization, camera integration, rendering and the playable level remain.
 
 - Both original skater constructor branches now return successfully, including
   tag/sticker texture loading and cloning, the final component, and temporary QB
