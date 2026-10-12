@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.12%** — 1,992 reported recovered routines divided
+**Decompilation estimate: 17.14%** — 1,994 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 836 experimental routines: 819 in the latest
+routines (9.93% of that baseline) and 838 experimental routines: 821 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-20,090 pinned artifacts, preserving all 19,896 preceding artifacts. All 161 Node
-and Chromium suites were rerun for this checkpoint and passed; all 159 inherited
+20,306 pinned artifacts, preserving all 20,090 preceding artifacts. All 164 Node
+and Chromium suites were rerun for this checkpoint and passed; all 161 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,6 +59,24 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
+- Ground-mode walking now completes 242 original frames across 82 cases,
+  including 56 connected sequences, flat ground, walls, steps, fixed/moving
+  surfaces, event callbacks, lighting, shadows, pose, animation speed and camera.
+  Twelve integrated transfer cases include four successful transitions to air.
+  Two complete supporting routines recover transfer eligibility and ground
+  validation: 266 direct cases and 342 calls exercise 285/287 instructions with
+  no exclusions. Together, the three new suites match 348 cases and 584 completed
+  calls, with no numeric allowances. The partial dispatcher exercises 131/142
+  instructions and earns no new routine count. Separate Node checks pass 168
+  animation frames through the same export and preserve 80 unfinished-state
+  boundaries. Original-write-proven probe fields receive 731 word comparisons;
+  32 queued messages retain exact defined bytes with 240 padding-byte comparisons
+  and 12 controls. Eight automatic collision caches are compared at destruction,
+  before later calls reuse their storage; five controls check that observation.
+  All 164 Node and Chromium suites pass, preserving all 161 prior result objects.
+  Evidence is in `local/analysis/walk-ground-frame-checkpoint.json`; the latest
+  module contains 821 unpromoted complete routines. Airborne, hanging and rail
+  updates, full startup, rendering and playable training remain unfinished.
 - The original walking dispatcher now reaches its return in animation state 4.
   Forty-eight connected sequences match 168 complete frames, including moving
   contact, collision correction, pose/events, animation speed, camera updates,
