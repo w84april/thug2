@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.25%** — 1,891 reported recovered routines divided
+**Decompilation estimate: 16.32%** — 1,899 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 735 experimental routines: 718 in the latest
+routines (9.93% of that baseline) and 743 experimental routines: 726 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,9 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,353 pinned artifacts. All 143 Node and Chromium suites were rerun for this
-checkpoint and passed; all 142 inherited result objects remain unchanged.
+17,525 pinned artifacts, preserving all 17,353 preceding artifacts. All 144 Node
+and Chromium suites were rerun for this checkpoint and passed; all 143 inherited
+result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -58,7 +59,21 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build completes EndGap and connects all six Gap commands
+- The latest experimental build recovers the Trigger component and connects it
+  to local skater construction. Eight complete routines handle creation, disposal,
+  initialization, event-mask commands, saved collision records and movement
+  callbacks. Actual static/moving collision queries and QB scripts run in 307
+  cases: 481 completed calls and 32 intentionally interrupted constructor calls.
+  Callback changes to owners, positions and records match the original. Coverage
+  is 293 / 294 instructions; one skipped alignment instruction remains in the
+  denominator, without exclusions, numeric masks or new unknown-byte allowances.
+  All 144 Node and Chromium suites pass, preserving all 143 earlier results.
+  Evidence is in `local/analysis/trigger-checkpoint.json`; the module contains
+  726 unpromoted complete routines. The partial skater constructor reaches
+  249 / 463 instructions and stops before SkaterFinalizePhysics. Remaining
+  startup/frames, later score linkage, camera/rendering and playable training
+  remain unfinished.
+- The preceding experimental build completes EndGap and connects all six Gap commands
   through the real component dispatcher. Gap awards, predicate scripts, required
   tricks, history, success events and callback-driven list changes match the
   original in 188 cases / 359 calls. Full start-gap, trick-score, finish-gap and

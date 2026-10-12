@@ -1,0 +1,42 @@
+{
+  "0x434b90": {
+    "bytes": 87,
+    "instructions": 26,
+    "name": "thug_trigger_create_draft"
+  },
+  "0x434900": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_trigger_destroy_draft"
+  },
+  "0x434910": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_trigger_delete_draft"
+  },
+  "0x434940": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_trigger_initialize_draft"
+  },
+  "0x434970": {
+    "bytes": 225,
+    "instructions": 84,
+    "name": "thug_trigger_command_draft"
+  },
+  "0x434ce0": {
+    "bytes": 135,
+    "instructions": 53,
+    "name": "thug_trigger_from_records_draft"
+  },
+  "0x434d70": {
+    "bytes": 22,
+    "instructions": 6,
+    "name": "thug_trigger_probe_callback_draft"
+  },
+  "0x434d90": {
+    "bytes": 360,
+    "instructions": 101,
+    "name": "thug_trigger_update_draft"
+  }
+}

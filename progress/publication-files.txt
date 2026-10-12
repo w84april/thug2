@@ -89,6 +89,7 @@ local/analysis/audit-sphere-query.py
 local/analysis/audit-sphere-sweep.py
 local/analysis/audit-texture-asset.py
 local/analysis/audit-texture-buffer.py
+local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/build-asset-factory-draft.py
 local/analysis/build-asset-ready-draft.py
@@ -178,6 +179,7 @@ local/analysis/build-sphere-sweep-draft.py
 local/analysis/build-texture-asset-draft.py
 local/analysis/build-texture-buffer-draft.py
 local/analysis/build-training-mode-draft.py
+local/analysis/build-trigger-draft.py
 local/analysis/build-vertex-upload-draft.py
 local/analysis/build-vertex-upload-ports.py
 local/analysis/check-input-pad-keyboard.mjs
@@ -336,6 +338,7 @@ local/analysis/lock-frame-worker.mjs
 local/analysis/map-input-component-descriptors.py
 local/analysis/map-input-component-names.py
 local/analysis/map-prop-component-dependencies.py
+local/analysis/map-trigger-component-names.py
 local/analysis/material-buffer-browser.html
 local/analysis/material-buffer-draft.build.json
 local/analysis/material-buffer-draft.c
@@ -564,6 +567,7 @@ local/analysis/pin-texture-asset.py
 local/analysis/pin-texture-buffer.py
 local/analysis/pin-training-mode.py
 local/analysis/pin-training-startup.py
+local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/probe-asset-factory.py
 local/analysis/probe-asset-ready.py
@@ -696,6 +700,7 @@ local/analysis/probe-training-setup.py
 local/analysis/probe-training-startup.py
 local/analysis/probe-training-texture-asset.py
 local/analysis/probe-training-vertex-upload.py
+local/analysis/probe-trigger.py
 local/analysis/probe-vertex-upload.py
 local/analysis/prop-command-browser.html
 local/analysis/prop-command-callback.build.json
@@ -905,6 +910,7 @@ local/analysis/serve-texture-asset.py
 local/analysis/serve-texture-buffer.py
 local/analysis/serve-training-mode.py
 local/analysis/serve-training-startup.py
+local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/skater-adjust-browser.html
 local/analysis/skater-adjust-constructor-prefix.c
@@ -1091,6 +1097,13 @@ local/analysis/training-texture-ports-setup.py
 local/analysis/training-vertex-upload-boundary.build.json
 local/analysis/training-vertex-upload-boundary.c
 local/analysis/training-vertex-upload-ports.build.json
+local/analysis/trigger-browser.html
+local/analysis/trigger-callback.c
+local/analysis/trigger-constructor-prefix.c
+local/analysis/trigger-draft.build.json
+local/analysis/trigger-draft.c
+local/analysis/trigger-routines.json
+local/analysis/trigger-worker.mjs
 local/analysis/update-skater-matrix-readme.py
 local/analysis/verify-asset-factory-checkpoint.mjs
 local/analysis/verify-asset-factory.mjs
@@ -1192,6 +1205,7 @@ local/analysis/verify-training-mode-checkpoint.mjs
 local/analysis/verify-training-mode.mjs
 local/analysis/verify-training-setup.mjs
 local/analysis/verify-training-startup.mjs
+local/analysis/verify-trigger-checkpoint.mjs
 local/analysis/verify-vertex-upload-checkpoint.mjs
 local/analysis/vertex-upload-browser.html
 local/analysis/vertex-upload-draft.build.json
