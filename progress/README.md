@@ -21,12 +21,16 @@ administrator, and an Actions workflow with a readable report artifact. The
 GitHub App is an additional integration for automatic refresh and PR reporting.
 Our repository is public. The user registered the project, and its
 [decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
-the browser on 2026-10-12. Its latest independently observed commit was
-`07e803e8`, displaying 18.45% “fully linked” and 0.02% “decompiled” (matching).
+the browser on 2026-10-13. Its latest independently observed commit was
+`0e9f1b2`, displaying 18.49% “fully linked” and 0.02% “decompiled” (matching).
 That linked percentage came from our earlier incorrect encoding of behavioral
 coverage as linked-unit completion. It proves historical artifact import, not
-original-target build/link integration. The corrected report requires its own
-upload/download verification and observed site import. Matching remains 406 bytes.
+original-target build/link integration. The corrected `060efffb` report has independently verified upload/download
+equality and pinned parser acceptance (run `38314064187`, artifact `11776495461`).
+Its report SHA-256 is `b945ac5813cb8f538596191f23ba281868e1a2ac175556c8dda27108111f825e`;
+original-target linked bytes and units are zero. Corrected site import remains
+unobserved: the live page still shows the preceding historical report.
+Matching remains 406 bytes.
 
 
 There is a material limitation: the current public listing hides projects below
@@ -349,3 +353,24 @@ The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger
 only after new complete behavior has its own verification; do not merely carry
 the historical routine estimate into objdiff completion fields.
+
+## Original QB camera assembly
+
+The immutable camera composite checkpoint verifies the actual five component
+type descriptors from the original skutils script through shared creation,
+merged initialization, node naming, priority and optional finalization. There
+are 36 original full assembly cases within 72 cases/108 direct calls. The new
+generic Camera initializer `41b7f0` covers all eight instructions and contributes
+24 unique original bytes; previously verified creation roots earn no repeated
+credit. All 207 Node and Chromium suites pass, with every one of the 206
+predecessor result objects unchanged. Complete rendered browser results were
+independently compared with Node.
+
+Derived method tables expose verified startup initialization/finalization/moved
+slots. Camera frame, disposal and command methods remain unfinished. The host
+ABI bridge scopes existing memory services; it is authored integration and
+receives no original-function credit. The checkpoint preserves earlier failed
+caller fixtures and the first metadata revision. This does not complete full
+profile initialization or make the Warehouse preview playable. Behavioral
+coverage is 439,254/2,375,378 bytes across 2,071 addresses (18.49%). Native matching
+remains eight functions/406 bytes and original-target linking remains zero.

@@ -4,7 +4,7 @@
     "total_code": "2375378",
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_functions": 11892,
+    "total_functions": 11893,
     "total_units": 3,
     "complete_units": 0,
     "matched_code": "406",
@@ -12,7 +12,7 @@
     "matched_functions": 8,
     "matched_code_percent": 0.01709201651274029,
     "matched_data_percent": 0,
-    "matched_functions_percent": 0.06727211570803902,
+    "matched_functions_percent": 0.06726645926175061,
     "fuzzy_match_percent": 0.01709201651274029,
     "total_data": "0",
     "complete_data": "0",
@@ -22,19 +22,19 @@
     {
       "name": "Scoped behavioral recovery (original-target link unverified)",
       "measures": {
-        "total_code": "439230",
+        "total_code": "439254",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 2070,
+        "total_functions": 2071,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.0924344876260729,
+        "matched_code_percent": 0.09242943718213152,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.3864734299516908,
-        "fuzzy_match_percent": 0.0924344876260729,
+        "matched_functions_percent": 0.386286817962337,
+        "fuzzy_match_percent": 0.09242943718213152,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -2171,6 +2171,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4306880"
+          }
+        },
+        {
+          "name": "thug_generic_camera_initialize_priority_v1",
+          "size": "24",
+          "address": "108528",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4306928"
           }
         },
         {
@@ -107104,7 +107113,7 @@
     {
       "name": "Unassigned original .text bytes (includes padding and jump tables)",
       "measures": {
-        "total_code": "405382",
+        "total_code": "405358",
         "complete_code": "0",
         "complete_code_percent": 0.0,
         "total_functions": 0,
@@ -107124,7 +107133,7 @@
       "sections": [
         {
           "name": ".text unassigned",
-          "size": "405382",
+          "size": "405358",
           "fuzzy_match_percent": 0
         }
       ],

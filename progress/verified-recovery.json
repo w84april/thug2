@@ -681,6 +681,56 @@
         }
       ],
       "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/camera-composite-startup-v4-checkpoint.json",
+        "sha256": "8c382ec405914b04f7493ea39ae251e578573f8e2ca6caed44374b5a91c455eb"
+      },
+      "audit": {
+        "path": "local/analysis/camera-composite-startup-v4-audit.json",
+        "sha256": "a5a90ca95d0a4c7f60d69aed2e9292ebf31a2d6f70fee227e330329781ef1f2c"
+      },
+      "discovery_exports": [
+        {
+          "path": "local/analysis/camera-composite-startup-v1-ranges.tsv",
+          "sha256": "01f695a2ef8c0ab3d6f38c824459d0c68d44823e91421f8cd373c41fe9f05ef2"
+        }
+      ],
+      "suites": [
+        {
+          "name": "camera_composite_startup_v3",
+          "source": {
+            "path": "local/analysis/camera-composite-startup-v1.c",
+            "sha256": "8514045aeb82cd0e15a37918f2a892f222a874c498ace9e86345ba7334ef36a5"
+          },
+          "routines": {
+            "path": "local/analysis/camera-composite-startup-v3-routines.json",
+            "sha256": "5177e8ae0b04f9bc26769779281c69732ceae1f79c628644a2b77d3a9ecee5b7"
+          },
+          "original": {
+            "path": "local/analysis/camera-composite-startup-v3-original.json",
+            "sha256": "bc3b8d131f279c864a9e72757cd35cfc5220318ec380134d331ee46a18e33f14"
+          },
+          "fixture": {
+            "path": "local/analysis/camera-composite-startup-v3-fixtures.json",
+            "sha256": "07e46ae215e23f1a6d6e966ef9b00d0bf9579fcbee93d7367218c29166cbb9e0"
+          },
+          "node": {
+            "path": "local/analysis/camera-composite-startup-v3-regression-camera-composite-startup-v3-result.json",
+            "sha256": "fdca6d0115c3ce1fe7802af87825a7df2cfe5764ad9818b842fc53d7de81a5ed"
+          },
+          "browser": {
+            "path": "local/analysis/camera-composite-startup-v3-browser-full.json",
+            "sha256": "d29688dcd7cd61f3503103dd844ad11a3813b032cf31f1b378a25c8fb9309c98"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-camera-composite-startup-v3.py",
+            "sha256": "1baac33f6e394394e9b7feedbda9267236f89a2fd259a245e1e06d604b6cfeb1"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [
