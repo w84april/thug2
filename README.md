@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.02%** — 1,981 reported recovered routines divided
+**Decompilation estimate: 17.07%** — 1,986 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 825 experimental routines: 808 in the latest
+routines (9.93% of that baseline) and 830 experimental routines: 813 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-19,313 pinned artifacts, preserving all 19,133 preceding artifacts. All 154 Node
-and Chromium suites were rerun for this checkpoint and passed; all 153 inherited
+19,501 pinned artifacts, preserving all 19,313 preceding artifacts. All 155 Node
+and Chromium suites were rerun for this checkpoint and passed; all 154 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,21 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- Five complete routines now recover animation-time access, the walking
+- Five complete routines now recover model-offset decay, up-vector restoration,
+  speed/event filtering, and publication and rotation of the character's pose.
+  All 358 cases and 1,168 original calls complete and match: 1,040 calls to the
+  new routines and 128 existing animation calls. All 402 new instructions execute,
+  with no exclusions or new numeric or indeterminate-field allowances. Sixteen
+  connected four-frame sequences advance animation forward and backward, then
+  publish position, orientation, velocity and model offsets with moving contacts,
+  tilted up vectors and temporary rotations. The indexed state-dispatch table is
+  independently checked against the complete function extent. All 155 Node and
+  Chromium suites pass, preserving all 154 preceding results. Evidence is in
+  `local/analysis/walk-common-checkpoint.json`; this module contains 813
+  unpromoted complete routines. These are connected recovered parts of the frame;
+  the full shared frame still needs collision and event helpers. Shared Walk stays
+  51 / 142 and the constructor 277 / 463; the training level is not playable.
+- The preceding animation build recovered animation-time access, the walking
   transition frame, final-pose commit and its script completion command.
   Twenty-four connected selection/frame/script sequences reach hanging or rail
   states. Six advance actual animation time through four frames, forward and

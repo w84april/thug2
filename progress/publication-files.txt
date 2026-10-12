@@ -95,6 +95,7 @@ local/analysis/audit-texture-buffer.py
 local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-animation.py
+local/analysis/audit-walk-common.py
 local/analysis/audit-walk-floor.py
 local/analysis/audit-walk-grab.py
 local/analysis/audit-walk-ground.py
@@ -196,6 +197,7 @@ local/analysis/build-trigger-draft.py
 local/analysis/build-vertex-upload-draft.py
 local/analysis/build-vertex-upload-ports.py
 local/analysis/build-walk-animation-draft.py
+local/analysis/build-walk-common-draft.py
 local/analysis/build-walk-floor-draft.py
 local/analysis/build-walk-grab-draft.py
 local/analysis/build-walk-ground-draft.py
@@ -593,6 +595,7 @@ local/analysis/pin-training-startup.py
 local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-animation.py
+local/analysis/pin-walk-common.py
 local/analysis/pin-walk-floor.py
 local/analysis/pin-walk-grab.py
 local/analysis/pin-walk-ground.py
@@ -736,6 +739,7 @@ local/analysis/probe-training-vertex-upload.py
 local/analysis/probe-trigger.py
 local/analysis/probe-vertex-upload.py
 local/analysis/probe-walk-animation.py
+local/analysis/probe-walk-common.py
 local/analysis/probe-walk-floor.py
 local/analysis/probe-walk-grab.py
 local/analysis/probe-walk-ground.py
@@ -956,6 +960,7 @@ local/analysis/serve-training-startup.py
 local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-animation.py
+local/analysis/serve-walk-common.py
 local/analysis/serve-walk-floor.py
 local/analysis/serve-walk-grab.py
 local/analysis/serve-walk-ground.py
@@ -1287,6 +1292,7 @@ local/analysis/verify-training-startup.mjs
 local/analysis/verify-trigger-checkpoint.mjs
 local/analysis/verify-vertex-upload-checkpoint.mjs
 local/analysis/verify-walk-animation-checkpoint.mjs
+local/analysis/verify-walk-common-checkpoint.mjs
 local/analysis/verify-walk-floor-checkpoint.mjs
 local/analysis/verify-walk-grab-checkpoint.mjs
 local/analysis/verify-walk-ground-checkpoint.mjs
@@ -1308,6 +1314,12 @@ local/analysis/walk-animation-draft.c
 local/analysis/walk-animation-extents.py
 local/analysis/walk-animation-routines.json
 local/analysis/walk-animation-worker.mjs
+local/analysis/walk-common-browser.html
+local/analysis/walk-common-draft.build.json
+local/analysis/walk-common-draft.c
+local/analysis/walk-common-extents.py
+local/analysis/walk-common-routines.json
+local/analysis/walk-common-worker.mjs
 local/analysis/walk-floor-browser.html
 local/analysis/walk-floor-diagnostics.build.json
 local/analysis/walk-floor-diagnostics.c

@@ -1,0 +1,27 @@
+{
+  "0x527be0": {
+    "bytes": 99,
+    "instructions": 33,
+    "name": "thug_walk_decay_model_offset_draft"
+  },
+  "0x527420": {
+    "bytes": 231,
+    "instructions": 68,
+    "name": "thug_walk_restore_up_draft"
+  },
+  "0x528400": {
+    "bytes": 191,
+    "instructions": 58,
+    "name": "thug_walk_filter_speed_event_draft"
+  },
+  "0x529ce0": {
+    "bytes": 642,
+    "instructions": 185,
+    "name": "thug_walk_write_owner_draft"
+  },
+  "0x529800": {
+    "bytes": 198,
+    "instructions": 58,
+    "name": "thug_walk_rotate_owner_draft"
+  }
+}
