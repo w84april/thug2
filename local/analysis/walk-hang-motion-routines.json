@@ -1,0 +1,17 @@
+{
+  "0x5250a0": {
+    "bytes": 60,
+    "instructions": 14,
+    "name": "thug_walk_hang_reset_orientation_draft"
+  },
+  "0x43dfc0": {
+    "bytes": 612,
+    "instructions": 180,
+    "name": "thug_walk_hang_corner_draft"
+  },
+  "0x440130": {
+    "bytes": 1368,
+    "instructions": 358,
+    "name": "thug_walk_hang_traverse_draft"
+  }
+}

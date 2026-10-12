@@ -1,0 +1,12 @@
+{
+  "0x43da20": {
+    "bytes": 67,
+    "instructions": 20,
+    "name": "thug_walk_hang_drop_input_draft"
+  },
+  "0x43fc70": {
+    "bytes": 434,
+    "instructions": 132,
+    "name": "thug_walk_hang_pose_draft"
+  }
+}

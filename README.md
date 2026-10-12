@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.32%** — 2,016 reported recovered routines divided
+**Decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 860 experimental routines: 843 in the latest
+routines (9.93% of that baseline) and 870 experimental routines: 853 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-21,394 pinned artifacts, preserving all 21,172 preceding artifacts. All 179 Node
-and Chromium suites were rerun for this checkpoint and passed; all 176 inherited
+21,648 pinned artifacts, preserving all 21,394 preceding artifacts. All 184 Node
+and Chromium suites were rerun for this checkpoint and passed; all 179 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -58,6 +58,22 @@ The requested schedule checks approximately every 20 minutes and publishes only
 new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
+
+- Hanging now connects to the complete five-state walking dispatcher, including
+  sideways traversal, corners, blocked movement, dropping and climbing out.
+  Ten complete routines match across 888 cases and 2,127 original calls,
+  including 38 real script callbacks. The dispatcher exercises all 142
+  instructions across 391 frames, covering all five states, out-of-range
+  fallthrough, cancellation and continued movement after climbing or dropping.
+  Combined coverage is 1,600/1,615 instructions with no exclusions; unexercised
+  reference-cleanup and contact-update failure branches remain in the count.
+  No numeric allowances or checker changes are added; 303 probe-word and 510
+  existing network-padding byte comparisons retain original-write provenance.
+  All 184 Node and Chromium suites pass, preserving all 179 earlier result
+  objects. Evidence is in `local/analysis/walk-hanging-checkpoint.json`; the
+  latest module contains 853 unpromoted routines. Startup still uses the
+  preserved partial walking entry. Connecting that entry, completing engine
+  startup and rendering, and playable training remain unfinished.
 
 - Rail climbing now connects to the shared movement loop, exit animations and
   the actual script commands that finish those animations. Eight complete

@@ -1,0 +1,17 @@
+{
+  "0x43db00": {
+    "bytes": 142,
+    "instructions": 32,
+    "name": "thug_walk_hang_ground_finish_draft"
+  },
+  "0x43db90": {
+    "bytes": 106,
+    "instructions": 29,
+    "name": "thug_walk_hang_air_finish_draft"
+  },
+  "0x43e530": {
+    "bytes": 1604,
+    "instructions": 411,
+    "name": "thug_walk_hang_climb_draft"
+  }
+}
