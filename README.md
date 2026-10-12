@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.20%** — 2,001 reported recovered routines divided
+**Decompilation estimate: 17.25%** — 2,007 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 845 experimental routines: 828 in the latest
+routines (9.93% of that baseline) and 851 experimental routines: 834 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-20,747 pinned artifacts, preserving all 20,531 preceding artifacts. All 171 Node
-and Chromium suites were rerun for this checkpoint and passed; all 168 inherited
+20,966 pinned artifacts, preserving all 20,747 preceding artifacts. All 174 Node
+and Chromium suites were rerun for this checkpoint and passed; all 171 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -58,6 +58,18 @@ The requested schedule checks approximately every 20 minutes and publishes only
 new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
+
+- Six complete helpers recover ballistic lip clearance, wall-contact jumps,
+  rail-target copying, airborne rail eligibility, weighted rail selection and
+  direct rail catches. All 431 cases and 548 original calls complete and match,
+  including 12 real collision-script callbacks. Coverage is 988/998 instructions
+  with no exclusions; unexercised release, unsigned-cooldown and alignment
+  instructions remain counted. No numeric, indeterminate-word or padding-byte
+  allowances are added. All 174 Node and Chromium suites pass, preserving all
+  171 previous result objects. Evidence is in
+  `local/analysis/walk-air-catch-checkpoint.json`; the latest module contains
+  834 unpromoted routines. Full airborne-frame validation and integration,
+  hanging/rail updates, startup, rendering and playable training remain open.
 
 - Three complete airborne transitions now recover swept landing/sliding,
   wallplant qualification with a synchronous script, and fixed/moving ledge

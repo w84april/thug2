@@ -1,0 +1,22 @@
+{
+  "0x57c500": {
+    "bytes": 61,
+    "instructions": 21,
+    "name": "thug_rail_catch_copy_draft"
+  },
+  "0x4413e0": {
+    "bytes": 672,
+    "instructions": 184,
+    "name": "thug_walk_air_rail_target_draft"
+  },
+  "0x57da20": {
+    "bytes": 894,
+    "instructions": 260,
+    "name": "thug_walk_air_rail_search_draft"
+  },
+  "0x442170": {
+    "bytes": 261,
+    "instructions": 81,
+    "name": "thug_walk_air_rail_draft"
+  }
+}
