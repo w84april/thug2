@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "metric": "Scoped behavioral recovery of original function bodies",
+  "specimen_sha256": "52fc88849654b34839ec2f96bff3a8c0b7a855df9a207aab9f2fca2e6bd440f3",
+  "ledger_sha256": "f0016938136b4a68d28cc21a1ab7944a547081e168b70277685392d77f42ffa6",
+  "verified_addresses": 2070,
+  "verified_function_body_bytes": 439230,
+  "original_text_virtual_bytes": 2375378,
+  "verified_body_percent": 18.490951755888958,
+  "known_inventory_functions": 11892,
+  "known_function_body_bytes": 1969996,
+  "unassigned_text_bytes": 405382,
+  "native_matching": {
+    "functions": 8,
+    "bytes": 406,
+    "percent": 0.01709201651274029
+  },
+  "original_target_link": {
+    "verified_code_bytes": 0,
+    "verified_units": 0,
+    "status": "unverified",
+    "evidence": []
+  },
+  "scope": "Complete routine implementations under their recorded behavioral test scopes; not exhaustive equivalence, original-target build/link completion, asset completion or playability.",
+  "playable": false
+}

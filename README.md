@@ -27,6 +27,14 @@ The native matching proof compares complete individual function bodies, with
 189 raw COFF-equal bytes and 217 bytes equal after declared address resolution.
 It does not establish a linked executable. See [the proof and scope](matching/README.md).
 
+Behavioral recovery is recorded separately in
+[behavioral-recovery.json](progress/behavioral-recovery.json). Objdiff/decomp.dev
+original-target linked credit is **zero bytes and zero units**: no original-target
+native build/link unit is selected as proven. Earlier reports through `0e9f1b2`
+put behavioral coverage into objdiff's linked fields; the displayed “fully linked”
+percentages overstated original-target integration. The corrected report keeps
+all behavioral evidence and the eight native matches, with no new link credit.
+
 **Historical decompilation estimate: 17.41%** — 2,026 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
 routines (9.93% of that baseline) and 870 experimental routines: 853 in the latest

@@ -2,11 +2,11 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "439230",
-    "complete_code_percent": 18.490951755888958,
+    "complete_code": "0",
+    "complete_code_percent": 0.0,
     "total_functions": 11892,
     "total_units": 3,
-    "complete_units": 1,
+    "complete_units": 0,
     "matched_code": "406",
     "matched_data": "0",
     "matched_functions": 8,
@@ -20,14 +20,14 @@
   },
   "units": [
     {
-      "name": "Verified behavioral recovery",
+      "name": "Scoped behavioral recovery (original-target link unverified)",
       "measures": {
         "total_code": "439230",
-        "complete_code": "439230",
-        "complete_code_percent": 100.0,
+        "complete_code": "0",
+        "complete_code_percent": 0.0,
         "total_functions": 2070,
         "total_units": 1,
-        "complete_units": 1,
+        "complete_units": 0,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
@@ -18672,7 +18672,7 @@
         }
       ],
       "metadata": {
-        "complete": true,
+        "complete": false,
         "auto_generated": true
       }
     },

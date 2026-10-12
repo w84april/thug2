@@ -2,7 +2,10 @@
 
 This project recovers Windows x86 behavior for WebAssembly. It has **406 verified
 native matching bytes across eight individual functions** and is not playable yet.
-Behavioral completion and native binary matching have separate evidence.
+Scoped behavioral recovery, native binary matching and original-target linked
+progress have separate evidence. Current verified original-target linked credit
+is zero; the 18.49% behavioral total remains in
+[behavioral-recovery.json](behavioral-recovery.json).
 
 ## decomp.dev requirements checked on 2026-10-12
 
@@ -19,8 +22,12 @@ GitHub App is an additional integration for automatic refresh and PR reporting.
 Our repository is public. The user registered the project, and its
 [decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
 the browser on 2026-10-12. Its latest independently observed commit was
-`2c5bec00`, with 18.39% fully linked completion and 0.02% decompiled (matching),
-confirming import of that viewport report. The matching display rounds 406 bytes.
+`07e803e8`, displaying 18.45% “fully linked” and 0.02% “decompiled” (matching).
+That linked percentage came from our earlier incorrect encoding of behavioral
+coverage as linked-unit completion. It proves historical artifact import, not
+original-target build/link integration. The corrected report requires its own
+upload/download verification and observed site import. Matching remains 406 bytes.
+
 
 There is a material limitation: the current public listing hides projects below
 **0.5% matched code**. Completion progress alone does not meet that threshold.
@@ -39,8 +46,31 @@ Authoritative implementation references:
 
 ## Metric policy
 
-`complete_code` will represent original code bytes attributed to recovered
-functions with linked source and passing behavioral evidence. Matching credit
+`complete_code`, `complete_code_percent`, `complete_units` and each unit's
+`metadata.complete` describe original-target linked-unit progress, not behavioral
+coverage. They stay zero/false because this project has no selected proof that an
+original-target native unit is built and included in the target link. Browser
+WebAssembly linking and isolated native COFF function comparisons do not establish
+that integration. There is no positive linked credit or linked-evidence selection.
+
+Objdiff's [schema](https://github.com/encounter/objdiff/blob/0c48d711c7bd51f791b353d7d85ba948b277e2f2/objdiff-core/protos/report.proto)
+and [report generator](https://github.com/encounter/objdiff/blob/0c48d711c7bd51f791b353d7d85ba948b277e2f2/objdiff-cli/src/cmd/report.rs)
+keep matching and completed/linked unit measures independent. The generator copies
+unit completion metadata and credits a whole unit only when it is marked complete;
+matching comes from object comparisons separately. A unit can therefore have
+matching functions without linked completion, or linked completion before exact
+matching. Our synthetic behavioral unit previously used `complete=true`, causing
+the misleading site percentage. Reports through `0e9f1b2` are historical records
+of that mistake; their successful schema/arithmetic checks did not prove linking.
+The correction preserves their immutable evidence and all recovered code.
+
+[behavioral-recovery.json](behavioral-recovery.json) keeps deduplicated original
+routine counts, original body bytes, the fixed `.text` denominator and test-scope
+limitations outside objdiff's linked fields. The address ledger remains the
+behavioral evidence index. No routine recovery is discarded or converted to
+additional binary matching.
+
+Matching credit
 requires selected positive per-function native proof, complete original body
 sizes and exact raw or declared-relocation-resolved bytes. The accepted proof
 is [matching/selection.json](../matching/selection.json), which pins the immutable
@@ -50,8 +80,8 @@ after DIR32 table address resolution (217 bytes). No instructions or operands ar
 masked. Two mismatches earn zero. No graded fuzzy comparison was performed:
 the eight exact items use objdiff's 100% item field, all other items use zero,
 and aggregate fuzzy fields contain only that conservative exact-byte fraction.
-Data matching and completion remain zero. This does not establish a full PE link.
-Completion does not mean exhaustive input coverage, hardware parity, complete
+Data matching and original-target linking remain zero. This does not establish a full PE link.
+Behavioral recovery does not mean exhaustive input coverage, hardware parity, complete
 engine integration, or playability. Existing test scopes and numeric allowances
 remain part of the evidence and must not be hidden by the aggregate metric.
 
@@ -73,10 +103,12 @@ publication of verified work from the current recovery chat.
 ## Reconciled report
 
 `ledger.json` links **2,070 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **439,230 original
+preserved positive original-execution evidence. The separate behavioral record
+credits **439,230 original
 function-body bytes / 2,375,378 original `.text` virtual bytes (18.49%)**.
 Native matching separately credits **406 / 2,375,378 bytes (0.01709%)**, across
-eight already complete addresses, so completion receives no additional credit.
+eight already behaviorally verified addresses. Objdiff original-target linked
+code and units remain zero; matching does not award linked credit.
 The initial reporting commit reconciled existing
 evidence. Subsequent audited checkpoint selections add 106 distinct addresses,
 totaling 12,181 original body bytes. The two latest camera batches add 551 factory/constructor bytes and 384
@@ -189,13 +221,14 @@ parser. The later 18.45% Animation-state/camera-reset report at `07e803e8` passe
 Independent retrieval of artifact `11774545506` confirmed only `report.json`,
 byte-identical to committed/regenerated bytes and accepted by the pinned parser.
 An actual browser observation confirms `07e803e8` / 18.45% fully linked and
-0.02% matched. The current 18.49% report requires its own hosted artifact
-verification and separately observed site import.
+0.02% matched. These are historical pre-correction linked displays. The corrected report keeps
+the behavioral 18.49% total separate, reports zero original-target linked credit,
+and requires its own hosted artifact verification and observed site import.
 The visible notice
 confirms that the project stays hidden from the public listing until 0.5%
-matched code. The site labels completion
-“fully linked” and matching “decompiled”; neither label establishes a playable
-browser engine. A later upload still needs its own artifact verification.
+matched code. The site labels unit completion
+“fully linked” and matching “decompiled”; neither establishes a playable browser
+engine, and behavioral coverage must not populate the linked fields. A later upload still needs its own artifact verification.
 
 A separate [rendering integration record](rendering-preview.json) preserves the
 earlier full-bundle exterior preview and the corrected indoor Warehouse view.
@@ -309,7 +342,8 @@ frames. Private continued work is recorded in
 `local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the current 18.49% report. Later pushes use the same upload/download checks.
+the corrected report with zero original-target linked credit. Later pushes use
+the same upload/download checks and preserve the separate behavioral record.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

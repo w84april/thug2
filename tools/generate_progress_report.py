@@ -1,4 +1,4 @@
-"""Generate objdiff v2 with separate behavioral completion and verified matching."""
+"""Generate objdiff matching/link fields and a separate scoped behavioral record."""
 import argparse
 import csv
 import hashlib
@@ -122,35 +122,61 @@ def generate(ledger, root=ROOT, local_evidence=False):
         return {'total_code': str(code), 'complete_code': str(complete), 'complete_code_percent': complete / code * 100 if code else 0, 'total_functions': functions, 'total_units': units, 'complete_units': complete_units, 'matched_code': str(matched_code), 'matched_data': '0', 'matched_functions': matched_functions, 'matched_code_percent': percent, 'matched_data_percent': 0, 'matched_functions_percent': matched_functions / functions * 100 if functions else 0, 'fuzzy_match_percent': percent, 'total_data': '0', 'complete_data': '0', 'complete_data_percent': 0}
 
     units = []
-    for complete in (True, False):
-        addresses = [a for a in sorted(inventory) if (a in recovered) == complete]
+    for behavioral in (True, False):
+        addresses = [a for a in sorted(inventory) if (a in recovered) == behavioral]
         code = sum(inventory[a][0] for a in addresses)
-        functions = [{'name': recovered[a]['name'] if complete else f'original_{a:08x}', 'size': str(inventory[a][0]), 'address': str(a - start), 'fuzzy_match_percent': 100 if a in matched else 0, 'metadata': {'virtual_address': str(a)}} for a in addresses]
+        functions = [{'name': recovered[a]['name'] if behavioral else f'original_{a:08x}', 'size': str(inventory[a][0]), 'address': str(a - start), 'fuzzy_match_percent': 100 if a in matched else 0, 'metadata': {'virtual_address': str(a)}} for a in addresses]
         matches = [a for a in addresses if a in matched]
-        units.append({'name': 'Verified behavioral recovery' if complete else 'Known unrecovered original functions', 'measures': measures(code, len(addresses), code if complete else 0, 1, int(complete), sum(inventory[a][0] for a in matches), len(matches)), 'functions': functions, 'metadata': {'complete': complete, 'auto_generated': True}})
+        # Synthetic address groups are not proven original-target linked units.
+        # Exact individual object matches do not establish that link evidence.
+        units.append({'name': 'Scoped behavioral recovery (original-target link unverified)' if behavioral else 'Known unrecovered original functions', 'measures': measures(code, len(addresses), 0, 1, 0, sum(inventory[a][0] for a in matches), len(matches)), 'functions': functions, 'metadata': {'complete': False, 'auto_generated': True}})
     unassigned = total - body_bytes
     units.append({'name': 'Unassigned original .text bytes (includes padding and jump tables)', 'measures': measures(unassigned, 0, 0, 1, 0), 'sections': [{'name': '.text unassigned', 'size': str(unassigned), 'fuzzy_match_percent': 0}], 'metadata': {'complete': False, 'auto_generated': True}})
-    complete_bytes = sum(r['size'] for r in recovered.values())
-    return {'version': 2, 'measures': measures(total, len(inventory), complete_bytes, len(units), 1, sum(f['size'] for f in matched.values()), len(matched)), 'units': units}
+    return {'version': 2, 'measures': measures(total, len(inventory), 0, len(units), 0, sum(f['size'] for f in matched.values()), len(matched)), 'units': units}
+
+
+def behavioral_summary(ledger, report, ledger_path=ROOT / 'progress/ledger.json'):
+    """Keep behavioral coverage outside objdiff's original-target linked fields."""
+    m = report['measures']
+    assert int(m['complete_code']) == m['complete_units'] == 0
+    verified_bytes = sum(row['size'] for row in ledger['records'])
+    total = ledger['code_section']['virtual_size']
+    return {'version': 1, 'metric': 'Scoped behavioral recovery of original function bodies',
+            'specimen_sha256': ledger['specimen_sha256'], 'ledger_sha256': sha(ledger_path),
+            'verified_addresses': len(ledger['records']), 'verified_function_body_bytes': verified_bytes,
+            'original_text_virtual_bytes': total, 'verified_body_percent': verified_bytes / total * 100,
+            'known_inventory_functions': ledger['inventory']['functions'],
+            'known_function_body_bytes': ledger['inventory']['body_bytes'],
+            'unassigned_text_bytes': total - ledger['inventory']['body_bytes'],
+            'native_matching': {'functions': m['matched_functions'], 'bytes': int(m['matched_code']), 'percent': m['matched_code_percent']},
+            'original_target_link': {'verified_code_bytes': 0, 'verified_units': 0, 'status': 'unverified', 'evidence': []},
+            'scope': 'Complete routine implementations under their recorded behavioral test scopes; not exhaustive equivalence, original-target build/link completion, asset completion or playability.',
+            'playable': False}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--ledger', type=Path, default=ROOT / 'progress/ledger.json')
     parser.add_argument('--output', type=Path, default=ROOT / 'progress/report.json')
+    parser.add_argument('--behavioral-output', type=Path, default=ROOT / 'progress/behavioral-recovery.json')
     parser.add_argument('--check', action='store_true', help='Require the saved report to exactly match regeneration')
     parser.add_argument('--local-evidence', action='store_true', help='Also inspect private original and runtime evidence')
     args = parser.parse_args()
     ledger = json.loads(args.ledger.read_text())
     report = generate(ledger, local_evidence=args.local_evidence)
     data = json.dumps(report, indent=2) + '\n'
+    behavioral = behavioral_summary(ledger, report, args.ledger)
+    behavioral_data = json.dumps(behavioral, indent=2) + '\n'
     if args.check:
         assert args.output.read_text() == data, 'Saved report differs from regeneration'
+        assert args.behavioral_output.read_text() == behavioral_data, 'Saved behavioral record differs from regeneration'
     else:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(data)
+        args.behavioral_output.parent.mkdir(parents=True, exist_ok=True)
+        args.behavioral_output.write_text(behavioral_data)
     m = report['measures']
-    print(f'{len(ledger["records"])} verified addresses; {m["complete_code"]}/{m["total_code"]} original .text bytes ({m["complete_code_percent"]:.2f}%); {m["matched_code"]} verified native matching bytes ({m["matched_code_percent"]:.5f}%)')
+    print(f'{behavioral["verified_addresses"]} behaviorally verified addresses; {behavioral["verified_function_body_bytes"]}/{m["total_code"]} original .text bytes ({behavioral["verified_body_percent"]:.2f}%); {m["complete_code"]} verified original-target linked bytes; {m["matched_code"]} verified native matching bytes ({m["matched_code_percent"]:.5f}%)')
 
 
 if __name__ == '__main__':

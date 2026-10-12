@@ -6,9 +6,13 @@ fn valid_measures(m: &Measures) -> Result<(), Box<dyn std::error::Error>> {
         || m.total_data != 0 || m.complete_data != 0 || m.complete_data_percent != 0.0 {
         return Err("This recovery has no verified data matching or completion".into());
     }
-    if m.complete_code > m.total_code || m.matched_code > m.complete_code
+    // Matching and original-target linked accounting are independent in objdiff.
+    if m.complete_code > m.total_code || m.matched_code > m.total_code
         || m.matched_functions > m.total_functions {
         return Err("Completion/matching exceeds verified bounds".into());
+    }
+    if m.complete_code != 0 || m.complete_units != 0 {
+        return Err("No original-target linked-unit evidence is selected".into());
     }
     for (actual, numerator, denominator) in [
         (m.complete_code_percent, m.complete_code, m.total_code),

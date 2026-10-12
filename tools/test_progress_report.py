@@ -5,7 +5,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from generate_progress_report import ROOT, generate
+from generate_progress_report import ROOT, generate, behavioral_summary
 from verify_matching_proof import verify_proof
 
 
@@ -13,7 +13,11 @@ def main():
     ledger = json.loads((ROOT / 'progress/ledger.json').read_text())
     report = generate(ledger)
     m = report['measures']
-    assert int(m['complete_code']) == sum(r['size'] for r in ledger['records'])
+    behavioral = behavioral_summary(ledger, report)
+    assert behavioral['verified_function_body_bytes'] == sum(r['size'] for r in ledger['records'])
+    assert behavioral['verified_addresses'] == len(ledger['records'])
+    assert int(m['complete_code']) == m['complete_units'] == 0
+    assert all(not u['metadata']['complete'] and int(u['measures']['complete_code']) == u['measures']['complete_units'] == 0 for u in report['units'])
     assert int(m['total_code']) == ledger['code_section']['virtual_size']
     selection = json.loads((ROOT / 'matching/selection.json').read_text())
     proof = json.loads((ROOT / selection['proof']['path']).read_text())
@@ -111,13 +115,30 @@ def main():
             target['matched_code'] = '0'
         for f in missing_credit['units'][0]['functions']: f['fuzzy_match_percent'] = 0
         bad_reports.append(missing_credit)
+        invented_link = copy.deepcopy(report)
+        linked_unit = invented_link['units'][0]
+        linked_bytes = int(linked_unit['measures']['total_code'])
+        linked_unit['metadata']['complete'] = True
+        linked_unit['measures'].update(complete_code=str(linked_bytes), complete_code_percent=100, complete_units=1)
+        invented_link['measures'].update(complete_code=str(linked_bytes), complete_code_percent=linked_bytes / int(m['total_code']) * 100, complete_units=1)
+        bad_reports.append(invented_link)  # Arithmetic alone cannot prove a target link.
         with tempfile.TemporaryDirectory(prefix='thug2-report-controls-') as directory:
             path = Path(directory) / 'bad-report.json'
             for bad in bad_reports:
                 path.write_text(json.dumps(bad))
                 result = subprocess.run([parser, str(path)], capture_output=True)
                 assert result.returncode != 0, 'Objdiff validator accepted corrupt matching/arithmetic'
-        print(f'Actual objdiff parser rejects {len(bad_reports)} matching/arithmetic/provenance corruptions')
+        print(f'Actual objdiff parser rejects {len(bad_reports)} matching/link/arithmetic/provenance corruptions')
+    with tempfile.TemporaryDirectory(prefix='thug2-behavioral-control-') as directory:
+        report_path = Path(directory) / 'report.json'
+        summary_path = Path(directory) / 'behavioral.json'
+        report_path.write_text(json.dumps(report, indent=2) + '\n')
+        bad_summary = copy.deepcopy(behavioral)
+        bad_summary['verified_function_body_bytes'] += 1
+        summary_path.write_text(json.dumps(bad_summary, indent=2) + '\n')
+        result = subprocess.run(['python3', str(ROOT / 'tools/generate_progress_report.py'), '--check', '--output', str(report_path), '--behavioral-output', str(summary_path)], capture_output=True)
+        assert result.returncode != 0 and b'Saved behavioral record differs' in result.stderr, 'Corrupt behavioral record accepted'
+    print('Separate behavioral record corruption control passes')
 
 
 if __name__ == '__main__':
