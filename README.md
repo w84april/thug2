@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.32%** — 1,899 reported recovered routines divided
+**Decompilation estimate: 16.38%** — 1,906 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 743 experimental routines: 726 in the latest
+routines (9.93% of that baseline) and 750 experimental routines: 733 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-17,525 pinned artifacts, preserving all 17,353 preceding artifacts. All 144 Node
-and Chromium suites were rerun for this checkpoint and passed; all 143 inherited
+17,697 pinned artifacts, preserving all 17,525 preceding artifacts. All 145 Node
+and Chromium suites were rerun for this checkpoint and passed; all 144 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,23 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers the Trigger component and connects it
+- The latest experimental build recovers SkaterFinalizePhysics and extends local
+  skater construction through it. Seven complete routines handle lifecycle,
+  dependency binding, the full frame, degenerate matrix repair and animation
+  speed clamping. Real stat lookup and matrix operations match the original in
+  354 cases: 632 completed calls and 32 interrupted constructor calls. Tests
+  cover movement thresholds, sound/animation state, dirty flags, matrix repairs,
+  actual owner dispatch and shared construction/disposal. Coverage is 375 / 381
+  instructions; six allocation-failure instructions remain unexercised, without
+  exclusions or numeric allowances. The experimental shared vector normalizer
+  now preserves the original negative NaN encoding for infinity times zero.
+  All 145 Node and Chromium suites pass, preserving all 144 earlier results.
+  Evidence is in `local/analysis/skater-finalize-checkpoint.json`; the module
+  contains 733 unpromoted complete routines. The partial skater constructor
+  reaches 257 / 463 instructions and stops before SkaterCleanupState. Remaining
+  startup/frames, later score linkage, camera/rendering and playable training
+  remain unfinished.
+- The preceding experimental build recovers the Trigger component and connects it
   to local skater construction. Eight complete routines handle creation, disposal,
   initialization, event-mask commands, saved collision records and movement
   callbacks. Actual static/moving collision queries and QB scripts run in 307

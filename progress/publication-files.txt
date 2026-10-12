@@ -77,6 +77,7 @@ local/analysis/audit-scene-state.py
 local/analysis/audit-score-insert.py
 local/analysis/audit-skater-adjust.py
 local/analysis/audit-skater-construction.py
+local/analysis/audit-skater-finalize.py
 local/analysis/audit-skater-gap.py
 local/analysis/audit-skater-ground.py
 local/analysis/audit-skater-matrix.py
@@ -164,6 +165,7 @@ local/analysis/build-score-insert-draft.py
 local/analysis/build-script-change-draft.py
 local/analysis/build-skater-adjust-draft.py
 local/analysis/build-skater-construction-draft.py
+local/analysis/build-skater-finalize-draft.py
 local/analysis/build-skater-gap-draft.py
 local/analysis/build-skater-ground-draft.py
 local/analysis/build-skater-matrix-draft.py
@@ -551,6 +553,7 @@ local/analysis/pin-scene-state.py
 local/analysis/pin-score-insert.py
 local/analysis/pin-skater-adjust.py
 local/analysis/pin-skater-construction.py
+local/analysis/pin-skater-finalize.py
 local/analysis/pin-skater-gap.py
 local/analysis/pin-skater-ground.py
 local/analysis/pin-skater-matrix.py
@@ -652,6 +655,7 @@ local/analysis/probe-score-insert.py
 local/analysis/probe-script-change.py
 local/analysis/probe-skater-adjust.py
 local/analysis/probe-skater-construction.py
+local/analysis/probe-skater-finalize.py
 local/analysis/probe-skater-gap.py
 local/analysis/probe-skater-ground.py
 local/analysis/probe-skater-matrix.py
@@ -894,6 +898,7 @@ local/analysis/serve-scene-state.py
 local/analysis/serve-score-insert.py
 local/analysis/serve-skater-adjust.py
 local/analysis/serve-skater-construction.py
+local/analysis/serve-skater-finalize.py
 local/analysis/serve-skater-gap.py
 local/analysis/serve-skater-ground.py
 local/analysis/serve-skater-matrix.py
@@ -924,6 +929,13 @@ local/analysis/skater-construction-diagnostic-fixture.c
 local/analysis/skater-construction-draft.build.json
 local/analysis/skater-construction-draft.c
 local/analysis/skater-construction-worker.mjs
+local/analysis/skater-finalize-browser.html
+local/analysis/skater-finalize-constructor-prefix.c
+local/analysis/skater-finalize-draft.build.json
+local/analysis/skater-finalize-draft.c
+local/analysis/skater-finalize-routines.json
+local/analysis/skater-finalize-vector-derived.c
+local/analysis/skater-finalize-worker.mjs
 local/analysis/skater-gap-browser.html
 local/analysis/skater-gap-constructor-prefix.c
 local/analysis/skater-gap-draft.build.json
@@ -1184,6 +1196,7 @@ local/analysis/verify-score-insert-checkpoint.mjs
 local/analysis/verify-script-change.mjs
 local/analysis/verify-skater-adjust-checkpoint.mjs
 local/analysis/verify-skater-construction-checkpoint.mjs
+local/analysis/verify-skater-finalize-checkpoint.mjs
 local/analysis/verify-skater-gap-checkpoint.mjs
 local/analysis/verify-skater-ground-checkpoint.mjs
 local/analysis/verify-skater-matrix-checkpoint.mjs

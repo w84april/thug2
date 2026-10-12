@@ -4,95 +4,93 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 726,
-  "experimental_functions_across_separate_builds": 743,
-  "reported_recovered_functions": 1899,
-  "decompilation_estimate_percent": 16.32,
+  "experimental_functions_in_latest_module": 733,
+  "experimental_functions_across_separate_builds": 750,
+  "reported_recovered_functions": 1906,
+  "decompilation_estimate_percent": 16.38,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/trigger-checkpoint.json",
-  "checkpoint_sha256": "9ddda74c467b84fd929079c957f3755dd1c5af616e4a7d461c9a52618f0c90db",
+  "checkpoint": "local/analysis/skater-finalize-checkpoint.json",
+  "checkpoint_sha256": "2730145384989cf88ab1df4c8ccd6d4603003b01971c1f0fb215aef1c7ddbe99",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "9ddda74c467b84fd929079c957f3755dd1c5af616e4a7d461c9a52618f0c90db",
-    "artifacts": 17525,
+    "checkpoint_sha256": "2730145384989cf88ab1df4c8ccd6d4603003b01971c1f0fb215aef1c7ddbe99",
+    "artifacts": 17697,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 589,
+    "harnesses": 596,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 17353,
+    "preserved_previous_artifacts": 17525,
     "main_wasm_unchanged": true,
-    "unit_cases": 307,
-    "unit_calls": 513,
-    "completed_calls": 481,
+    "unit_cases": 354,
+    "unit_calls": 664,
+    "completed_calls": 632,
     "interrupted_calls": 32,
-    "new_instruction_coverage": "293/294; one skipped alignment instruction unexercised; no exclusions",
-    "native_qb_callbacks": 35,
+    "new_instruction_coverage": "375/381; six allocation-failure instructions unexercised; no exclusions",
     "new_uninitialized_byte_allowances": 0,
-    "browser_suites": 144,
-    "preserved_browser_suites": 143,
-    "constructor_prefix": "249/463; local path creates Trigger then stops before SkaterFinalizePhysics",
+    "browser_suites": 145,
+    "preserved_browser_suites": 144,
+    "constructor_prefix": "257/463; local path creates FinalizePhysics then stops before SkaterCleanupState",
     "playable": false
   },
-  "scope": "Eight complete original routines recover Trigger creation, initialization, disposal, event-mask command, collision-record dispatch, probe callback and full movement frame. Real static/moving geometry, node lookup, script spawning and QB run before explicit terminal test callbacks. Duplicate masks add rather than OR; list scans and owner/position reads preserve callback ordering. Shared construction and real owner frame dispatch execute. Skater constructor continues through Trigger, then stops before9b373e58; remote850eef66 unchanged. Whole arena/globals/heap and completed-call registers compare, without numeric masks. Initialized graphs, required command arrays and successful allocations are original internal contracts. Remaining skater startup/frames, camera/rendering and original playable training remain unfinished.",
-  "remaining": "Trigger is recovered and local skater construction now stops before SkaterFinalizePhysics (9b373e58); the remote850eef66 boundary is unchanged. Remaining startup/frames, actual later score linkage, camera/rendering and original playable training remain unfinished.",
-  "browser_suites": 144,
-  "new_cases": 307,
-  "new_calls": 513,
+  "scope": "Seven complete original routines recover FinalizePhysics creation, disposal, dependency binding and full frame, plus degenerate matrix repair and animation speed clamp. Real stat lookup, matrix operations and component lookup run without game-call substitutions. Shared creation/finalization/disposal and actual owner dispatch execute. Whole arena, globals, heap and completed-call preserved registers compare. The constructor continues through FinalizePhysics and explicitly stops before CleanupState d8cc3428; remote850eef66 unchanged. Partial construction is not a completed routine. Initialized dependencies and successful allocation are internal contracts. Remaining startup/frames, later score linkage, camera/rendering and original playable training remain unfinished.",
+  "remaining": "FinalizePhysics is recovered and local skater construction now stops before SkaterCleanupState (d8cc3428); the remote850eef66 boundary is unchanged. Remaining startup/frames, actual later score linkage, camera/rendering and original playable training remain unfinished.",
+  "browser_suites": 145,
+  "new_cases": 354,
+  "new_calls": 664,
   "instruction_coverage": {
-    "0x434b90": {
-      "covered": 26,
-      "total": 26,
+    "0x405480": {
+      "covered": 162,
+      "total": 162,
       "missing": [],
       "excluded": {}
     },
-    "0x434900": {
+    "0x5138b0": {
+      "covered": 9,
+      "total": 9,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x511280": {
+      "covered": 27,
+      "total": 33,
+      "missing": [
+        "0x5112e7",
+        "0x5112eb",
+        "0x5112ed",
+        "0x5112ee",
+        "0x5112f5",
+        "0x5112f8"
+      ],
+      "excluded": {}
+    },
+    "0x511010": {
       "covered": 2,
       "total": 2,
       "missing": [],
       "excluded": {}
     },
-    "0x434910": {
+    "0x511020": {
       "covered": 11,
       "total": 11,
       "missing": [],
       "excluded": {}
     },
-    "0x434940": {
-      "covered": 11,
-      "total": 11,
+    "0x511050": {
+      "covered": 12,
+      "total": 12,
       "missing": [],
       "excluded": {}
     },
-    "0x434970": {
-      "covered": 84,
-      "total": 84,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x434ce0": {
-      "covered": 52,
-      "total": 53,
-      "missing": [
-        "0x434d0d"
-      ],
-      "excluded": {}
-    },
-    "0x434d70": {
-      "covered": 6,
-      "total": 6,
-      "missing": [],
-      "excluded": {}
-    },
-    "0x434d90": {
-      "covered": 101,
-      "total": 101,
+    "0x511080": {
+      "covered": 152,
+      "total": 152,
       "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "d018ea5aa6ad9473183a8ecbb6cad46d8786062f8cfd5188327d578b14958875",
+  "experimental_wasm_sha256": "8616ee21b0bf0d9865acd1609f0151d07a92486957415c20ebd7a2d7519dda3e",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -173,6 +171,7 @@
     "local/analysis/audit-score-insert.py": "f800dffeac34331361c37e8758bc5327cef8b94ad953b3d9026af474587a33f1",
     "local/analysis/audit-skater-adjust.py": "bc19b514fbdf350908be6459b846b42c6c2c07e1bb45768555e82e289e695465",
     "local/analysis/audit-skater-construction.py": "9fcf81c95f507c4840fb5adce71e7d0a1c95ce4fd2eaa5046b997e0195deecb2",
+    "local/analysis/audit-skater-finalize.py": "1695e6028a0d771c43b8f0ed7227896a83bbd3e431fe61774f5434739e1e5bd7",
     "local/analysis/audit-skater-gap.py": "2f1db95b196f4cc20109b6e97ba70bfcbcc60e9270af85cd2ae9537052861f82",
     "local/analysis/audit-skater-ground.py": "50490e2fd737466cb00e965387b09c552cf8b8078070f30e87d22e96973129b9",
     "local/analysis/audit-skater-matrix.py": "45893992534786215a4b36f59b455f3b0049d6ae93cf02af12c18660e7dca4a8",
@@ -260,6 +259,7 @@
     "local/analysis/build-script-change-draft.py": "682faa876654b208a926f75badb4b3adad3cf21ee771c52fda925a12b1a94ff1",
     "local/analysis/build-skater-adjust-draft.py": "82aa5fac7186a24c91e49ff03d96622f0c9ef9610c09cbc760d9f16b79248951",
     "local/analysis/build-skater-construction-draft.py": "1872cc560feafef89944954730f06b9b4ee52ffda7ea77e7db91fc1273ace6e4",
+    "local/analysis/build-skater-finalize-draft.py": "ac4fe2c258d9fcde906ce7c9cc5c264d34e65d4c5ac0da17fbaecc185bb10be5",
     "local/analysis/build-skater-gap-draft.py": "e6265332a26f33cfeb767c1258c2f59e7b35b1407cba8b625992489524520c27",
     "local/analysis/build-skater-ground-draft.py": "d0f78fd1f8d93c3168494b15b9d59ed0bd06b5df8aa233e97c16db93a9a216a3",
     "local/analysis/build-skater-matrix-draft.py": "413fb69bb679471ffaa42a72df3937e4c624454c39b122c4615b74d304d32fb0",
@@ -647,6 +647,7 @@
     "local/analysis/pin-score-insert.py": "862bc2484cb5ae81e8b364750094905212aeeb45305a2b41c3b9e7078d21ba6e",
     "local/analysis/pin-skater-adjust.py": "8f6eb39f394443910f3af96dfb9565e0a1a050148f04f1128b9c2832a90cd81b",
     "local/analysis/pin-skater-construction.py": "7128ba665194f8d0daba0e295a9007f30c955fcda3adc58aa6a8e1586bf5a549",
+    "local/analysis/pin-skater-finalize.py": "a40259c13ec03067624226b5ab330c97166e4a380b33cf8f7b96bd55b13ea92c",
     "local/analysis/pin-skater-gap.py": "0bf9ae09861bef546e1c493e7b1d8a426cf9496490a1d254b0ec3fb4acdd3e27",
     "local/analysis/pin-skater-ground.py": "7f3df92e405611f41c23a5b44e1a6308d4d3b48bf30fb1667b6ef3e286507a72",
     "local/analysis/pin-skater-matrix.py": "a7390fc879cddaefc333908d29f2a3b9cce8549c926c5bf4c4ba433c20fef697",
@@ -748,6 +749,7 @@
     "local/analysis/probe-script-change.py": "59a319d03b1f1bbe8fae94c53e443ec5f5a1402443a5c288a2b222652300b711",
     "local/analysis/probe-skater-adjust.py": "0c39b1cd1c48c594b73e68882bc2ac0e7f8a15f6119fa49bb51797ce5f9eb61e",
     "local/analysis/probe-skater-construction.py": "4aebed2dd3d301da98f39ca53559d0eb96cea228c1be2462e696ce9e87ed0e61",
+    "local/analysis/probe-skater-finalize.py": "b94e274f37e0066d9772942931881e2cb19a02314f930b6c429d5e187ce9e344",
     "local/analysis/probe-skater-gap.py": "6d872d436252179b1f7f434765c6e4a4a98952fc54cb8e457b4075da36604d18",
     "local/analysis/probe-skater-ground.py": "64ed6c3e507c14da8103e6046e6bf9e578f55288b038801b53d9301a6632fde5",
     "local/analysis/probe-skater-matrix.py": "8f64dcd089a17d29d8e5c3ecc1ff371f30146ec5e63c231ddffb2ab29d28f7d5",
@@ -990,6 +992,7 @@
     "local/analysis/serve-score-insert.py": "03893b010c2321d1bc03fe813be1f319a7661d38256fbb34491a0e845320a204",
     "local/analysis/serve-skater-adjust.py": "07f39cbd3aed76e36b95601016aec85c9124c20bfa093ef4cfdcda895adeade8",
     "local/analysis/serve-skater-construction.py": "4249388b0a84b49d3c12c90e7663a2adb425ebc3fd91243477dfdf4f70d6838e",
+    "local/analysis/serve-skater-finalize.py": "97903c9f5832f63a0876d15b18d6796a5923d038738f7a425893ea298205854c",
     "local/analysis/serve-skater-gap.py": "497a6a8ce41c22c237f22b7e921c601cfc56ae59e7a5dfbb2e83f6f0b7218ec1",
     "local/analysis/serve-skater-ground.py": "cdef995384a2e3fd01cf7948f11f3b35aec98312b1bd950247d4713a24f1ad7f",
     "local/analysis/serve-skater-matrix.py": "e89b4cf7d76abcf4ce124216db64d4fc75452815a743b064c7f15d4e468d15b9",
@@ -1020,6 +1023,13 @@
     "local/analysis/skater-construction-draft.build.json": "ef3038fb00bc63fb87d58079eef16f6555e27f89db3011539e07e59b29f1c7be",
     "local/analysis/skater-construction-draft.c": "38ab736a195f5ecc67656fa3dc5f1e1c3fd8f64b85731842629cb511e22ed8db",
     "local/analysis/skater-construction-worker.mjs": "d5245dab6690560338a5b2d5ecedea245af3b474e952ca038520ac4bd6771da6",
+    "local/analysis/skater-finalize-browser.html": "af15e8f50761c0e783ddc6069be7baba1943758e4d6735676fdf24478bb28435",
+    "local/analysis/skater-finalize-constructor-prefix.c": "263ec4c9413fbbb677be56de9de6d00be0585bc4d6e736cab757b0032abdeb3b",
+    "local/analysis/skater-finalize-draft.build.json": "f5f83bd05ec3cc783775fdd81bdfc787971fdb800099bc7c9cb48344f33fde3e",
+    "local/analysis/skater-finalize-draft.c": "29370cbac34e36ce5ab973cb0b6c322a34a4023dbf4cf4ddf81a5569b863523f",
+    "local/analysis/skater-finalize-routines.json": "a3bc6b72381bdd2612355a5c4fd8d826490a9fc6fe0b7c8fcb905b9c3f5ef7aa",
+    "local/analysis/skater-finalize-vector-derived.c": "80d30b937ad0a0fedd368334915c9cd26ae073a40bde8aec08387fd583dbe335",
+    "local/analysis/skater-finalize-worker.mjs": "80f2134d3b855848ab7630c81e69a41b882bbe4b63891863ea4282cc699b7e2d",
     "local/analysis/skater-gap-browser.html": "5badf415db0d3184d80962bb450ad65cc0eb06f66c15150b0d6af00afbc1a644",
     "local/analysis/skater-gap-constructor-prefix.c": "c23c312ef1fa02ef540c8c61e37edcbb727bc0a92c518ea1e2ed3fe81b8be963",
     "local/analysis/skater-gap-draft.build.json": "56fcb31c2f6d565efc9b0898573fc3079f39b88fbacc9d8fe606195ac3f0fb6f",
@@ -1280,6 +1290,7 @@
     "local/analysis/verify-script-change.mjs": "63fba106cd64257815adceb78d565196ac5fc84b56905862d0937a9b19b77561",
     "local/analysis/verify-skater-adjust-checkpoint.mjs": "0ce6978413a30c0279e1c0a202ca7f2e48930d00119cef7f9bac48df39c95ae9",
     "local/analysis/verify-skater-construction-checkpoint.mjs": "55525b4746f8f3404b8fda5195e0b4d18adb36a58723a747f594b2e9a585b7ef",
+    "local/analysis/verify-skater-finalize-checkpoint.mjs": "c9c0013f5403af25f4ce77cc4c50606f72494f4a591b336e0573987eee49fb65",
     "local/analysis/verify-skater-gap-checkpoint.mjs": "4aff3f76e7bc1c076494c3d52bb3a2850a4564472538355df285ca20d215f2e4",
     "local/analysis/verify-skater-ground-checkpoint.mjs": "e8da091eeb6a7f8d103ec21edbc91a6402a18e76de19bf17ef6af76bb441d2ee",
     "local/analysis/verify-skater-matrix-checkpoint.mjs": "9000d71a9f5204cb67b60805937ca9859d1cebbe4176401b26c4d61bd9a95d65",

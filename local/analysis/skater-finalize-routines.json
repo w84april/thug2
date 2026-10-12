@@ -1,0 +1,37 @@
+{
+  "0x405480": {
+    "bytes": 377,
+    "instructions": 162,
+    "name": "thug_matrix_repair_basis_draft"
+  },
+  "0x5138b0": {
+    "bytes": 40,
+    "instructions": 9,
+    "name": "thug_skater_animation_speed_draft"
+  },
+  "0x511280": {
+    "bytes": 121,
+    "instructions": 33,
+    "name": "thug_skater_finalize_create_draft"
+  },
+  "0x511010": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_skater_finalize_destroy_draft"
+  },
+  "0x511020": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_skater_finalize_delete_draft"
+  },
+  "0x511050": {
+    "bytes": 37,
+    "instructions": 12,
+    "name": "thug_skater_finalize_bind_draft"
+  },
+  "0x511080": {
+    "bytes": 511,
+    "instructions": 152,
+    "name": "thug_skater_finalize_update_draft"
+  }
+}
