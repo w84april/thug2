@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.45% of original `.text` bytes** —
-438,295 / 2,375,378 bytes attributed to 2,060 distinct original addresses with
+**Reconciled behavioral completion: 18.49% of original `.text` bytes** —
+439,230 / 2,375,378 bytes attributed to 2,070 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 96 newly reconciled startup/lifecycle/camera addresses.
+reconciled baseline with 106 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -44,17 +44,21 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 204 suites; all 203 preceding
+checkpoint preserves all prior evidence and passes 206 suites; all 205 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
-The latest engine checkpoint verifies SkaterCamera reset and FOV settings using
-original Physics QB presets: 333 cases and 924 completed calls cover all 276
-instructions and add two routines / 947 body bytes. The preceding Animation state
-storage checkpoint adds two routines / 244 bytes through 504 cases and 1,008 calls,
-covering all 77 instructions. Both preserve all earlier result objects with no
-new numeric allowance or checker change. Full SkaterCamera initialization/update,
-Animation configuration/clip loading and complete profile startup remain unfinished.
+The latest camera QB initialization checkpoint verifies seven mappings in 423 cases
+and 918 calls, exercising all 165 instructions. Five new addresses add 384 bytes;
+two previously verified target bindings add no repeated credit. The preceding
+camera factory checkpoint verifies six mappings in 81 cases and 165 calls.
+Five new addresses add 551 bytes; the already verified three-byte identity helper
+adds no repeated credit. Its initialized allocator contract excludes one cold
+bootstrap call. All 206 Node/actual Chromium suites pass, preserving all 205
+predecessor result objects without numeric allowance or checker changes.
+Earlier camera reset/FOV and Animation state checkpoints remain independently
+selected. Original camera composite startup/frame updates, Animation configuration
+and clip loading, and complete profile startup remain unfinished.
 A separate zero-credit scene audit corrects the preview to show the indoor
 Warehouse and preserves the earlier full-bundle exterior overview.
 
@@ -90,6 +94,21 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
+- Five new camera QB initialization/final-link addresses add 384 original bytes;
+  seven mappings pass 423 original/Wasm cases and 918 calls, covering all 165
+  instructions. Required checksum getter variants, global object lookup,
+  missing/mistyped/duplicate/high-bit parameters, exact matrix words and bounded
+  component graphs compare. Two already selected target bindings earn no repeated
+  credit. All 206 suites pass and all 205 predecessor result objects are unchanged.
+
+- Five new camera factory/constructor/direct-link addresses add 551 original
+  bytes. Six mappings pass 81 original/Wasm cases and 165 calls, covering 150/151
+  instructions under the initialized allocator contract. Only the literal cold
+  bootstrap call is excluded. The three-byte extra-storage identity helper was
+  already selected and earns no repeated credit. All 205 suites pass and all 204
+  predecessor result objects are unchanged. Identity-only tables establish no
+  virtual lifecycle, frame or full camera assembly behavior.
+
 - Two camera reset/FOV routines pass 333 original/Wasm cases and 924 completed
   calls, adding 947 original body bytes with all 276 instructions exercised.
   Real Physics QB normal/split-screen presets 1–4, immediate/interpolated settings,
@@ -97,7 +116,7 @@ of verified checkpoints is authorized in the current recovery chat.
   mode branches use bounded caller arrays extended with an existing preset;
   they do not establish original gameplay modes. All 204 Node/actual Chromium
   suites pass; all 203 predecessor results are unchanged. Full camera
-  initialization/update, original camera frames and complete startup remain unfinished.
+  composite startup, original camera frames and complete startup remain unfinished.
 
 - Two Animation state storage routines pass 504 original/Wasm cases and 1,008
   completed calls, adding 244 original body bytes with all 77 instructions

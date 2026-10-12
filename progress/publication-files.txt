@@ -88,6 +88,8 @@ local/analysis/audit-scene-state.py
 local/analysis/audit-score-insert.py
 local/analysis/audit-skater-adjust.py
 local/analysis/audit-skater-balance-startup.py
+local/analysis/audit-skater-camera-factories-v5.py
+local/analysis/audit-skater-camera-initialization-v3.py
 local/analysis/audit-skater-camera-reset-v1.py
 local/analysis/audit-skater-cleanup.py
 local/analysis/audit-skater-construction.py
@@ -212,6 +214,8 @@ local/analysis/build-script-change-draft.py
 local/analysis/build-skater-adjust-draft.py
 local/analysis/build-skater-balance-lifecycle.py
 local/analysis/build-skater-balance-startup.py
+local/analysis/build-skater-camera-factories-v1.py
+local/analysis/build-skater-camera-initialization-v2.py
 local/analysis/build-skater-camera-reset-v1.py
 local/analysis/build-skater-cleanup-draft.py
 local/analysis/build-skater-construction-draft.py
@@ -684,6 +688,8 @@ local/analysis/pin-scene-state.py
 local/analysis/pin-score-insert.py
 local/analysis/pin-skater-adjust.py
 local/analysis/pin-skater-balance-startup.py
+local/analysis/pin-skater-camera-factories-v5.py
+local/analysis/pin-skater-camera-initialization-v3.py
 local/analysis/pin-skater-camera-reset-v1.py
 local/analysis/pin-skater-cleanup.py
 local/analysis/pin-skater-construction.py
@@ -826,6 +832,8 @@ local/analysis/probe-skater-adjust.py
 local/analysis/probe-skater-balance-lifecycle.py
 local/analysis/probe-skater-balance-startup.py
 local/analysis/probe-skater-base-descriptors.py
+local/analysis/probe-skater-camera-factories-v1.py
+local/analysis/probe-skater-camera-initialization-v3.py
 local/analysis/probe-skater-camera-reset-v1.py
 local/analysis/probe-skater-cleanup.py
 local/analysis/probe-skater-construction.py
@@ -1128,6 +1136,8 @@ local/analysis/serve-scene-state.py
 local/analysis/serve-score-insert.py
 local/analysis/serve-skater-adjust.py
 local/analysis/serve-skater-balance.py
+local/analysis/serve-skater-camera-factories-v1.py
+local/analysis/serve-skater-camera-initialization-v3.py
 local/analysis/serve-skater-camera-reset-v1.py
 local/analysis/serve-skater-cleanup.py
 local/analysis/serve-skater-construction.py
@@ -1194,6 +1204,12 @@ local/analysis/skater-balance-lifecycle-routines.json
 local/analysis/skater-balance-no-qb-negative.c
 local/analysis/skater-balance-startup-draft.build.json
 local/analysis/skater-balance-worker.mjs
+local/analysis/skater-camera-factories-v1-browser.html
+local/analysis/skater-camera-factories-v1-worker.mjs
+local/analysis/skater-camera-factories-v1.c
+local/analysis/skater-camera-initialization-v2.c
+local/analysis/skater-camera-initialization-v3-browser.html
+local/analysis/skater-camera-initialization-v3-worker.mjs
 local/analysis/skater-camera-reset-v1-browser.html
 local/analysis/skater-camera-reset-v1-worker.mjs
 local/analysis/skater-camera-reset-v1.c
@@ -1581,6 +1597,10 @@ local/analysis/verify-skater-balance-prior-candidates.mjs
 local/analysis/verify-skater-balance-regression.mjs
 local/analysis/verify-skater-balance-startup.mjs
 local/analysis/verify-skater-base-descriptor.mjs
+local/analysis/verify-skater-camera-factories-v1-regression.mjs
+local/analysis/verify-skater-camera-factories-v1.mjs
+local/analysis/verify-skater-camera-initialization-v3-regression.mjs
+local/analysis/verify-skater-camera-initialization-v3.mjs
 local/analysis/verify-skater-camera-reset-v1-regression.mjs
 local/analysis/verify-skater-camera-reset-v1.mjs
 local/analysis/verify-skater-cleanup-checkpoint.mjs

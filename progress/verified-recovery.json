@@ -586,6 +586,101 @@
         }
       ],
       "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-factories-v5-checkpoint.json",
+        "sha256": "28edb42705db106778cdedf1ce9aaf16d1b4d4a20f1e93ff78c77e4752767fd2"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-factories-v5-audit.json",
+        "sha256": "dd6d6295f6913be00aed8e52d5624f13a03e038a0c0a66ce68f8f5697f817f6b"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "skater_camera_factories_v1",
+          "source": {
+            "path": "local/analysis/skater-camera-factories-v1.c",
+            "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8"
+          },
+          "routines": {
+            "path": "local/analysis/skater-camera-factories-v1-routines.json",
+            "sha256": "66b165657d2339b3900e1058a631a50281ba1c2fb1dac8bdaad69e1d23a2c200"
+          },
+          "original": {
+            "path": "local/analysis/skater-camera-factories-v1-original.json",
+            "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+            "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+          },
+          "node": {
+            "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+            "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+          },
+          "browser": {
+            "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+            "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-camera-factories-v1.py",
+            "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+          }
+        }
+      ],
+      "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-initialization-v3-checkpoint.json",
+        "sha256": "41cd70cef93e116511e3697e95393db311277a1cd5ef514ba5311a36f549e876"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-initialization-v3-audit.json",
+        "sha256": "4c16fdc5b9439ef5c38f350fe439799c95bb8f99a422d41474d72f21407222cb"
+      },
+      "discovery_exports": [
+        {
+          "path": "local/analysis/skater-camera-initialization-v3-extra-ranges.tsv",
+          "sha256": "57a070ea9b03ba2837e8eec20b1dfd89df321cd33e33dfeb03a29d3a3b9b64bd"
+        }
+      ],
+      "suites": [
+        {
+          "name": "skater_camera_initialization_v3",
+          "source": {
+            "path": "local/analysis/skater-camera-initialization-v2.c",
+            "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3"
+          },
+          "routines": {
+            "path": "local/analysis/skater-camera-initialization-v3-routines.json",
+            "sha256": "7f7304842cf234932726f146118524918d880016ac1a5fcc129aa64b8ac33cfa"
+          },
+          "original": {
+            "path": "local/analysis/skater-camera-initialization-v3-original.json",
+            "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+            "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+          },
+          "node": {
+            "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+            "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+          },
+          "browser": {
+            "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+            "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+            "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [

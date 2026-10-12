@@ -8,9 +8,9 @@
   },
   "inventory": {
     "path": "progress/function-inventory.tsv",
-    "sha256": "6be15916b606ef01c58c53a776faeeeb9689ceb1b1a30de43e55f6fff01a64f4",
-    "functions": 11889,
-    "body_bytes": 1969695,
+    "sha256": "32c0c5a4b3adb8ab9c5bcb5c9fe6ac1096560b200708da159c624a90ea8d0ef8",
+    "functions": 11892,
+    "body_bytes": 1969996,
     "source_exports": [
       {
         "path": "local/analysis/progress-function-ranges.tsv",
@@ -43,6 +43,10 @@
       {
         "path": "local/analysis/skater-tag-texture-extra-ranges.tsv",
         "sha256": "bab696d71b409ace18cf4c0c7979832536395f688ecf3832dd6975b95b49448d"
+      },
+      {
+        "path": "local/analysis/skater-camera-initialization-v3-extra-ranges.tsv",
+        "sha256": "57a070ea9b03ba2837e8eec20b1dfd89df321cd33e33dfeb03a29d3a3b9b64bd"
       }
     ]
   },
@@ -57937,6 +57941,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004e3f70",
+      "size": 24,
+      "ranges": [
+        [
+          5128048,
+          5128071
+        ]
+      ],
+      "name": "thug_skater_camera_object_initialize_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 18
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
+        "field": "instruction_coverage/0x4e3f70/covered",
+        "value": 7
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
+      "browser": {
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+      },
+      "aliases": [
+        "thug_skater_camera_object_initialize_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004e3f90",
       "size": 5,
       "ranges": [
@@ -57970,6 +58019,96 @@
       },
       "aliases": [
         "thug_component_refresh"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004e4040",
+      "size": 21,
+      "ranges": [
+        [
+          5128256,
+          5128276
+        ]
+      ],
+      "name": "thug_skater_camera_object_finalize_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 22
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
+        "field": "instruction_coverage/0x4e4040/covered",
+        "value": 8
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
+      "browser": {
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+      },
+      "aliases": [
+        "thug_skater_camera_object_finalize_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004e42e0",
+      "size": 87,
+      "ranges": [
+        [
+          5128928,
+          5129014
+        ]
+      ],
+      "name": "thug_skater_camera_object_create_storage_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-factories-v1.c",
+        "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8",
+        "line": 22
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-factories-v1-original.json",
+        "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188",
+        "field": "instruction_coverage/0x4e42e0/covered",
+        "value": 26
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+        "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe",
+        "suite": "skater_camera_factories_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+        "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+        "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-factories-v1.py",
+        "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+      },
+      "aliases": [
+        "thug_skater_camera_object_create_storage_v1"
       ],
       "checkpoint_claims": []
     },
@@ -59170,6 +59309,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004f9a20",
+      "size": 24,
+      "ranges": [
+        [
+          5216800,
+          5216823
+        ]
+      ],
+      "name": "thug_skater_camera_bind_object_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-factories-v1.c",
+        "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8",
+        "line": 26
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-factories-v1-original.json",
+        "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188",
+        "field": "instruction_coverage/0x4f9a20/covered",
+        "value": 8
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+        "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe",
+        "suite": "skater_camera_factories_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+        "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+        "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-factories-v1.py",
+        "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+      },
+      "aliases": [
+        "thug_skater_camera_bind_object_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004f9ae0",
       "size": 929,
       "ranges": [
@@ -59223,39 +59407,175 @@
           5219347
         ]
       ],
-      "name": "thug_skater_camera_bind_owner_v1",
+      "name": "thug_skater_camera_bind_target_v1",
       "source": {
-        "path": "local/analysis/skater-initialization-links-v1.c",
-        "sha256": "ca4d8b7190e44cbd2bbb11968fb48c80821a72fba8e3216ae4bfe8ab8ff8747c",
-        "line": 29
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 10
       },
       "original": {
-        "path": "local/analysis/skater-initialization-links-v1-original.json",
-        "sha256": "8de8e9302fbbf320384df667403da11af5f71a86605c34269c07ee7662b18750",
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
         "field": "instruction_coverage/0x4fa3c0/covered",
         "value": 21
       },
-      "scope": "Four complete post-construction dependencies: raw Light construction, cdecl Motion/Proximity/Sound/Light/LockObj assembly with live appends, camera owner/state/trick linking and clearing, and walking camera linking. Existing actual constructors and component searches run unchanged. Four sequences start with the complete original local/remote skater constructor. Initialized services, bounded component lists, nonnull walking camera owners and successful internal allocations are required; allocation failures fault before shared assembly returns. Light vtable is identity-only; no virtual behavior, complete581850/profile initialization, rendered frame or gameplay is claimed.",
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
       "browser": {
-        "path": "local/analysis/skater-initialization-links-v1-browser.json",
-        "sha256": "25da26f807ce96b740d25a4dd1f2717999f5ea3413e37c3dd89613eb07a0dd3c",
-        "suite": "skater_initialization_links_v1",
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
         "result": "pass"
       },
       "node": {
-        "path": "local/analysis/skater-initialization-links-v1-regression-skater-initialization-links-v1-result.json",
-        "sha256": "74371b5927fc70616f3ad654fe8e9cb15977c452d3823797c93115578af4f24c"
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
       },
       "fixture": {
-        "path": "local/analysis/skater-initialization-links-v1-fixtures.json",
-        "sha256": "d0075ce4cb7162ee5afee488cfa04b3afbe5a8209077b60bd5d85bafaddd548b"
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
       },
       "mapping_harness": {
-        "path": "local/analysis/probe-skater-initialization-links-v1.py",
-        "sha256": "41ec591e700e642cfb04b0b7451564f51bc0305a6abd002d4874ffce8837be25"
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
       },
       "aliases": [
-        "thug_skater_camera_bind_owner_v1"
+        "thug_skater_camera_bind_owner_v1",
+        "thug_skater_camera_bind_target_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004fa4b0",
+      "size": 224,
+      "ranges": [
+        [
+          5219504,
+          5219727
+        ]
+      ],
+      "name": "thug_skater_camera_construct_storage_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-factories-v1.c",
+        "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8",
+        "line": 13
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-factories-v1-original.json",
+        "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188",
+        "field": "instruction_coverage/0x4fa4b0/covered",
+        "value": 51
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+        "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe",
+        "suite": "skater_camera_factories_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+        "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+        "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-factories-v1.py",
+        "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+      },
+      "aliases": [
+        "thug_skater_camera_construct_storage_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004fa5c0",
+      "size": 189,
+      "ranges": [
+        [
+          5219776,
+          5219964
+        ]
+      ],
+      "name": "thug_skater_camera_initialize_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 28
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
+        "field": "instruction_coverage/0x4fa5c0/covered",
+        "value": 64
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
+      "browser": {
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+      },
+      "aliases": [
+        "thug_skater_camera_initialize_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004fa800",
+      "size": 89,
+      "ranges": [
+        [
+          5220352,
+          5220440
+        ]
+      ],
+      "name": "thug_skater_camera_create_storage_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-factories-v1.c",
+        "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8",
+        "line": 20
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-factories-v1-original.json",
+        "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188",
+        "field": "instruction_coverage/0x4fa800/covered",
+        "value": 24
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+        "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe",
+        "suite": "skater_camera_factories_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+        "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+        "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-factories-v1.py",
+        "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+      },
+      "aliases": [
+        "thug_skater_camera_create_storage_v1"
       ],
       "checkpoint_claims": []
     },
@@ -70953,7 +71273,98 @@
         "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
       },
       "aliases": [
+        "thug_skater_camera_roll_bind_target_v1",
         "thug_walk_camera_bind_owner_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00524f50",
+      "size": 88,
+      "ranges": [
+        [
+          5394256,
+          5394343
+        ]
+      ],
+      "name": "thug_skater_camera_roll_initialize_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 34
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
+        "field": "instruction_coverage/0x524f50/covered",
+        "value": 28
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
+      "browser": {
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+      },
+      "aliases": [
+        "thug_skater_camera_roll_initialize_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00524fb0",
+      "size": 62,
+      "ranges": [
+        [
+          5394352,
+          5394413
+        ]
+      ],
+      "name": "thug_skater_camera_roll_finalize_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-initialization-v2.c",
+        "sha256": "ad473852fe6d54c31ddaa27e51c5ee001ef834f7b8a991a21b0e418b211ba7d3",
+        "line": 24
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-initialization-v3-original.json",
+        "sha256": "bbce3aba89e48a2285eab071d92835dedd02ce7f5e42888d6a80d31b2a441481",
+        "field": "instruction_coverage/0x524fb0/covered",
+        "value": 16
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes.",
+      "browser": {
+        "path": "local/analysis/skater-camera-initialization-v3-browser-full.json",
+        "sha256": "84a96478360cce2aaae1a3530f296a65dfce332333bfc6bb3a7de4b2ce719a55",
+        "suite": "skater_camera_initialization_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-initialization-v3-regression-skater-camera-initialization-v3-result.json",
+        "sha256": "15ccccbf07ac77d53a550a2ca6752d225d8be99ea2b01f36e4e4ec247103287b"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-initialization-v3-fixtures.json",
+        "sha256": "98a4151e17f2fd396669fcbde62fa320841ff20220f42a68d1329772d8cbc57f"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-initialization-v3.py",
+        "sha256": "98e5165babc6fb5d82f8317c67c3abaf043ce749d44af525d830c6cf6d99471f"
+      },
+      "aliases": [
+        "thug_skater_camera_roll_finalize_v1"
       ],
       "checkpoint_claims": []
     },
@@ -70999,6 +71410,51 @@
       "checkpoint_claims": [
         "local/analysis/walk-hanging-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x00525dc0",
+      "size": 127,
+      "ranges": [
+        [
+          5397952,
+          5398078
+        ]
+      ],
+      "name": "thug_skater_camera_roll_create_storage_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-factories-v1.c",
+        "sha256": "c6ea7f19318193a5871dd82f97948b5408670484a847e8e14848b94719196ce8",
+        "line": 24
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-factories-v1-original.json",
+        "sha256": "21f2c9d479f6ca648643271f4ef91609869815f27244e3030dfa1fbaea1d3188",
+        "field": "instruction_coverage/0x525dc0/covered",
+        "value": 39
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim.",
+      "browser": {
+        "path": "local/analysis/skater-camera-factories-v1-browser-full.json",
+        "sha256": "687f8b90a0c07862ada7f3c13ca0557a4011e366c8e49673474f0e707dafeebe",
+        "suite": "skater_camera_factories_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-factories-v1-regression-skater-camera-factories-v1-result.json",
+        "sha256": "b7d1b395632c715cd6330b12ee8eca8e18baedc5873aa87ae299020947042d16"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-factories-v1-fixtures.json",
+        "sha256": "83974fa5ff017b8cd5b96817d259aad5d6f0ab4c203eeee45f3f02845f391d55"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-factories-v1.py",
+        "sha256": "a0cd1aaf5d1fb3f92273a19da9cf057489c893d6771b9f0f6f324480095cd3bd"
+      },
+      "aliases": [
+        "thug_skater_camera_roll_create_storage_v1"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x00525e60",
@@ -80834,6 +81290,7 @@
         "sha256": "6a1da965dd22f50e96835851550abaed824ac814fba22adba912cb128b792243"
       },
       "aliases": [
+        "thug_camera_extra_storage_construct_v1",
         "thug_segment_initialize"
       ],
       "checkpoint_claims": []
@@ -83124,6 +83581,28 @@
         "sha256": "28323dccc053b35d9e319dca7b193a162956bcbb84d6c3203f16eecf10958eb7"
       },
       "scope": "Two camera dependencies: FOV setter calls the unchanged verified projection routine; SkaterCamera reset uses actual original Physics QB normal/split-screen presets, real component lookup, arrays/checksum/global structure and float/optional getters, immediate/interpolated settings and controller angles. Unaligned/poisoned caller storage, repeat calls, split layouts and actual integer-to-float behind value compare. Required local settings, finite bounded projection parameters, both valid caller-owned component payloads and bounded array indices required. Modes5..12 are instruction-coverage cases using caller arrays extended with an existing original medium-preset checksum; unchanged PC arrays have five entries and no gameplay mode or original startup claim follows. Optional derivative overrides compare separately. Existing PC24 projection SDK transcendental contract retained; no physical x87 transcendental accuracy, numeric/comparator changes, full startup, frame or gameplay credit. All204 Node/actualChromium suites pass and all203 predecessor result objects are unchanged. Two additional unique addresses contribute947 original body bytes;276/276 instructions exercised with no exclusions. Complete browser evidence is parsed from full DOM text and independently compared to Node; no structured-object truncation. Previous constructor callees earn no repeated bytes. Physics QB source and original-loader preset discovery are immutable private inputs. No checker or numeric allowance changes, no full SkaterCamera initialization/update, full581850 startup, frame or gameplay claim."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-factories-v5-checkpoint.json",
+        "sha256": "28edb42705db106778cdedf1ce9aaf16d1b4d4a20f1e93ff78c77e4752767fd2"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-factories-v5-audit.json",
+        "sha256": "dd6d6295f6913be00aed8e52d5624f13a03e038a0c0a66ce68f8f5697f817f6b"
+      },
+      "scope": "Six camera descriptor dependencies: three initialized-heap factories, SkaterCamera constructor storage, actual three-byte extra-storage identity routine and direct first CameraObject binding. Poisoned/unaligned storage, repeat allocation/construction, allocation failures, absent/decoy/duplicate bounded component graphs and unchanged auxiliary98h bytes compare. Only literal4fa4f3 cold allocator bootstrap call excluded under initialized-service contract. Pending identity-only tables establish no virtual initialization, disposal, updates, full original camera composite startup or gameplay. Existing component base/allocator callees receive no repeated credit; no fake game callee, numeric/comparator change or matching claim. All205 Node/actualChromium suites pass and all204 predecessor result objects are unchanged. Five new unique addresses contribute551 original body bytes; the sixth mapped routine5902e0 is already selected and earns no additional3bytes;150/151 instructions exercised with only initialized-allocator coldcall4fa4f3 excluded. Complete browser evidence is parsed from full DOM text and independently compared to Node; no structured-object truncation. Previous constructor callees earn no repeated bytes. No checker or numeric allowance changes, no full SkaterCamera initialization/update, full581850 startup, frame or gameplay claim."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-initialization-v3-checkpoint.json",
+        "sha256": "41cd70cef93e116511e3697e95393db311277a1cd5ef514ba5311a36f549e876"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-initialization-v3-audit.json",
+        "sha256": "4c16fdc5b9439ef5c38f350fe439799c95bb8f99a422d41474d72f21407222cb"
+      },
+      "scope": "Seven complete camera QB initialization, target binding and final component-link routines. Direct original callees perform required checksum getter variants, primary/secondary global object lookup and first component scans. Missing/wrong/duplicate/high-bit QB parameters, bounded absent/decoy/duplicate graphs, target/null/target transitions, poisoned/unaligned caller storage, preserved partial bytes and exact matrix words compare. No frame, command, virtual table, full composite/profile startup, numeric/checker change or gameplay claim; reused callees earn no repeated bytes. All206 Node/actualChromium suites pass and all205 predecessor result objects are unchanged. Five new addresses/384bytes; two remapped target bindings/167bytes already selected and uncredited. Complete browser evidence is parsed from full DOM text and independently compared to Node. Failed earlier integer-getter assumptions, probes and module remain private and unselected. No numeric/comparator changes."
     }
   ],
   "uncredited_source_definitions": [
@@ -84993,9 +85472,9 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2060,
+    "accepted_addresses": 2070,
     "uncredited_source_definitions": 207,
-    "duplicate_alias_addresses": 5,
+    "duplicate_alias_addresses": 8,
     "linear_extent_differences": 13,
     "historical_routine_estimate": {
       "numerator": 2026,
