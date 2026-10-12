@@ -48201,6 +48201,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004a0970",
+      "size": 73,
+      "ranges": [
+        [
+          4852080,
+          4852152
+        ]
+      ],
+      "name": "thug_viewport_assign_camera_v1",
+      "source": {
+        "path": "local/analysis/camera-viewport-v1.c",
+        "sha256": "456dab7180bb012c6172fd86c08673d4e18da43337d1492c914c098d1ce6838b",
+        "line": 21
+      },
+      "original": {
+        "path": "local/analysis/camera-viewport-v1-original.json",
+        "sha256": "bb86df82534d06f047a39495ee368b6a834198a0a66e9fc91f45eebbdd36e317",
+        "field": "instruction_coverage/0x4a0970/covered",
+        "value": 24
+      },
+      "scope": "Three viewport-registration routines execute with real camera object lifecycle, intrusive reference operations, global owner/component lookup and virtual Camera update. Owned flag low-bit, low-byte force, absent/secondary/colliding lookup, null payload without forced update, unused mappings, linked/external references and raw unregistered owned pointer storage compare. The comparison allocator retains released storage; assigning the same owned pointer is a raw original behavior case, not a valid gameplay lifetime claim. Initialized bounded mappings/UI services and nonnull camera for forced updates required. No new numeric allowances, fake game callee, full profile/startup or gameplay credit.",
+      "browser": {
+        "path": "local/analysis/camera-viewport-v1-browser.json",
+        "sha256": "2591d920b5fffac2ef85ff09a975f93317531e25f2fe7424f1e760a10f1a4f67",
+        "suite": "camera_viewport_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-viewport-v1-regression-camera-viewport-v1-result.json",
+        "sha256": "620932838e52e1328e164e84019ec6366e56e42499b201d8220c7afbe8188205"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-viewport-v1-fixtures.json",
+        "sha256": "9aeed57ae64416da59b3a5fafd5e95578af5208b3c5c3c4382c124282bc6aaf3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-viewport-v1.py",
+        "sha256": "136353c396a3c008b6f0d0fd1ea31f12e2d3233209f7d4ed5ac23e080d7a1a16"
+      },
+      "aliases": [
+        "thug_viewport_assign_camera_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004a09c0",
       "size": 17,
       "ranges": [
@@ -48281,6 +48326,51 @@
       },
       "aliases": [
         "thug_camera_nearest"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004a0d70",
+      "size": 57,
+      "ranges": [
+        [
+          4853104,
+          4853160
+        ]
+      ],
+      "name": "thug_viewport_clear_owned_camera_v1",
+      "source": {
+        "path": "local/analysis/camera-viewport-v1.c",
+        "sha256": "456dab7180bb012c6172fd86c08673d4e18da43337d1492c914c098d1ce6838b",
+        "line": 12
+      },
+      "original": {
+        "path": "local/analysis/camera-viewport-v1-original.json",
+        "sha256": "bb86df82534d06f047a39495ee368b6a834198a0a66e9fc91f45eebbdd36e317",
+        "field": "instruction_coverage/0x4a0d70/covered",
+        "value": 23
+      },
+      "scope": "Three viewport-registration routines execute with real camera object lifecycle, intrusive reference operations, global owner/component lookup and virtual Camera update. Owned flag low-bit, low-byte force, absent/secondary/colliding lookup, null payload without forced update, unused mappings, linked/external references and raw unregistered owned pointer storage compare. The comparison allocator retains released storage; assigning the same owned pointer is a raw original behavior case, not a valid gameplay lifetime claim. Initialized bounded mappings/UI services and nonnull camera for forced updates required. No new numeric allowances, fake game callee, full profile/startup or gameplay credit.",
+      "browser": {
+        "path": "local/analysis/camera-viewport-v1-browser.json",
+        "sha256": "2591d920b5fffac2ef85ff09a975f93317531e25f2fe7424f1e760a10f1a4f67",
+        "suite": "camera_viewport_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-viewport-v1-regression-camera-viewport-v1-result.json",
+        "sha256": "620932838e52e1328e164e84019ec6366e56e42499b201d8220c7afbe8188205"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-viewport-v1-fixtures.json",
+        "sha256": "9aeed57ae64416da59b3a5fafd5e95578af5208b3c5c3c4382c124282bc6aaf3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-viewport-v1.py",
+        "sha256": "136353c396a3c008b6f0d0fd1ea31f12e2d3233209f7d4ed5ac23e080d7a1a16"
+      },
+      "aliases": [
+        "thug_viewport_clear_owned_camera_v1"
       ],
       "checkpoint_claims": []
     },
@@ -80479,6 +80569,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x0059f890",
+      "size": 149,
+      "ranges": [
+        [
+          5896336,
+          5896484
+        ]
+      ],
+      "name": "thug_player_register_camera_v1",
+      "source": {
+        "path": "local/analysis/camera-viewport-v1.c",
+        "sha256": "456dab7180bb012c6172fd86c08673d4e18da43337d1492c914c098d1ce6838b",
+        "line": 32
+      },
+      "original": {
+        "path": "local/analysis/camera-viewport-v1-original.json",
+        "sha256": "bb86df82534d06f047a39495ee368b6a834198a0a66e9fc91f45eebbdd36e317",
+        "field": "instruction_coverage/0x59f890/covered",
+        "value": 57
+      },
+      "scope": "Three viewport-registration routines execute with real camera object lifecycle, intrusive reference operations, global owner/component lookup and virtual Camera update. Owned flag low-bit, low-byte force, absent/secondary/colliding lookup, null payload without forced update, unused mappings, linked/external references and raw unregistered owned pointer storage compare. The comparison allocator retains released storage; assigning the same owned pointer is a raw original behavior case, not a valid gameplay lifetime claim. Initialized bounded mappings/UI services and nonnull camera for forced updates required. No new numeric allowances, fake game callee, full profile/startup or gameplay credit.",
+      "browser": {
+        "path": "local/analysis/camera-viewport-v1-browser.json",
+        "sha256": "2591d920b5fffac2ef85ff09a975f93317531e25f2fe7424f1e760a10f1a4f67",
+        "suite": "camera_viewport_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-viewport-v1-regression-camera-viewport-v1-result.json",
+        "sha256": "620932838e52e1328e164e84019ec6366e56e42499b201d8220c7afbe8188205"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-viewport-v1-fixtures.json",
+        "sha256": "9aeed57ae64416da59b3a5fafd5e95578af5208b3c5c3c4382c124282bc6aaf3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-viewport-v1.py",
+        "sha256": "136353c396a3c008b6f0d0fd1ea31f12e2d3233209f7d4ed5ac23e080d7a1a16"
+      },
+      "aliases": [
+        "thug_player_register_camera_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0059fb10",
       "size": 21,
       "ranges": [
@@ -82675,6 +82810,17 @@
         "sha256": "5ec8ff73e95cb646090ac6b5d5943a1e406a6021cec544b79a5cb87cf1aaaddc"
       },
       "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged. All200 Node/actualChromium suites pass and all199 predecessor objects are unchanged. Thirteen additional unique addresses contribute988 original body bytes; all276 instructions exercised. No new numeric allowance or checker change. This independent selection does not replace earlier updates. Original QB camera asset discovery receives no completion credit."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/camera-viewport-v1-checkpoint.json",
+        "sha256": "fd7fedf3544d67bff84babd59fa4c71e51e2c3895a73faf505ee4b3a80674bbc"
+      },
+      "audit": {
+        "path": "local/analysis/camera-viewport-v1-audit.json",
+        "sha256": "adbfdcea2141e63610cf44aaf4c81341daa933e48dfabc3d16f9eb7a66bac4a6"
+      },
+      "scope": "Three viewport-registration routines execute with real camera object lifecycle, intrusive reference operations, global owner/component lookup and virtual Camera update. Owned flag low-bit, low-byte force, absent/secondary/colliding lookup, null payload without forced update, unused mappings, linked/external references and raw unregistered owned pointer storage compare. The comparison allocator retains released storage; assigning the same owned pointer is a raw original behavior case, not a valid gameplay lifetime claim. Initialized bounded mappings/UI services and nonnull camera for forced updates required. No new numeric allowances, fake game callee, full profile/startup or gameplay credit. All201 Node/actualChromium suites pass and all200 predecessor result objects are unchanged. Three additional unique addresses contribute279 original body bytes; all104 instructions exercised. Original59f890 takes three cdecl arguments: owner key, viewport index and low-byte force. No checker or numeric allowance changes. Preserves the zero-credit original-training rendering preview and every preceding pinned artifact."
     }
   ],
   "uncredited_source_definitions": [
@@ -84544,7 +84690,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2051,
+    "accepted_addresses": 2054,
     "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 5,
     "linear_extent_differences": 13,

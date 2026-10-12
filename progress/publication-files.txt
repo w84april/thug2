@@ -15,6 +15,7 @@ local/analysis/asset-ready-training-ports-setup.py
 local/analysis/asset-ready-worker.mjs
 local/analysis/audit-asset-ready.py
 local/analysis/audit-camera-startup-v2.py
+local/analysis/audit-camera-viewport-v1.py
 local/analysis/audit-composite-construction.py
 local/analysis/audit-contact-assembly.py
 local/analysis/audit-gap-end.py
@@ -125,6 +126,7 @@ local/analysis/balance-construction-callback.c
 local/analysis/build-asset-factory-draft.py
 local/analysis/build-asset-ready-draft.py
 local/analysis/build-camera-startup-v2.py
+local/analysis/build-camera-viewport-v1.py
 local/analysis/build-composite-construction-draft.py
 local/analysis/build-contact-assembly-draft.py
 local/analysis/build-gap-end-draft.py
@@ -274,6 +276,10 @@ local/analysis/camera-startup-v2-routines.json
 local/analysis/camera-startup-v2-worker.mjs
 local/analysis/camera-startup-v2.build.json
 local/analysis/camera-startup-v2.c
+local/analysis/camera-viewport-v1-browser.html
+local/analysis/camera-viewport-v1-routines.json
+local/analysis/camera-viewport-v1-worker.mjs
+local/analysis/camera-viewport-v1.c
 local/analysis/check-input-pad-keyboard.mjs
 local/analysis/check-level-collision-component-graph.py
 local/analysis/check-level-collision-load-graph.py
@@ -590,6 +596,7 @@ local/analysis/physics-script-values-draft.c
 local/analysis/pin-asset-factory.py
 local/analysis/pin-asset-ready.py
 local/analysis/pin-camera-startup-v2.py
+local/analysis/pin-camera-viewport-v1.py
 local/analysis/pin-composite-construction.py
 local/analysis/pin-contact-assembly.py
 local/analysis/pin-gap-end.py
@@ -708,6 +715,7 @@ local/analysis/prepare-training-webgl-v1.py
 local/analysis/probe-asset-factory.py
 local/analysis/probe-asset-ready.py
 local/analysis/probe-camera-startup-v2.py
+local/analysis/probe-camera-viewport-v1.py
 local/analysis/probe-composite-construction.py
 local/analysis/probe-composite-math.py
 local/analysis/probe-contact-assembly-training.py
@@ -1024,6 +1032,7 @@ local/analysis/script-change-draft.c
 local/analysis/serve-asset-factory.py
 local/analysis/serve-asset-ready.py
 local/analysis/serve-camera-startup-v2.py
+local/analysis/serve-camera-viewport-v1.py
 local/analysis/serve-composite-construction.py
 local/analysis/serve-contact-assembly.py
 local/analysis/serve-gap-end.py
@@ -1357,6 +1366,7 @@ local/analysis/trace-rigidbody-update-training.py
 local/analysis/trace-skater-initialization-v1.py
 local/analysis/trace-skater-initialization-v2.py
 local/analysis/trace-skater-initialization-v3.py
+local/analysis/trace-skater-initialization-v4.py
 local/analysis/trace-training-level-mesh-flow.py
 local/analysis/trace-training-node-index.py
 local/analysis/trace-training-object-expansion.py
@@ -1441,6 +1451,8 @@ local/analysis/verify-asset-factory.mjs
 local/analysis/verify-asset-ready-checkpoint.mjs
 local/analysis/verify-camera-startup-v2-regression.mjs
 local/analysis/verify-camera-startup-v2.mjs
+local/analysis/verify-camera-viewport-v1-regression.mjs
+local/analysis/verify-camera-viewport-v1.mjs
 local/analysis/verify-composite-construction-checkpoint.mjs
 local/analysis/verify-contact-assembly-checkpoint.mjs
 local/analysis/verify-end-run-lifecycle-startup-candidate.mjs

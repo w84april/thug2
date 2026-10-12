@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.38% of original `.text` bytes** —
-436,577 / 2,375,378 bytes attributed to 2,051 distinct original addresses with
+**Reconciled behavioral completion: 18.39% of original `.text` bytes** —
+436,856 / 2,375,378 bytes attributed to 2,054 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 87 newly reconciled startup/lifecycle/camera addresses.
+reconciled baseline with 90 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -44,9 +44,14 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 200 suites; all 199 preceding
+checkpoint preserves all prior evidence and passes 201 suites; all 200 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
+
+The latest checkpoint verifies viewport camera ownership, reference replacement
+and player-camera registration against complete original execution. Its 75 cases
+and 344 calls exercise all 104 instructions of three new routines, adding 279
+body bytes. Full profile startup and SkaterCamera reset remain unfinished.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -80,6 +85,14 @@ of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
 
+- Three viewport routines now pass 75 original/Wasm cases and 344 completed calls,
+  exercising all 104 instructions and adding 279 original body bytes. Actual
+  camera disposal, intrusive reference replacement and forced owner-state
+  synchronization execute through their recovered callees. All 201 Node/actual
+  Chromium suites pass; all 200 predecessor result objects remain unchanged.
+  Registration takes separate owner and viewport arguments. Initialized UI and
+  mapping services remain required; full profile startup is unfinished.
+
 - The original training level now renders in a private Chromium geometry preview
   through the preserved Wasm mesh/texture/material loaders and a new WebGL adapter.
   All 2,269 meshes, 596 textures and 2,486 mip uploads draw; 7,024 storage payloads
@@ -96,7 +109,7 @@ of verified checkpoints is authorized in the current recovery chat.
   suites pass, with all 199 preceding result objects unchanged and no new numeric
   tolerance or checker changes. Projection uses the existing SDK transcendental
   adapters; physical x87 accuracy remains unverified. Camera-specific QB
-  initialization, viewport assignment, full profile startup and rendering remain.
+  initialization, full profile startup and original frame equivalence remain.
 
 - Eight reconstructed C++ helpers now have independently replayed native byte
   matches under MSVC 13.10.3077. Every byte is compared; three checksum routines

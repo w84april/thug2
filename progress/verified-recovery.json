@@ -1,7 +1,7 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "Reconciled baseline plus 87 distinct newly audited startup/lifecycle/camera addresses and 9528 original body bytes. Latest thirteen camera dependencies add 988 bytes after 97 cases/271 calls and all276 original instructions, no new numeric allowance or checker changes. All200 Node/actualChromium suites pass; all199 predecessor objects unchanged. Historical582d90 completion remains independently resolved through its80 complete constructor calls. Four remaining partial roots, QB/entry discovery, unfinished camera-specific initialization/commands, viewport registration, full profile startup and rendering earn no new credit. Native binary matching is separately selected in matching/selection.json and remains406 bytes.",
+  "scope": "Reconciled baseline plus 90 distinct newly audited startup/lifecycle/camera addresses and 9807 original body bytes. Latest three viewport routines add279 bytes after75 cases/344 calls and all104 original instructions, no numeric allowance or checker changes. All201 Node/actualChromium suites pass; all200 predecessor result objects unchanged. Historical582d90 remains independently resolved through80 complete constructor calls. Four remaining partial roots, startup traces, camera-specific QB initialization/commands, SkaterCamera reset and full profile startup earn no new credit. The separate rendering preview earns zero completion bytes. Native binary matching remains independently selected406 bytes.",
   "updates": [
     {
       "checkpoint": {
@@ -406,6 +406,51 @@
           }
         }
       ]
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/camera-viewport-v1-checkpoint.json",
+        "sha256": "fd7fedf3544d67bff84babd59fa4c71e51e2c3895a73faf505ee4b3a80674bbc"
+      },
+      "audit": {
+        "path": "local/analysis/camera-viewport-v1-audit.json",
+        "sha256": "adbfdcea2141e63610cf44aaf4c81341daa933e48dfabc3d16f9eb7a66bac4a6"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "camera_viewport_v1",
+          "source": {
+            "path": "local/analysis/camera-viewport-v1.c",
+            "sha256": "456dab7180bb012c6172fd86c08673d4e18da43337d1492c914c098d1ce6838b"
+          },
+          "routines": {
+            "path": "local/analysis/camera-viewport-v1-routines.json",
+            "sha256": "319aeb03850d91ec749c20b3741eff091a1413e9f2c3837fe1d232018de6c57d"
+          },
+          "original": {
+            "path": "local/analysis/camera-viewport-v1-original.json",
+            "sha256": "bb86df82534d06f047a39495ee368b6a834198a0a66e9fc91f45eebbdd36e317"
+          },
+          "fixture": {
+            "path": "local/analysis/camera-viewport-v1-fixtures.json",
+            "sha256": "9aeed57ae64416da59b3a5fafd5e95578af5208b3c5c3c4382c124282bc6aaf3"
+          },
+          "node": {
+            "path": "local/analysis/camera-viewport-v1-regression-camera-viewport-v1-result.json",
+            "sha256": "620932838e52e1328e164e84019ec6366e56e42499b201d8220c7afbe8188205"
+          },
+          "browser": {
+            "path": "local/analysis/camera-viewport-v1-browser.json",
+            "sha256": "2591d920b5fffac2ef85ff09a975f93317531e25f2fe7424f1e760a10f1a4f67"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-camera-viewport-v1.py",
+            "sha256": "136353c396a3c008b6f0d0fd1ea31f12e2d3233209f7d4ed5ac23e080d7a1a16"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [

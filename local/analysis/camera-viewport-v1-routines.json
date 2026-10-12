@@ -1,0 +1,17 @@
+{
+  "0x4a0d70": {
+    "bytes": 57,
+    "instructions": 23,
+    "name": "thug_viewport_clear_owned_camera_v1"
+  },
+  "0x4a0970": {
+    "bytes": 73,
+    "instructions": 24,
+    "name": "thug_viewport_assign_camera_v1"
+  },
+  "0x59f890": {
+    "bytes": 149,
+    "instructions": 57,
+    "name": "thug_player_register_camera_v1"
+  }
+}

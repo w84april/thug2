@@ -2,8 +2,8 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "436577",
-    "complete_code_percent": 18.379264268676394,
+    "complete_code": "436856",
+    "complete_code_percent": 18.39100976770855,
     "total_functions": 11889,
     "total_units": 3,
     "complete_units": 1,
@@ -22,19 +22,19 @@
     {
       "name": "Verified behavioral recovery",
       "measures": {
-        "total_code": "436577",
-        "complete_code": "436577",
+        "total_code": "436856",
+        "complete_code": "436856",
         "complete_code_percent": 100.0,
-        "total_functions": 2051,
+        "total_functions": 2054,
         "total_units": 1,
         "complete_units": 1,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.09299619540195658,
+        "matched_code_percent": 0.09293680297397769,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.39005363237445145,
-        "fuzzy_match_percent": 0.09299619540195658,
+        "matched_functions_percent": 0.3894839337877313,
+        "fuzzy_match_percent": 0.09293680297397769,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -10760,6 +10760,15 @@
           }
         },
         {
+          "name": "thug_viewport_assign_camera_v1",
+          "size": "73",
+          "address": "653680",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4852080"
+          }
+        },
+        {
           "name": "thug_particle_camera_draft",
           "size": "17",
           "address": "653760",
@@ -10775,6 +10784,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4852192"
+          }
+        },
+        {
+          "name": "thug_viewport_clear_owned_camera_v1",
+          "size": "57",
+          "address": "654704",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4853104"
           }
         },
         {
@@ -18023,6 +18041,15 @@
           }
         },
         {
+          "name": "thug_player_register_camera_v1",
+          "size": "149",
+          "address": "1697936",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5896336"
+          }
+        },
+        {
           "name": "thug_scene_kill_object_draft",
           "size": "21",
           "address": "1698576",
@@ -18508,10 +18535,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1533118",
+        "total_code": "1532839",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9838,
+        "total_functions": 9835,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -37292,15 +37319,6 @@
           }
         },
         {
-          "name": "original_004a0970",
-          "size": "73",
-          "address": "653680",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4852080"
-          }
-        },
-        {
           "name": "original_004a0ad0",
           "size": "156",
           "address": "654032",
@@ -37343,15 +37361,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4853072"
-          }
-        },
-        {
-          "name": "original_004a0d70",
-          "size": "57",
-          "address": "654704",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4853104"
           }
         },
         {
@@ -64163,15 +64172,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5896192"
-          }
-        },
-        {
-          "name": "original_0059f890",
-          "size": "149",
-          "address": "1697936",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5896336"
           }
         },
         {
