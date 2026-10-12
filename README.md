@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.96%** — 1,974 reported recovered routines divided
+**Decompilation estimate: 16.98%** — 1,976 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 818 experimental routines: 801 in the latest
+routines (9.93% of that baseline) and 820 experimental routines: 803 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-18,945 pinned artifacts, preserving all 18,771 preceding artifacts. All 152 Node
-and Chromium suites were rerun for this checkpoint and passed; all 151 inherited
+19,133 pinned artifacts, preserving all 18,945 preceding artifacts. All 153 Node
+and Chromium suites were rerun for this checkpoint and passed; all 152 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,20 +59,29 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- Five complete ledge-grab routines now recover side clearance, usable-side
-  selection, weighted segment search and the hanging transition on fixed and
-  moving rails. All 894 cases and 1,256 calls complete and match the original,
-  exercising all 1,832 new instructions without exclusions. Defined memory,
-  globals and preserved registers compare exactly, including temporary collision
-  cache identities and lifetimes. No numeric or indeterminate-field allowances
-  were added. Eighteen explicit grab-to-callback sequences reach hanging state,
-  with twelve real script callbacks; the intervening animation frame remains
-  unfinished. All 152 Node and Chromium suites pass, preserving all 151 earlier
-  result objects. Evidence is in `local/analysis/walk-grab-checkpoint.json`; this
-  module contains 801 unpromoted complete routines. Full floor handling,
-  ground/Walk frames, startup, rendering and original playable training remain
-  unfinished. Ground coverage stays 63 / 134, shared Walk 51 / 142 and constructor
-  277 / 463.
+- The complete floor and ground updates now recover surface probing, real
+  leave/enter/fall scripts, material and moving-contact changes, step height,
+  escape from moving objects, and falling/grind/rail/hang transitions. All 164
+  cases and 262 original calls complete, including 38 real script callbacks.
+  Coverage is 394 / 410 instructions: floor 276 / 276 and ground 118 / 134.
+  Sixteen translated event-branch instructions remain unexercised because the
+  preceding acceleration overwrites the event in all observed valid graphs;
+  they stay in the denominator without exclusions. Defined memory, globals and
+  preserved registers compare exactly. There are 512 four-byte comparisons of
+  probe fields proven uninitialized by original write tracing, with later-write
+  revocation and six negative checker tests. No numeric allowances were added.
+  All 153 Node and Chromium suites pass and all 152 inherited result objects
+  remain unchanged. Evidence is in `local/analysis/walk-grounded-checkpoint.json`;
+  this module contains 803 unpromoted complete routines. Shared Walk remains
+  51 / 142 instructions and the constructor 277 / 463; other movement states,
+  animation/script flow, startup and browser rendering remain unfinished.
+- The preceding ledge-grab build recovered five complete routines for side
+  clearance, usable-side selection, weighted segment search and hanging
+  transitions on fixed and moving rails. Its 894 cases and 1,256 original calls
+  exercised all 1,832 new instructions without exclusions. Eighteen explicit
+  grab-to-callback sequences reach hanging state, with twelve real script
+  callbacks; these sequences do not establish the intervening animation flow.
+  Evidence is preserved in `local/analysis/walk-grab-checkpoint.json`.
 - The preceding experimental build recovers twelve helpers for upper rail entry,
   hanging, vertical clearance, moving-rail grind selection and following
   adjoining ledges. Real collision, QB callbacks and connected, disconnected,

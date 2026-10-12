@@ -1,0 +1,12 @@
+{
+  "0x52b370": {
+    "bytes": 1116,
+    "instructions": 276,
+    "name": "thug_walk_floor_draft"
+  },
+  "0x52d300": {
+    "bytes": 431,
+    "instructions": 134,
+    "name": "thug_walk_ground_draft"
+  }
+}

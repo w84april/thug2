@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--import-memory",
+    "-Wl,--export-all",
+    "-Wl,--global-base=58720256",
+    "local/analysis/walk-grounded-diagnostics.c",
+    "-o",
+    "local/analysis/walk-grounded-diagnostics.wasm"
+  ],
+  "sha256": "04119a18711b998b384532cca9f3ef7532fb867cfde1522930bad49af245bbf8",
+  "source_sha256": "fd947ee862d44caa86354cc86aeb1aba775ade4d8436a5051b696415babf6c70"
+}
