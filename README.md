@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.40% of original `.text` bytes** —
-437,104 / 2,375,378 bytes attributed to 2,056 distinct original addresses with
+**Reconciled behavioral completion: 18.45% of original `.text` bytes** —
+438,295 / 2,375,378 bytes attributed to 2,060 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 92 newly reconciled startup/lifecycle/camera addresses.
+reconciled baseline with 96 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -44,17 +44,19 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 202 suites; all 201 preceding
+checkpoint preserves all prior evidence and passes 204 suites; all 203 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
-The latest engine checkpoint verifies Animation component storage and allocation
-against complete original execution: 24 cases and 42 calls add two routines and
-248 body bytes. It exercises 66 of 67 instructions, with only the reviewed cold
-allocator bootstrap call excluded under its initialized-service contract.
-Animation QB initialization, full profile startup and SkaterCamera reset remain
-unfinished. A separate zero-credit scene audit corrects the preview to show the
-indoor Warehouse and preserves the earlier full-bundle exterior overview.
+The latest engine checkpoint verifies SkaterCamera reset and FOV settings using
+original Physics QB presets: 333 cases and 924 completed calls cover all 276
+instructions and add two routines / 947 body bytes. The preceding Animation state
+storage checkpoint adds two routines / 244 bytes through 504 cases and 1,008 calls,
+covering all 77 instructions. Both preserve all earlier result objects with no
+new numeric allowance or checker change. Full SkaterCamera initialization/update,
+Animation configuration/clip loading and complete profile startup remain unfinished.
+A separate zero-credit scene audit corrects the preview to show the indoor
+Warehouse and preserves the earlier full-bundle exterior overview.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
 explicitly tracked using [progress/publication-files.txt](progress/publication-files.txt).
@@ -87,6 +89,23 @@ The retired chat and its publishing automation remain paused; direct publication
 of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
+
+- Two camera reset/FOV routines pass 333 original/Wasm cases and 924 completed
+  calls, adding 947 original body bytes with all 276 instructions exercised.
+  Real Physics QB normal/split-screen presets 1–4, immediate/interpolated settings,
+  optional defaults, unaligned storage and component lookup compare. Additional
+  mode branches use bounded caller arrays extended with an existing preset;
+  they do not establish original gameplay modes. All 204 Node/actual Chromium
+  suites pass; all 203 predecessor results are unchanged. Full camera
+  initialization/update, original camera frames and complete startup remain unfinished.
+
+- Two Animation state storage routines pass 504 original/Wasm cases and 1,008
+  completed calls, adding 244 original body bytes with all 77 instructions
+  exercised. Actual empty-list clearing and Script wait clearing execute;
+  low-byte flags, sentinel rejection and overlapping heads compare. Identity
+  tables earn no virtual-method/configuration credit. All 203 suites pass,
+  preserving all 202 predecessor results. Startup discovery reaches the next
+  original configuration dependency but earns no full-initializer credit.
 
 - Two Animation storage routines pass 24 original/Wasm cases and 42 completed
   calls, adding 248 original body bytes. Base component initialization, embedded

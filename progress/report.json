@@ -2,8 +2,8 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "437104",
-    "complete_code_percent": 18.401450211292687,
+    "complete_code": "438295",
+    "complete_code_percent": 18.451589599634246,
     "total_functions": 11889,
     "total_units": 3,
     "complete_units": 1,
@@ -22,19 +22,19 @@
     {
       "name": "Verified behavioral recovery",
       "measures": {
-        "total_code": "437104",
-        "complete_code": "437104",
+        "total_code": "438295",
+        "complete_code": "438295",
         "complete_code_percent": 100.0,
-        "total_functions": 2056,
+        "total_functions": 2060,
         "total_units": 1,
         "complete_units": 1,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.0928840733555401,
+        "matched_code_percent": 0.09263167501340422,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.38910505836575876,
-        "fuzzy_match_percent": 0.0928840733555401,
+        "matched_functions_percent": 0.3883495145631068,
+        "fuzzy_match_percent": 0.09263167501340422,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -8519,6 +8519,24 @@
           }
         },
         {
+          "name": "thug_animation_state_enable_channel_events_v1",
+          "size": "26",
+          "address": "514688",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4713088"
+          }
+        },
+        {
+          "name": "thug_animation_state_construct_storage_v1",
+          "size": "218",
+          "address": "516432",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4714832"
+          }
+        },
+        {
           "name": "thug_animation_cache_rotation_stride",
           "size": "4",
           "address": "521696",
@@ -9209,6 +9227,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4741792"
+          }
+        },
+        {
+          "name": "thug_camera_set_fov_v1",
+          "size": "18",
+          "address": "543520",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4741920"
           }
         },
         {
@@ -13160,6 +13187,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5214576"
+          }
+        },
+        {
+          "name": "thug_skater_camera_reset_v1",
+          "size": "929",
+          "address": "1018592",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5216992"
           }
         },
         {
@@ -18553,10 +18589,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1532591",
+        "total_code": "1531400",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9833,
+        "total_functions": 9829,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -32342,15 +32378,6 @@
           }
         },
         {
-          "name": "original_0047ea80",
-          "size": "26",
-          "address": "514688",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4713088"
-          }
-        },
-        {
           "name": "original_0047eaa0",
           "size": "131",
           "address": "514720",
@@ -32420,15 +32447,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4714496"
-          }
-        },
-        {
-          "name": "original_0047f150",
-          "size": "218",
-          "address": "516432",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4714832"
           }
         },
         {
@@ -32843,15 +32861,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4741904"
-          }
-        },
-        {
-          "name": "original_00485b20",
-          "size": "18",
-          "address": "543520",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4741920"
           }
         },
         {
@@ -45191,15 +45200,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5216832"
-          }
-        },
-        {
-          "name": "original_004f9ae0",
-          "size": "929",
-          "address": "1018592",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5216992"
           }
         },
         {

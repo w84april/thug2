@@ -496,6 +496,96 @@
         }
       ],
       "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-state-storage-v3-checkpoint.json",
+        "sha256": "b25d1215c1d4f460d7821eb457b368fb2b201bdd804fa84d4f8657f4323003c2"
+      },
+      "audit": {
+        "path": "local/analysis/animation-state-storage-v3-audit.json",
+        "sha256": "7bcc2538bd7e179a6a475908a6e45fec1f3c76172e82130e8c2953a38cab67da"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "animation_state_storage_v3",
+          "source": {
+            "path": "local/analysis/animation-state-storage-v1.c",
+            "sha256": "b557d7947a1987053276cbd93ea3a4894577528a3bf3fe513169566651584b29"
+          },
+          "routines": {
+            "path": "local/analysis/animation-state-storage-v3-routines.json",
+            "sha256": "18c2ccbe30351e2d2c98b4c3e60c6922d55eb25ba50bc9179ec4c450d7715727"
+          },
+          "original": {
+            "path": "local/analysis/animation-state-storage-v3-original.json",
+            "sha256": "297bef5e34c757e0b2b94fbf4e650a354d9bd8310ad17062ebb24f8de5f78310"
+          },
+          "fixture": {
+            "path": "local/analysis/animation-state-storage-v3-fixtures.json",
+            "sha256": "ce83e2972464933278b74a50bd3630793c03d5da93d98080bd056034a122a5d7"
+          },
+          "node": {
+            "path": "local/analysis/animation-state-storage-v3-regression-animation-state-storage-v3-result.json",
+            "sha256": "d1e882cc92bcf6d8e0273ea610610da2865d9a4f0f862e70b983fdfc8317b56a"
+          },
+          "browser": {
+            "path": "local/analysis/animation-state-storage-v3-browser-full.json",
+            "sha256": "e32a8ea2342cafb64950547d443524cfa5fdeb9af92cec25a45bb20d3d6ad2fd"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-animation-state-storage-v3.py",
+            "sha256": "c1a66b64cd5210577491bda6fd590d5ffd7b7769e2b6600137188faec9785364"
+          }
+        }
+      ],
+      "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-reset-v1-checkpoint.json",
+        "sha256": "811f7673994b8a3318ef8d89af3a9b3e7301891614c849e6aff4e2205d778c62"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-reset-v1-audit.json",
+        "sha256": "28323dccc053b35d9e319dca7b193a162956bcbb84d6c3203f16eecf10958eb7"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "skater_camera_reset_v1",
+          "source": {
+            "path": "local/analysis/skater-camera-reset-v1.c",
+            "sha256": "5a30565be602ec890b09752d7fe40910f1afdbf88b9ff9fe2bdb0ee515f4213a"
+          },
+          "routines": {
+            "path": "local/analysis/skater-camera-reset-v1-routines.json",
+            "sha256": "765751748f8d3c04ba70834e15eee2b1b5002f70050bad8ca0005a1f0ff890a2"
+          },
+          "original": {
+            "path": "local/analysis/skater-camera-reset-v1-original.json",
+            "sha256": "30cda40dce163a2a9c683e516a50a5d8d6feb36eec77135a0cc3c3748144dae6"
+          },
+          "fixture": {
+            "path": "local/analysis/skater-camera-reset-v1-fixtures.json",
+            "sha256": "4cdea04f133a5d84daf062e03380bf9293019db0a1bf7449df84593400cd6265"
+          },
+          "node": {
+            "path": "local/analysis/skater-camera-reset-v1-regression-skater-camera-reset-v1-result.json",
+            "sha256": "5c8b4224b9a68ab1a27a5729cfcdc0219a7f7de27e9bcce4d2bef296c7a20e10"
+          },
+          "browser": {
+            "path": "local/analysis/skater-camera-reset-v1-browser-full.json",
+            "sha256": "393a92ba045b72223ac779f76a0522c4d5ef442b554c4ceb91cc4862f7ac07c9"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-skater-camera-reset-v1.py",
+            "sha256": "b7a4ea9eed361e616336952f6924fee6cd1e9631b8bafb11e66c364fea898d0e"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [

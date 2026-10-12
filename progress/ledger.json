@@ -38173,6 +38173,96 @@
       "size_note": "Ghidra body union excludes gaps/alignment within the separately verified linear extent; body bytes only receive credit."
     },
     {
+      "address": "0x0047ea80",
+      "size": 26,
+      "ranges": [
+        [
+          4713088,
+          4713113
+        ]
+      ],
+      "name": "thug_animation_state_enable_channel_events_v1",
+      "source": {
+        "path": "local/analysis/animation-state-storage-v1.c",
+        "sha256": "b557d7947a1987053276cbd93ea3a4894577528a3bf3fe513169566651584b29",
+        "line": 25
+      },
+      "original": {
+        "path": "local/analysis/animation-state-storage-v3-original.json",
+        "sha256": "297bef5e34c757e0b2b94fbf4e650a354d9bd8310ad17062ebb24f8de5f78310",
+        "field": "instruction_coverage/0x47ea80/covered",
+        "value": 9
+      },
+      "scope": "Two Animation state dependencies: constructor storage with actual empty-gap-list clearing and original Script clear-wait callee, and channel-event flag propagation through a valid mapped nonnull head. Raw poisoned/unaligned bytes, low-byte flags, repeated construction, absent/present script payloads, conditional wait clearing, sentinel rejection and overlapping heads compare. Identity-only state/embedded tables do not establish virtual dispatch, configuration, animation clip or asset startup, full419dd0/profile initialization, rendering or gameplay. Generic initialized services and bounded valid storage required; no fake game callee, engine numeric allowance or comparator change.",
+      "browser": {
+        "path": "local/analysis/animation-state-storage-v3-browser-full.json",
+        "sha256": "e32a8ea2342cafb64950547d443524cfa5fdeb9af92cec25a45bb20d3d6ad2fd",
+        "suite": "animation_state_storage_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-state-storage-v3-regression-animation-state-storage-v3-result.json",
+        "sha256": "d1e882cc92bcf6d8e0273ea610610da2865d9a4f0f862e70b983fdfc8317b56a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-state-storage-v3-fixtures.json",
+        "sha256": "ce83e2972464933278b74a50bd3630793c03d5da93d98080bd056034a122a5d7"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-state-storage-v3.py",
+        "sha256": "c1a66b64cd5210577491bda6fd590d5ffd7b7769e2b6600137188faec9785364"
+      },
+      "aliases": [
+        "thug_animation_state_enable_channel_events_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0047f150",
+      "size": 218,
+      "ranges": [
+        [
+          4714832,
+          4715049
+        ]
+      ],
+      "name": "thug_animation_state_construct_storage_v1",
+      "source": {
+        "path": "local/analysis/animation-state-storage-v1.c",
+        "sha256": "b557d7947a1987053276cbd93ea3a4894577528a3bf3fe513169566651584b29",
+        "line": 10
+      },
+      "original": {
+        "path": "local/analysis/animation-state-storage-v3-original.json",
+        "sha256": "297bef5e34c757e0b2b94fbf4e650a354d9bd8310ad17062ebb24f8de5f78310",
+        "field": "instruction_coverage/0x47f150/covered",
+        "value": 68
+      },
+      "scope": "Two Animation state dependencies: constructor storage with actual empty-gap-list clearing and original Script clear-wait callee, and channel-event flag propagation through a valid mapped nonnull head. Raw poisoned/unaligned bytes, low-byte flags, repeated construction, absent/present script payloads, conditional wait clearing, sentinel rejection and overlapping heads compare. Identity-only state/embedded tables do not establish virtual dispatch, configuration, animation clip or asset startup, full419dd0/profile initialization, rendering or gameplay. Generic initialized services and bounded valid storage required; no fake game callee, engine numeric allowance or comparator change.",
+      "browser": {
+        "path": "local/analysis/animation-state-storage-v3-browser-full.json",
+        "sha256": "e32a8ea2342cafb64950547d443524cfa5fdeb9af92cec25a45bb20d3d6ad2fd",
+        "suite": "animation_state_storage_v3",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-state-storage-v3-regression-animation-state-storage-v3-result.json",
+        "sha256": "d1e882cc92bcf6d8e0273ea610610da2865d9a4f0f862e70b983fdfc8317b56a"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-state-storage-v3-fixtures.json",
+        "sha256": "ce83e2972464933278b74a50bd3630793c03d5da93d98080bd056034a122a5d7"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-state-storage-v3.py",
+        "sha256": "c1a66b64cd5210577491bda6fd590d5ffd7b7769e2b6600137188faec9785364"
+      },
+      "aliases": [
+        "thug_animation_state_construct_storage_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x004805e0",
       "size": 4,
       "ranges": [
@@ -41100,6 +41190,51 @@
       },
       "aliases": [
         "thug_camera_projection_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00485b20",
+      "size": 18,
+      "ranges": [
+        [
+          4741920,
+          4741937
+        ]
+      ],
+      "name": "thug_camera_set_fov_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-reset-v1.c",
+        "sha256": "5a30565be602ec890b09752d7fe40910f1afdbf88b9ff9fe2bdb0ee515f4213a",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-reset-v1-original.json",
+        "sha256": "30cda40dce163a2a9c683e516a50a5d8d6feb36eec77135a0cc3c3748144dae6",
+        "field": "instruction_coverage/0x485b20/covered",
+        "value": 4
+      },
+      "scope": "Two camera dependencies: FOV setter calls the unchanged verified projection routine; SkaterCamera reset uses actual original Physics QB normal/split-screen presets, real component lookup, arrays/checksum/global structure and float/optional getters, immediate/interpolated settings and controller angles. Unaligned/poisoned caller storage, repeat calls, split layouts and actual integer-to-float behind value compare. Required local settings, finite bounded projection parameters, both valid caller-owned component payloads and bounded array indices required. Modes5..12 are instruction-coverage cases using caller arrays extended with an existing original medium-preset checksum; unchanged PC arrays have five entries and no gameplay mode or original startup claim follows. Optional derivative overrides compare separately. Existing PC24 projection SDK transcendental contract retained; no physical x87 transcendental accuracy, numeric/comparator changes, full startup, frame or gameplay credit.",
+      "browser": {
+        "path": "local/analysis/skater-camera-reset-v1-browser-full.json",
+        "sha256": "393a92ba045b72223ac779f76a0522c4d5ef442b554c4ceb91cc4862f7ac07c9",
+        "suite": "skater_camera_reset_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-reset-v1-regression-skater-camera-reset-v1-result.json",
+        "sha256": "5c8b4224b9a68ab1a27a5729cfcdc0219a7f7de27e9bcce4d2bef296c7a20e10"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-reset-v1-fixtures.json",
+        "sha256": "4cdea04f133a5d84daf062e03380bf9293019db0a1bf7449df84593400cd6265"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-reset-v1.py",
+        "sha256": "b7a4ea9eed361e616336952f6924fee6cd1e9631b8bafb11e66c364fea898d0e"
+      },
+      "aliases": [
+        "thug_camera_set_fov_v1"
       ],
       "checkpoint_claims": []
     },
@@ -59031,6 +59166,51 @@
       },
       "aliases": [
         "thug_balance_component_create_draft"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004f9ae0",
+      "size": 929,
+      "ranges": [
+        [
+          5216992,
+          5217920
+        ]
+      ],
+      "name": "thug_skater_camera_reset_v1",
+      "source": {
+        "path": "local/analysis/skater-camera-reset-v1.c",
+        "sha256": "5a30565be602ec890b09752d7fe40910f1afdbf88b9ff9fe2bdb0ee515f4213a",
+        "line": 19
+      },
+      "original": {
+        "path": "local/analysis/skater-camera-reset-v1-original.json",
+        "sha256": "30cda40dce163a2a9c683e516a50a5d8d6feb36eec77135a0cc3c3748144dae6",
+        "field": "instruction_coverage/0x4f9ae0/covered",
+        "value": 272
+      },
+      "scope": "Two camera dependencies: FOV setter calls the unchanged verified projection routine; SkaterCamera reset uses actual original Physics QB normal/split-screen presets, real component lookup, arrays/checksum/global structure and float/optional getters, immediate/interpolated settings and controller angles. Unaligned/poisoned caller storage, repeat calls, split layouts and actual integer-to-float behind value compare. Required local settings, finite bounded projection parameters, both valid caller-owned component payloads and bounded array indices required. Modes5..12 are instruction-coverage cases using caller arrays extended with an existing original medium-preset checksum; unchanged PC arrays have five entries and no gameplay mode or original startup claim follows. Optional derivative overrides compare separately. Existing PC24 projection SDK transcendental contract retained; no physical x87 transcendental accuracy, numeric/comparator changes, full startup, frame or gameplay credit.",
+      "browser": {
+        "path": "local/analysis/skater-camera-reset-v1-browser-full.json",
+        "sha256": "393a92ba045b72223ac779f76a0522c4d5ef442b554c4ceb91cc4862f7ac07c9",
+        "suite": "skater_camera_reset_v1",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/skater-camera-reset-v1-regression-skater-camera-reset-v1-result.json",
+        "sha256": "5c8b4224b9a68ab1a27a5729cfcdc0219a7f7de27e9bcce4d2bef296c7a20e10"
+      },
+      "fixture": {
+        "path": "local/analysis/skater-camera-reset-v1-fixtures.json",
+        "sha256": "4cdea04f133a5d84daf062e03380bf9293019db0a1bf7449df84593400cd6265"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-skater-camera-reset-v1.py",
+        "sha256": "b7a4ea9eed361e616336952f6924fee6cd1e9631b8bafb11e66c364fea898d0e"
+      },
+      "aliases": [
+        "thug_skater_camera_reset_v1"
       ],
       "checkpoint_claims": []
     },
@@ -82922,6 +83102,28 @@
         "sha256": "325acdd3df9a29ae0de71fa6204605726d865cf0555896795162a1d0e95afa88"
       },
       "scope": "Animation component constructor and factory storage with initialized generic allocator. Real base construction, embedded intrusive-list identity, successful/null sentinel allocations, outer allocation failure, raw poisoned and unaligned gaps and repeated construction compare. Component and embedded vtables are identity-only; no virtual lifecycle, Animation QB initialization, cold allocator bootstrap, full profile startup or gameplay is claimed. No fake game callee, numeric allowance or checker change. All202 Node/actualChromium suites pass and all201 predecessor result objects are unchanged. Two additional unique addresses contribute248 original body bytes;66/67 instructions exercised, with only the reviewed41a472 cold allocator bootstrap call excluded by the initialized-service contract. Embedded unaligned vtable relocation is explicitly declared; failedv2 unit and earlier dynamic-exclusion harness are retained. No checker or numeric allowance changes. All earlier rendering/engine artifacts remain immutable."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-state-storage-v3-checkpoint.json",
+        "sha256": "b25d1215c1d4f460d7821eb457b368fb2b201bdd804fa84d4f8657f4323003c2"
+      },
+      "audit": {
+        "path": "local/analysis/animation-state-storage-v3-audit.json",
+        "sha256": "7bcc2538bd7e179a6a475908a6e45fec1f3c76172e82130e8c2953a38cab67da"
+      },
+      "scope": "Two Animation state dependencies: constructor storage with actual empty-gap-list clearing and original Script clear-wait callee, and channel-event flag propagation through a valid mapped nonnull head. Raw poisoned/unaligned bytes, low-byte flags, repeated construction, absent/present script payloads, conditional wait clearing, sentinel rejection and overlapping heads compare. Identity-only state/embedded tables do not establish virtual dispatch, configuration, animation clip or asset startup, full419dd0/profile initialization, rendering or gameplay. Generic initialized services and bounded valid storage required; no fake game callee, engine numeric allowance or comparator change. All203 Node/actualChromium suites pass and all202 predecessor result objects are unchanged. Two additional unique addresses contribute244 original body bytes;77/77 instructions exercised with no exclusions. Pointer arguments and unaligned owner/component identities are explicitly declared; failedv1/v2 fixtures and unit logs remain preserved. The first browser object capture was truncated at200 keys; full DOM text is separately preserved and all203 result objects compare exactly. No checker or numeric allowance changes. All earlier Warehouse preview, rendering and engine artifacts remain immutable. Startupv6/v7 traces are discovery only; the Animation heap-context slot is caller-initialized and no full419dd0/configuration/profile credit is claimed."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/skater-camera-reset-v1-checkpoint.json",
+        "sha256": "811f7673994b8a3318ef8d89af3a9b3e7301891614c849e6aff4e2205d778c62"
+      },
+      "audit": {
+        "path": "local/analysis/skater-camera-reset-v1-audit.json",
+        "sha256": "28323dccc053b35d9e319dca7b193a162956bcbb84d6c3203f16eecf10958eb7"
+      },
+      "scope": "Two camera dependencies: FOV setter calls the unchanged verified projection routine; SkaterCamera reset uses actual original Physics QB normal/split-screen presets, real component lookup, arrays/checksum/global structure and float/optional getters, immediate/interpolated settings and controller angles. Unaligned/poisoned caller storage, repeat calls, split layouts and actual integer-to-float behind value compare. Required local settings, finite bounded projection parameters, both valid caller-owned component payloads and bounded array indices required. Modes5..12 are instruction-coverage cases using caller arrays extended with an existing original medium-preset checksum; unchanged PC arrays have five entries and no gameplay mode or original startup claim follows. Optional derivative overrides compare separately. Existing PC24 projection SDK transcendental contract retained; no physical x87 transcendental accuracy, numeric/comparator changes, full startup, frame or gameplay credit. All204 Node/actualChromium suites pass and all203 predecessor result objects are unchanged. Two additional unique addresses contribute947 original body bytes;276/276 instructions exercised with no exclusions. Complete browser evidence is parsed from full DOM text and independently compared to Node; no structured-object truncation. Previous constructor callees earn no repeated bytes. Physics QB source and original-loader preset discovery are immutable private inputs. No checker or numeric allowance changes, no full SkaterCamera initialization/update, full581850 startup, frame or gameplay claim."
     }
   ],
   "uncredited_source_definitions": [
@@ -84791,7 +84993,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2056,
+    "accepted_addresses": 2060,
     "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 5,
     "linear_extent_differences": 13,
