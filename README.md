@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.82%** — 1,957 reported recovered routines divided
+**Decompilation estimate: 16.92%** — 1,969 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 801 experimental routines: 784 in the latest
+routines (9.93% of that baseline) and 813 experimental routines: 796 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-18,573 pinned artifacts, preserving all 18,397 preceding artifacts. All 150 Node
-and Chromium suites were rerun for this checkpoint and passed; all 149 inherited
+18,771 pinned artifacts, preserving all 18,573 preceding artifacts. All 151 Node
+and Chromium suites were rerun for this checkpoint and passed; all 150 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,21 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The latest experimental build recovers the full ledge-jump and eight-probe
+- The latest experimental build recovers twelve helpers for upper rail entry,
+  hanging, vertical clearance, moving-rail grind selection and following
+  adjoining ledges. Real collision, QB callbacks and connected, disconnected,
+  reversed and rejected ledge joins match the original in 559 cases and 811
+  completed calls, including 60 existing probe initializations. All 1,145 new
+  instructions execute without exclusions; this is not exhaustive input or
+  branch coverage. Defined memory, globals and preserved registers compare
+  exactly, with no new numeric or indeterminate-field allowances. All 151 Node
+  and Chromium suites pass, preserving all 150 earlier result objects.
+  Evidence is in `local/analysis/walk-floor-checkpoint.json`; this module
+  contains 796 unpromoted complete routines. Full ledge selection and floor
+  handling remain unfinished. Ground coverage remains 63 / 134, shared Walk
+  coverage 51 / 142 and constructor coverage 277 / 463. The original training
+  level is not playable.
+- The preceding experimental build recovers the full ledge-jump and eight-probe
   walking-contact routines. Ledge-height scans, moving-wall response, velocity
   constraints, rail entry and real script cancellation match the original in
   503 cases and 680 calls: 671 complete and nine explicitly interrupted ground

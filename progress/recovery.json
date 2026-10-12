@@ -4,70 +4,119 @@
   "baseline_functions": 11637,
   "baseline_inventory_sha256": "59a4a740b349c5bd004f9ce0c9d6f34414533ab393a949a5d563eb48cea9d546",
   "maintained_functions": 1156,
-  "experimental_functions_in_latest_module": 784,
-  "experimental_functions_across_separate_builds": 801,
-  "reported_recovered_functions": 1957,
-  "decompilation_estimate_percent": 16.82,
+  "experimental_functions_in_latest_module": 796,
+  "experimental_functions_across_separate_builds": 813,
+  "reported_recovered_functions": 1969,
+  "decompilation_estimate_percent": 16.92,
   "maintained_estimate_percent": 9.93,
   "playable": false,
-  "checkpoint": "local/analysis/walk-ledge-checkpoint.json",
-  "checkpoint_sha256": "bd34c53b3c1c8c473954c1e6ecbe041203314e73fe2e1866a9a45c33ac939872",
+  "checkpoint": "local/analysis/walk-floor-checkpoint.json",
+  "checkpoint_sha256": "3504690bb4d756240cc4a0129056da8c9e4e575d861a0871f05f507640138b40",
   "audit": {
     "result": "pass",
-    "checkpoint_sha256": "bd34c53b3c1c8c473954c1e6ecbe041203314e73fe2e1866a9a45c33ac939872",
-    "artifacts": 18573,
+    "checkpoint_sha256": "3504690bb4d756240cc4a0129056da8c9e4e575d861a0871f05f507640138b40",
+    "artifacts": 18771,
     "maintained_sources": 207,
     "platform_sources": 1,
-    "harnesses": 640,
+    "harnesses": 649,
     "checker_dependencies": 1,
-    "preserved_previous_artifacts": 18397,
+    "preserved_previous_artifacts": 18573,
     "main_wasm_unchanged": true,
-    "unit_cases": 503,
-    "unit_calls": 680,
-    "completed_calls": 671,
-    "interrupted_calls": 9,
-    "new_instruction_coverage": "1241/1244; three unexercised alignment instructions without exclusions; not exhaustive inputs or branches",
-    "undefined_word_comparisons": 820,
-    "undefined_source_offsets": {
-      "0xa8": 784,
-      "0x70": 36
-    },
-    "undefined_field_provenance_checked": true,
-    "checker_corruptions_rejected": 6,
+    "unit_cases": 559,
+    "unit_calls": 811,
+    "completed_calls": 811,
+    "interrupted_calls": 0,
+    "new_instruction_coverage": "1145/1145; no exclusions; not exhaustive inputs or branches",
     "new_float_comparison_allowances": 0,
-    "browser_suites": 150,
-    "preserved_browser_suites": 149,
+    "new_indeterminate_field_allowances": 0,
+    "browser_suites": 151,
+    "preserved_browser_suites": 150,
     "constructor_prefix": "277/463 unchanged; local path stops before7cd3e6d5",
     "walk_frame_prefix": "51/142 unchanged; stops before state handlers or common tail",
-    "walk_ground_prefix": "63/134, previously18/134; stops before floor handler52b370 with genuine state/control exits preserved",
+    "walk_ground_prefix": "63/134 unchanged; stops before floor handler52b370 with genuine state/control exits preserved",
     "playable": false
   },
-  "scope": "Two complete original routines recover ledge jumps and full eight-probe Walk contact handling, including moving-surface velocity, timed/forced rail gates, script cancellation, separation and ordered velocity constraints. The ground parent now executes these handlers and position movement before stopping explicitly at52b370; genuine state/control exits return normally, but the parent is not counted complete. All defined arena/global values compare. Copied probe unknown_a8 and conditionally unset scene words receive four-byte definedness allowances only when source-write tracing proves them uninitialized, ending on any later write; retained probe/cache pointers are checked for Wasm stack identity and lifetime. No numeric masks, NaN classification or quieting. Initialized graphs, finite inputs and valid cache/rail capacities are contracts. Full ground/Walk frames, remaining startup/rendering and original playable training remain unfinished.",
-  "remaining": "Ledge jumps and full eight-probe contact response are recovered. Ground parent52d300 now reaches63/134 and stops explicitly before floor handler52b370; genuine state/control exits return normally. Floor handling, full ground/Walk and intervening rail animation frames, remaining startup, renderer creation/rendering and original playable training remain unfinished. Constructor277/463 and common Walk frame51/142 are unchanged.",
-  "browser_suites": 150,
-  "new_cases": 503,
-  "new_calls": 680,
+  "scope": "Twelve complete floor-transition prerequisites recover upper-side rail selection/callback, ledge blend and hanging heights, hanging entry with actual QB events, rail-space vector/target copies fixed/moving grind selection with final collision clearance, two-direction hanging clearance and connected/coincident ledge continuation. Entire arena/globals and completed-call preserved registers compare. Explicit selection-to-callback calls do not recover the intervening animation frame. Full ledge selection, floor handling, ground/Walk frames, startup and browser playability remain unfinished.",
+  "remaining": "Hanging entry, vertical clearance, connected/coincident ledge continuation, upper rail entry and fixed/moving grind selection are recovered. Full ledge selection43ec40 still needs57dda0,440690,43fe30 and43f3a0. Floor52b370, full ground/Walk and intervening rail animation frames, remaining startup, renderer creation/rendering and original playable training remain unfinished. Ground63/134, common Walk51/142 and constructor277/463 are unchanged.",
+  "browser_suites": 151,
+  "new_cases": 559,
+  "new_calls": 811,
   "instruction_coverage": {
-    "0x52bc70": {
-      "covered": 397,
-      "total": 398,
-      "missing": [
-        "0x52c0ba"
-      ],
+    "0x441190": {
+      "covered": 67,
+      "total": 67,
+      "missing": [],
       "excluded": {}
     },
-    "0x52c2c0": {
-      "covered": 844,
-      "total": 846,
-      "missing": [
-        "0x52c8d8",
-        "0x52c8df"
-      ],
+    "0x441fc0": {
+      "covered": 121,
+      "total": 121,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x43dc00": {
+      "covered": 26,
+      "total": 26,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x43dc60": {
+      "covered": 40,
+      "total": 40,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x43dcf0": {
+      "covered": 56,
+      "total": 56,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x57cb20": {
+      "covered": 23,
+      "total": 23,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x57c540": {
+      "covered": 29,
+      "total": 29,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x5299f0": {
+      "covered": 217,
+      "total": 217,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x43ddd0": {
+      "covered": 155,
+      "total": 155,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x57c5a0": {
+      "covered": 27,
+      "total": 27,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x57e170": {
+      "covered": 130,
+      "total": 130,
+      "missing": [],
+      "excluded": {}
+    },
+    "0x43e230": {
+      "covered": 254,
+      "total": 254,
+      "missing": [],
       "excluded": {}
     }
   },
   "main_wasm_sha256": "8d1341809131c6f76b676e8aa330151fac7c25b774a8d31074b01df2e266fed0",
-  "experimental_wasm_sha256": "32f8442295b75bbb36656ca2b5adf63cbc723c78033cc5253d8eabc8533e264c",
+  "experimental_wasm_sha256": "13367604f555ea2d5b74b36be2df6087561a4214fc8b592dfadac5e91e25c321",
   "published_checkpoint_file_hashes": {
     "local/analysis/asset-factory-browser.html": "2c1978bf47d7d6e989b85d1ff009b515bd50e0f23246e0eeeb7f87533f90a690",
     "local/analysis/asset-factory-callbacks.c": "35956e56b83b9fc6a3ce01442da81622bd118e2472b02530cbe75d1ac1a594fb",
@@ -165,6 +214,7 @@
     "local/analysis/audit-texture-buffer.py": "3987603f8f365493dabd42a4d9d62450a2ac1bb1e6bd52d9792548a412c34904",
     "local/analysis/audit-trigger.py": "a2895518bc930272e72d4c5a94f0bd07e8cfca9975f00c890026278ae6960eae",
     "local/analysis/audit-vertex-upload.py": "f9584bf0f8d5e53052a26391b210e9a1663eba87144c67a46a12aab7a708b228",
+    "local/analysis/audit-walk-floor.py": "bd57d908793636ccd4a743beaa7533e1d2a58ab8b27549a2f46a21722bc92fa3",
     "local/analysis/audit-walk-ground.py": "bf21c67a21da7f419cbea50e7c8df6ba2c492c2a8163492de48b9638683b5d28",
     "local/analysis/audit-walk-ledge.py": "0693fc17efd135ffd8eb8bbe4e505071c6cb2c57d04eba211c10225a311726ae",
     "local/analysis/audit-walk-transition.py": "ce2b625c35665b89713ed19360ba471dc7c9eab1b6d885870ced010792015e01",
@@ -262,6 +312,7 @@
     "local/analysis/build-trigger-draft.py": "62121cc45f6bf90b778ad4c11a52169114459eeeaed0a9d2168a054595f9ccff",
     "local/analysis/build-vertex-upload-draft.py": "a28758aa2d1b79abc8ffeaba452e65f67e76eb83eb2849656f951f8d020ac661",
     "local/analysis/build-vertex-upload-ports.py": "6fe26ae6a03e09d7a09f7e9b689257442bce6886d387f8958ff29c5e380e6fb2",
+    "local/analysis/build-walk-floor-draft.py": "bb186546d077dbb7f96a0eac44bf19fe2aa348f10ce00ad96798b29cec5ada41",
     "local/analysis/build-walk-ground-draft.py": "089869d2584e1528a0614ac2bf9b0fca9abd92fd37c6b0bf4a403c9f34d1dd60",
     "local/analysis/build-walk-ledge-draft.py": "5b09889276ef1a96a9b690b9b856b37973590c822feb7069a928ff0958375f12",
     "local/analysis/build-walk-transition-draft.py": "bc17ddca5dee3cf698dce087b1916042e3c6ed0afe3a652739c72b02c9ce3213",
@@ -655,6 +706,7 @@
     "local/analysis/pin-training-startup.py": "7f4fc7c311780132feeea38111e3ef6d078ff85b5628b82a1b92302d24152408",
     "local/analysis/pin-trigger.py": "1e14954e2da741b02981cd4032f56fea1ae65d92ef0703e3f584b9f810b7ef65",
     "local/analysis/pin-vertex-upload.py": "5f7aa2bc51e9b6f73ac2b1c4fe1ba93845c7da8d8302f765717a079313f47fea",
+    "local/analysis/pin-walk-floor.py": "9c51f573172539e818f44f7c1e13b811ad5c3c24807a1fff0fb6aed8d76d3637",
     "local/analysis/pin-walk-ground.py": "d871bc9d2355a1ba289812eda6a05788edcaaf4fe19ca220767d45833f8d5e6a",
     "local/analysis/pin-walk-ledge.py": "eb8cd40be2b55b22d83f0c7194cb119cb19c470d0ba63830c55b9187f6dbb2a3",
     "local/analysis/pin-walk-transition.py": "ccaf1e8cb5b3d3d7a140d5b9dcd2b0dd3c77f75cf484d9236c22f835742ec9b0",
@@ -794,6 +846,7 @@
     "local/analysis/probe-training-vertex-upload.py": "23a6bd3e170498915d212aad4ec2896bbab89d86f25ce78786f4a9f5aae742be",
     "local/analysis/probe-trigger.py": "b6a29e20e83e36a36ba0a7d3064f987fd2bfacd8d23d6c2bbfa0d592f0cfb902",
     "local/analysis/probe-vertex-upload.py": "417b5a49204232f3c3e66413ce6fb24966c8c454fbe50cd2e5ac08a9a34f2fe9",
+    "local/analysis/probe-walk-floor.py": "a0c9628dfa8d0bb12de5d14ef30d331d3a0016103252c421f062e5b0617d4df6",
     "local/analysis/probe-walk-ground.py": "f2f948c426e097da34201ae4e00de64b72730a51004c3b6e75981c25d1da10e4",
     "local/analysis/probe-walk-ledge.py": "6b5f25aa98cb63912bd6823504d1b79bdf4c318651fd76a5e1900f872c8d67bf",
     "local/analysis/probe-walk-transition.py": "e63cc2a535d42417b94abefbe74226800cf3fb2f7ad42cfb5e1531bd68d6f8ab",
@@ -1010,6 +1063,7 @@
     "local/analysis/serve-training-startup.py": "66aecc47b4895432e1bc2100fd3e1c697fc05a1bddeb570e90659bd66122b464",
     "local/analysis/serve-trigger.py": "04e81f18c455ea69076c53635fcdf73d10828619920c0b916815e9b75c23296e",
     "local/analysis/serve-vertex-upload.py": "4c65cd7e207bbe023a3dd8bd8fb6fbe06adc831149a11847d2e2206f2f49c663",
+    "local/analysis/serve-walk-floor.py": "b3e472203e6f6730785d635d146c674bd87b462f86c0c05af77c8c111369caff",
     "local/analysis/serve-walk-ground.py": "74df6dba79aa342046a0cdac95975a35d45bed749ad71e90dca7ace126f4e82f",
     "local/analysis/serve-walk-ledge.py": "96298e77570bcec23b185465737348e8d65d1bb702ab24bc0369ba920af09f55",
     "local/analysis/serve-walk-transition.py": "87df99dfe671fcdbbea509671b0fe92b11e951e88e28ba0db61bbd31a011bd39",
@@ -1337,6 +1391,7 @@
     "local/analysis/verify-training-startup.mjs": "54b4e8e328f913e6588d6ebab6f5acef65622b17454d8c67e9f968ed8c760430",
     "local/analysis/verify-trigger-checkpoint.mjs": "35ba68f4e7d05f2c68cad9882752c844a6e6d8f98726f575f84b53c5c72ca8fa",
     "local/analysis/verify-vertex-upload-checkpoint.mjs": "448f01496bb1143436f44f7543374a396c7194adddf1fe09a2c08b597cdbfe3f",
+    "local/analysis/verify-walk-floor-checkpoint.mjs": "e8f1e565afd49adf1605f0a69f968631f75b43561aa986a78acd3aed6c6d8559",
     "local/analysis/verify-walk-ground-checkpoint.mjs": "8201dcd1f8c0a7e86377ca573053cac50bc5edd7056e408f8817bb286a92ca34",
     "local/analysis/verify-walk-ledge-checkpoint.mjs": "85d4d411a52baf45e09a85b9a6c63fce9a0435f07d268c5179edebab772effed",
     "local/analysis/verify-walk-transition-checkpoint.mjs": "1b9f434df8d53b88ebc9c1ccd655378afe91f1d5deacfc4766290e5288a236f8",
@@ -1348,6 +1403,15 @@
     "local/analysis/vertex-upload-ports.build.json": "1fbe16903cc962eb16ee1a46f08fcf5589ad747716e1e497b007a7a1565ca863",
     "local/analysis/vertex-upload-ports.c": "4bb887241e61a5090d5a78b3b43563902bd9b7609f7852889269e3a0e7f7a23c",
     "local/analysis/vertex-upload-worker.mjs": "ba83fff6d85f9b347d45e1907500f631d14fa622e3e624903ce186885a6b984e",
+    "local/analysis/walk-floor-browser.html": "985960e9a5950d3c7d7cc3577fdc5c9b321e48b328d25f82680cbce711eeeb7b",
+    "local/analysis/walk-floor-diagnostics.build.json": "d1001820f159f4aba6ba130f076b217aae6d88ce9c061e4285e48f73bcbbd98e",
+    "local/analysis/walk-floor-diagnostics.c": "ba03b8a7cbca71312c3d78aae53e09d68bcea385e08ea040d4b0968e588cce8b",
+    "local/analysis/walk-floor-draft.build.json": "74e2719f8c3cf26d2e9d93878cee7adf9ec9da26798704abddfcf8aa3fc6f7ca",
+    "local/analysis/walk-floor-draft.c": "59b2b5b555c25e388d03d37fb96212a4525c0c88c8b390ececb6582bfe3d480f",
+    "local/analysis/walk-floor-extents.py": "7f40fcdf2801e59d18ecdf039401149a89bcc6e37dce1232d95a825296361b7e",
+    "local/analysis/walk-floor-ghidra-run.py": "d17ea4986edbcae79f54f696166e10324ea3cae47518b20eb2ba3aa4cbef0d91",
+    "local/analysis/walk-floor-routines.json": "1f9590e96faf9b8e79a181abc8fa0cd8179a6e0c71ac3a891c59a1ee5767c3b1",
+    "local/analysis/walk-floor-worker.mjs": "6220e31f8338a3f83e96fd56f5ef4dbef0445c639df23961974cd15b3cec7d76",
     "local/analysis/walk-ground-browser.html": "1669550974cd504c88e3102e134127bcf68c1dd614688ff0f7c671e02f3fcb82",
     "local/analysis/walk-ground-draft.build.json": "2b50e7baebac087d24dfb545c61506c504039e20143cb83f1e463e252e88debe",
     "local/analysis/walk-ground-draft.c": "6116cf450f707f85149e160bab3f92bc010946f5b7e7c0d6b863033db9c3ecf7",

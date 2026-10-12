@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/daniilpolienko/Documents/GitHub/thug/.tools/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "--target=wasm32",
+    "-O2",
+    "-nostdlib",
+    "-Wl,--no-entry",
+    "-Wl,--import-memory",
+    "-Wl,--export-all",
+    "-Wl,--global-base=58720256",
+    "local/analysis/walk-floor-diagnostics.c",
+    "-o",
+    "local/analysis/walk-floor-diagnostics.wasm"
+  ]
+}

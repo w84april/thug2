@@ -1,0 +1,62 @@
+{
+  "0x441190": {
+    "bytes": 194,
+    "instructions": 67,
+    "name": "thug_walk_enter_rail_top_draft"
+  },
+  "0x441fc0": {
+    "bytes": 420,
+    "instructions": 121,
+    "name": "thug_walk_try_rail_top_draft"
+  },
+  "0x43dc00": {
+    "bytes": 91,
+    "instructions": 26,
+    "name": "thug_walk_ledge_blend_height_draft"
+  },
+  "0x43dc60": {
+    "bytes": 136,
+    "instructions": 40,
+    "name": "thug_walk_hang_height_draft"
+  },
+  "0x43dcf0": {
+    "bytes": 214,
+    "instructions": 56,
+    "name": "thug_walk_enter_hang_draft"
+  },
+  "0x57cb20": {
+    "bytes": 62,
+    "instructions": 23,
+    "name": "thug_rail_transform_vector_draft"
+  },
+  "0x57c540": {
+    "bytes": 85,
+    "instructions": 29,
+    "name": "thug_ledge_target_copy_draft"
+  },
+  "0x5299f0": {
+    "bytes": 750,
+    "instructions": 217,
+    "name": "thug_walk_try_grind_draft"
+  },
+  "0x43ddd0": {
+    "bytes": 490,
+    "instructions": 155,
+    "name": "thug_walk_hang_vertical_clear_draft"
+  },
+  "0x57c5a0": {
+    "bytes": 81,
+    "instructions": 27,
+    "name": "thug_rail_nodes_coincident_draft"
+  },
+  "0x57e170": {
+    "bytes": 341,
+    "instructions": 130,
+    "name": "thug_rail_find_coincident_draft"
+  },
+  "0x43e230": {
+    "bytes": 753,
+    "instructions": 254,
+    "name": "thug_walk_follow_ledge_draft"
+  }
+}
