@@ -95,6 +95,7 @@ local/analysis/audit-texture-buffer.py
 local/analysis/audit-trigger.py
 local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-floor.py
+local/analysis/audit-walk-grab.py
 local/analysis/audit-walk-ground.py
 local/analysis/audit-walk-ledge.py
 local/analysis/audit-walk-transition.py
@@ -193,6 +194,7 @@ local/analysis/build-trigger-draft.py
 local/analysis/build-vertex-upload-draft.py
 local/analysis/build-vertex-upload-ports.py
 local/analysis/build-walk-floor-draft.py
+local/analysis/build-walk-grab-draft.py
 local/analysis/build-walk-ground-draft.py
 local/analysis/build-walk-ledge-draft.py
 local/analysis/build-walk-transition-draft.py
@@ -587,6 +589,7 @@ local/analysis/pin-training-startup.py
 local/analysis/pin-trigger.py
 local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-floor.py
+local/analysis/pin-walk-grab.py
 local/analysis/pin-walk-ground.py
 local/analysis/pin-walk-ledge.py
 local/analysis/pin-walk-transition.py
@@ -727,6 +730,7 @@ local/analysis/probe-training-vertex-upload.py
 local/analysis/probe-trigger.py
 local/analysis/probe-vertex-upload.py
 local/analysis/probe-walk-floor.py
+local/analysis/probe-walk-grab.py
 local/analysis/probe-walk-ground.py
 local/analysis/probe-walk-ledge.py
 local/analysis/probe-walk-transition.py
@@ -944,6 +948,7 @@ local/analysis/serve-training-startup.py
 local/analysis/serve-trigger.py
 local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-floor.py
+local/analysis/serve-walk-grab.py
 local/analysis/serve-walk-ground.py
 local/analysis/serve-walk-ledge.py
 local/analysis/serve-walk-transition.py
@@ -1272,6 +1277,7 @@ local/analysis/verify-training-startup.mjs
 local/analysis/verify-trigger-checkpoint.mjs
 local/analysis/verify-vertex-upload-checkpoint.mjs
 local/analysis/verify-walk-floor-checkpoint.mjs
+local/analysis/verify-walk-grab-checkpoint.mjs
 local/analysis/verify-walk-ground-checkpoint.mjs
 local/analysis/verify-walk-ledge-checkpoint.mjs
 local/analysis/verify-walk-transition-checkpoint.mjs
@@ -1292,6 +1298,12 @@ local/analysis/walk-floor-extents.py
 local/analysis/walk-floor-ghidra-run.py
 local/analysis/walk-floor-routines.json
 local/analysis/walk-floor-worker.mjs
+local/analysis/walk-grab-browser.html
+local/analysis/walk-grab-draft.build.json
+local/analysis/walk-grab-draft.c
+local/analysis/walk-grab-extents.py
+local/analysis/walk-grab-routines.json
+local/analysis/walk-grab-worker.mjs
 local/analysis/walk-ground-browser.html
 local/analysis/walk-ground-draft.build.json
 local/analysis/walk-ground-draft.c

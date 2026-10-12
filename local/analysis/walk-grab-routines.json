@@ -1,0 +1,27 @@
+{
+  "0x43f3a0": {
+    "bytes": 2243,
+    "instructions": 619,
+    "name": "thug_walk_hang_side_blocked_draft"
+  },
+  "0x43fe30": {
+    "bytes": 754,
+    "instructions": 253,
+    "name": "thug_walk_hang_target_draft"
+  },
+  "0x440690": {
+    "bytes": 1372,
+    "instructions": 397,
+    "name": "thug_walk_choose_ledge_draft"
+  },
+  "0x57dda0": {
+    "bytes": 969,
+    "instructions": 269,
+    "name": "thug_walk_scan_ledge_draft"
+  },
+  "0x43ec40": {
+    "bytes": 1007,
+    "instructions": 294,
+    "name": "thug_walk_try_hang_draft"
+  }
+}
