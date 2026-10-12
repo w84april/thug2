@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 16.98%** — 1,976 reported recovered routines divided
+**Decompilation estimate: 17.02%** — 1,981 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 820 experimental routines: 803 in the latest
+routines (9.93% of that baseline) and 825 experimental routines: 808 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-19,133 pinned artifacts, preserving all 18,945 preceding artifacts. All 153 Node
-and Chromium suites were rerun for this checkpoint and passed; all 152 inherited
+19,313 pinned artifacts, preserving all 19,133 preceding artifacts. All 154 Node
+and Chromium suites were rerun for this checkpoint and passed; all 153 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,7 +59,22 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
-- The complete floor and ground updates now recover surface probing, real
+- Five complete routines now recover animation-time access, the walking
+  transition frame, final-pose commit and its script completion command.
+  Twenty-four connected selection/frame/script sequences reach hanging or rail
+  states. Six advance actual animation time through four frames, forward and
+  reverse, before the completion script runs; five rail script callbacks fire.
+  The Walk component now forwards extended commands through the original member
+  dispatch path. All 129 cases and 354 original calls complete and match.
+  Coverage is 282 / 285 instructions; three translated contact-failure
+  instructions remain unexercised and stay in the denominator without exclusions.
+  No numeric or indeterminate-field allowances were added. All 154 Node and
+  Chromium suites pass, preserving all 153 preceding results. Evidence is in
+  `local/analysis/walk-animation-checkpoint.json`; this module contains 808
+  unpromoted complete routines. Animation channels are initialized fixture data;
+  full scheduling and original asset setup remain unfinished. Shared Walk stays
+  51 / 142 and the constructor 277 / 463; the training level is not playable.
+- The preceding floor and ground build recovered surface probing, real
   leave/enter/fall scripts, material and moving-contact changes, step height,
   escape from moving objects, and falling/grind/rail/hang transitions. All 164
   cases and 262 original calls complete, including 38 real script callbacks.

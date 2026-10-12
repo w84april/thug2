@@ -1,0 +1,27 @@
+{
+  "0x4813b0": {
+    "bytes": 58,
+    "instructions": 20,
+    "name": "thug_animation_channel_times_draft"
+  },
+  "0x41a0e0": {
+    "bytes": 129,
+    "instructions": 43,
+    "name": "thug_animation_component_times_draft"
+  },
+  "0x52ad10": {
+    "bytes": 550,
+    "instructions": 158,
+    "name": "thug_walk_transition_frame_draft"
+  },
+  "0x5298d0": {
+    "bytes": 280,
+    "instructions": 61,
+    "name": "thug_walk_finish_transition_draft"
+  },
+  "0x52a180": {
+    "bytes": 13,
+    "instructions": 3,
+    "name": "thug_walk_finish_command_draft"
+  }
+}

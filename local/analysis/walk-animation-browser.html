@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>THUG2 training scene recovery</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}pre{white-space:pre-wrap;font-size:12px}#status{font-weight:600}</style>
+<h1>Original walking animation transitions</h1>
+<p>Walking transition frames and the script completion command are compared with the original instructions. Connected sequences advance animation time and enter hanging or rail states. Shared frames and full animation scheduling remain unfinished. The training level is not yet playable.</p>
+<p id="status">Loading…</p><pre id="report"></pre>
+<script type="module">
+const status=document.querySelector('#status'),output=document.querySelector('#report');
+try {
+ const response=await fetch('/module.wasm');if(!response.ok)throw Error('Module fetch failed');
+ const wasm=await response.arrayBuffer(),module=await WebAssembly.compile(wasm);
+ const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',wasm))].map(b=>b.toString(16).padStart(2,'0')).join('');
+ const imports=WebAssembly.Module.imports(module).length;if(imports)throw Error('Unexpected runtime imports');
+ const suites={};
+ for(const name of ['walk-animation','walk-grounded','walk-grab','walk-floor','walk-ledge','walk-transition','walk-ground','skater-walk','skater-cleanup','skater-finalize','trigger','gap-end','score-insert','gap-links','gap-start','gap-score','skater-ground','skater-adjust','skater-gap','skater-rotate','skater-trick','skater-matrix','skater-score','skater-score-assets','skater-construction','input-command','input-lifecycle','input-callbacks','input-pad','rigidbody-update','rigidbody-update-training','rigidbody-update-active-training','rigidbody-kick','contact-assembly','contact-assembly-training','sphere-query','sphere-query-training','sphere-contact','sphere-contact-training','sphere-sweep','sphere-sweep-training','sphere-geometry','sphere-geometry-training','rigidbody-solver','motion-rotation','motion-rotation-training','rigidbody-response','particle-dispatch','particle-dispatch-training','particle-update','particle-simulation','particle-emission','particle-command','particle-frame','lock-frame','lock-frame-training','proximity-frame','proximity-frame-training','motion-frame','motion-frame-training','particle-setup','particle-setup-training','particle-image','particle-image-training','particle-create','particle-create-training','particle-engine','particle-engine-training','particle-component','particle-component-training','particle-startup','rigidbody-motion','rigidbody-initialize','rigidbody-initialize-training','rigidbody-core','level-collision-component','level-collision-component-unit','level-collision-load','level-collision-load-unit','level-object-startup','geometry-clone','training-geometry-clone','training-geometry-clone-shared','level-register','training-level-register','training-level-register-shared','level-sector','training-level-sector','level-mesh','training-level-mesh','level-material','training-level-material','scene-create','training-scene-create','model-transform','training-model-transform','renderer-bounds','training-renderer-bounds','render-instance','training-render-instance','asset-ready','training-asset-ready','scene-finalize','training-scene-finalize','mesh-register','training-mesh-register','vertex-upload','training-vertex-upload','mesh-index','training-mesh-index','scene-construction','training-scene-construction','material-buffer','training-material-buffer','model-asset','training-model-file','texture-asset','training-texture-asset','texture-buffer','model-configuration','model-configuration-prefix','training-model-configuration','model-initialize','model-initialize-prefix','training-model-initialize','model-component','training-model-component','prop-command','training-prop-script','prop-sound','training-prop-components','prop-lifecycle','composite-math','composite-construction','node-registration','training-node-registration','node-index','training-node-index','scene-kill','scene-subscribe','scene-lifetime','scene-proximity','scene-state','scene-disposal','scene-visitor','training-mode','node-prefix','scene-name','training-setup','asset-factory','training-load','skeleton-asset','skeleton-buffer','script-change']) {
+  status.textContent='Checking '+name+'…';
+  suites[name.replaceAll('-','_')]=await new Promise((resolve,reject)=>{
+   const worker=new Worker('/worker.mjs',{type:'module'});
+   worker.onmessage=({data})=>{worker.terminate();data.error?reject(Error(data.error)):resolve(data.result);};
+   worker.onerror=event=>{worker.terminate();reject(Error(event.message));};
+   worker.postMessage({name,wasm});
+  });
+ }
+ output.textContent=JSON.stringify({result:'pass',wasm_sha256:hash,wasm_bytes:wasm.byteLength,runtime_imports:imports,suites},null,2);
+ status.textContent='PASS — Walking animation transitions and all earlier comparisons complete. The game is not yet playable.';
+} catch(error){status.textContent='FAIL';output.textContent=String(error.stack||error);}
+</script>
