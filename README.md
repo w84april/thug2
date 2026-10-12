@@ -12,9 +12,9 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Decompilation estimate: 17.11%** — 1,991 reported recovered routines divided
+**Decompilation estimate: 17.12%** — 1,992 reported recovered routines divided
 by the initial 11,637-function Ghidra inventory. This comprises 1,156 maintained
-routines (9.93% of that baseline) and 835 experimental routines: 818 in the latest
+routines (9.93% of that baseline) and 836 experimental routines: 819 in the latest
 module and 17 in a separate physics experiment. **The game is not playable.**
 
 This is a preliminary bookkeeping metric, not compiler byte matching or a
@@ -28,8 +28,8 @@ The current machine-readable report is [progress/recovery.json](progress/recover
 It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. The latest integrity audit passed for all
-19,896 pinned artifacts, preserving all 19,709 preceding artifacts. All 159 Node
-and Chromium suites were rerun for this checkpoint and passed; all 158 inherited
+20,090 pinned artifacts, preserving all 19,896 preceding artifacts. All 161 Node
+and Chromium suites were rerun for this checkpoint and passed; all 159 inherited
 result objects remain unchanged.
 
 The source, harnesses and selected build metadata under `local/analysis/` are
@@ -59,6 +59,22 @@ new verified work; unchanged or unfinished work does not create an empty commit.
 
 ## Current evidence
 
+- The original walking dispatcher now reaches its return in animation state 4.
+  Forty-eight connected sequences match 168 complete frames, including moving
+  contact, collision correction, pose/events, animation speed, camera updates,
+  cancellation and counters. The complete animation-speed parent adds one
+  recovered routine: 189 direct cases and 308 calls. Together, the new suites
+  compare 237 cases and 644 completed calls, with no numeric allowances.
+  The parent exercises 211/216 instructions; the partial frame exercises
+  114/142. Other movement states remain explicit boundaries, checked separately
+  in 96 original interrupted comparisons, and the dispatcher earns no routine
+  count. Thirty-three queued messages retain exact defined bytes, with 462
+  comparisons of original-write-proven padding bytes and 12 protective controls.
+  All 161 Node and Chromium suites pass; 159 earlier results remain unchanged.
+  Evidence is in `local/analysis/walk-frame-speed-checkpoint.json`; the latest
+  module contains 819 unpromoted complete routines. Ground transfer/validation,
+  remaining movement states, startup, rendering and playable training remain
+  unfinished. The original constructor prefix is unchanged.
 - Two complete routines now recover animation-channel speed changes and component
   forwarding. All 267 cases and 547 original calls complete and match, including
   32 populated-queue cases that enqueue 40 messages. Individual/all-channel and

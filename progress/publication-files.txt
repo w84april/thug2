@@ -97,6 +97,7 @@ local/analysis/audit-vertex-upload.py
 local/analysis/audit-walk-animation.py
 local/analysis/audit-walk-common.py
 local/analysis/audit-walk-floor.py
+local/analysis/audit-walk-frame-speed.py
 local/analysis/audit-walk-grab.py
 local/analysis/audit-walk-ground.py
 local/analysis/audit-walk-grounded.py
@@ -203,6 +204,7 @@ local/analysis/build-walk-camera-draft.py
 local/analysis/build-walk-common-draft.py
 local/analysis/build-walk-critical-draft.py
 local/analysis/build-walk-floor-draft.py
+local/analysis/build-walk-frame-speed-draft.py
 local/analysis/build-walk-grab-draft.py
 local/analysis/build-walk-ground-draft.py
 local/analysis/build-walk-grounded-draft.py
@@ -214,6 +216,8 @@ local/analysis/check-input-pad-keyboard.mjs
 local/analysis/check-level-collision-component-graph.py
 local/analysis/check-level-collision-load-graph.py
 local/analysis/check-level-object-startup-graph.py
+local/analysis/check-walk-frame-boundaries.mjs
+local/analysis/check-walk-frame-speed-padding.mjs
 local/analysis/check-walk-speed-padding.mjs
 local/analysis/composite-construction-browser.html
 local/analysis/composite-construction-callback-setup.py
@@ -604,6 +608,7 @@ local/analysis/pin-vertex-upload.py
 local/analysis/pin-walk-animation.py
 local/analysis/pin-walk-common.py
 local/analysis/pin-walk-floor.py
+local/analysis/pin-walk-frame-speed.py
 local/analysis/pin-walk-grab.py
 local/analysis/pin-walk-ground.py
 local/analysis/pin-walk-grounded.py
@@ -752,6 +757,8 @@ local/analysis/probe-walk-camera.py
 local/analysis/probe-walk-common.py
 local/analysis/probe-walk-critical.py
 local/analysis/probe-walk-floor.py
+local/analysis/probe-walk-frame-speed-flow.py
+local/analysis/probe-walk-frame-speed.py
 local/analysis/probe-walk-grab.py
 local/analysis/probe-walk-ground.py
 local/analysis/probe-walk-grounded.py
@@ -976,6 +983,7 @@ local/analysis/serve-vertex-upload.py
 local/analysis/serve-walk-animation.py
 local/analysis/serve-walk-common.py
 local/analysis/serve-walk-floor.py
+local/analysis/serve-walk-frame-speed.py
 local/analysis/serve-walk-grab.py
 local/analysis/serve-walk-ground.py
 local/analysis/serve-walk-grounded.py
@@ -1312,6 +1320,8 @@ local/analysis/verify-walk-camera-checkpoint.mjs
 local/analysis/verify-walk-common-checkpoint.mjs
 local/analysis/verify-walk-critical-checkpoint.mjs
 local/analysis/verify-walk-floor-checkpoint.mjs
+local/analysis/verify-walk-frame-speed-checkpoint.mjs
+local/analysis/verify-walk-frame-speed-unit.mjs
 local/analysis/verify-walk-grab-checkpoint.mjs
 local/analysis/verify-walk-ground-checkpoint.mjs
 local/analysis/verify-walk-grounded-checkpoint.mjs
@@ -1359,6 +1369,12 @@ local/analysis/walk-floor-extents.py
 local/analysis/walk-floor-ghidra-run.py
 local/analysis/walk-floor-routines.json
 local/analysis/walk-floor-worker.mjs
+local/analysis/walk-frame-speed-browser.html
+local/analysis/walk-frame-speed-draft.build.json
+local/analysis/walk-frame-speed-draft.c
+local/analysis/walk-frame-speed-extents.py
+local/analysis/walk-frame-speed-routines.json
+local/analysis/walk-frame-speed-worker.mjs
 local/analysis/walk-grab-browser.html
 local/analysis/walk-grab-draft.build.json
 local/analysis/walk-grab-draft.c
