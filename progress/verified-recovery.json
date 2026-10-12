@@ -776,6 +776,56 @@
         }
       ],
       "resolved_partials": []
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-clip-startup-v6-checkpoint.json",
+        "sha256": "98bb23c083a431c2ddacbcd8a38f9db89884011ab1695a0755470ab76aa8329d"
+      },
+      "audit": {
+        "path": "local/analysis/animation-clip-startup-v6-audit.json",
+        "sha256": "e6c09264dbfe99abfeab3f0d5aa062cd25d0ff823ffbc6c330ac99c114d907ca"
+      },
+      "discovery_exports": [
+        {
+          "path": "local/analysis/animation-clip-startup-v6-selected-ranges.tsv",
+          "sha256": "d0fd0e54f9fb0a70062cffda4280b10edcc9c9a65167faa86053d7ca60963f66"
+        }
+      ],
+      "suites": [
+        {
+          "name": "animation_clip_startup_v4",
+          "source": {
+            "path": "local/analysis/animation-clip-startup-v3.c",
+            "sha256": "53f1bc6f1f3f812aa9ee41d9647551f24209efa277a7ed371a84703c72676e71"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-animation-clip-startup-v4.py",
+            "sha256": "e0112407cf0033c24cd0ea40b84e7cf5f02ff5bb02a561667b48711772c1b2c4"
+          },
+          "routines": {
+            "path": "local/analysis/animation-clip-startup-v4-routines.json",
+            "sha256": "3536151d267a0913a07190d78af04fb4a44db7cc2e181c78a8e42b9de3edcb3e"
+          },
+          "original": {
+            "path": "local/analysis/animation-clip-startup-v4-original.json",
+            "sha256": "941175f3c0c9cf608bd94c5886ad9a2179e3ecd7059ac8f93000871a2d3cca7e"
+          },
+          "fixture": {
+            "path": "local/analysis/animation-clip-startup-v4-fixtures.json",
+            "sha256": "d242800412ae0f062f81da2c0563ec9c25209fbc12a28da02a4704d2998f25b7"
+          },
+          "node": {
+            "path": "local/analysis/animation-clip-startup-v4-regression-animation-clip-startup-v4-result.json",
+            "sha256": "8135fff3701076f56be2b74692183ae967132dd4374638339ede3ba965b4a379"
+          },
+          "browser": {
+            "path": "local/analysis/animation-clip-startup-v4-browser-full.json",
+            "sha256": "917a1baf37ed6d4e7caa31edf0c743e02ed954c16f3191d4b9a572583393e6e5"
+          }
+        }
+      ],
+      "resolved_partials": []
     }
   ],
   "duplicate_accounting": [

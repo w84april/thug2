@@ -8,9 +8,9 @@
   },
   "inventory": {
     "path": "progress/function-inventory.tsv",
-    "sha256": "d9adc980ef5db3c49c6c48f4d3717779f7cfb944302627f84c2dcdbeaaf8cf26",
-    "functions": 11893,
-    "body_bytes": 1970020,
+    "sha256": "934d25508c3799f697b126b863dfae8577ae341adf45f267596e94e8a074e694",
+    "functions": 11894,
+    "body_bytes": 1971462,
     "source_exports": [
       {
         "path": "local/analysis/progress-function-ranges.tsv",
@@ -51,6 +51,10 @@
       {
         "path": "local/analysis/camera-composite-startup-v1-ranges.tsv",
         "sha256": "01f695a2ef8c0ab3d6f38c824459d0c68d44823e91421f8cd373c41fe9f05ef2"
+      },
+      {
+        "path": "local/analysis/animation-clip-startup-v6-selected-ranges.tsv",
+        "sha256": "d0fd0e54f9fb0a70062cffda4280b10edcc9c9a65167faa86053d7ca60963f66"
       }
     ]
   },
@@ -25675,6 +25679,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004616f0",
+      "size": 25,
+      "ranges": [
+        [
+          4593392,
+          4593416
+        ]
+      ],
+      "name": "thug_ui_object_merge_parameters_v1",
+      "source": {
+        "path": "local/analysis/animation-clip-startup-v3.c",
+        "sha256": "53f1bc6f1f3f812aa9ee41d9647551f24209efa277a7ed371a84703c72676e71",
+        "line": 38
+      },
+      "original": {
+        "path": "local/analysis/animation-clip-startup-v4-original.json",
+        "sha256": "941175f3c0c9cf608bd94c5886ad9a2179e3ecd7059ac8f93000871a2d3cca7e",
+        "field": "counts/thug_ui_object_merge_parameters_v1",
+        "value": 48
+      },
+      "scope": "Original clip startup4823c0 and owner optional-parameter merge4616f0 use real archived AirIdle/AirTurnLeft clips, standard dictionaries, asset/cache readers, concrete controller factories and command methods. Initialized successful allocators, valid owned channels/parameters and at most six controllers required. Finite PC24 timeline arithmetic; mirrored low byte. Original THPS6_Basics/Default400B asset is also loaded and directly started with its actual checksum1ca1ff20. No cold bootstrap, full Animation/profile startup, pose rendering, skater control or gameplay credit. Existing explicit heap/cache/diagnostic/native event adapters remain unchanged; no fake game callees or comparator changes.",
+      "browser": {
+        "path": "local/analysis/animation-clip-startup-v4-browser-full.json",
+        "sha256": "917a1baf37ed6d4e7caa31edf0c743e02ed954c16f3191d4b9a572583393e6e5",
+        "suite": "animation_clip_startup_v4",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-clip-startup-v4-regression-animation-clip-startup-v4-result.json",
+        "sha256": "8135fff3701076f56be2b74692183ae967132dd4374638339ede3ba965b4a379"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-clip-startup-v4-fixtures.json",
+        "sha256": "d242800412ae0f062f81da2c0563ec9c25209fbc12a28da02a4704d2998f25b7"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-clip-startup-v4.py",
+        "sha256": "e0112407cf0033c24cd0ea40b84e7cf5f02ff5bb02a561667b48711772c1b2c4"
+      },
+      "aliases": [
+        "thug_ui_object_merge_parameters_v1"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x00461710",
       "size": 162,
       "ranges": [
@@ -40623,6 +40672,51 @@
       },
       "aliases": [
         "thug_animation_channel_free"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004823c0",
+      "size": 1442,
+      "ranges": [
+        [
+          4727744,
+          4729185
+        ]
+      ],
+      "name": "thug_animation_channel_start_clip_v1",
+      "source": {
+        "path": "local/analysis/animation-clip-startup-v3.c",
+        "sha256": "53f1bc6f1f3f812aa9ee41d9647551f24209efa277a7ed371a84703c72676e71",
+        "line": 20
+      },
+      "original": {
+        "path": "local/analysis/animation-clip-startup-v4-original.json",
+        "sha256": "941175f3c0c9cf608bd94c5886ad9a2179e3ecd7059ac8f93000871a2d3cca7e",
+        "field": "counts/thug_animation_channel_start_clip_v1",
+        "value": 424
+      },
+      "scope": "Original clip startup4823c0 and owner optional-parameter merge4616f0 use real archived AirIdle/AirTurnLeft clips, standard dictionaries, asset/cache readers, concrete controller factories and command methods. Initialized successful allocators, valid owned channels/parameters and at most six controllers required. Finite PC24 timeline arithmetic; mirrored low byte. Original THPS6_Basics/Default400B asset is also loaded and directly started with its actual checksum1ca1ff20. No cold bootstrap, full Animation/profile startup, pose rendering, skater control or gameplay credit. Existing explicit heap/cache/diagnostic/native event adapters remain unchanged; no fake game callees or comparator changes.",
+      "browser": {
+        "path": "local/analysis/animation-clip-startup-v4-browser-full.json",
+        "sha256": "917a1baf37ed6d4e7caa31edf0c743e02ed954c16f3191d4b9a572583393e6e5",
+        "suite": "animation_clip_startup_v4",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/animation-clip-startup-v4-regression-animation-clip-startup-v4-result.json",
+        "sha256": "8135fff3701076f56be2b74692183ae967132dd4374638339ede3ba965b4a379"
+      },
+      "fixture": {
+        "path": "local/analysis/animation-clip-startup-v4-fixtures.json",
+        "sha256": "d242800412ae0f062f81da2c0563ec9c25209fbc12a28da02a4704d2998f25b7"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-animation-clip-startup-v4.py",
+        "sha256": "e0112407cf0033c24cd0ea40b84e7cf5f02ff5bb02a561667b48711772c1b2c4"
+      },
+      "aliases": [
+        "thug_animation_channel_start_clip_v1"
       ],
       "checkpoint_claims": []
     },
@@ -83854,6 +83948,17 @@
         "sha256": "c44cfdbc19ad1ab45c990fae41cac58e6210607d0233afbc1c82802ec4d54e9a"
       },
       "scope": "Four channel-creation dependencies for actual Animation startup. Real selected/empty pools and generic heap allocation/failure, poisoned unaligned status storage, boolean low-byte returns, repeated zero/positive/negative fade transitions, live initialized sentinel lists, max-channel removal with real destructor/free callees, PC24 finite fade accumulation and repeated channel creation compare. Initialized allocator, valid channel ownership/lists and successful internal root allocation required; only direct allocation wrapper failure is supported. No clip playback, full Animation419dd0/480410, profile startup, frame, rendered skater or gameplay credit. No fake game callee or numeric/checker changes. All208 Node/actualChromium suites pass and all207 predecessor result objects remain unchanged. Four unique addresses416bytes;152/154instructions with two explicit scoped exclusions. Failed sentinel fixture and header-offset draft remain private and unselected; corrected source follows original+5c duration/+60 weight. No fixture/checker/numeric changes to make a failed port pass."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/animation-clip-startup-v6-checkpoint.json",
+        "sha256": "98bb23c083a431c2ddacbcd8a38f9db89884011ab1695a0755470ab76aa8329d"
+      },
+      "audit": {
+        "path": "local/analysis/animation-clip-startup-v6-audit.json",
+        "sha256": "e6c09264dbfe99abfeab3f0d5aa062cd25d0ff823ffbc6c330ac99c114d907ca"
+      },
+      "scope": "Original clip startup4823c0 and owner optional-parameter merge4616f0 use real archived AirIdle/AirTurnLeft clips, standard dictionaries, asset/cache readers, concrete controller factories and command methods. Initialized successful allocators, valid owned channels/parameters and at most six controllers required. Finite PC24 timeline arithmetic; mirrored low byte. Original THPS6_Basics/Default400B asset is also loaded and directly started with its actual checksum1ca1ff20. No cold bootstrap, full Animation/profile startup, pose rendering, skater control or gameplay credit. Existing explicit heap/cache/diagnostic/native event adapters remain unchanged; no fake game callees or comparator changes. All209 Node/actualChromium suites pass; all208 predecessor result objects unchanged. Two new addresses1467bytes;433/450instructions with17 explicit scoped exclusions. Earlier field-offset draft, optional-secondary error and failed compile remain private/unselected. Original fixture and checker unchanged when correcting source. The earlier dummy label was inaccurate: checksum1ca1ff20 is Default, whose400B archive decode equals the extracted file."
     }
   ],
   "uncredited_source_definitions": [
@@ -85732,7 +85837,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2075,
+    "accepted_addresses": 2077,
     "uncredited_source_definitions": 208,
     "duplicate_alias_addresses": 8,
     "linear_extent_differences": 13,

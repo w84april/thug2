@@ -1,6 +1,9 @@
 local/analysis/animation-channel-startup-v2.c
 local/analysis/animation-channel-startup-v3-browser.html
 local/analysis/animation-channel-startup-v3-worker.mjs
+local/analysis/animation-clip-startup-v3.c
+local/analysis/animation-clip-startup-v4-browser.html
+local/analysis/animation-clip-startup-v4-worker.mjs
 local/analysis/animation-component-storage-v1.c
 local/analysis/animation-component-storage-v3-browser.html
 local/analysis/animation-component-storage-v3-routines.json
@@ -24,6 +27,8 @@ local/analysis/asset-ready-texture-derived.c
 local/analysis/asset-ready-training-ports-setup.py
 local/analysis/asset-ready-worker.mjs
 local/analysis/audit-animation-channel-startup-v3.py
+local/analysis/audit-animation-clip-startup-v4.py
+local/analysis/audit-animation-clip-startup-v6.py
 local/analysis/audit-animation-component-storage-v3.py
 local/analysis/audit-animation-state-storage-v3.py
 local/analysis/audit-asset-ready.py
@@ -143,6 +148,7 @@ local/analysis/audit-walk-tail.py
 local/analysis/audit-walk-transition.py
 local/analysis/balance-construction-callback.c
 local/analysis/build-animation-channel-startup-v2.py
+local/analysis/build-animation-clip-startup-v3.py
 local/analysis/build-animation-component-storage-v1.py
 local/analysis/build-animation-state-storage-v1.py
 local/analysis/build-asset-factory-draft.py
@@ -631,6 +637,8 @@ local/analysis/physics-script-outputs-memory.c
 local/analysis/physics-script-values-draft.build.json
 local/analysis/physics-script-values-draft.c
 local/analysis/pin-animation-channel-startup-v3.py
+local/analysis/pin-animation-clip-startup-v4.py
+local/analysis/pin-animation-clip-startup-v6.py
 local/analysis/pin-animation-component-storage-v3.py
 local/analysis/pin-animation-state-storage-v3.py
 local/analysis/pin-asset-factory.py
@@ -760,6 +768,7 @@ local/analysis/prepare-training-warehouse-v2.py
 local/analysis/prepare-training-webgl-v1-storage.py
 local/analysis/prepare-training-webgl-v1.py
 local/analysis/probe-animation-channel-startup-v3.py
+local/analysis/probe-animation-clip-startup-v4.py
 local/analysis/probe-animation-component-storage-v3.py
 local/analysis/probe-animation-state-storage-v3.py
 local/analysis/probe-asset-factory.py
@@ -1084,6 +1093,7 @@ local/analysis/score-insert-worker.mjs
 local/analysis/script-change-draft.build.json
 local/analysis/script-change-draft.c
 local/analysis/serve-animation-channel-startup-v3.py
+local/analysis/serve-animation-clip-startup-v4.py
 local/analysis/serve-animation-component-storage-v3.py
 local/analysis/serve-animation-state-storage-v3.py
 local/analysis/serve-asset-factory.py
@@ -1523,6 +1533,7 @@ local/analysis/trigger-routines.json
 local/analysis/trigger-worker.mjs
 local/analysis/update-skater-matrix-readme.py
 local/analysis/verify-animation-channel-startup-v3-regression.mjs
+local/analysis/verify-animation-clip-startup-v4-regression.mjs
 local/analysis/verify-animation-component-storage-v3-regression.mjs
 local/analysis/verify-animation-component-storage-v3.mjs
 local/analysis/verify-animation-state-storage-v3-regression.mjs

@@ -4,7 +4,7 @@ This project recovers Windows x86 behavior for WebAssembly. It has **406 verifie
 native matching bytes across eight individual functions** and is not playable yet.
 Scoped behavioral recovery, native binary matching and original-target linked
 progress have separate evidence. Current verified original-target linked credit
-is zero; the 18.49% behavioral total remains in
+is zero; the 18.57% behavioral total remains in
 [behavioral-recovery.json](behavioral-recovery.json).
 
 ## decomp.dev requirements checked on 2026-10-12
@@ -397,3 +397,31 @@ The four addresses add 416 unique body bytes: behavioral coverage is now
 eight functions/406 bytes and original-target linked credit remains zero. Clip
 playback startup, full Animation/profile initialization, a controllable rendered
 skater and gameplay remain unfinished. The Warehouse is still a static preview.
+
+## Original animation clip startup
+
+Two further routines pass 256 original cases and 2,264 direct calls: channel
+clip startup `4823c0` and optional owner-parameter merge `4616f0`. Original
+controller factories, command methods, archive clips, readers, cache ownership,
+pooled temporary structures and event-array disposal execute. The comparison
+also loads and starts the actual 400-byte THPS6_Basics/Default animation with
+checksum `1ca1ff20`; its decoded archive contents equal the extracted file.
+The earlier private “dummy” label was incorrect. This direct clip proof does
+not establish original asset registration, profile bootstrap or pose rendering.
+
+All 209 Node and actual Chromium suites pass, with all 208 predecessor result
+objects unchanged and complete rendered results equal to Node. Coverage is
+433/450 instructions, with seven literal cold-bootstrap calls, nine mandatory
+allocation-null instructions and one failed selected-pool membership instruction
+excluded under initialized successful allocation and stable valid ownership.
+The selected checkpoint preserves 27,036 artifacts, including all 26,655 parent
+artifacts. The first scoped proof and rejected metadata revision remain private.
+
+The two addresses add 1,467 unique original body bytes. Behavioral recovery is
+441,137/2,375,378 bytes across 2,077 addresses (18.57%). The clip's 1,442-byte
+body was absent from the old inventory; its independently exported extent
+raises known functions to 11,894 and leaves 403,916 text bytes unassigned.
+The denominator and earlier address records are unchanged. Native matching
+remains eight functions/406 bytes and original-target linked credit remains zero.
+Full Animation/profile initialization, skater control, pose rendering and
+playable gameplay remain unfinished. The Warehouse remains a static preview.

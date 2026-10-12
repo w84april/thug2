@@ -4,7 +4,7 @@
     "total_code": "2375378",
     "complete_code": "0",
     "complete_code_percent": 0.0,
-    "total_functions": 11893,
+    "total_functions": 11894,
     "total_units": 3,
     "complete_units": 0,
     "matched_code": "406",
@@ -12,7 +12,7 @@
     "matched_functions": 8,
     "matched_code_percent": 0.01709201651274029,
     "matched_data_percent": 0,
-    "matched_functions_percent": 0.06726645926175061,
+    "matched_functions_percent": 0.06726080376660501,
     "fuzzy_match_percent": 0.01709201651274029,
     "total_data": "0",
     "complete_data": "0",
@@ -22,19 +22,19 @@
     {
       "name": "Scoped behavioral recovery (original-target link unverified)",
       "measures": {
-        "total_code": "439670",
+        "total_code": "441137",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 2075,
+        "total_functions": 2077,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.09234198376054768,
+        "matched_code_percent": 0.0920349007224513,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.38554216867469876,
-        "fuzzy_match_percent": 0.09234198376054768,
+        "matched_functions_percent": 0.38517091959557054,
+        "fuzzy_match_percent": 0.0920349007224513,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -5621,6 +5621,15 @@
           }
         },
         {
+          "name": "thug_ui_object_merge_parameters_v1",
+          "size": "25",
+          "address": "394992",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4593392"
+          }
+        },
+        {
           "name": "thug_object_apply_parameters_draft",
           "size": "162",
           "address": "395024",
@@ -9092,6 +9101,15 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4727648"
+          }
+        },
+        {
+          "name": "thug_animation_channel_start_clip_v1",
+          "size": "1442",
+          "address": "529344",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4727744"
           }
         },
         {
@@ -18724,10 +18742,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1530350",
+        "total_code": "1530325",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9818,
+        "total_functions": 9817,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -29756,15 +29774,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4593328"
-          }
-        },
-        {
-          "name": "original_004616f0",
-          "size": "25",
-          "address": "394992",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4593392"
           }
         },
         {
@@ -107113,7 +107122,7 @@
     {
       "name": "Unassigned original .text bytes (includes padding and jump tables)",
       "measures": {
-        "total_code": "405358",
+        "total_code": "403916",
         "complete_code": "0",
         "complete_code_percent": 0.0,
         "total_functions": 0,
@@ -107133,7 +107142,7 @@
       "sections": [
         {
           "name": ".text unassigned",
-          "size": "405358",
+          "size": "403916",
           "fuzzy_match_percent": 0
         }
       ],
