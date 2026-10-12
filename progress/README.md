@@ -71,15 +71,16 @@ publication of verified work from the current recovery chat.
 
 ## Reconciled report
 
-`ledger.json` links **2,038 distinct original addresses** to source hashes and
-preserved positive original-execution evidence. It credits **435,589 original
-function-body bytes / 2,375,378 original `.text` virtual bytes (18.34%)**.
+`ledger.json` links **2,051 distinct original addresses** to source hashes and
+preserved positive original-execution evidence. It credits **436,577 original
+function-body bytes / 2,375,378 original `.text` virtual bytes (18.38%)**.
 Native matching separately credits **406 / 2,375,378 bytes (0.01709%)**, across
 eight already complete addresses, so completion receives no additional credit.
 The initial reporting commit reconciled existing
-evidence. Subsequent audited checkpoint selections add 74 distinct addresses,
-totaling 8,540 original body bytes. The latest four checked mappings add 451
-bytes. The preceding 22 mappings added 21 addresses (4,093 bytes); shared
+evidence. Subsequent audited checkpoint selections add 87 distinct addresses,
+totaling 9,528 original body bytes. The latest thirteen camera mappings add 988
+bytes. The preceding four mappings added 451 bytes, and the earlier 22 mappings
+added 21 addresses (4,093 bytes); shared
 `49f3b0` earned no extra bytes. Constructor
 `582d90` now has explicit return and temporary cleanup verification; its earlier
 partial checkpoints remain immutable.
@@ -166,16 +167,30 @@ confirmed a ZIP containing only `report.json`, byte-identical to the committed
 report; local regeneration and the pinned objdiff parser passed again. See
 [the verification record](upload-verification.json) for hashes and artifact expiry.
 
-decomp.dev registration and import of the earlier 18.15% report are independently
-verified on the project page. Its visible notice confirms that the project stays
-hidden from the public listing until 0.5% matched code. The site labels completion
+decomp.dev registration and import of the matching report at `b42fb04` are
+verified on the project page. The manager independently observed its exact
+commit link, 18.34% “fully linked” and 0.02% “decompiled” display; the latter
+rounds the verified 406 / 2,375,378 matching bytes (0.01709%). That report also
+passed all hosted upload/download steps and independent ZIP retrieval, byte
+comparison, regeneration and pinned-parser checks. The newer 18.38% camera
+report needs its own upload and site-import verification. The visible notice
+confirms that the project stays hidden from the public listing until 0.5%
+matched code. The site labels completion
 “fully linked” and matching “decompiled”; neither label establishes a playable
 browser engine. A later upload still needs its own artifact verification.
 
 The latest audited startup checkpoint and its selected complete routine maps are
-recorded in [verified-recovery.json](verified-recovery.json). It preserves 199
-passing Node/actual Chromium suites and 74 newly reconciled distinct addresses.
-The latest four complete dependencies cover Light construction, shared-component
+recorded in [verified-recovery.json](verified-recovery.json). It preserves 200
+passing Node/actual Chromium suites and 87 newly reconciled distinct addresses.
+The latest thirteen camera dependencies compare 97 cases and 271 completed
+calls, exercising all 276 original instructions. They cover object/component
+storage and cleanup, projection, raw owner-state copying and WalkCamera links.
+No new numeric tolerance or checker changes were introduced. Projection uses
+the existing SDK transcendental adapters; physical x87 accuracy is unverified.
+All 199 predecessor result objects are unchanged. Camera-specific QB
+initialization/commands, viewport assignment and full profile startup remain.
+
+The preceding four complete dependencies cover Light construction, shared-component
 construction, camera owner binding and Walk camera binding. They pass 55 cases
 and 131 completed calls, covering 127/132 instructions with five unchecked
 allocation-fault exclusions. All 198 predecessor result objects are unchanged.
@@ -200,7 +215,7 @@ frames. Private continued work is recorded in
 `local/analysis/continued-recovery-next.txt`.
 
 The first upload verification record identifies the original 17.98% report, not
-the current 18.34% report. Later pushes use the same upload/download checks.
+the current 18.38% report. Later pushes use the same upload/download checks.
 
 The old chat's goal and the publishing automation remain paused. Preserve
 `HANDOFF.txt`, all checkpoints and their private evidence. Refresh the ledger

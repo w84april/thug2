@@ -9416,6 +9416,276 @@
       ]
     },
     {
+      "address": "0x0041b6d0",
+      "size": 87,
+      "ranges": [
+        [
+          4306640,
+          4306726
+        ]
+      ],
+      "name": "thug_camera_component_destroy_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 66
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b6d0/covered",
+        "value": 25
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_destroy_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041b730",
+      "size": 134,
+      "ranges": [
+        [
+          4306736,
+          4306869
+        ]
+      ],
+      "name": "thug_camera_component_construct_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 61
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b730/covered",
+        "value": 37
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_construct_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041b7c0",
+      "size": 33,
+      "ranges": [
+        [
+          4306880,
+          4306912
+        ]
+      ],
+      "name": "thug_camera_component_delete_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 70
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b7c0/covered",
+        "value": 11
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_delete_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041b810",
+      "size": 35,
+      "ranges": [
+        [
+          4306960,
+          4306994
+        ]
+      ],
+      "name": "thug_camera_component_sync_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 53
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b810/covered",
+        "value": 14
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_sync_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041b840",
+      "size": 86,
+      "ranges": [
+        [
+          4307008,
+          4307093
+        ]
+      ],
+      "name": "thug_camera_component_create_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 65
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b840/covered",
+        "value": 24
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_create_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x0041b8a0",
+      "size": 100,
+      "ranges": [
+        [
+          4307104,
+          4307203
+        ]
+      ],
+      "name": "thug_camera_component_update_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 45
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x41b8a0/covered",
+        "value": 32
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_component_update_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x0041c350",
       "size": 27,
       "ranges": [
@@ -40441,6 +40711,51 @@
       "checkpoint_claims": []
     },
     {
+      "address": "0x004859f0",
+      "size": 11,
+      "ranges": [
+        [
+          4741616,
+          4741626
+        ]
+      ],
+      "name": "thug_camera_object_destroy_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 40
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x4859f0/covered",
+        "value": 2
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_object_destroy_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x00485a00",
       "size": 4,
       "ranges": [
@@ -40519,6 +40834,51 @@
       },
       "aliases": [
         "thug_camera_orientation"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00485a20",
+      "size": 33,
+      "ranges": [
+        [
+          4741664,
+          4741696
+        ]
+      ],
+      "name": "thug_camera_object_delete_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 41
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x485a20/covered",
+        "value": 11
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_object_delete_v2"
       ],
       "checkpoint_claims": []
     },
@@ -40607,6 +40967,96 @@
       "checkpoint_claims": [
         "local/analysis/skater-cleanup-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x00485aa0",
+      "size": 109,
+      "ranges": [
+        [
+          4741792,
+          4741900
+        ]
+      ],
+      "name": "thug_camera_projection_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 20
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x485aa0/covered",
+        "value": 31
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_projection_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x00485ba0",
+      "size": 263,
+      "ranges": [
+        [
+          4742048,
+          4742310
+        ]
+      ],
+      "name": "thug_camera_object_construct_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 32
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x485ba0/covered",
+        "value": 64
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_object_construct_v2"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x004860c0",
@@ -47618,6 +48068,96 @@
       "checkpoint_claims": [
         "local/analysis/skater-score-checkpoint.json"
       ]
+    },
+    {
+      "address": "0x004a07b0",
+      "size": 7,
+      "ranges": [
+        [
+          4851632,
+          4851638
+        ]
+      ],
+      "name": "thug_camera_get_default_fov_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 16
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x4a07b0/covered",
+        "value": 2
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_get_default_fov_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
+      "address": "0x004a07c0",
+      "size": 7,
+      "ranges": [
+        [
+          4851648,
+          4851654
+        ]
+      ],
+      "name": "thug_camera_get_display_ratio_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 17
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x4a07c0/covered",
+        "value": 2
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_camera_get_display_ratio_v2"
+      ],
+      "checkpoint_claims": []
     },
     {
       "address": "0x004a0950",
@@ -70013,6 +70553,51 @@
       ]
     },
     {
+      "address": "0x00524c50",
+      "size": 83,
+      "ranges": [
+        [
+          5393488,
+          5393570
+        ]
+      ],
+      "name": "thug_walk_camera_bind_owner_v2",
+      "source": {
+        "path": "local/analysis/camera-startup-v2.c",
+        "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec",
+        "line": 74
+      },
+      "original": {
+        "path": "local/analysis/camera-startup-v2-original.json",
+        "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787",
+        "field": "instruction_coverage/0x524c50/covered",
+        "value": 21
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged.",
+      "browser": {
+        "path": "local/analysis/camera-startup-v2-browser.json",
+        "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e",
+        "suite": "camera_startup_v2",
+        "result": "pass"
+      },
+      "node": {
+        "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+        "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+      },
+      "fixture": {
+        "path": "local/analysis/camera-startup-v2-fixtures.json",
+        "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+      },
+      "mapping_harness": {
+        "path": "local/analysis/probe-camera-startup-v2.py",
+        "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
+      },
+      "aliases": [
+        "thug_walk_camera_bind_owner_v2"
+      ],
+      "checkpoint_claims": []
+    },
+    {
       "address": "0x005250a0",
       "size": 60,
       "ranges": [
@@ -82079,6 +82664,17 @@
         "sha256": "0d3115e5d21df1d74ce185bedc98592699e5f7b978fae2f985222ab01ef916a6"
       },
       "scope": "Four complete post-construction dependencies: raw Light construction, cdecl Motion/Proximity/Sound/Light/LockObj assembly with live appends, camera owner/state/trick linking and clearing, and walking camera linking. Existing actual constructors and component searches run unchanged. Four sequences start with the complete original local/remote skater constructor. Initialized services, bounded component lists, nonnull walking camera owners and successful internal allocations are required; allocation failures fault before shared assembly returns. Light vtable is identity-only; no virtual behavior, complete581850/profile initialization, rendered frame or gameplay is claimed. All199 Node/actualChromium suites pass and all198 predecessor objects are unchanged. Four additional unique addresses contribute451 conservative body bytes; five allocation-fault exclusions retain their bytes. This independent selection does not replace earlier updates. Original QB camera asset discovery receives no completion credit."
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/camera-startup-v2-checkpoint.json",
+        "sha256": "63a639d3ea500f7009f9c0b692a9be15417d541cf2ad5b2ca5a5d00bb83c52f6"
+      },
+      "audit": {
+        "path": "local/analysis/camera-startup-v2-audit.json",
+        "sha256": "5ec8ff73e95cb646090ac6b5d5943a1e406a6021cec544b79a5cb87cf1aaaddc"
+      },
+      "scope": "Thirteen complete camera dependencies: default FOV/display ratio getters, PC24 projection arithmetic with existing SDK transcendental adapters, camera object construction/destruction/deleting wrapper, actual component payload construction/factory/destruction/deleting wrapper, raw owner snapshot/update and synchronization, and WalkCamera owner binding/clearing. Finite bounded projection parameters, initialized heap/UI services and valid ownership graphs; raw copy cases preserve NaN payloads without arithmetic. Allocation failures and low-byte flag behavior covered. No physical x87 transcendental parity, camera-specific QB initialization/commands, viewport registration, full skater initialization, actual rendered frame or gameplay claimed. Existing checker and comparison allowances unchanged. All200 Node/actualChromium suites pass and all199 predecessor objects are unchanged. Thirteen additional unique addresses contribute988 original body bytes; all276 instructions exercised. No new numeric allowance or checker change. This independent selection does not replace earlier updates. Original QB camera asset discovery receives no completion credit."
     }
   ],
   "uncredited_source_definitions": [
@@ -83948,7 +84544,7 @@
   ],
   "reconciliation": {
     "provisional_addresses": 1893,
-    "accepted_addresses": 2038,
+    "accepted_addresses": 2051,
     "uncredited_source_definitions": 207,
     "duplicate_alias_addresses": 5,
     "linear_extent_differences": 13,

@@ -2,8 +2,8 @@
   "version": 2,
   "measures": {
     "total_code": "2375378",
-    "complete_code": "435589",
-    "complete_code_percent": 18.337670888591205,
+    "complete_code": "436577",
+    "complete_code_percent": 18.379264268676394,
     "total_functions": 11889,
     "total_units": 3,
     "complete_units": 1,
@@ -22,19 +22,19 @@
     {
       "name": "Verified behavioral recovery",
       "measures": {
-        "total_code": "435589",
-        "complete_code": "435589",
+        "total_code": "436577",
+        "complete_code": "436577",
         "complete_code_percent": 100.0,
-        "total_functions": 2038,
+        "total_functions": 2051,
         "total_units": 1,
         "complete_units": 1,
         "matched_code": "406",
         "matched_data": "0",
         "matched_functions": 8,
-        "matched_code_percent": 0.09320712873832902,
+        "matched_code_percent": 0.09299619540195658,
         "matched_data_percent": 0,
-        "matched_functions_percent": 0.39254170755642787,
-        "fuzzy_match_percent": 0.09320712873832902,
+        "matched_functions_percent": 0.39005363237445145,
+        "fuzzy_match_percent": 0.09299619540195658,
         "total_data": "0",
         "complete_data": "0",
         "complete_data_percent": 0
@@ -2126,6 +2126,60 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4304320"
+          }
+        },
+        {
+          "name": "thug_camera_component_destroy_v2",
+          "size": "87",
+          "address": "108240",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4306640"
+          }
+        },
+        {
+          "name": "thug_camera_component_construct_v2",
+          "size": "134",
+          "address": "108336",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4306736"
+          }
+        },
+        {
+          "name": "thug_camera_component_delete_v2",
+          "size": "33",
+          "address": "108480",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4306880"
+          }
+        },
+        {
+          "name": "thug_camera_component_sync_v2",
+          "size": "35",
+          "address": "108560",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4306960"
+          }
+        },
+        {
+          "name": "thug_camera_component_create_v2",
+          "size": "86",
+          "address": "108608",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4307008"
+          }
+        },
+        {
+          "name": "thug_camera_component_update_v2",
+          "size": "100",
+          "address": "108704",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4307104"
           }
         },
         {
@@ -9077,6 +9131,15 @@
           }
         },
         {
+          "name": "thug_camera_object_destroy_v2",
+          "size": "11",
+          "address": "543216",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4741616"
+          }
+        },
+        {
           "name": "thug_camera_position",
           "size": "4",
           "address": "543232",
@@ -9095,6 +9158,15 @@
           }
         },
         {
+          "name": "thug_camera_object_delete_v2",
+          "size": "33",
+          "address": "543264",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4741664"
+          }
+        },
+        {
           "name": "thug_camera_set_position_draft",
           "size": "30",
           "address": "543344",
@@ -9110,6 +9182,24 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4741776"
+          }
+        },
+        {
+          "name": "thug_camera_projection_v2",
+          "size": "109",
+          "address": "543392",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4741792"
+          }
+        },
+        {
+          "name": "thug_camera_object_construct_v2",
+          "size": "263",
+          "address": "543648",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4742048"
           }
         },
         {
@@ -10640,6 +10730,24 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4851472"
+          }
+        },
+        {
+          "name": "thug_camera_get_default_fov_v2",
+          "size": "7",
+          "address": "653232",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4851632"
+          }
+        },
+        {
+          "name": "thug_camera_get_display_ratio_v2",
+          "size": "7",
+          "address": "653248",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "4851648"
           }
         },
         {
@@ -15692,6 +15800,15 @@
           }
         },
         {
+          "name": "thug_walk_camera_bind_owner_v2",
+          "size": "83",
+          "address": "1195088",
+          "fuzzy_match_percent": 0,
+          "metadata": {
+            "virtual_address": "5393488"
+          }
+        },
+        {
           "name": "thug_walk_hang_reset_orientation_draft",
           "size": "60",
           "address": "1196192",
@@ -18391,10 +18508,10 @@
     {
       "name": "Known unrecovered original functions",
       "measures": {
-        "total_code": "1534106",
+        "total_code": "1533118",
         "complete_code": "0",
         "complete_code_percent": 0.0,
-        "total_functions": 9851,
+        "total_functions": 9838,
         "total_units": 1,
         "complete_units": 0,
         "matched_code": "0",
@@ -20882,60 +20999,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4306304"
-          }
-        },
-        {
-          "name": "original_0041b6d0",
-          "size": "87",
-          "address": "108240",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4306640"
-          }
-        },
-        {
-          "name": "original_0041b730",
-          "size": "134",
-          "address": "108336",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4306736"
-          }
-        },
-        {
-          "name": "original_0041b7c0",
-          "size": "33",
-          "address": "108480",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4306880"
-          }
-        },
-        {
-          "name": "original_0041b810",
-          "size": "35",
-          "address": "108560",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4306960"
-          }
-        },
-        {
-          "name": "original_0041b840",
-          "size": "86",
-          "address": "108608",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4307008"
-          }
-        },
-        {
-          "name": "original_0041b8a0",
-          "size": "100",
-          "address": "108704",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4307104"
           }
         },
         {
@@ -32738,39 +32801,12 @@
           }
         },
         {
-          "name": "original_004859f0",
-          "size": "11",
-          "address": "543216",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4741616"
-          }
-        },
-        {
-          "name": "original_00485a20",
-          "size": "33",
-          "address": "543264",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4741664"
-          }
-        },
-        {
           "name": "original_00485a50",
           "size": "25",
           "address": "543312",
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4741712"
-          }
-        },
-        {
-          "name": "original_00485aa0",
-          "size": "109",
-          "address": "543392",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4741792"
           }
         },
         {
@@ -32789,15 +32825,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4741920"
-          }
-        },
-        {
-          "name": "original_00485ba0",
-          "size": "263",
-          "address": "543648",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4742048"
           }
         },
         {
@@ -37235,24 +37262,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "4851616"
-          }
-        },
-        {
-          "name": "original_004a07b0",
-          "size": "7",
-          "address": "653232",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4851632"
-          }
-        },
-        {
-          "name": "original_004a07c0",
-          "size": "7",
-          "address": "653248",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "4851648"
           }
         },
         {
@@ -46964,15 +46973,6 @@
           "fuzzy_match_percent": 0,
           "metadata": {
             "virtual_address": "5393456"
-          }
-        },
-        {
-          "name": "original_00524c50",
-          "size": "83",
-          "address": "1195088",
-          "fuzzy_match_percent": 0,
-          "metadata": {
-            "virtual_address": "5393488"
           }
         },
         {

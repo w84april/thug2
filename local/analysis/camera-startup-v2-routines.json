@@ -1,0 +1,67 @@
+{
+  "0x4a07b0": {
+    "bytes": 7,
+    "instructions": 2,
+    "name": "thug_camera_get_default_fov_v2"
+  },
+  "0x4a07c0": {
+    "bytes": 7,
+    "instructions": 2,
+    "name": "thug_camera_get_display_ratio_v2"
+  },
+  "0x485aa0": {
+    "bytes": 109,
+    "instructions": 31,
+    "name": "thug_camera_projection_v2"
+  },
+  "0x485ba0": {
+    "bytes": 263,
+    "instructions": 64,
+    "name": "thug_camera_object_construct_v2"
+  },
+  "0x4859f0": {
+    "bytes": 11,
+    "instructions": 2,
+    "name": "thug_camera_object_destroy_v2"
+  },
+  "0x485a20": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_camera_object_delete_v2"
+  },
+  "0x41b730": {
+    "bytes": 134,
+    "instructions": 37,
+    "name": "thug_camera_component_construct_v2"
+  },
+  "0x41b840": {
+    "bytes": 86,
+    "instructions": 24,
+    "name": "thug_camera_component_create_v2"
+  },
+  "0x41b6d0": {
+    "bytes": 87,
+    "instructions": 25,
+    "name": "thug_camera_component_destroy_v2"
+  },
+  "0x41b7c0": {
+    "bytes": 33,
+    "instructions": 11,
+    "name": "thug_camera_component_delete_v2"
+  },
+  "0x41b8a0": {
+    "bytes": 100,
+    "instructions": 32,
+    "name": "thug_camera_component_update_v2"
+  },
+  "0x41b810": {
+    "bytes": 35,
+    "instructions": 14,
+    "name": "thug_camera_component_sync_v2"
+  },
+  "0x524c50": {
+    "bytes": 83,
+    "instructions": 21,
+    "name": "thug_walk_camera_bind_owner_v2"
+  }
+}

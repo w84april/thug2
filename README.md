@@ -12,13 +12,13 @@ Generated decompiler pseudocode alone does not supply that build.
 
 ## Progress and Git checkpoints
 
-**Reconciled behavioral completion: 18.34% of original `.text` bytes** —
-435,589 / 2,375,378 bytes attributed to 2,038 distinct original addresses with
+**Reconciled behavioral completion: 18.38% of original `.text` bytes** —
+436,577 / 2,375,378 bytes attributed to 2,051 distinct original addresses with
 linked source and scoped behavioral evidence. **Verified native binary matching:
 406 bytes across eight functions (0.01709%).**
 The game is not playable. Unidentified code, jump tables and padding remain in
 the code denominator; data and assets are unmeasured. This metric combines the
-reconciled baseline with 74 newly reconciled startup/lifecycle addresses.
+reconciled baseline with 87 newly reconciled startup/lifecycle/camera addresses.
 Shared original routines and C aliases receive no additional credit. It does
 not measure playability. See
 [reporting policy and verification](progress/README.md),
@@ -44,7 +44,7 @@ It records the checkpoint hash, validation summary, scope, remaining work and
 hashes of published checkpoint files. Existing checkpoint files and the original
 executable remain unchanged locally. That historical integrity audit passed for all
 21,854 pinned artifacts and 185 Node/Chromium suites. The newer startup
-checkpoint preserves all prior evidence and passes 199 suites; all 198 preceding
+checkpoint preserves all prior evidence and passes 200 suites; all 199 preceding
 result objects remain unchanged. See
 [the current verified checkpoint selection](progress/verified-recovery.json).
 
@@ -79,6 +79,15 @@ The retired chat and its publishing automation remain paused; direct publication
 of verified checkpoints is authorized in the current recovery chat.
 
 ## Current evidence
+
+- Thirteen camera dependencies now pass 97 original/Wasm cases and 271 completed
+  calls, exercising all 276 instructions and adding 988 original body bytes.
+  Camera object/component storage and cleanup, projection setup, raw owner-state
+  copying and WalkCamera binding compare exactly. All 200 Node/actual Chromium
+  suites pass, with all 199 preceding result objects unchanged and no new numeric
+  tolerance or checker changes. Projection uses the existing SDK transcendental
+  adapters; physical x87 accuracy remains unverified. Camera-specific QB
+  initialization, viewport assignment, full profile startup and rendering remain.
 
 - Eight reconstructed C++ helpers now have independently replayed native byte
   matches under MSVC 13.10.3077. Every byte is compared; three checksum routines

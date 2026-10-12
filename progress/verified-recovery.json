@@ -1,7 +1,7 @@
 {
   "version": 1,
   "playable": false,
-  "scope": "74 newly reconciled distinct original addresses add8540 conservative body bytes beyond the original reporting baseline. The latest independent update adds four original addresses/451 bytes over55 cases/131 calls and127of132 scoped instructions; five unchecked allocation-fault instructions remain excluded. All199 Node/actual Chromium suites pass and all198 predecessor result objects are unchanged. Earlier complete constructor582d90 resolution,80 original completed calls and shared49f3b0 zero extra credit remain selected unchanged. New whole originalQB camera asset and post-construction entry traces are discovery only, earning no completion. Full profile/camera/frame/rendering integration and a playable level remain unfinished; private evidence/checkpoints are preserved.",
+  "scope": "Reconciled baseline plus 87 distinct newly audited startup/lifecycle/camera addresses and 9528 original body bytes. Latest thirteen camera dependencies add 988 bytes after 97 cases/271 calls and all276 original instructions, no new numeric allowance or checker changes. All200 Node/actualChromium suites pass; all199 predecessor objects unchanged. Historical582d90 completion remains independently resolved through its80 complete constructor calls. Four remaining partial roots, QB/entry discovery, unfinished camera-specific initialization/commands, viewport registration, full profile startup and rendering earn no new credit. Native binary matching is separately selected in matching/selection.json and remains406 bytes.",
   "updates": [
     {
       "checkpoint": {
@@ -359,6 +359,50 @@
           "mapping_harness": {
             "path": "local/analysis/probe-skater-initialization-links-v1.py",
             "sha256": "41ec591e700e642cfb04b0b7451564f51bc0305a6abd002d4874ffce8837be25"
+          }
+        }
+      ]
+    },
+    {
+      "checkpoint": {
+        "path": "local/analysis/camera-startup-v2-checkpoint.json",
+        "sha256": "63a639d3ea500f7009f9c0b692a9be15417d541cf2ad5b2ca5a5d00bb83c52f6"
+      },
+      "audit": {
+        "path": "local/analysis/camera-startup-v2-audit.json",
+        "sha256": "5ec8ff73e95cb646090ac6b5d5943a1e406a6021cec544b79a5cb87cf1aaaddc"
+      },
+      "discovery_exports": [],
+      "suites": [
+        {
+          "name": "camera_startup_v2",
+          "source": {
+            "path": "local/analysis/camera-startup-v2.c",
+            "sha256": "42a53cf38cf14e69107c8a87704f97906b7f7219706cb35f4a335b98e5dfcdec"
+          },
+          "routines": {
+            "path": "local/analysis/camera-startup-v2-routines.json",
+            "sha256": "74f49a289101adf4fbc2e74f23887d77036e100d28746b47d31ac2846c2cb4db"
+          },
+          "original": {
+            "path": "local/analysis/camera-startup-v2-original.json",
+            "sha256": "94c0e2e5b5357973dda8935b256f7bea0bb7a45e458ad1661d5fb1a4055dd787"
+          },
+          "fixture": {
+            "path": "local/analysis/camera-startup-v2-fixtures.json",
+            "sha256": "86ed2ee419ea4f7d0e892aac627cdb81082f1944ffc74cffb13fa2f0aa9ef6e3"
+          },
+          "node": {
+            "path": "local/analysis/camera-startup-v2-regression-camera-startup-v2-result.json",
+            "sha256": "12a79f5d92a680d8092c10e295eaf08ec40fbc336bf246ec8bfd5669c1c73d4b"
+          },
+          "browser": {
+            "path": "local/analysis/camera-startup-v2-browser.json",
+            "sha256": "1c4c01757a9515aafceb0ad842260cc0ba8ea8e912cdaefd8be358c6bc863d3e"
+          },
+          "mapping_harness": {
+            "path": "local/analysis/probe-camera-startup-v2.py",
+            "sha256": "e425169ac64a1ef00ece8fb77700f29730172aba61df690ea33cf8d08f05c50e"
           }
         }
       ]
