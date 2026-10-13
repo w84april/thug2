@@ -8,6 +8,9 @@ local/analysis/animation-component-storage-v1.c
 local/analysis/animation-component-storage-v3-browser.html
 local/analysis/animation-component-storage-v3-routines.json
 local/analysis/animation-component-storage-v3-worker.mjs
+local/analysis/animation-offline-configuration-v2.c
+local/analysis/animation-offline-startup-v1.c
+local/analysis/animation-prepare-clip-v1.c
 local/analysis/animation-state-storage-v1.c
 local/analysis/animation-state-storage-v3-browser.html
 local/analysis/animation-state-storage-v3-worker.mjs
@@ -1176,6 +1179,7 @@ local/analysis/serve-skater-end-run.py
 local/analysis/serve-skater-finalize.py
 local/analysis/serve-skater-full-startup.py
 local/analysis/serve-skater-gap.py
+local/analysis/serve-skater-goal-trigger-browser-v1.py
 local/analysis/serve-skater-ground.py
 local/analysis/serve-skater-initialization-links-v1.py
 local/analysis/serve-skater-local-net.py
@@ -1196,6 +1200,7 @@ local/analysis/serve-texture-asset.py
 local/analysis/serve-texture-buffer.py
 local/analysis/serve-training-mode.py
 local/analysis/serve-training-startup.py
+local/analysis/serve-training-warehouse-hawk-movement-v9.py
 local/analysis/serve-training-warehouse-v2.py
 local/analysis/serve-training-webgl-v1.py
 local/analysis/serve-trigger.py
@@ -1225,6 +1230,8 @@ local/analysis/skater-adjust-draft.build.json
 local/analysis/skater-adjust-draft.c
 local/analysis/skater-adjust-routines.json
 local/analysis/skater-adjust-worker.mjs
+local/analysis/skater-animation-preview-v1-pose.mjs
+local/analysis/skater-animation-sample-v1.c
 local/analysis/skater-balance-browser.html
 local/analysis/skater-balance-constructor-prefix.c
 local/analysis/skater-balance-lifecycle-draft.build.json
@@ -1234,6 +1241,7 @@ local/analysis/skater-balance-lifecycle-routines.json
 local/analysis/skater-balance-no-qb-negative.c
 local/analysis/skater-balance-startup-draft.build.json
 local/analysis/skater-balance-worker.mjs
+local/analysis/skater-browser-motion-v1.mjs
 local/analysis/skater-camera-factories-v1-browser.html
 local/analysis/skater-camera-factories-v1-worker.mjs
 local/analysis/skater-camera-factories-v1.c
@@ -1293,6 +1301,8 @@ local/analysis/skater-gap-draft.build.json
 local/analysis/skater-gap-draft.c
 local/analysis/skater-gap-routines.json
 local/analysis/skater-gap-worker.mjs
+local/analysis/skater-goal-active-v1-checks.mjs
+local/analysis/skater-goal-trigger-browser-v1-browser.html
 local/analysis/skater-ground-adjust-derived.c
 local/analysis/skater-ground-browser.html
 local/analysis/skater-ground-draft.build.json
@@ -1303,11 +1313,19 @@ local/analysis/skater-ground-moving-derived.c
 local/analysis/skater-ground-routines.json
 local/analysis/skater-ground-static-derived.c
 local/analysis/skater-ground-worker.mjs
+local/analysis/skater-grounded-bootstrap-v6.c
+local/analysis/skater-hawk-webgl-v2-load.mjs
 local/analysis/skater-initialization-links-v1-browser.html
 local/analysis/skater-initialization-links-v1-routines.json
 local/analysis/skater-initialization-links-v1-worker.mjs
 local/analysis/skater-initialization-links-v1.build.json
 local/analysis/skater-initialization-links-v1.c
+local/analysis/skater-jump-action-bootstrap-v6-checks.mjs
+local/analysis/skater-jump-action-bootstrap-v6.mjs
+local/analysis/skater-level-mesh-derived-v1.c
+local/analysis/skater-level-trigger-browser-v1-worker.mjs
+local/analysis/skater-level-trigger-browser-v1.html
+local/analysis/skater-level-trigger-route-v1-checks.mjs
 local/analysis/skater-local-net-browser.html
 local/analysis/skater-local-net-descriptor-corrected.c
 local/analysis/skater-local-net-draft.build.json
@@ -1331,6 +1349,7 @@ local/analysis/skater-matrix-constructor-prefix.c
 local/analysis/skater-matrix-draft.build.json
 local/analysis/skater-matrix-draft.c
 local/analysis/skater-matrix-worker.mjs
+local/analysis/skater-packed-vertices-v1.c
 local/analysis/skater-rotate-browser.html
 local/analysis/skater-rotate-checks.mjs
 local/analysis/skater-rotate-constructor-prefix.c
@@ -1343,6 +1362,8 @@ local/analysis/skater-score-constructor-prefix.c
 local/analysis/skater-score-draft.build.json
 local/analysis/skater-score-draft.c
 local/analysis/skater-score-worker.mjs
+local/analysis/skater-skeleton-instance-v1.c
+local/analysis/skater-skeleton-pose-v1.c
 local/analysis/skater-startup-tail-browser.html
 local/analysis/skater-startup-tail-constructor-prefix.c
 local/analysis/skater-startup-tail-diagnostic-fixture.c
@@ -1386,6 +1407,7 @@ local/analysis/skeleton-buffer-browser.html
 local/analysis/skeleton-buffer-draft.build.json
 local/analysis/skeleton-buffer-draft.c
 local/analysis/skeleton-buffer-worker.mjs
+local/analysis/skinned-model-webgl-v1-load.mjs
 local/analysis/sound-stop-draft.c
 local/analysis/sound-stop-routines.json
 local/analysis/sphere-contact-browser.html
@@ -1519,6 +1541,8 @@ local/analysis/training-texture-ports-setup.py
 local/analysis/training-vertex-upload-boundary.build.json
 local/analysis/training-vertex-upload-boundary.c
 local/analysis/training-vertex-upload-ports.build.json
+local/analysis/training-warehouse-hawk-movement-v9-render.mjs
+local/analysis/training-warehouse-hawk-movement-v9.html
 local/analysis/training-warehouse-v2-render.mjs
 local/analysis/training-warehouse-v2.html
 local/analysis/training-webgl-v1-load.mjs
@@ -1649,9 +1673,14 @@ local/analysis/verify-skater-full-startup-extents.py
 local/analysis/verify-skater-full-startup-regression.mjs
 local/analysis/verify-skater-full-startup.mjs
 local/analysis/verify-skater-gap-checkpoint.mjs
+local/analysis/verify-skater-goal-active-v1.mjs
+local/analysis/verify-skater-goal-trigger-browser-v1-regression.mjs
 local/analysis/verify-skater-ground-checkpoint.mjs
 local/analysis/verify-skater-initialization-links-v1-regression.mjs
 local/analysis/verify-skater-initialization-links-v1.mjs
+local/analysis/verify-skater-level-trigger-air-release-v1-node.mjs
+local/analysis/verify-skater-level-trigger-jump-v1-node.mjs
+local/analysis/verify-skater-level-trigger-route-v1-node.mjs
 local/analysis/verify-skater-local-net-regression.mjs
 local/analysis/verify-skater-local-net-unit.mjs
 local/analysis/verify-skater-looping-sound-lifecycle.mjs
@@ -1934,6 +1963,8 @@ local/analysis/walk-transition-draft.c
 local/analysis/walk-transition-extents.py
 local/analysis/walk-transition-routines.json
 local/analysis/walk-transition-worker.mjs
+local/analysis/warehouse-original-physics-jump-traversal-v4.mjs
+local/analysis/warehouse-shared-collision-v2.mjs
 src/audio/device.c
 src/audio/device.h
 src/audio/events.c

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "result": "Bounded Warehouse movement preview and reproduced trigger-crash repair independently reviewed; full game unfinished",
+  "playable": false,
+  "checkpoint": {
+    "path": "local/analysis/skater-level-trigger-integration-v1-checkpoint.json",
+    "sha256": "12b4c4b5f447a1270034b42fd11236b22c34bd2d4897e2ec1a3d58864b6e1f36"
+  },
+  "audit": {
+    "path": "local/analysis/skater-level-trigger-integration-v1-audit.json",
+    "sha256": "79a2c9bf751193aeb968edbdc1a6c02e619b3b38cdec9708a318c9ab53fec116"
+  },
+  "preserved_parent_artifacts": 29896,
+  "pinned_artifacts": 30213,
+  "browser_suites_unchanged": 216,
+  "candidate": {
+    "wasm_bytes": 979397,
+    "wasm_sha256": "c80695cd7674703b6a9529edc6012cfebb8eb52b8c003f6eab9903c98cd3592f",
+    "runtime_imports": 0,
+    "selected_core_changed": false
+  },
+  "original_comparisons": {
+    "goal_predicate_cases": 536,
+    "goal_wrapper_instructions": 28,
+    "goal_wrapper_instructions_covered": 28,
+    "jump_frames": 180,
+    "air_release_frames": 180,
+    "transfer_route_frames": 1200,
+    "transfer_route_frame_sha256": "bce4a9f99bad9d7e5137e69f325483e066e2136797f19509e6e4b285be4ff9d9",
+    "Node_and_actual_Chromium_whole_state_equal": true
+  },
+  "assets": {
+    "terrain_storage_buffers": 7024,
+    "hawk_storage_buffers": 119,
+    "board_storage_buffers": 36,
+    "skeleton_bones": 50,
+    "animation_clips": 6,
+    "verified_poses": 18,
+    "original_asset_bytes_published": false
+  },
+  "live_controls": {
+    "push_jump_landing_steer_brake_fresh_reset_verified": true,
+    "browser_error_logs_at_verification": 0,
+    "reset_after_forced_error_verified": false,
+    "exact_human_reported_error_identified": false
+  },
+  "implementation_scope": "Original bounded Physics and script routines own position/contact. C6 adds original GoalIsActive and loads whole original SK4 helper with existing GotParam; every other unknown native still traps. Authored bootstrap/input/time/ground-only Space-release jump mapping, direct clip sampler, CPU skinning and WebGL camera/render adapter remain. Whole original controller/profile/main-loop/render startup and appearance texture replacement remain unverified. Later startup diagnostic fixtures are excluded. Source archive requires private owned assets, immutable local fixtures and build configuration; it is not a standalone playable release.",
+  "new_credit": {
+    "addresses": 0,
+    "original_body_bytes": 0,
+    "matching_bytes": 0,
+    "linked_bytes": 0
+  },
+  "source_files": {
+    "local/analysis/animation-offline-configuration-v2.c": "2f624e78c63b163d9a54082fa0f94f3604ee445cbf6bb8516d06dfe40d92b5dc",
+    "local/analysis/animation-offline-startup-v1.c": "60e15e8cb385ee2ebd46016c73788f1a0fcb7af6ee457d248622d649b03d7b89",
+    "local/analysis/animation-prepare-clip-v1.c": "d1034b98584fcbbaa5fcb83bc29eb4f26e0faf538fa4c9bfd70dbf7723a4e7f5",
+    "local/analysis/serve-skater-goal-trigger-browser-v1.py": "895340ef8a13cb8337ff55c49268cd24c046bca4d150557b6ad2b04e669eeba9",
+    "local/analysis/serve-training-warehouse-hawk-movement-v9.py": "f3f3ba3f8e9ede0a0112f553d1cd91cf981f2de1d7fdb0d03c1f4f995fe5450f",
+    "local/analysis/skater-animation-preview-v1-pose.mjs": "6ba1bdf1f67eafecd8038d55bdf83700a0b120ebe78285434c7aad6c709dd4ba",
+    "local/analysis/skater-animation-sample-v1.c": "9009ae20044cb7e6a4771df0b0724df7d41a262df21e10f74838457d02f673fc",
+    "local/analysis/skater-browser-motion-v1.mjs": "2953fa74423b30458e260a0021eede5d996186aa3934c0da4c4e3510d297e0aa",
+    "local/analysis/skater-goal-active-v1-checks.mjs": "70df7b33ee71f9bc0678df1ae8cf50f5b4490569ca5a941b00608ea6f018d7be",
+    "local/analysis/skater-goal-trigger-browser-v1-browser.html": "24e285783227a7cd016edcf7c7abdfbfcc35cc3dd065127b7c15285567949cee",
+    "local/analysis/skater-grounded-bootstrap-v6.c": "6063315dc763c3159a379331f3eff7af58aab7059891f437ebbae2d11f25d560",
+    "local/analysis/skater-hawk-webgl-v2-load.mjs": "8b45b5ceeb3eea0851422ef21ca3f75a2e1dc1ee1db5573642005e4883e3e7b8",
+    "local/analysis/skater-jump-action-bootstrap-v6-checks.mjs": "9ea567add7e050e1eae50f4e1629f006949c647408513dfc3d25f1d9ceffe6ac",
+    "local/analysis/skater-jump-action-bootstrap-v6.mjs": "d6c648772e376787b2fc5056db13729198825f6e28d33abf1136131d783b4ff9",
+    "local/analysis/skater-level-mesh-derived-v1.c": "7e8409efd8d1960ab6afc254a629c2007d079b2f852d6c8098bdbc6bfd33e4ba",
+    "local/analysis/skater-level-trigger-browser-v1-worker.mjs": "87ee91361488e5c0e424762878f9e950ca79c5b328146bf949884da409dd4779",
+    "local/analysis/skater-level-trigger-browser-v1.html": "f0479cc05dad4c3956d601e0f3fc8c409ce238592d5d3087c8198039f9f1ca17",
+    "local/analysis/skater-level-trigger-route-v1-checks.mjs": "08398dc1ab9056e5451565027f9e0b31fa5bd5b3c9968ae010eface2f9b0cd3f",
+    "local/analysis/skater-packed-vertices-v1.c": "13e76f003a90faa25c843f0fcd73817b4d95431290107650c67bc247ec8c8ae2",
+    "local/analysis/skater-skeleton-instance-v1.c": "b9c25fe7c18de9aea47000fad6db546353d6ad15bad295772119bbaf1bfc013c",
+    "local/analysis/skater-skeleton-pose-v1.c": "e58cfff7de765243c201c5644404162c50b8e9ef214575f0647b99ae20318e27",
+    "local/analysis/skinned-model-webgl-v1-load.mjs": "38b5fd48692313d76f7567be58c5b2e20d092e0260a3c1200036300dee2ab215",
+    "local/analysis/training-warehouse-hawk-movement-v9-render.mjs": "25418a536bbb704941ec99ca53284a62609e3da541881c287a5080247ab38f0a",
+    "local/analysis/training-warehouse-hawk-movement-v9.html": "71ae658543e6a0e54718010c6aed62e919fdbcdf1484e6047a96ae5f98873abd",
+    "local/analysis/verify-skater-goal-active-v1.mjs": "eed21cfff46557416ac20e0d5500b8b97c31c2475e532fb51220de5bdba11e1a",
+    "local/analysis/verify-skater-goal-trigger-browser-v1-regression.mjs": "d85b5ba949bf3e049c8a83421a7822547395532bb3b38efb66f8b52ddb096926",
+    "local/analysis/verify-skater-level-trigger-air-release-v1-node.mjs": "74e7a93eeb50ff6d1584514cbb0750fb7081207cc09d8332045736341481c4ed",
+    "local/analysis/verify-skater-level-trigger-jump-v1-node.mjs": "bf2c43a35b8ffe335de0266493119a7443d2b8ca74092df9123ea9408826d122",
+    "local/analysis/verify-skater-level-trigger-route-v1-node.mjs": "8474ed9dffcde9dd668f6c37b505daf9022bbabf455c18f5eacc38ea0c5716af",
+    "local/analysis/warehouse-original-physics-jump-traversal-v4.mjs": "9dbc267e400d7c498c6611853e75e5e36f8c2bae0bccf67bbb102bf2c473ea58",
+    "local/analysis/warehouse-shared-collision-v2.mjs": "86bc44e802e0569a0d405fda4d94c8d010db1040a63964a2e6a09440b5777f40"
+  }
+}

@@ -425,3 +425,27 @@ The denominator and earlier address records are unchanged. Native matching
 remains eight functions/406 bytes and original-target linked credit remains zero.
 Full Animation/profile initialization, skater control, pose rendering and
 playable gameplay remain unfinished. The Warehouse remains a static preview.
+
+
+### Reviewed Warehouse movement source checkpoint
+
+The latest [browser movement record](browser-movement-preview.json)
+adds the reviewed Hawk, board, skeleton, animation sampler and bounded movement
+source through the v9/C6 trigger repair. All 216 earlier Node/Chromium suite
+objects are unchanged. Original comparisons cover 536 goal-predicate cases, two
+180-frame jump/release sequences and a 1,200-frame transfer route. Real browser
+push, jump, landing, steering, braking and fresh reset checks pass.
+
+This fixes the reproduced turning/jumping trigger failure. The exact earlier
+human-reported error is unknown, and reset after a forced engine failure has not
+been tested. Camera, input/time/bootstrap, jump-action mapping, CPU skinning and
+WebGL presentation retain their authored adapters; complete original gameplay
+and rendering startup remain unfinished. The original assets, game modules,
+fixture outputs, screenshots and private compiler material are omitted. Public
+source alone cannot run the preview.
+
+No new recovery, matching or original-target linking is claimed: behavioral
+recovery remains 2,077 unique routines / 441,137 original body bytes (18.57%);
+matching remains eight functions / 406 bytes; linked credit remains zero.
+Reviewed source commits and pushes are authorized. Only the retired publishing
+automation remains paused.
