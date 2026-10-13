@@ -19,23 +19,24 @@ not accept an arbitrary progress JSON with a percentage field.
 Registration requires a public GitHub repository, an authenticated repository
 administrator, and an Actions workflow with a readable report artifact. The
 GitHub App is an additional integration for automatic refresh and PR reporting.
-Our repository is public. The user registered the project, and its
-[decomp.dev page](https://decomp.dev/w84april/thug2) was independently checked in
-the browser on 2026-10-13. The manager chat independently observed the corrected
-`060efffb10eed0db0798757bbb6bd2980dd3231f` import and its exact commit link,
-rounded 0.02% matching, the hidden-until-0.5% notice and removal of the historical
-“fully linked” display. That observation is recorded separately from this chat's
-earlier view of the superseded `0e9f1b2` report. Earlier linked percentages
-incorrectly encoded behavioral coverage; they prove historical import, not
-original-target build/link integration. The corrected `060efffb` report also has
-independently verified upload/download equality and pinned parser acceptance
-(run `38314064187`, artifact `11776495461`). Its report SHA-256 is
-`b945ac5813cb8f538596191f23ba281868e1a2ac175556c8dda27108111f825e`;
-original-target linked bytes and units are zero. Matching remains 406 bytes.
-The later camera checkpoint `f9ebc3fa` has a separately verified hosted artifact
-(run `38317514576`, artifact `11777236994`) equal to the committed report;
-its own site import has not been observed.
+Our repository is public and the project is registered. On 2026-10-13, an
+independent browser check of the [PC progress page](https://decomp.dev/w84april/thug2/pc)
+showed the exact imported commit
+[`a03871003c8f9d2ece2fd6580e460b50a6b072df`](https://github.com/w84april/thug2/commit/a03871003c8f9d2ece2fd6580e460b50a6b072df),
+rounded 0.02% matching, and the hidden-until-0.5% notice. Its
+[Actions run](https://github.com/w84april/thug2/actions/runs/38411458360) passed
+all ten job steps. The downloaded `pc_report` artifact (`11822605905`) contains
+only `report.json`, byte-for-byte equal to the committed report and accepted by
+the pinned objdiff parser. Report SHA-256:
+`7f1b7db36932f13e38e3c15bf0df88ea1309bcb130cf8ef8141d35c7c073a785`.
+Matching remains 406 bytes; original-target linked bytes and units remain zero.
 
+Earlier reports through `0e9f1b2` incorrectly encoded behavioral coverage as
+linked completion. Their historical imports do not prove original-target
+build/link integration. The corrected `060efffb` import and upload/download
+equality remain preserved as earlier evidence; the current observation above
+verifies the reviewed Warehouse source checkpoint. Behavioral coverage stays in
+the separate recovery report and does not increase decomp.dev matching.
 
 There is a material limitation: the current public listing hides projects below
 **0.5% matched code**. Completion progress alone does not meet that threshold.
